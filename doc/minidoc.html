@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>OpenClassrooms Courses Explorer minidoc</title>
+  </head>
+  <body>
+    <h1>OpenClassrooms Courses Explorer : et Voil&agrave;!</h1>
+    <h2>Introduction</h2>
+    <section>
+    <p>When you start a <b>path</b> at OpenClassrooms, the simplest way not to get lost is to follow the guideline, from project to project, until success!</p>
+    <p>When you start a <b>project</b> at OpenClassrooms, the simplest way not to get lost is to follow the required courses, from course to course, until success!</p>
+    <p>When you start a <b>course</b> at OpenClassrooms, the simplest way not to get lost is to follow the guide, chapter after chapter, until success!</p>
+    <p>However, <b>courses have prerequisites</b> : it is recommended to follow courses B,C and D before starting course A. And B,C,D require themselves several courses...</p>
+    <p>This is where things start to get tricky: 
+    <ul>
+	<li>Even by <b>reducing healthy learner curiosity</b> (avoid non-necessary references, skip light requirements), you will still need to keep track of all the required courses to achieve a given course.</li>
+	<li><b>Cross references, circular references</b> add some fun to your attempt to follow the links: a paper and a pen become bad companions for this journey</li>
+	<li>Moreover, <b>Scheduling correcly your projects agenda</b> becomes a <b>time-consuming task</b> itself, with few time for that!</li>
+    </ul></p>
+    
+    <p>Imagine you start your journey in an unknown place. Somewhere in front of you a few ways enter the forest of knowledge, but you don't know where they will take you to!
+    <br/><img width="180" src="spawn_in_the_dark.png">
+    </p>
+    <p>Perhaps it is a <b>chosen way</b> to let purposefully students find their ways by themselves, to let them discover some treasures along the road if curiosity and serendipity are in a good day, but... Even Dora the explorer has a map, hasn't she?
+    <br/><img width="180" src="dora_has_a_map.jpg">
+    </p>
+    <p>Perhaps the <b>complexity of paths and references between courses</b> has grown with time?
+    <br/>Perhaps a given uncertainty regarding the <b>student's preestablished knowledge of the courses requirements</b>, added to a given uncertainty regarding the <b>student's curiosity and available time "to read further"</b>, has discouraged the desire to build a "step-by-step" schedule for each path?
+    <br/>Would these sources of fuzziness (complexity and uncertainty) explain the <b>absence of a full path-project-course map</b> at OC? 
+    <br/><img width="180" src="path_milestone.png">
+    </p>
+    <p>When achieving my third project, I was used to find my way along the courses links, and well aware of the interest to self-discover goldnuts along the way. 
+    <br/>I started project 4 with same curiosity, interest, will to learn, motivation as before, and began to take note of the prerequisites for this new project.
+    <br/>The cross references between courses, chapters, other courses, other chapters, overwhelmed me progressively with a feeling of being lost again. <i>As we will see soon below, this feeling was totally predictible and understandable.</i>
+    <br/><img width="180" src="labyrinth.png">
+    </p>
+    <p>After a few attempts to calm down this growing feeling, I came to a first conclusion : <b>paper, pen, post'it, calc-sheet, Jira, ... whatever tool you use to draw your learning roadmap is unuseful without a clear sight of the whole links and requirement-dependencies between courses!</b>.
+    </p>
+    <p>After very frustrating moments in front of such an undemanded complexity, wondering how not to loose more time, I came to a second conclusion : <b>this is a problem to be solved by a computer scientist, a data engineer, a motivated database architect, and a person who has 2 weeks in front of him!</b>.
+    </p>
+    <p>Then, I looked around and found out I could do the job: I fortunately had achieved my 3rd project 2 weeks before the deadline, had some robust experience of databases, good knowledge about graphs traversal, and a strong need to practice Python programming (started 3 months ago) to strenghten my little knowledge of Pandas, Matplotlib and other tools. 
+    </p>
+    <p>There was a final question : is it possible to collect the courses requirements data without breaking any licence? Quick answer : <b>all OC courses are provided with a cute Creative Commons By-SA \f111 \f112 \f115</b>. Longer answer : let's grab the data and do some automated things with it.
+    </p>
+    <p>
+    <b>That was the story , here is the tool!</b>
+    </p>
+    </section>
+    <h2>What is OC-C-E ?</h2>
+    <section>
+    <p>
+    <ul>
+	<li>OC-C-E is a tribute to OC : this is the cost I pay to get a full overview of OC courses interconnexions.</li>
+	<li>OC-C-E is a tribute to OC : this is a work motivated by the will to loose less time and embrace as much <b>good OC Courses content</b> as possible to avoid missing goldnuts somewhere</li>
+	<li>OC-C-E is a submarine project between project 3 and project 4: I used all python data science programming I had learned the 3 last months</li>
+	<li>OC-C-E is an OpenClassrooms Courses Explorer</li>
+    </ul>
+    </p>
+    </section>
+    <h2>What is *NOT* OC-C-E ?</h2>
+    <section>
+    <ul>
+	<li>OC-C-E is <b>NOT</b> a work of OpenClassrooms, it was not demanded by anyone in OC Organization. For this reason, do not ask OC any support or information about this tool.</li>
+	<li>OC-C-E is <b>NOT</b> a commercial industrial tool : it is free, it is "as is", and there is a licence to explain how to use it.</li>
+	<li>OC-C-E is <b>NOT</b> for me myself and I (anymore). It was first motivated by my own needs, but the product belongs now to the data-python-scientists and other OC students who will want to do something with it..</li>
+    </ul>
+    </section>
+    <h2>Where are the OC-C-E entry points ?</h2>
+    <section>
+    <ul>
+	<li>Launch with Jupyter Lab : several notebooks are provided, one with the full application and some others with tutorial step by step examples.</li>
+	<li>Launch with Jupyter Notebook: same as above</li>
+	<li>Launch with Voilà: the main application will start with Voilà!
+	<br/><pre>voila --VoilaConfiguration.file_whitelist="['.*\.(csv|html|png)', 'viz.*']" OCCoursesExplorer.ipynb</pre>
+	</li>
+    </ul>
+    <br/><i>See below for installation instructions</i>
+    </section>
+    <h2>Why OC-C-E ?</h2>
+    <section></section>
+    <h2>Who can use OC-C-E ?</h2>
+    <section></section>
+    <h2>What can I really do with OC-C-E ?</h2>
+    <section></section>
+    
+    <h1>OpenClassrooms Courses Explorer : How To</h1>
+    <h2>How to install OC-C-E</h2>
+    <h3>Requirements</h3>
+    <ul>
+	<li>Install all packages listed in the file requirements.txt 
+	<ul>
+		<li>If running a virtual Anaconda environment : do 1
+		<ul>
+			<li>To ensure ipywidgets will run properly within the notebooks, 
+			be sure to install the package like this : <pre>conda install -c conda-forge ipywidgets</pre>
+			</li>
+		</ul>
+		</li>
+		<li>If running python VirtualEnv : do 2
+		<ul>
+			<li>To ensure ipywidgets will run properly within the notebooks, 
+			be sure to install the package like this : <pre>pip install ipywidgets</pre>
+			</li>
+		</ul>
+		</li>		
+	</ul>
+	</li>
+	<li>To use the notebooks with Jupyter, be sure to have setup ipywidgets as nbextension
+	<ul>
+		<li>jupyter nbextension enable --py widgetsnbextension</li>
+	</ul>
+	</li>
+	<li>For Jupyter Lab : install 
+	<ul>
+		<li>jupyter labextension install @jupyter-widgets/jupyterlab-manager</li>
+	</ul>
+	</li>
+    </ul>
+    
+    <section></section>
+    <h2>How to explore Topics, Paths, Projects and Courses</h2>
+    <section></section>
+    <h2>How to use OC-C-E with Notebooks?</h2>
+    <section></section>
+    <h2>How to analyze my Courses progression?</h2>
+    <section></section>
+    <h2>How to export my Path Roadmap towards Jira?</h2>
+    <section></section>
+    <h2>How to contribute?</h2>
+    <section></section>
+    <h2>Checkpoint</h2>
+    <section></section>
+  </body>
+</html>

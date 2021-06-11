@@ -1,0 +1,16 @@
+titreCours,inscription,progression,moyenneDeClasse,duree,difficulte,nbChapitres,ratioQuizEvaluation,nbEvaluations,derniereMiseAJour,idCours
+Mettez en place un système de veille informationnelle,12 days,0,0,4.0,1,9,1.0,3,03/03/2021,4805776
+Réalisez une analyse exploratoire de données,40 days,43,0,15.0,2,19,1.0,2,15/12/2020,4525281
+Initiez-vous à Python pour l'analyse de données,41 days,100,0,12.0,1,11,1.0,3,22/03/2021,6204541
+Démarrez votre projet avec Python,40 days,100,0,4.0,1,15,1.0,3,03/06/2021,4262331
+Learn Python Basics for Data Analysis,47 days,0,0,12.0,1,12,1.0,2,21/01/2021,2304731
+Initiez-vous au Machine Learning,47 days,0,0,10.0,2,15,1.0,3,08/04/2021,4011851
+Objectif IA : initiez-vous à l'intelligence artificielle,119 days,100,0,6.0,1,10,1.0,3,17/04/2020,6417031
+Découvrez les librairies Python pour la Data Science,64 days,100,0,10.0,2,15,0.0,0,15/12/2020,4452741
+Décrivez et nettoyez votre jeu de données,64 days,100,0,15.0,2,25,1.0,3,25/05/2021,4525266
+Apprenez à apprendre,82 days,100,0,6.0,1,19,1.0,4,31/03/2021,4312781
+Mettez en place l'intégration et la livraison continues avec la démarche DevOps,100 days,0,0,10.0,3,8,1.0,2,22/02/2021,2035736
+Optimisez votre déploiement en créant des conteneurs avec Docker,100 days,0,0,8.0,2,9,1.0,2,15/12/2020,2035766
+Gérez votre projet avec une équipe Scrum,100 days,0,0,8.0,2,15,1.0,3,15/12/2020,4511226
+Découvrez la méthodologie DevOps,100 days,0,0,6.0,1,4,1.0,1,07/01/2021,6093671
+Utilisez Git et GitHub pour vos projets de développement,110 days,0,0,12.0,1,19,1.0,4,09/06/2021,5641721

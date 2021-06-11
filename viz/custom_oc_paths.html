@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" href="vis.css" type="text/css" />
+<script type="text/javascript" src="vis-network.min.js"></script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #paths_network {
+            width: 99%;
+            height: 560px;
+            background-color: #FFF;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+        
+	div.OpenClassroomsCoursesExplorer {
+	  position: fixed;
+	  z-index:123;
+	  bottom: 20px;
+	  right: 20px;
+	  width: 400px;
+	  height:20px;
+	  text-align:center;
+	  font-size=10px;
+	  color:#343434;
+	  border: 1px solid #d5d0f5;
+	}
+	div.OpenClassroomsCoursesExplorer a{
+	  color:#141414; 
+	  font-size=11px;
+	}
+	
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+
+<div id = "paths_network"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('paths_network');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#7451eb", "font": {"color": "#141414"}, "group": "root", "id": 0, "image": "https://raw.githubusercontent.com/TristanV/OCAIEngineer/main/Icons/openclassrooms_icon.webp", "label": "OpenClassrooms", "mass": 3, "physics": false, "shape": "image"}, {"color": "#9471fb", "font": {"color": "#141414"}, "group": "topic", "id": 1, "image": "https://raw.githubusercontent.com/TristanV/OCAIEngineer/main/Icons/topic.png", "label": "Business", "physics": true, "shape": "image", "size": 25.618, "x": 153.0, "y": -3.7474192053909006e-14}, {"color": "#B491FE", "font": {"color": "#141414"}, "group": "lang", "id": 2, "image": "https://raw.githubusercontent.com/TristanV/OCAIEngineer/main/Icons/fr.png", "label": "fr", "physics": true, "shape": "image", "size": 16, "x": 145.61999999999998, "y": -3.566661337836751e-14}, {"font": {"color": "#141414"}, "group": "path", "id": 3, "image": "https://raw.githubusercontent.com/TristanV/OCAIEngineer/main/Icons/path_3.png", "label": "Manager op\u00e9rationnel", "shape": "image", "size": 20}]);
+        edges = new vis.DataSet([{"from": 0, "length": 153, "to": 1}, {"color": "#B491FE", "from": 1, "length": 71.8, "to": 2}, {"color": "#B491FE", "from": 2, "label": "12m", "to": 3}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "hierarchicalRepulsion": {
+            "centralGravity": 0.0,
+            "damping": 0.09,
+            "nodeDistance": 120,
+            "springConstant": 0.01,
+            "springLength": 100
+        },
+        "solver": "hierarchicalRepulsion",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+<div class="OpenClassroomsCoursesExplorer">
+Graph generated with <a href="https://github.com/TristanV/OpenClassroomsCoursesExplorer" target="_blank">OpenClassrooms Courses Explorer</a>
+</div>
+</body>
+</html>
