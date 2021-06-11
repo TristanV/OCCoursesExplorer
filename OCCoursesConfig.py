@@ -84,9 +84,9 @@ VoilaVizFolder = r"viz/"
 # VizTemplate= r"viz/pyvis_original_template.html" 
 VizTemplate= r"viz/vis_template.html"
 
-FirefoxWebdriverPath = r"F:\AIDEV\personal_notebooks\OCCoursesExplorer\driver\geckodriver.exe" # the path to the webdriver must be absolute
+FirefoxWebdriverPath = r"F:\AIDEV\OCCoursesExplorer\driver\geckodriver.exe" # the path to the webdriver must be absolute
 
-OCGraphsIconsFolderURL = "https://raw.githubusercontent.com/TristanV/OCAIEngineer/main/Icons/" # Icons must be stored somewhere on the web. PyVis won't accept local drives paths
+OCGraphsIconsFolderURL = "https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/img/" # Icons must be stored somewhere on the web. PyVis won't accept local drives paths
 OCGraphsIconsFolderLocal="img/"
 
 OCGraphsIconsURL = {
