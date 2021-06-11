@@ -99,7 +99,7 @@ def get_agenda_html_page(body):
     page+=body
     page+=''' 
     <div class="OpenClassroomsCoursesExplorer">
-        Schedule generated with <a href="https://github.com/TristanV/OpenClassroomsCoursesExplorer" target="_blank">OpenClassrooms Courses Explorer</a>
+        Schedule generated with <a href="https://github.com/TristanV/OCCoursesExplorer" target="_blank">OpenClassrooms Courses Explorer</a>
     </div>
     </body>
     '''
