@@ -17,31 +17,35 @@
 	<li>Even by <b>reducing healthy learner curiosity</b> (avoid non-necessary references, skip light requirements), you will still need to keep track of all the required courses to achieve a given course.</li>
 	<li><b>Cross references, circular references</b> add some fun to your attempt to follow the links: a paper and a pen become bad companions for this journey</li>
 	<li>Moreover, <b>Scheduling correcly your projects agenda</b> becomes a <b>time-consuming task</b> itself, with few time for that!</li>
-    </ul></p>
-    
-    <p>Imagine you start your journey in an unknown place. Somewhere in front of you a few ways enter the forest of knowledge, but you don't know where they will take you to!
-    <br/><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/spawn_in_the_dark.png">
+    </ul>
     </p>
-    <p>Perhaps it is a <b>chosen way</b> to let purposefully students find their ways by themselves, to let them discover some treasures along the road if curiosity and serendipity are in a good day, but... Even Dora the explorer has a map, hasn't she?
-    <br/><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/dora_has_a_map.jpg">
+    
+    <p>Imagine you start your journey in an unknown place. Somewhere in front of you a few tracks enter <i>the depths of Knowwood-OC</i> the forest-of-OpenClassrooms-knowledge, but you won't know where they will take you to!
+    <br/><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/spawn_in_the_dark.png"/>
+    </p>
+    <p>Perhaps it is a <b>purposeful choice</b> to let students find their ways by themselves, to let them discover some treasures along the road if curiosity and serendipity are in a good day, but... Even Dora the explorer has a map, hasn't she?
+    <br/><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/dora_has_a_map.jpg"/>
     </p>
     <p>Perhaps the <b>complexity of paths and references between courses</b> has grown with time?
     <br/>Perhaps a given uncertainty regarding the <b>student's preestablished knowledge of the courses requirements</b>, added to a given uncertainty regarding the <b>student's curiosity and available time "to read further"</b>, has discouraged the desire to build a "step-by-step" schedule for each path?
     <br/>Would these sources of fuzziness (complexity and uncertainty) explain the <b>absence of a full path-project-course map</b> at OC? 
-    <br/><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/path_milestone.png">
+    <br/><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/path_milestone.png"/>
     </p>
     <p>When achieving my third project, I was used to find my way along the courses links, and well aware of the interest to self-discover goldnuts along the way. 
     <br/>I started project 4 with same curiosity, interest, will to learn, motivation as before, and began to take note of the prerequisites for this new project.
     <br/>The cross references between courses, chapters, other courses, other chapters, overwhelmed me progressively with a feeling of being lost again. <i>As we will see soon below, this feeling was totally predictible and understandable.</i>
-    <br/><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/labyrinth.png">
+    <br/><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/labyrinth.png"/>
     </p>
     <p>After a few attempts to calm down this growing feeling, I came to a first conclusion : <b>paper, pen, post'it, calc-sheet, Jira, ... whatever tool you use to draw your learning roadmap is unuseful without a clear sight of the whole links and requirement-dependencies between courses!</b>.
+    <br/>To understand my mindset when I started following the courses of my 4th project, here is a screenshot of the dense relational network between courses of the 3rd and 4th projects in the path "Ing&eacute;nieur IA":
+    <br/><img width="600" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_projects_complex_zoom.png">
+    <br/>In front of such a complex network, one can easily understand that a student can feel a bit lost, and feel a bit uncomfortable when following courses, chapter after chapter.
     </p>
     <p>After very frustrating moments in front of such an undemanded complexity, wondering how not to loose more time, I came to a second conclusion : <b>this is a problem to be solved by a computer scientist, a data engineer, a motivated database architect, and a person who has 2 weeks in front of him!</b>.
     </p>
     <p>Then, I looked around and found out I could do the job: I fortunately had achieved my 3rd project 2 weeks before the deadline, had some robust experience of databases, good knowledge about graphs traversal, and a strong need to practice Python programming (started 3 months ago) to strenghten my little knowledge of Pandas, Matplotlib and other tools. 
     </p>
-    <p>There was a final question : is it possible to collect the courses requirements data without breaking any licence? Quick answer : <b>all OC courses are provided with a cute Creative Commons By-SA \f111 \f112 \f115</b>. Longer answer : let's grab the data and do some automated things with it.
+    <p>There was a final question : is it possible to collect the courses requirements data without breaking any licence? Quick answer : <b>all OC courses are provided with a Creative Commons By-SA Licence</b>. Technical answer : All the data is here, availble and usable for my needs, so let's grab the data and do some automated things with it.
     </p>
     <p>
     <b>That was the story , here is the tool!</b>
@@ -50,12 +54,12 @@
     <h2>What is OC-C-E ?</h2>
     <section>
     <p>
-    <ul>
-	<li>OC-C-E is a tribute to OC : this is the cost I pay to get a full overview of OC courses interconnexions.</li>
-	<li>OC-C-E is a tribute to OC : this is a work motivated by the will to loose less time and embrace as much <b>good OC Courses content</b> as possible to avoid missing goldnuts somewhere</li>
-	<li>OC-C-E is a submarine project between project 3 and project 4: I used all python data science programming I had learned the 3 last months</li>
-	<li>OC-C-E is an OpenClassrooms Courses Explorer</li>
-    </ul>
+        <ul>
+            <li>OC-C-E is a tribute to OC : this is the cost I pay to get a full overview of OC courses interconnexions.</li>
+            <li>OC-C-E is again a tribute to OC : this is a work motivated by the will to loose less time and embrace as much <b>good OC Courses content</b> as possible to avoid missing goldnuts somewhere</li>
+            <li>OC-C-E is a submarine project between project 3 and project 4: I used all python data science programming I had learned the 3 last months</li>
+            <li>OC-C-E is an OpenClassrooms Courses Explorer</li>
+        </ul>
     </p>
     </section>
     <h2>What is *NOT* OC-C-E ?</h2>
@@ -78,11 +82,32 @@
     <br/><i>See below for installation instructions</i>
     </section>
     <h2>Why OC-C-E ?</h2>
-    <section></section>
+    <section>
+    <p>
+        The personal story leading to develop OpenClassrooms Courses Explorer is now 3 weeks behind. It took me way more time than expected to finally achieve the scheduling tool. There is no "in-between" approach : between building a bunch of scripts and building a clean application with a documented code, I chose the second one. Moreover I wanted to practice Pandas, Matplotlib, Voila, web scrapping... Now it is time to deliver the job and let you do something with it.
+    </p>
+    </section>
     <h2>Who can use OC-C-E ?</h2>
-    <section></section>
+    <section>
+        <ul>
+            <li>Someone with Python + Jupyter understanding</li>
+            <li>Someone who knows someone who does that</li>
+        </ul>
+        <p>For now, I do not plan to make it a standalone "one-click-install" application.</p>
+    </section>
     <h2>What can I really do with OC-C-E ?</h2>
-    <section></section>
+    <section>
+        <ul>
+            <li>Use the datasets provided with the application</li>
+            <li>Refresh the datasets from time to time</li>
+            <li>Explore Topics and Paths</li>
+            <li>Explore Paths and Projects</li>
+            <li>Explore Courses and Chapters</li>
+            <li>Explore Skills (this will be delivered in a later version)</li>
+            <li>Schedule your path and take your progression in account</li>
+            <li>Plenty things I do not even know, that you will imagine with the datasets.</li>
+        </ul>
+    </section>
     
     <h1>OpenClassrooms Courses Explorer : How To</h1>
     <h2>How to install OC-C-E</h2>
@@ -90,20 +115,22 @@
     <ul>
 	<li>Install all packages listed in the file requirements.txt 
 	<ul>
-		<li>If running a virtual Anaconda environment : do 1
+		<li>If running a virtual Anaconda environment : use the requirements.yml file
 		<ul>
 			<li>To ensure ipywidgets will run properly within the notebooks, 
 			be sure to install the package like this : <pre>conda install -c conda-forge ipywidgets</pre>
 			</li>
 		</ul>
 		</li>
-		<li>If running python VirtualEnv : do 2
+		<li>If running python VirtualEnv : use the requirements.txt file
 		<ul>
 			<li>To ensure ipywidgets will run properly within the notebooks, 
 			be sure to install the package like this : <pre>pip install ipywidgets</pre>
 			</li>
 		</ul>
-		</li>		
+		</li>
+        <li>The web scrapper used by this app is Selenium, with a Firefox Driver. If you don't want to use Firefox and prefer Chrome, then you'll have to configure some files (setup the proper path towards your driver in the OCCoursesConfig)
+        </li>
 	</ul>
 	</li>
 	<li>To use the notebooks with Jupyter, be sure to have setup ipywidgets as nbextension
@@ -116,20 +143,49 @@
 		<li>jupyter labextension install @jupyter-widgets/jupyterlab-manager</li>
 	</ul>
 	</li>
-    </ul>
-    
+    </ul> 
     <section></section>
     <h2>How to explore Topics, Paths, Projects and Courses</h2>
-    <section></section>
+    <section>
+        <p>Here are some captures of the application. The widgets are self-explanatory.</p>
+        <p>The Data Interface</p>
+        <img width="600" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_data.PNG">
+        <p>The Paths tab</p>
+        <img width="600" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_paths.PNG">
+        <p>The Projects tab</p>
+        <img width="600" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_projects.PNG">
+        <p>The Courses tab</p>
+        <img width="600" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_courses.PNG">
+        <p>The Schedule tab</p>
+        <img width="600" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_schedule.PNG">
+    </section>
     <h2>How to use OC-C-E with Notebooks?</h2>
-    <section></section>
+    <section>
+        <p>Feel free to use and adapt the tutorial notebooks provided : step by step, courses and paths, scheduler ...</p>
+        <p>Launch some queries on the datasets</p>
+        <img width="600" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_query_from_notebook.PNG">
+        <p>Create some dynamic graphs</p>
+        <img width="600" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_graph_from_notebook.PNG">
+        <p>Create a schedule</p>
+        <img width="600" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_schedule_from_notebook.PNG">
+    </section>
     <h2>How to analyze my Courses progression?</h2>
-    <section></section>
-    <h2>How to export my Path Roadmap towards Jira?</h2>
-    <section></section>
+    <section>
+        <p>In the "my_courses" folder, there is a notebook analyzing your progression: it is largely using an exercise correction given in a Course about exploratory analysis.
+        </p>
+    </section>
+    <h2>How to export my Path Schedule towards CSV or Jira?</h2>
+    <section>
+        <p>In a next version of the application.</p>
+    </section>
     <h2>How to contribute?</h2>
-    <section></section>
+    <section>
+        <p>People interested, mostly OC students following the DATA paths, are welcome to contribute: contact me via the OC Workplace!</p>
+    </section>
     <h2>Checkpoint</h2>
-    <section></section>
+    <section>
+        <p>Remember all of this is just a Proof of Concept, a Work in Progress. I will be very happy if someone gets something useful from this tool. Please let me know!</p>
+        <img width="128" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/blueprint.png">
+    </section>
   </body>
 </html>
