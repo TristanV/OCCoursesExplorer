@@ -366,8 +366,16 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
                 dur=0
                 status="unbooked"
                 ignore_this_course = False
-                if r["course_id"] in courses_exclusion_set:
-                    ignore_this_course=True
+                if r["course_id"] in courses_exclusion_set: #if the course has already been seen before, we do not count it twice in the stats, but we still show it in the schedule
+                    ignore_this_course=True                    
+                    if (r["status"]=="none"):
+                        status="Unbooked"
+                    elif (r["status"]=="todo"):
+                        status="To Do"
+                    elif (r["status"]=="in_progress"):
+                        status="In progress"
+                    elif (r["status"]=="done"):
+                        status="Achieved"
                 else:
                     if r["course_duration_hours"]!=np.nan:
                         dur=r["course_duration_hours"]
@@ -398,7 +406,7 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
                 ht+="<tr>"
                 if (ignore_this_course):
                     # ---------------
-                    ht+="<td colspan=2 class='"+classname+"'>Planned in a previous project" 
+                    ht+="<td colspan=2 class='"+classname+"'><b>Planned in a previous project</b>" 
                     ht+="<br/>Rank req: "+str(r['rank_req'])
                     ht+="<br/>Rank ref: "+str(r['rank_ref'])
 #                     ht+="<br/>Order : "+str(r['order'])
@@ -407,6 +415,7 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
                     ht+="<br/>°req in : "+str(r['degree_req_in'])
                     ht+="<br/>°ref in : "+str(r['degree_ref_in'])
                     ht+="<br/>Layer : "+str(r['layer'])
+                    ht+='<br/><b>'+status+'</b>'
                     if r["is_critical"] == True:
                         ht+='<br/><b>On the critical path</b>'
                     ht+="</td>" 
@@ -503,19 +512,19 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
         ht+="</tr>"
         if (project_courses_unbooked>0):
             ht+="<tr>"
-            ht+="<td colspan='3' class='noborder'></td><td  class='border'>"+str(project_courses_unbooked)+" unbooked</td><td class='border'>"+str(project_scheduled_unbooked_duration)+" h</td><td colspan=2 class='noborder'></td>"
+            ht+="<td colspan='3' class='noborder'></td><td  class='border'>"+str(project_courses_unbooked)+" unbooked</td><td class='border'>"+str(project_scheduled_unbooked_duration)+" h</td><td class='noborder'></td><td class='border'>"+str(int(100*project_scheduled_unbooked_duration/project_allocated_duration))+"%</td>"
             ht+="</tr>"
         if (project_courses_booked>0):
             ht+="<tr>"
-            ht+="<td colspan='3' class='noborder'></td><td class='border'>"+str(project_courses_booked)+" booked</td><td class='border'>"+str(project_scheduled_booked_duration)+" h</td><td colspan=2 class='noborder'></td>"
+            ht+="<td colspan='3' class='noborder'></td><td class='border'>"+str(project_courses_booked)+" booked</td><td class='border'>"+str(project_scheduled_booked_duration)+" h</td><td class='noborder'></td><td class='border'>"+str(int(100*project_scheduled_booked_duration/project_allocated_duration))+"%</td>"
             ht+="</tr>"
         if (project_courses_in_progress>0):
             ht+="<tr>"
-            ht+="<td colspan='3' class='noborder'></td><td class='border'>"+str(project_courses_in_progress)+" in progress</td><td class='border'>"+str(project_scheduled_in_progress_duration)+" h</td><td colspan=2 class='noborder'></td>"
+            ht+="<td colspan='3' class='noborder'></td><td class='border'>"+str(project_courses_in_progress)+" in progress</td><td class='border'>"+str(project_scheduled_in_progress_duration)+" h</td><td class='noborder'></td><td class='border'>"+str(int(100*project_scheduled_in_progress_duration/project_allocated_duration))+"%</td>"
             ht+="</tr>"
         if (project_courses_done>0):
             ht+="<tr>"
-            ht+="<td colspan='3' class='noborder'></td><td class='border'>"+str(project_courses_done)+" achieved</td><td class='border'>"+str(project_scheduled_done_duration)+" h</td><td colspan=2 class='noborder'></td>"
+            ht+="<td colspan='3' class='noborder'></td><td class='border'>"+str(project_courses_done)+" achieved</td><td class='border'>"+str(project_scheduled_done_duration)+" h</td><td class='noborder'></td><td class='border'>"+str(int(100*project_scheduled_done_duration/project_allocated_duration))+"%</td>"
             ht+="</tr>" 
         ht+="<tr>"
         ht+="<td colspan=3 class='noborder'></td>"
@@ -549,19 +558,19 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
     ht+="</tr>"
     if (total_courses_unbooked>0):
         ht+="<tr>"
-        ht+="<td class='border'>"+str(total_courses_unbooked)+" unbooked</td><td class='border'>"+str(total_scheduled_unbooked_duration)+" h</td><td colspan=2 class='noborder'></td>"
+        ht+="<td class='border'>"+str(total_courses_unbooked)+" unbooked</td><td class='border'>"+str(total_scheduled_unbooked_duration)+" h</td><td class='noborder'></td><td class='border'>"+str(int(100*total_scheduled_unbooked_duration/total_allocated_duration))+"%</td>"
         ht+="</tr>"
     if (total_courses_booked>0):
         ht+="<tr>"
-        ht+="<td class='border'>"+str(total_courses_booked)+" booked</td><td class='border'>"+str(total_scheduled_booked_duration)+" h</td><td colspan=2 class='noborder'></td>"
+        ht+="<td class='border'>"+str(total_courses_booked)+" booked</td><td class='border'>"+str(total_scheduled_booked_duration)+" h</td><td class='border'>"+str(int(100*total_scheduled_booked_duration/total_allocated_duration))+"%</td>"
         ht+="</tr>"
     if (total_courses_in_progress>0):
         ht+="<tr>"
-        ht+="<td class='border'>"+str(total_courses_in_progress)+" in progress</td><td class='border'>"+str(total_scheduled_in_progress_duration)+" h</td><td colspan=2 class='noborder'></td>"
+        ht+="<td class='border'>"+str(total_courses_in_progress)+" in progress</td><td class='border'>"+str(total_scheduled_in_progress_duration)+" h</td><td class='border'>"+str(int(100*total_scheduled_in_progress_duration/total_allocated_duration))+"%</td>"
         ht+="</tr>"
     if (total_courses_done>0):
         ht+="<tr>"
-        ht+="<td class='border'>"+str(total_courses_done)+" achieved</td><td class='border'>"+str(total_scheduled_done_duration)+" h</td><td colspan=2 class='noborder'></td>"
+        ht+="<td class='border'>"+str(total_courses_done)+" achieved</td><td class='border'>"+str(total_scheduled_done_duration)+" h</td><td class='border'>"+str(int(100*total_scheduled_done_duration/total_allocated_duration))+"%</td>"
         ht+="</tr>"   
     ht+="<tr>"
     ht+="<th>"+str(total_courses_count)+" courses<br/>incl "+str(total_courses_critical_count)+" critical courses</th>"
