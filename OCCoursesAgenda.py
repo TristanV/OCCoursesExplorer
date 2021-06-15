@@ -562,15 +562,15 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
         ht+="</tr>"
     if (total_courses_booked>0):
         ht+="<tr>"
-        ht+="<td class='border'>"+str(total_courses_booked)+" booked</td><td class='border'>"+str(total_scheduled_booked_duration)+" h</td><td class='border'>"+str(int(100*total_scheduled_booked_duration/total_allocated_duration))+"%</td>"
+        ht+="<td class='border'>"+str(total_courses_booked)+" booked</td><td class='border'>"+str(total_scheduled_booked_duration)+" h</td><td class='noborder'></td><td class='border'>"+str(int(100*total_scheduled_booked_duration/total_allocated_duration))+"%</td>"
         ht+="</tr>"
     if (total_courses_in_progress>0):
         ht+="<tr>"
-        ht+="<td class='border'>"+str(total_courses_in_progress)+" in progress</td><td class='border'>"+str(total_scheduled_in_progress_duration)+" h</td><td class='border'>"+str(int(100*total_scheduled_in_progress_duration/total_allocated_duration))+"%</td>"
+        ht+="<td class='border'>"+str(total_courses_in_progress)+" in progress</td><td class='border'>"+str(total_scheduled_in_progress_duration)+" h</td><td class='noborder'></td><td class='border'>"+str(int(100*total_scheduled_in_progress_duration/total_allocated_duration))+"%</td>"
         ht+="</tr>"
     if (total_courses_done>0):
         ht+="<tr>"
-        ht+="<td class='border'>"+str(total_courses_done)+" achieved</td><td class='border'>"+str(total_scheduled_done_duration)+" h</td><td class='border'>"+str(int(100*total_scheduled_done_duration/total_allocated_duration))+"%</td>"
+        ht+="<td class='border'>"+str(total_courses_done)+" achieved</td><td class='border'>"+str(total_scheduled_done_duration)+" h</td><td class='noborder'></td><td class='border'>"+str(int(100*total_scheduled_done_duration/total_allocated_duration))+"%</td>"
         ht+="</tr>"   
     ht+="<tr>"
     ht+="<th>"+str(total_courses_count)+" courses<br/>incl "+str(total_courses_critical_count)+" critical courses</th>"

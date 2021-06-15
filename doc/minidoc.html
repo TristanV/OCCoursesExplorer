@@ -299,24 +299,48 @@ header a:hover, footer a:hover {
     
     <section>
     <h2>OpenClassrooms Courses Explorer : How To install OC-C-E</h2>
+    <h3>Download or clone the git repository</h3>
+	<p>Download or clone the git repository in a local folder where you will setup the python environment.</p>
+	<div class="code">
+	git clone https://github.com/TristanV/OCCoursesExplorer.git
+	</div>
     <h3>Requirements</h3>
     <ul>
-	<li>Install all packages listed in the file requirements.txt 
+	<li>The following manual setup works with <b>conda</b> from the folder where you have downloaded the git content:<br/>
+	<div class="code">
+	conda create -n OCCoursesExplorer python
+	<br/>conda activate OCCoursesExplorer
+	<br/>conda install -c conda-forge jupyterlab
+	<br/>conda install -c conda-forge notebook
+	<br/>conda install -c conda-forge voila
+	<br/>conda install -c conda-forge IPython
+	<br/>conda install -c conda-forge ipywidgets
+	<br/>jupyter nbextension enable --py widgetsnbextension
+	<br/>conda install -c conda-forge nodejs
+	<br/>jupyter labextension install @jupyter-widgets/jupyterlab-manager
+	<br/>jupyter labextension install @jupyterlab/toc
+	<br/>conda install -c conda-forge matplotlib 
+	<br/>conda install -c conda-forge numpy
+	<br/>conda install -c conda-forge networkx 
+	<br/>conda install -c conda-forge pandas
+	<br/>conda install -c conda-forge pip 
+	<br/>conda install -c conda-forge plotly 
+	<br/>conda install -c conda-forge pyvis 
+	<br/>conda install -c conda-forge requests
+	<br/>conda install -c conda-forge scipy
+	<br/>conda install -c conda-forge scikit-learn
+	<br/>conda install -c conda-forge selenium
+	<br/>conda install -c conda-forge seaborn 
+	</div>
+	</li> 
+	<li>Alternatively : install all packages listed in the file requirements.txt + Jupyter Lab and Jupyter Notebook with widgetsnbextension.
 	<ul>
-		<li>If running a virtual Anaconda environment : use the environment.yml file
-		<ul>
-			<li>To ensure ipywidgets will run properly within the notebooks, 
-			be sure to install the package like this : <pre>conda install -c conda-forge ipywidgets</pre>
-			</li>
-		</ul>
+		<li>If running Anaconda : create the OCCoursesExplorer environment with the environment.yml file : 
+		<div class="code">conda env create -f environment.yml</div>
 		</li>
-		<li>If running python VirtualEnv : use the requirements.txt file
-		<ul>
-			<li>To ensure ipywidgets will run properly within the notebooks, 
-			be sure to install the package like this : <pre>pip install ipywidgets</pre>
-			</li>
-		</ul>
+		<li>If running python VirtualEnv : use the pip_requirements.txt file
 		</li>
+	</ul>
         <li>The web scrapper used by this app is Selenium, with a Firefox Driver. If you don't want to use Firefox and prefer Chrome, then you'll have to configure some files. Anyway you have to setup the proper absolute path towards your Firefox (or other) web driver in the OCCoursesConfig.py file!
         </li>
 	</ul>

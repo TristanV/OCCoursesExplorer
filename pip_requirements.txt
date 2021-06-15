@@ -4,7 +4,6 @@ async-generator==1.10
 attrs @ file:///home/conda/feedstock_root/build_artifacts/attrs_1620387926260/work
 backcall @ file:///home/conda/feedstock_root/build_artifacts/backcall_1592338393461/work
 backports.functools-lru-cache @ file:///home/conda/feedstock_root/build_artifacts/backports.functools_lru_cache_1618230623929/work
-beautifulsoup4 @ file:///home/conda/feedstock_root/build_artifacts/beautifulsoup4_1601745390275/work
 bleach @ file:///home/conda/feedstock_root/build_artifacts/bleach_1612213472466/work
 brotlipy==0.7.0
 certifi==2021.5.30
@@ -40,7 +39,6 @@ jupyterlab-widgets @ file:///home/conda/feedstock_root/build_artifacts/jupyterla
 kiwisolver @ file:///D:/bld/kiwisolver_1610099948875/work
 MarkupSafe @ file:///D:/bld/markupsafe_1610127683324/work
 matplotlib @ file:///D:/bld/matplotlib-suite_1620506206452/work
-matplotlib-venn @ file:///home/conda/feedstock_root/build_artifacts/matplotlib-venn_1603640976466/work
 mistune @ file:///D:/bld/mistune_1610113104461/work
 nbclient @ file:///home/conda/feedstock_root/build_artifacts/nbclient_1614336084111/work
 nbconvert @ file:///D:/bld/nbconvert_1605402041690/work
@@ -82,7 +80,6 @@ Send2Trash==1.5.0
 six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
 sklearn==0.0
 sniffio @ file:///D:/bld/sniffio_1610318539925/work
-soupsieve @ file:///home/conda/feedstock_root/build_artifacts/soupsieve_1597680516047/work
 statsmodels @ file:///D:/bld/statsmodels_1612273760174/work
 terminado @ file:///D:/bld/terminado_1617048799047/work
 testpath==0.4.4

@@ -17,15 +17,15 @@ import matplotlib.pyplot as plt
 # %matplotlib inline
 # %matplotlib notebook
 
-from matplotlib_venn import venn2
-from matplotlib_venn import venn3
+# from matplotlib_venn import venn2
+# from matplotlib_venn import venn3
 
-from matplotlib.gridspec import GridSpec
+# from matplotlib.gridspec import GridSpec
 
 
-# Handle date time conversions between pandas and matplotlib
-from pandas.plotting import register_matplotlib_converters
-register_matplotlib_converters()
+# # Handle date time conversions between pandas and matplotlib
+# from pandas.plotting import register_matplotlib_converters
+# register_matplotlib_converters()
 
 import seaborn as sns
 
@@ -35,7 +35,7 @@ from IPython.display import display, clear_output, Image, HTML,  IFrame
 #(if necessary install nodejs first) conda 
 #jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
-from ipywidgets import interact, interactive, fixed, interact_manual
+# from ipywidgets import interact, interactive, fixed, interact_manual
 import ipywidgets as widgets
 
 import html
@@ -69,8 +69,8 @@ plt.rcParams['figure.dpi'] = 100
 plt.rcParams['figure.figsize'] = [6, 2]
 plt.style.use('seaborn')
 sns.set(style = 'whitegrid') 
-font1 = {'family':'sans-serif','color':'blue','size':15}
-font2 = {'family':'sans-serif','color':'darkred','size':12}
+# font1 = {'family':'sans-serif','color':'blue','size':15}
+# font2 = {'family':'sans-serif','color':'darkred','size':12}
 
 
 # ----------------------------------------------------------------------------

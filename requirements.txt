@@ -1,8 +1,6 @@
 IPython
 ipywidgets
 matplotlib
-matplotlib-venn 
-mpl_toolkits
 numpy
 networkx
 pandas
@@ -12,7 +10,5 @@ requests
 scipy
 scikit-learn
 seaborn
-selenium
-sklearn
-timeit
+selenium 
 voila 
