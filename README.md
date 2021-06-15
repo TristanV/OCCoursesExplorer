@@ -8,6 +8,7 @@ See LICENCE for more details
 
 # Documentation
 This is a work in progress, but you can read the minidoc.html file located in the doc folder of this repository. 
+A pdf of the minidoc is also accessible here : https://github.com/TristanV/OCCoursesExplorer/blob/main/doc/OpenClassrooms%20Courses%20Explorer%20minidoc.pdf
 
 # Disclaimer : 
 Web scrapping is delicate activity. it is recommended to be fair with the scrapped website:
