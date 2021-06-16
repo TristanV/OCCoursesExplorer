@@ -233,15 +233,10 @@ header a:hover, footer a:hover {
     <br/>This is certainly a good thing to update the courses and spring-cleanup the house now and again, but the cost for learners is to find their way in a courses structure that is <b>changing in time, with no trace of the past structure</b>. Another loss of precious time is when you wonder why your "achieved" courses are archived, and whether you have to follow or not the new updated courses with (probably better-fresher-more-recent content).
     </p>
     <p><img width="500" height="672" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/turning_in_circles.png"/> For instance with the best intentions, this is how OpenClassrooms becomes <b>OpenClassMaze</b> for the student fellow: 
-    <div>
-    <ul>
-	<li>The course <a href="https://openclassrooms.com/fr/courses/4262331-demarrez-votre-projet-avec-python" target="_blank">Démarrez votre projet avec Python</a> will be archived in july 2021, so we are invited to follow this one: <a href="https://openclassrooms.com/fr/courses/4302126-decouvrez-la-programmation-orientee-objet-avec-python" target="_blank">Découvrez la programmation orienté objet avec Python</a></li>
-	<li>But when landing on the page <a href="https://openclassrooms.com/fr/courses/4302126-decouvrez-la-programmation-orientee-objet-avec-python" target="_blank">Découvrez la programmation orienté objet avec Python</a>, we are invited to take note that the course has been updated into a new version that we can find here: <a href="https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python" target="_blank">Apprenez la programmation orienté objet avec Python</a></li>
-	<li>Finally, reading this new course prerequisites, we are still invited to follow the course <a href="https://openclassrooms.com/fr/courses/4262331-demarrez-votre-projet-avec-python" target="_blank">Démarrez votre projet avec Python</a> <b>(The one that will be archived soon and replaced by a one that redirects to the current page? Yeah!)</b>. </li>
-	<li>(re)Finally, reading further this new course prerequisites, we are also invited to follow two new courses <a href="https://openclassrooms.com/fr/courses/6943241-mettez-en-place-votre-environnement-front-end" target="_blank">Mettez en place votre environnement front-end (with Visual Studio)</a> and <a href="https://openclassrooms.com/fr/courses/6951236-mettez-en-place-votre-environnement-python" target="_blank">Mettez en place votre environnement Python (with Pycharm)</a>.</li>
-    </ul>
-    <div>
-    <p>
+    <br/>- The course <a href="https://openclassrooms.com/fr/courses/4262331-demarrez-votre-projet-avec-python" target="_blank">Démarrez votre projet avec Python</a> will be archived in july 2021, so we are invited to follow this one: <a href="https://openclassrooms.com/fr/courses/4302126-decouvrez-la-programmation-orientee-objet-avec-python" target="_blank">Découvrez la programmation orienté objet avec Python</a>
+    <br/>-But when landing on the page <a href="https://openclassrooms.com/fr/courses/4302126-decouvrez-la-programmation-orientee-objet-avec-python" target="_blank">Découvrez la programmation orienté objet avec Python</a>, we are invited to take note that the course has been updated into a new version that we can find here: <a href="https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python" target="_blank">Apprenez la programmation orienté objet avec Python</a>
+    <br/>- Finally, reading this new course prerequisites, we are still invited to follow the course <a href="https://openclassrooms.com/fr/courses/4262331-demarrez-votre-projet-avec-python" target="_blank">Démarrez votre projet avec Python</a> <b>(The one that will be archived soon and replaced by a one that redirects to the current page? Yeah!)</b>.
+    <br/>-(re)Finally, reading further this new course prerequisites, we are also invited to follow two new courses <a href="https://openclassrooms.com/fr/courses/6943241-mettez-en-place-votre-environnement-front-end" target="_blank">Mettez en place votre environnement front-end (with Visual Studio)</a> and <a href="https://openclassrooms.com/fr/courses/6951236-mettez-en-place-votre-environnement-python" target="_blank">Mettez en place votre environnement Python (with Pycharm)</a>.
     </p>
     <p>After a few attempts to calm down this growing feeling, I came to a first conclusion : <b>paper, pen, post'it, calc-sheet, Jira, ... whatever tool you use to draw your learning roadmap is unuseful without a clear sight of the whole links and requirement-dependencies between courses!</b>.
     <br/>To understand my mindset when I started following the courses of my 4th project, here is a screenshot of the dense relational network between courses of the 3rd and 4th projects in the path "Ing&eacute;nieur IA":
@@ -252,7 +247,7 @@ header a:hover, footer a:hover {
     </p>
     <p>Then, I looked around and found out I could do the job: I fortunately had achieved my 3rd project 2 weeks before the deadline, had some robust experience of databases, good knowledge about graphs traversal, and a strong need to practice Python programming (started 3 months ago) to strenghten my little knowledge of Pandas, Matplotlib and other tools. 
     </p>
-    <p><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/by-nc-sa.png"/> There was a final question : is it possible to collect the courses requirements data without breaking any licence? Quick answer : <b>all OC courses are provided with a Creative Commons By-SA Licence</b>. Technical answer : All the data is here, availble and usable for my needs, so let's program an explorer and do some automated things with it.
+    <p><img width="120" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/by-nc-sa.png"/> There was a final question : is it possible to collect the courses requirements data without breaking any licence? Quick answer : <b>all OC courses are provided with a Creative Commons By-SA Licence</b>. Technical answer : All the data is here, availble and usable for my needs, so let's program an explorer and do some automated things with it.
     </p>
     <p>
         <b>That was the story , <a href="https://github.com/TristanV/OCCoursesExplorer" target="_blank">here is OpenClassrooms Courses Explorer!</a></b>
@@ -305,7 +300,11 @@ header a:hover, footer a:hover {
     <section>
     <h2>Why OC-C-E ?</h2> 
     <p><img width="500" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/idefix_in_a_maze.png"/> 
-        The personal story leading to develop OpenClassrooms Courses Explorer is now 3 weeks behind. It took me way more time than expected to finally achieve the scheduling tool. There is no "in-between" approach : between building a bunch of scripts and building a clean application with a documented code, I chose the second one. Moreover I wanted to practice Pandas, Matplotlib, Voila, web scrapping... Now it is time to deliver the job and let you do something with it.
+        The personal story leading to develop OpenClassrooms Courses Explorer is now 3 weeks behind. It took me way more time than expected to finally achieve the scheduling tool. 
+        <br/>There is no "in-between" approach : between building a bunch of scripts and building a clean application with a documented code, I chose the second one. Moreover I wanted to practice Pandas, Matplotlib, Voila, web scrapping... 
+        <br/>Now it is time to deliver the job and let <b>you</b> do something with it.
+        <br/><img width="320" height="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/together.png"/>
+        <br/>There are plenty things that can be done with the OCCoursesExplorer datasets, with a community of students eager to improve their learning experience.
     </p>
     </section>
     <section>
@@ -461,7 +460,7 @@ header a:hover, footer a:hover {
     </section>
     <section>
     <h2>How to contribute?</h2> 
-        <p>People interested, mostly OC students following the DATA paths but also "Python dev" and any other curious dev, are welcome to contribute: contact me via the OC Workplace!</p>
+        <p><img width="320" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/collaborate.png"/> People interested, mostly OC students following the DATA paths but also "Python dev" and any other curious dev, are welcome to contribute: contact me via the OC Workplace!</p>
     </section>
     <section>
     <h2>Checkpoint</h2>
