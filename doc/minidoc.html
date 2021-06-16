@@ -97,7 +97,7 @@ p > ul {
 margin-left:20px;
 }
 
-div .code{
+div.code{
 	font-family: 'Source Code Pro', monospace;
 	background : #141414;
 	color : #AAFFAA;
@@ -106,7 +106,25 @@ div .code{
 	width:80%;
 	padding-left:10px;
 	padding-right:10px;
+	padding-top:3px;
+	padding-bottom:3px;
 }
+
+span.code{
+	font-family: 'Source Code Pro', monospace;
+	background : #141414;
+	color : #AAFFAA;
+	font-size : 14px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+div.coderesult, span.coderesult{
+	color : #FAFAFA;
+}
+
 pre {
 	font-family: 'Source Code Pro', monospace;
 	font-size : 14px;
@@ -133,11 +151,11 @@ a {
 }
 
 a:link {
-  color: #315279;
+  color: #2A4566;
 }
 
 a:visited {
-  color: #315279;
+  color: #2A4566;
 }
 
 a:focus {
@@ -151,7 +169,7 @@ a:hover {
 }
 
 a:active {
-  background: #315279;
+  background: #2A4566;
   color: #CDFEAA;
 }
 
@@ -170,7 +188,7 @@ header a:focus, footer a:focus {
 }
 header a:hover, footer a:hover {
   color: #fff;
-  background: #c7ad78;
+  background: #CFB98D;
 }
 
 </style>
@@ -261,10 +279,25 @@ header a:hover, footer a:hover {
     <section>
     <h2>Where are the OC-C-E entry points ?</h2> 
     <ul>
-	<li>Launch with Jupyter Lab : several notebooks are provided, one with the full application and some others with tutorial step by step examples.</li>
-	<li>Launch with Jupyter Notebook: same as above</li>
-	<li>Launch with Voilà: the main application will start with Voilà!
-	<br/><div class='code' >voila --enable_nbextensions=True --VoilaConfiguration.file_whitelist="['.*\.(csv|html|png|jpg)', 'viz.*', 'data.*']"  OCCoursesExplorer.ipynb</div>
+	<li>Launch with Jupyter Lab : several notebooks are provided, one with the full application and some others with tutorial step by step examples.
+	<ul>
+		<li>Full application :
+		<div class="code">jupyter lab OCCoursesExplorer.ipynb</div>
+		</li>
+		<li>Step by step exploration with the datasets:
+		<div class="code">jupyter lab OCCoursesExplorer_stepbystep.ipynb</div>
+		</li>
+		<li>Courses and paths network exploration:
+		<div class="code">jupyter lab OCCoursesExplorer_courses_and_paths.ipynb</div>
+		</li>
+		<li>Courses scheduler exploration:
+		<div class="code">jupyter lab OCCoursesExplorer_schedule.ipynb</div>
+		</li>
+	</ul>
+	</li>
+	<li>Launch with Jupyter Notebook: same as above, with <span class="code coderesult">notebook</span> instead of <span class="code coderesult">lab</span></li>
+	<li>Launch with Voilà: the main full application will start with Voilà!
+	<div class='code' >voila --enable_nbextensions=True --VoilaConfiguration.file_whitelist="['.*\.(csv|html|png|jpg)', 'viz.*', 'data.*']"  OCCoursesExplorer.ipynb</div>
 	</li>
     </ul>
     <br/><i>See below for installation instructions</i>
@@ -306,56 +339,89 @@ header a:hover, footer a:hover {
 	</div>
     <h3>Requirements</h3>
     <ul>
-	<li>The following manual setup works with <b>conda</b> from the folder where you have downloaded the git content:<br/>
-	<div class="code">
-	conda create -n OCCoursesExplorer python
-	<br/>conda activate OCCoursesExplorer
-	<br/>conda install -c conda-forge jupyterlab
-	<br/>conda install -c conda-forge notebook
-	<br/>conda install -c conda-forge voila
-	<br/>conda install -c conda-forge IPython
-	<br/>conda install -c conda-forge ipywidgets
-	<br/>jupyter nbextension enable --py widgetsnbextension
-	<br/>conda install -c conda-forge nodejs
-	<br/>jupyter labextension install @jupyter-widgets/jupyterlab-manager
-	<br/>jupyter labextension install @jupyterlab/toc
-	<br/>conda install -c conda-forge matplotlib 
-	<br/>conda install -c conda-forge numpy
-	<br/>conda install -c conda-forge networkx 
-	<br/>conda install -c conda-forge pandas
-	<br/>conda install -c conda-forge pip 
-	<br/>conda install -c conda-forge plotly 
-	<br/>conda install -c conda-forge pyvis 
-	<br/>conda install -c conda-forge requests
-	<br/>conda install -c conda-forge scipy
-	<br/>conda install -c conda-forge scikit-learn
-	<br/>conda install -c conda-forge selenium
-	<br/>conda install -c conda-forge seaborn 
-	</div>
-	</li> 
-	<li>Alternatively : install all packages listed in the file requirements.txt + Jupyter Lab and Jupyter Notebook with widgetsnbextension.
-	<ul>
-		<li>If running Anaconda : create the OCCoursesExplorer environment with the environment.yml file : 
-		<div class="code">conda env create -f environment.yml</div>
-		</li>
-		<li>If running python VirtualEnv : use the pip_requirements.txt file
-		</li>
-	</ul>
-        <li>The web scrapper used by this app is Selenium, with a Firefox Driver. If you don't want to use Firefox and prefer Chrome, then you'll have to configure some files. Anyway you have to setup the proper absolute path towards your Firefox (or other) web driver in the OCCoursesConfig.py file!
-        </li>
-	</ul>
+	<li>Install all packages listed in the file requirements.txt + Jupyter Lab and Jupyter Notebook with widgetsnbextension.
+		<ul>
+			<li>If running <b>Anaconda</b> : create the OCCoursesExplorer environment with the environment.yml file : 
+			<div class="code">conda env create -n OCCoursesExplorer -f environment.yml</div>
+			</li>
+			<li>If running python <b>VirtualEnv</b> : use the pip_requirements.txt file
+			</li>
+		</ul>
 	</li>
-	<li>To use the notebooks with Jupyter, be sure to have setup ipywidgets as nbextension
-	<ul>
-		<li>jupyter nbextension enable --py widgetsnbextension</li>
-	</ul>
+	<li>Alternatively, the following manual setup works with <b>conda</b> from the folder where you have downloaded the git content:<br/>
+		<div class="code">
+			conda create -n OCCoursesExplorer python
+			<br/>conda activate OCCoursesExplorer
+			<br/>conda install -c conda-forge jupyterlab
+			<br/>conda install -c conda-forge notebook
+			<br/>conda install -c conda-forge voila
+			<br/>conda install -c conda-forge IPython
+			<br/>conda install -c conda-forge ipywidgets
+			<br/>jupyter nbextension enable --py widgetsnbextension
+			<br/>conda install -c conda-forge nodejs
+			<br/>jupyter labextension install @jupyter-widgets/jupyterlab-manager
+			<br/>jupyter labextension install @jupyterlab/toc
+			<br/>conda install -c conda-forge matplotlib 
+			<br/>conda install -c conda-forge numpy
+			<br/>conda install -c conda-forge networkx 
+			<br/>conda install -c conda-forge pandas
+			<br/>conda install -c conda-forge pip 
+			<br/>conda install -c conda-forge plotly 
+			<br/>conda install -c conda-forge pyvis 
+			<br/>conda install -c conda-forge requests
+			<br/>conda install -c conda-forge scipy
+			<br/>conda install -c conda-forge scikit-learn
+			<br/>conda install -c conda-forge selenium
+			<br/>conda install -c conda-forge seaborn 
+		</div>
+	</li>  
+    </ul>
+    <ul>
+	<li>To use the notebooks with Jupyter and Jupyter Lab, be sure to have setup the widgets as nbextension.
+		<ul>
+			<li>By running the following commands, you should see <span class="code coderesult">widgetsnbextension</span> and <span class="code coderesult">jupyter-widgets</span> extensions enabled:
+			<div class="code">
+				jupyter nbextension list 
+			</div>
+			<div class="code coderesult">
+				notebook section
+				<br/>plotlywidget/extension enabled
+				<br/>- Validating: ok
+				<br/>voila-gridstack/extension enabled
+				<br/>- Validating: ok
+				<br/>voila/extension enabled
+				<br/>- Validating: ok
+				<br/>jupyter-js-widgets/extension enabled
+				<br/>- Validating: ok
+			</div>
+			<div class="code">jupyter labextension list
+			</div>
+			<div class="code coderesult">
+				@jupyter-widgets/jupyterlab-manager v2.0.0 enabled  ok 
+			</div>
+			<br/>If you don't see these extensions enabled, please run the following commands:
+			</li>
+			<li>For Jupyter Notebook : <div class="code">jupyter nbextension enable --py widgetsnbextension</div></li>
+			<li>For Jupyter Lab : <div class="code">jupyter labextension install @jupyter-widgets/jupyterlab-manager</div></li>
+			
+		</ul>
 	</li>
-	<li>For Jupyter Lab : install 
-	<ul>
-		<li>jupyter labextension install @jupyter-widgets/jupyterlab-manager</li>
-	</ul>
+	<li>The <b>web scrapper</b> used by this app is Selenium, with a Firefox Driver. 
+		<br/>For convenience, a copy of the geckodriver.exe file is included in this repository, in the "driver" folder, but if you dislike exe files falling from unknown Github repositories, you may also download it manually from here : <a href="https://github.com/mozilla/geckodriver/releases">Last release of the Gecko (Firefox) Driver</a> .
+		<br/>If you don't want to use Firefox and prefer Chrome, Opera, Safari or whatever else, then you'll have to download the corresponding Web Driver into the driver/ folder. Here is a <a href="https://www.selenium.dev/documentation/fr/webdriver/driver_requirements/">list of possible web drivers for Selenium</a>
+		<br/>However, please note that in this early stage of development, the OCCoursesExplorer application is not programmed (yet) to work with another web driver than Firefox. So if you really want to avoid Firefox and prefer your own web driver, you'll also have to replace a piece of Python code in the OCCoursesScrapping.py file.
 	</li>
     </ul> 
+    <h3>Configuration</h3>
+    <p>Once installed, there are few manual configuration steps.</p>
+    <ul>
+    <li>The web scrapper used by this app is Selenium, with a Firefox Driver. 
+    <br/>Selenium needs the <b>absolute path</b> towards this Firefox Driver to be set: open <span class="code coderesult">OCCoursesConfig.py</span> in a text editor, then find the line where the variable <span class="code coderesult">FirefoxWebdriverPath</span> is set, and change the String to correspond with the absolute path towards your Firefox web driver!
+    <div class="code">
+    FirefoxWebdriverPath = r"C:\path\towards\OCCoursesExplorer\driver\geckodriver.exe" # the path to the webdriver must be absolute
+    </div>
+    </li>
+    </ul>
     </section>
     <section>
     <h2>How to explore Topics, Paths, Projects and Courses</h2> 
@@ -385,6 +451,8 @@ header a:hover, footer a:hover {
     <h2>How to analyze my Courses progression?</h2> 
         <p>In the "my_courses" folder, there is a notebook analyzing your progression: it is largely using an exercise correction given in a Course about exploratory analysis.
             <br/><a  target="_blank" href="https://openclassrooms.com/fr/courses/4525281-realisez-une-analyse-exploratoire-de-donnees/5148885-telechargez-les-jeux-de-donnees-analyses-dans-ce-cours">Here is the course analyzing OC courses progression.</a>
+	  <br/>Launch the notebook with the command:
+	  <div class="code">jupyter lab my_courses/my_courses_analysis.ipynb</div>
         </p>
     </section>
     <section>
