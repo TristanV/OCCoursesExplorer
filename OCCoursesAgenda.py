@@ -65,6 +65,20 @@ def get_agenda_html_page(body):
     tbody td.criticalpath{ 
         border-left : 3px solid #4de2c9 
     }
+    
+    .none_course{ 
+    }
+    
+    .todo_course{
+        background-color:#92f2ff
+    }
+    .in_progress_course{
+        background-color:#FFF222
+    }
+    .done_course{
+        background-color:#95ff00
+    }    
+    
     .leftrefbox{ 
         border: 1px solid #eae3e6;
         border-right: 50px solid #eae3e6;
@@ -320,7 +334,15 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
         "tertiary_references" : "#D2B", # the other links between courses of depth D to any depth other than D+1
         "long_link"           : "#BB8", # the other long distance links
     }
-    
+    status_colors={
+        "none"                : "#CCC", # use topic color instead 
+        "todo_course"         : "#92f2ff",
+        "todo"                : "#1ae4ff", 
+        "in_progress_course"  : "#FFF222", 
+        "in_progress"         : "#f9f900", 
+        "done_course"         : "#95ff00",
+        "done"                : "#80DD00" 
+    }
     # ---------- PROJECTS 
     courses_exclusion_set=set()
     total_allocated_duration=0
@@ -400,13 +422,14 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
                     if r["is_critical"] == True:
                         project_courses_critical_count+=1
                         project_scheduled_critical_duration+=dur
-                classname=""
+                statusclassname=r["status"]+"_course"
+                criticalclassname=""
                 if r["is_critical"] == True:
-                    classname="criticalpath" 
+                    criticalclassname="criticalpath" 
                 ht+="<tr>"
                 if (ignore_this_course):
                     # ---------------
-                    ht+="<td colspan=2 class='"+classname+"'><b>Planned in a previous project</b>" 
+                    ht+="<td colspan=2 class='"+criticalclassname+" "+statusclassname+"'><b>Planned in a previous project</b>" 
                     ht+="<br/>Rank req: "+str(r['rank_req'])
                     ht+="<br/>Rank ref: "+str(r['rank_ref'])
 #                     ht+="<br/>Order : "+str(r['order'])
@@ -428,7 +451,7 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
                     ht+="<td>-</td>"
                 else:
                     # ---------------
-                    ht+="<td class='"+classname+"'>"
+                    ht+="<td class='"+criticalclassname+"'>"
                     ht+="Rank req: "+str(r['rank_req'])
                     ht+="<br/>Rank ref: "+str(r['rank_ref'])
 #                     ht+="<br/>Order : "+str(r['order'])
@@ -442,7 +465,7 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
                     imgurl=OCGraphsIconsURL["course"]
                     if r["status"]!=np.nan and r["status"]!="none":
                         imgurl=OCGraphsIconsURL["course_"+r["status"]]
-                    ht+="<td>"
+                    ht+="<td class='"+statusclassname+"'>"
                     ht+='<img src="'+imgurl+'" height="40" align="middle"/>' 
                     ht+='<br/>'+status
                     if r["is_critical"] == True:
@@ -471,14 +494,16 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
                 if(len(required_courses)>0):
                     ht+="<div class='leftrefbox'><b>Requires</b>"
                     for ii,rr in required_courses.iterrows(): 
-                        ht+="<br/>"+str(rr["course_id"])+"-<a href=\""+rr["course_url"]+"\" target=\"_blank\">"+rr["course_title"]+"</a>"
+                        course_status_class=rr["tgt_status"]+"_course"
+                        ht+="<br/><span class=\""+course_status_class+"\">"+str(rr["course_id"])+"</span>-<a href=\""+rr["course_url"]+"\" target=\"_blank\">"+rr["course_title"]+"</a>"
                     ht+="</div>"
                         
                 references_courses=dfcc[dfcc["src_course_id"].isin([r["course_id"]]) & ~dfcc["relation"].isin(["requires"]) & ~dfcc["tgt_course_id"].isin([r["course_id"]]) & ~dfcc["tgt_course_id"].isin(required_courses.tgt_course_id.values)].merge(dfc,left_on="tgt_course_id",right_on="course_id",how="left").dropna(subset=["course_id"])
                 if(len(references_courses)>0):
                     ht+="<div class='leftrefbox'><b>References</b>"
                     for ii,rr in references_courses.iterrows(): 
-                        ht+="<br/>"+str(rr["course_id"])+"-<a href=\""+rr["course_url"]+"\" target=\"_blank\">"+rr["course_title"]+"</a>"
+                        course_status_class=rr["tgt_status"]+"_course"
+                        ht+="<br/><span class=\""+course_status_class+"\">"+str(rr["course_id"])+"</span>-<a href=\""+rr["course_url"]+"\" target=\"_blank\">"+rr["course_title"]+"</a>"
                     ht+="</div>"
 
                 required_courses=dfcc[dfcc["tgt_course_id"].isin([r["course_id"]]) & dfcc["relation"].isin(["requires"]) & ~dfcc["src_course_id"].isin([r["course_id"]]) ].merge(dfc,left_on="src_course_id",right_on="course_id",how="left").dropna(subset=["course_id"])
@@ -487,14 +512,16 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,o
                     if r["layer"]==0:
                         ht+="<br/> Project "+str(nn["project_number"])
                     for ii,rr in required_courses.iterrows(): 
-                        ht+="<br/>"+str(rr["course_id"])+"-<a href=\""+rr["course_url"]+"\" target=\"_blank\">"+rr["course_title"]+"</a>"
+                        course_status_class=rr["src_status"]+"_course"
+                        ht+="<br/><span class=\""+course_status_class+"\">"+str(rr["course_id"])+"</span>-<a href=\""+rr["course_url"]+"\" target=\"_blank\">"+rr["course_title"]+"</a>"
                     ht+="</div>"                
                         
                 references_courses=dfcc[dfcc["tgt_course_id"].isin([r["course_id"]]) & ~dfcc["relation"].isin(["requires"]) & ~dfcc["src_course_id"].isin([r["course_id"]]) & ~dfcc["src_course_id"].isin(required_courses.src_course_id.values)].merge(dfc,left_on="src_course_id",right_on="course_id",how="left").dropna(subset=["course_id"])
                 if(len(references_courses)>0):
                     ht+="<div class='rightrefbox'><b>Referenced by</b>"
                     for ii,rr in references_courses.iterrows(): 
-                        ht+="<br/>"+str(rr["course_id"])+"-<a href=\""+rr["course_url"]+"\" target=\"_blank\">"+rr["course_title"]+"</a>"
+                        course_status_class=rr["src_status"]+"_course"
+                        ht+="<br/><span class=\""+course_status_class+"\">"+str(rr["course_id"])+"</span>-<a href=\""+rr["course_url"]+"\" target=\"_blank\">"+rr["course_title"]+"</a>"
                     ht+="</div>"   
                 ht+="</td>"
                 # ---------------

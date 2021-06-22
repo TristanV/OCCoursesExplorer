@@ -34,7 +34,7 @@ def OC_browser_hide_overlays(max_wait=10):
     Parameters
     ----------
     max_wait : TYPE, optional
-        DESCRIPTION. The default is 20.
+        DESCRIPTION. The default is 10.
 
     Returns
     -------

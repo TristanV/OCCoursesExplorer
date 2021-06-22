@@ -351,7 +351,7 @@ def climb_project_mountain(h,hmax,ymax,shape="mountain"):
 # we calculate d(P,A) the number of nodes between P and A
 # we calculate d(P,B) the number of nodes between P and B
 # the parenthood degree D(A,B) = max(d(P,A),d(P,B))
-def get_parenthood_degree_between(src_uid, tgt_uid,skeleton_edges,max_depth=20,debug=False):
+def get_parenthood_degree_between(src_uid, tgt_uid,skeleton_edges,max_depth=20):
     # we want to know the parenthood degree of the nodes src and tgt
     # so we need to find a common ancestors of src and tgt, 
     # but of course we need to SKIP the link src->tgt during our computation
@@ -368,21 +368,21 @@ def get_parenthood_degree_between(src_uid, tgt_uid,skeleton_edges,max_depth=20,d
     edges = edges[~(edges["src_uid"].isin([src_uid]) & edges["tgt_uid"].isin([tgt_uid]))]
     edges = edges[~(edges["src_uid"].isin([tgt_uid]) & edges["tgt_uid"].isin([src_uid]))]
     
-    if (debug) :
-        print(" -------- "*5)
-        print(" ---------- --------------------- > start ",src_uid,tgt_uid)
+#     if (debug) :
+#         print(" -------- "*5)
+#         print(" ---------- --------------------- > start ",src_uid,tgt_uid)
     while (common_parent_found ==False) and (depth<max_depth):
         depth+=1
-        if (debug) :
-            print("step ",depth," A/ looking for parents of ",set_a)
+#         if (debug) :
+#             print("step ",depth," A/ looking for parents of ",set_a)
             
         # we look for parents of A
         parents_a=set(edges[edges["tgt_uid"].isin(set_a)].src_uid.values)
         family_a=family_a | parents_a  
-        if (debug) :
-            print("---> parents = ",parents_a)
-            print("---> family = ",family_a)
-            print("step ",depth," B/ looking for parents of ",set_b)
+#         if (debug) :
+#             print("---> parents = ",parents_a)
+#             print("---> family = ",family_a)
+#             print("step ",depth," B/ looking for parents of ",set_b)
         
         # we look for parents of B
         parents_b=set(edges[edges["tgt_uid"].isin(set_b)].src_uid.values)
@@ -390,29 +390,29 @@ def get_parenthood_degree_between(src_uid, tgt_uid,skeleton_edges,max_depth=20,d
         
         
         common=family_a & family_b
-        if (debug):
-            print("---> parents = ",parents_b)
-            print("---> family = ",family_b)
-            print("step ",depth," intersection = ",common)
+#         if (debug):
+#             print("---> parents = ",parents_b)
+#             print("---> family = ",family_b)
+#             print("step ",depth," intersection = ",common)
 
         if (len(common)>0):
             common_parent_found = True
-            if (debug):
-                print(" ---------- > common ancestor found !")
+#             if (debug):
+#                 print(" ---------- > common ancestor found !")
             return depth,common
 
         new_a = parents_a - set_a
         new_b = parents_b - set_b
         if ((len(new_a) == 0) and (len(new_b) == 0)):
-            if (debug):
-                print(" ---------- > nothing more to find !")
+#             if (debug):
+#                 print(" ---------- > nothing more to find !")
             return 0,{tgt_uid}
             break
         #else iterate
         set_a = parents_a
         set_b = parents_b
-        if (debug):
-            print(" ---------- > next")
+#         if (debug):
+#             print(" ---------- > next")
     # end loop while no ancestor found
     return depth,{}
 #end function 
@@ -1020,28 +1020,47 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
 # -------------------------------------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------------------------------------
-def build_courses_graph(topic_id=0,path_id=0,language=0,max_depth=20,show_only_requirement_relations = True,
-                        height='640px', width='99%',palette="Topic", bgcolor="#ffffff",
-                        font_color=False,heading=None,directed=False,notebook=True,layout=False,
+# the following function is focused on the courses graph.
+# if topic_id is selected (not equal to 0), only courses belonging to this topic will be shown
+# if language is selected (not equal to '-'), only courses belonging to this language will be shown
+#
+# In this courses graph, paths are shown as a vertebral structure underlying the courses network. 
+# Each path is shown as a single node, except if path_is non zero (the path is then shown as a sequence of projects).
+# if path_topic_id is selected (not equal to 0), only paths belonging to this topic will be shown
+# if path_language is selected (not equal to '-'), only paths belonging to this language will be shown
+# If path_id is selected (not equal to 0), only the path structure of this path will be shown
+
+def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-',\
+                        path_id=0,max_depth=20,show_my_way=True,show_only_requirement_relations = True,\
+                        atlas_layout=False,height='640px', width='99%',palette="Topic", bgcolor="#ffffff",\
+                        font_color=False,heading=None,directed=True,notebook=True,layout=False,\
                         show_titles=True,show_buttons=False,filter_options=None):
     
 #     filter_options={
 #         "height"                             : courses_height_slider.value,
 #         "topic"                              : courses_topic_selector.value,
 #         "language"                               : courses_language_selector.value,
+#         "path_topic"                         : courses_path_topic_selector.value,
+#         "path_language"                      : courses_path_language_selector.value,
 #         "max_depth"                          : courses_max_depth_slider.value,
 #         "path"                               : courses_path_selector.value, 
 #         "hide_references"                    : courses_hidereferences_check.value,
+#         "atlas_layout"                       : courses_algo_check.value,
+#         "show_my_way"                        : courses_myway_check.value, 
 #         "palette"                            : courses_palette_selector.value
 #     }
 #     show_buttons=True
     if type(filter_options)!=type(None): 
         height=str(filter_options["height"])+"px"
+        palette = filter_options["palette"] 
+        topic_id = filter_options["topic"] 
         language=filter_options["language"] 
+        path_topic_id = filter_options["path_topic"] 
+        path_language=filter_options["path_language"] 
         path_id = filter_options["path"] 
         max_depth= filter_options["max_depth"] 
-        topic_id = filter_options["topic"] 
-        palette = filter_options["palette"] 
+        atlas_layout=filter_options["atlas_layout"] 
+        show_my_way= filter_options["show_my_way"] 
         show_only_requirement_relations = filter_options["hide_references"]
     
 #     display(filter_options)
@@ -1051,10 +1070,10 @@ def build_courses_graph(topic_id=0,path_id=0,language=0,max_depth=20,show_only_r
         dfpa= ocd.OC_Paths
     else:
         dfpa= ocd.OC_Paths[ocd.OC_Paths["path_id"].isin([path_id])]
-    if (topic_id!=0):
-        dfpa= dfpa[dfpa["topic_id"].isin([topic_id])] 
-    if (language!='-'):
-        dfpa= dfpa[dfpa["path_language"].isin([language])] 
+    if (path_topic_id!=0):
+        dfpa= dfpa[dfpa["topic_id"].isin([path_topic_id])] 
+    if (path_language!='-'):
+        dfpa= dfpa[dfpa["path_language"].isin([path_language])] 
     
     dfpa=dfpa.merge(ocd.OC_Topics[["topic_id","topic_color"]],on="topic_id",how="left")
     
@@ -1069,8 +1088,9 @@ def build_courses_graph(topic_id=0,path_id=0,language=0,max_depth=20,show_only_r
         dfc= dfc[dfc["topic_id"].isin([topic_id])] 
     if (language!='-'):
         dfc= dfc[dfc["course_language"].isin([language])] 
-    dfc=dfc.merge(ocd.OC_Topics[["topic_id","topic_color"]],on="topic_id",how="left")
-    
+    dfc=dfc.merge(ocd.OC_Topics[["topic_id","topic_color"]],on="topic_id",how="left")  
+    dfc=dfc.merge(ocd.OC_MyProgressCourses,on="course_id",how="left")
+    dfc["status"]=dfc["progression"].apply(progression_to_status)
     
     filter_courses = set(dfc.course_id.unique())
     
@@ -1078,6 +1098,7 @@ def build_courses_graph(topic_id=0,path_id=0,language=0,max_depth=20,show_only_r
     dfpc= ocd.OC_ProjectsCoursesLinks[ocd.OC_ProjectsCoursesLinks["path_id"].isin(dfpa.path_id.unique()) &\
                                       ocd.OC_ProjectsCoursesLinks["course_id"].isin(filter_courses)] # courses referenced/required by the project
         
+    # build an array of layers of courses, starting from the paths project courses, and iterating to max_depth 
     #use sets to have unique courses IDs and avoid counting the same courses twice or more
     path_courses = set(dfpc.course_id.unique())
     courses_layers=[path_courses]
@@ -1096,17 +1117,20 @@ def build_courses_graph(topic_id=0,path_id=0,language=0,max_depth=20,show_only_r
             courses_layers.append(tgt_courses)
             path_courses=path_courses | tgt_courses
     # end while 
+     
+    dfcc=ocd.OC_CoursesLinks[(ocd.OC_CoursesLinks["src_course_id"].isin(filter_courses)) & \
+                             (ocd.OC_CoursesLinks["tgt_course_id"].isin(filter_courses))].drop_duplicates(subset=["src_course_id","tgt_course_id","relation"])
     
-    # if path is not selected, we show all links
-    if (path_id==0):
-        all_courses = filter_courses
-        dfcc=ocd.OC_CoursesLinks[(ocd.OC_CoursesLinks["src_course_id"].isin(all_courses)) & \
-                             (ocd.OC_CoursesLinks["tgt_course_id"].isin(all_courses))].drop_duplicates(subset=["src_course_id","tgt_course_id","relation"])
-    else: # but if path is selected, we show all links "necessary for the path", hence hiding links not related to the path
-        all_courses = path_courses 
-        dfc=dfc[dfc["course_id"].isin(all_courses)]
-        dfcc=ocd.OC_CoursesLinks[(ocd.OC_CoursesLinks["src_course_id"].isin(all_courses)) & \
-                             (ocd.OC_CoursesLinks["tgt_course_id"].isin(all_courses))].drop_duplicates(subset=["src_course_id","tgt_course_id","relation"])
+#     # if path is not selected, we show all links
+#     if (path_id==0):
+#         all_courses = filter_courses
+#         dfcc=ocd.OC_CoursesLinks[(ocd.OC_CoursesLinks["src_course_id"].isin(all_courses)) & \
+#                              (ocd.OC_CoursesLinks["tgt_course_id"].isin(all_courses))].drop_duplicates(subset=["src_course_id","tgt_course_id","relation"])
+#     else: # but if path is selected, we show all links "necessary for the path", hence hiding links not related to the path
+#         all_courses = path_courses 
+#         dfc=dfc[dfc["course_id"].isin(all_courses)]
+#         dfcc=ocd.OC_CoursesLinks[(ocd.OC_CoursesLinks["src_course_id"].isin(all_courses)) & \
+#                              (ocd.OC_CoursesLinks["tgt_course_id"].isin(all_courses))].drop_duplicates(subset=["src_course_id","tgt_course_id","relation"])
 
         
     if len(dfc) == 0:
@@ -1122,18 +1146,24 @@ def build_courses_graph(topic_id=0,path_id=0,language=0,max_depth=20,show_only_r
     
     # pick what we need 
     #paths
-    dfpa=dfpa[["topic_id","topic_color","path_id","path_title","path_language","path_level","path_duration_months","path_illustration"]].copy()
+    
+    dfpa=dfpa[["topic_id","topic_color","path_id","path_title","path_language","path_level","path_duration_months","path_illustration","path_url"]].copy()
+    dfmp=ocd.OC_MyProgressProjects.path_id.unique()
+    dfpa["status"]=dfpa.agg(lambda x:   "in_progress" if x["path_id"] in dfmp else "none", axis=1)
     #projects
+    dfpr=dfpr.merge(ocd.OC_MyProgressProjects,on=["path_id","project_number"],how="left")
+    dfpr=dfpr.fillna(value={"status":"none"})
     dfpr=dfpr[["path_id","topic_id","topic_color","project_number","project_title",\
-               "project_description","project_duration_hours"]].sort_values(by="project_number").copy()
+               "project_description","project_duration_hours","status"]].sort_values(by="project_number").copy()
     #projects-courses edges
     dfpc=dfpc.merge(ocd.OC_Courses, on='course_id', how='left')
     dfpc=dfpc.merge(ocd.OC_Topics[["topic_id","topic_color"]],on="topic_id",how="left")
-    dfpc=dfpc[['path_id','topic_id','topic_color','project_number','course_id','course_title','course_difficulty','course_duration_hours','course_url']].copy()
+    dfpc=dfpc[['path_id','topic_id','topic_color','project_number','course_id','course_title',\
+               'course_difficulty','course_duration_hours','course_url']].copy()
 
     
     #courses
-    dfc=dfc[['topic_id',"topic_color",'course_id','course_title','course_difficulty','course_duration_hours','course_url']].copy()
+    dfc=dfc[['topic_id',"topic_color",'course_id','course_title','course_difficulty','course_duration_hours','course_url',"status"]].copy()
     #courses-courses edges
     #display(dfcc[dfcc.duplicated(subset=["src_course_id","tgt_course_id","relation"],keep=False)])
     dfcc=dfcc.merge(ocd.OC_Courses, left_on='src_course_id', right_on='course_id', how='left')
@@ -1150,68 +1180,74 @@ def build_courses_graph(topic_id=0,path_id=0,language=0,max_depth=20,show_only_r
                   'src_course_title','src_course_difficulty','src_course_duration_hours',"src_topic_id","src_topic_color",\
                   'tgt_course_title','tgt_course_difficulty','tgt_course_duration_hours',"tgt_topic_id","tgt_topic_color"]
     
-    # add unique ids and other columns for the graph
+    # add unique ids and other columns for the graph    
+    # convert textual uids into a global numeric unique ids because PyVis doesn't like string ids 
+    aia= AssociativeIdentifierArray()
     #note that dfpa can be empty when we explore a topic having no path
     if len(dfpa)>0:
         dfpa["uid"]=dfpa.agg(lambda x: f"p_{x['path_id']}", axis=1)
-        dfpr["path_uid"]=dfpr.agg(lambda x: f"p_{x['path_id']}", axis=1)
+        aia.record_object_id_array(dfpa.uid.values)
+        dfpa["nid"]=dfpa["uid"].apply(aia.get_numeric_id_for_object_id)
+    else :
+        dfpa.assign(colname="uid")        
+        dfpa.assign(colname="nid")
     
+    if len(dfpr)>0:
+        dfpr["path_uid"]=dfpr.agg(lambda x: f"p_{x['path_id']}", axis=1)
         dfpr["uid"]=dfpr.agg(lambda x: f"p_{x['path_id']}-pn_{x['project_number']}", axis=1)
-
+        aia.record_object_id_array(dfpr.uid.values) 
+        aia.record_object_id_array(dfpr.path_uid.values)
+        dfpr["nid"]=dfpr["uid"].apply(aia.get_numeric_id_for_object_id)
+        dfpr["path_nid"]=dfpr["path_uid"].apply(aia.get_numeric_id_for_object_id)
+    else : 
+        dfpr.assign(colname="path_uid")
+        dfpr.assign(colname="uid")
+        dfpr.assign(colname="path_nid")
+        dfpr.assign(colname="nid")
+    
+    if len(dfpc)>0:
         dfpc["path_uid"]=dfpc.agg(lambda x: f"p_{x['path_id']}", axis=1)
         dfpc["src_uid"]=dfpc.agg(lambda x: f"p_{x['path_id']}-pn_{x['project_number']}", axis=1)
         dfpc["tgt_uid"]=dfpc.agg(lambda x: f"c_{x['course_id']}", axis=1)
-        dfpc["course_difficulty_grade"]=dfpc['course_difficulty'].map(ocd.course_grades)
+        dfpc["course_difficulty_grade"]=dfpc['course_difficulty'].map(ocd.course_grades)        
+        aia.record_object_id_array(dfpc.path_uid.values)
+        aia.record_object_id_array(dfpc.src_uid.values)
+        aia.record_object_id_array(dfpc.tgt_uid.values) 
+        dfpc["path_nid"]=dfpc["path_uid"].apply(aia.get_numeric_id_for_object_id)
+        dfpc["src_nid"]=dfpc["src_uid"].apply(aia.get_numeric_id_for_object_id)
+        dfpc["tgt_nid"]=dfpc["tgt_uid"].apply(aia.get_numeric_id_for_object_id)
     else :
-        dfpa.assign(colname="uid")
-        dfpr.assign(colname="path_uid")
-        dfpr.assign(colname="uid")
         dfpc.assign(colname="path_uid")
         dfpc.assign(colname="src_uid")
         dfpc.assign(colname="tgt_uid")
         dfpc.assign(colname="course_difficulty_grade")
+        dfpc.assign(colname="path_nid")
+        dfpc.assign(colname="src_nid")
+        dfpc.assign(colname="tgt_nid") 
     
     
     dfc["uid"]=dfc.agg(lambda x: f"c_{x['course_id']}", axis=1)
     dfc["course_difficulty_grade"]=dfc['course_difficulty'].map(ocd.course_grades)
-    
-    dfcc["src_uid"]=dfcc.agg(lambda x: f"c_{x['src_course_id']}", axis=1)
-    dfcc["tgt_uid"]=dfcc.agg(lambda x: f"c_{x['tgt_course_id']}", axis=1)
-    dfcc["src_course_difficulty_grade"]=dfcc['src_course_difficulty'].map(ocd.course_grades)
-    dfcc["tgt_course_difficulty_grade"]=dfcc['tgt_course_difficulty'].map(ocd.course_grades)
-    
-    # convert textual uids into a global numeric unique ids because PyVis doesn't like string ids 
-    aia= AssociativeIdentifierArray()
-    if len(dfpa)>0:
-        aia.record_object_id_array(dfpa.uid.values)
-        aia.record_object_id_array(dfpr.uid.values)
-        aia.record_object_id_array(dfpr.path_uid.values)
-        aia.record_object_id_array(dfpc.src_uid.values)
-        aia.record_object_id_array(dfpc.tgt_uid.values) 
     aia.record_object_id_array(dfc.uid.values)
-    aia.record_object_id_array(dfcc.src_uid.values)
-    aia.record_object_id_array(dfcc.tgt_uid.values)
-    # display(aia.get_object_dict())
-    if len(dfpa)>0:
-        dfpa["nid"]=dfpa["uid"].apply(aia.get_numeric_id_for_object_id)
-        dfpr["nid"]=dfpr["uid"].apply(aia.get_numeric_id_for_object_id)
-        dfpr["path_nid"]=dfpr["path_uid"].apply(aia.get_numeric_id_for_object_id)
-        dfpc["path_nid"]=dfpc["path_uid"].apply(aia.get_numeric_id_for_object_id)
-        dfpc["src_nid"]=dfpc["src_uid"].apply(aia.get_numeric_id_for_object_id)
-        dfpc["tgt_nid"]=dfpc["tgt_uid"].apply(aia.get_numeric_id_for_object_id)
-    else:
-        dfpa.assign(colname="nid")
-        dfpr.assign(colname="path_nid")
-        dfpr.assign(colname="nid")
-        dfpc.assign(colname="path_nid")
-        dfpc.assign(colname="src_nid")
-        dfpc.assign(colname="tgt_nid")
-
     dfc["nid"]=dfc["uid"].apply(aia.get_numeric_id_for_object_id)
-    dfcc["src_nid"]=dfcc["src_uid"].apply(aia.get_numeric_id_for_object_id)
-    dfcc["tgt_nid"]=dfcc["tgt_uid"].apply(aia.get_numeric_id_for_object_id)
     
-#     print(len(dfpa), len(dfpr), len(dfc), len(dfpc), len(dfcc))
+    if len(dfcc)>0:
+        dfcc["src_uid"]=dfcc.agg(lambda x: f"c_{x['src_course_id']}", axis=1)
+        dfcc["tgt_uid"]=dfcc.agg(lambda x: f"c_{x['tgt_course_id']}", axis=1)
+        dfcc["src_course_difficulty_grade"]=dfcc['src_course_difficulty'].map(ocd.course_grades)
+        dfcc["tgt_course_difficulty_grade"]=dfcc['tgt_course_difficulty'].map(ocd.course_grades)
+        aia.record_object_id_array(dfcc.src_uid.values)
+        aia.record_object_id_array(dfcc.tgt_uid.values)    
+        dfcc["src_nid"]=dfcc["src_uid"].apply(aia.get_numeric_id_for_object_id)
+        dfcc["tgt_nid"]=dfcc["tgt_uid"].apply(aia.get_numeric_id_for_object_id)
+    else :
+        dfcc.assign(colname="src_uid")
+        dfcc.assign(colname="tgt_uid")
+        dfcc.assign(colname="src_course_difficulty_grade")
+        dfcc.assign(colname="tgt_course_difficulty_grade") 
+        dfcc.assign(colname="src_nid")
+        dfcc.assign(colname="tgt_nid")  
+  
     
     # build the graph nodes
     if type(heading) == type(None) :
@@ -1227,7 +1263,10 @@ def build_courses_graph(topic_id=0,path_id=0,language=0,max_depth=20,show_only_r
         grav=-20000
     elif (len(dfc)>30 or (len(dfcc)+len(dfpc)>30)):
         grav=-15000
-    physics_model="barneshut" #="barneshut"
+        
+    physics_model="barneshut"  
+    if atlas_layout:
+        physics_model="forceatlas" #="barneshut"
     if physics_model=="barneshut":
         g.barnes_hut(gravity=grav,
             central_gravity=0.01,
@@ -1256,156 +1295,239 @@ def build_courses_graph(topic_id=0,path_id=0,language=0,max_depth=20,show_only_r
         "tertiary_references" : "#D2B", # the other links between courses of depth D to any depth other than D+1
         "long_link"           : "#BB8", # the other long distance links
     }
+    
+    #"my way" colors
+    status_colors={
+        "none"                : "#CCC", # use topic color instead 
+        "todo_course"         : "#92f2ff",
+        "todo"                : "#1ae4ff", 
+        "in_progress_course"  : "#FFF222", 
+        "in_progress"         : "#f9f900", 
+        "done_course"         : "#95ff00",
+        "done"                : "#80DD00" 
+    }
     oc_colors=["#7451eb","#9471fb","#B491FE"]
 
     path_shape="star"
-    path_size="40"
+    path_size="80"
     path_color="#7451eb"
     
     project_shape="square"
-    project_size="20"
+    project_size="40"
     project_color="#5451db"
     
     course_shape="triangle"
     course_color="#B491FE"
     course_size="10"
+    path_course_size="30"
     
     part_shape="triangleDown"
     part_size="8"
     
     chapter_shape="dot"
     chapter_size="8"
-    # --------- PATHs
+    
+    
+    marker_color="#cc00ff"
+    marker_shape="diamond"
+    
+    # to avoid multiple display of the same elements
+    added_nodes=set() 
+    added_edges=set()
+    
+    # --------- PATHs (if shown)
     for i,n in dfpa.iterrows():
+        if n["nid"] in added_nodes: 
+            continue
+        added_nodes.add(n["nid"])
         color=path_color #dependency palette
         if (palette=="Topic" or palette=="Hybrid"): #topic palette
             color=n["topic_color"]
+        if (show_my_way and n["status"]!="none"):
+            color=status_colors[n["status"]]
         if (show_titles):
             g.add_node(n["nid"], n["path_title"],group="path",color=color,shape=path_shape,size=path_size,\
-                       physics=True,title=str(n["uid"])+"/"+str(n["nid"]))
+                       physics=True,title="<a href=\""+n["path_url"]+"\" target=\"_blank\">"+n["path_title"]+"</a>")
         else:
             g.add_node(n["nid"], n["path_title"],group="path",color=color ,shape=path_shape,size=path_size,physics=True)
 #         print("adding path node : ",n["nid"],n)
         
-        # if no path is selected, we show all paths but we don't show their inner projects
-        # otherwise we show the projects of the selected path
-        if path_id!=0:
+        # if no path is selected and no path topic is selected, we show all paths but we don't show their inner projects
+        # otherwise we show the projects of the selected path or topic paths
+        if path_id!=0 or path_topic_id!=0:
             # ---------- PROJECTS 
             previous_uid=n["uid"]
             previous_nid=n["nid"]
             for ii,nn in dfpr[dfpr["path_id"].isin([n["path_id"]])].iterrows():
-        #             length = plength+ nn["project_duration_hours"]
-    #             print("adding project node : ",nn["nid"],nn)
-                color=project_color
-                if (palette=="Topic"):
-                    color=n["topic_color"]
-                if (show_titles):
-                    g.add_node(int(nn["nid"]), str(nn["project_number"])+"-"+nn["project_title"], color=color,group="project",\
-                               shape=project_shape,size=project_size, physics=True,title=nn["uid"]+"/"+str(nn["nid"]))
-                else:
-                    g.add_node(int(nn["nid"]), str(nn["project_number"])+"-"+nn["project_title"], color=color,group="project",\
-                               shape=project_shape,size=project_size, physics=True,title=nn["uid"]+"/"+str(nn["nid"]))
-        #             print("add project edge ",previous_nid,"-",nn["nid"],nn["project_duration_hours"])
-                color=project_color
-                if (palette=="Topic"):
-                    color=nn["topic_color"]
-                g.add_edge(previous_nid, int(nn["nid"]),label=str(int(nn["project_duration_hours"]))+"h",color=color)
+                if nn["nid"] not in added_nodes: 
+                    added_nodes.add(nn["nid"])
+            #             length = plength+ nn["project_duration_hours"]
+        #             print("adding project node : ",nn["nid"],nn)
+                    color=project_color
+                    if (palette=="Topic"):
+                        color=n["topic_color"]
+                    if (show_my_way == True) and (nn["status"]!="none"):
+                        color=status_colors[nn["status"]]
+                    if (show_titles):
+                        g.add_node(int(nn["nid"]), str(nn["project_number"])+"-"+nn["project_title"], color=color,group="project",\
+                                   shape=project_shape,size=project_size, physics=True,title=nn["project_title"])
+                    else:
+                        g.add_node(int(nn["nid"]), str(nn["project_number"])+"-"+nn["project_title"], color=color,group="project",\
+                                   shape=project_shape,size=project_size, physics=True)
+            #             print("add project edge ",previous_nid,"-",nn["nid"],nn["project_duration_hours"])
+                fs=frozenset([previous_nid,nn["nid"]])
+                if fs not in added_edges: 
+                    added_edges.add(fs)
+                    color=project_color
+                    if (palette=="Topic"):
+                        color=nn["topic_color"]
+                    if (show_my_way == True) and (nn["status"]!="none"):
+                        color=status_colors[nn["status"]]
+                    g.add_edge(previous_nid, int(nn["nid"]),label=str(int(nn["project_duration_hours"]))+"h",color=color,value=2)
                 previous_uid=nn["uid"]
                 previous_nid=int(nn["nid"])
             # end loop on projects
+#             fs=frozenset([previous_nid,n["nid"]]) #closing the path wheel
+#             if fs not in added_edges: 
+#                 added_edges.add(fs)
+#                 color=project_color
+#                 if (palette=="Topic"):
+#                     color=n["topic_color"]
+#                 if (show_my_way == True) and (nn["status"]!="none"):
+#                     color=status_colors[nn["status"]]
+#                 g.add_edge(previous_nid, int(n["nid"]),label="jury",color=color,value=2)
         # end if we show projects
     # end loop on paths
 
     # --------- COURSES
     for i,n in dfc.iterrows():
+        if n["nid"] in added_nodes: 
+            continue
+        added_nodes.add(n["nid"])
         color=course_color
+        size_coeff=1
+        if int(n["course_id"]) in path_courses:
+            size_coeff=2
         if (palette=="Topic" or palette=="Hybrid"):
             color=n["topic_color"]
+        if (show_my_way == True) and (n["status"]!="none"):
+            color=status_colors[n["status"]+"_course"]
         if (show_titles):
-            g.add_node(n["nid"], n["course_title"],group="course",color=color,size=n["course_difficulty_grade"]*10 ,\
-                       shape=course_shape,physics=True,title=str(n["uid"])+"/"+str(n["nid"]))
+            g.add_node(n["nid"], n["course_title"],group="course",color=color,size=n["course_difficulty_grade"]*10*size_coeff ,\
+                       shape=course_shape,physics=True,title="<a href=\""+n["course_url"]+"\" target=\"_blank\">"+n["course_title"]+"</a>")
         else:
-            g.add_node(n["nid"], n["course_title"],group="course",color=color,size=n["course_difficulty_grade"]*10 ,\
+            g.add_node(n["nid"], n["course_title"],group="course",color=color,size=n["course_difficulty_grade"]*10*size_coeff,\
                        shape=course_shape,physics=True)
     
     
     # ---------- LINKING PROJECTS TO COURSES
-    # if no path is selected, we show all paths but we don't show their inner projects
-    # otherwise we show the projects of the selected path
-    if path_id!=0:
-        for i,e in dfpc.iterrows():        
-            # apparently some target courses nodes are note present in the 'courses' dataset
-    #         print(gns,gnt)
-            color=course_color
-            if (palette=="Topic" or palette=="Hybrid"):
-                color=e["topic_color"]
-            if (show_titles):
-                g.add_node(e["tgt_nid"], e["course_title"],group="course",color=color,size=e["course_difficulty_grade"]*10 ,\
-                           shape=course_shape,physics=True,title=str(e["tgt_uid"])+"/"+str(e["tgt_nid"]))
-            else:
-                g.add_node(e["tgt_nid"], e["course_title"],group="course",color=color,size=e["course_difficulty_grade"]*10 ,\
-                           shape=course_shape,physics=True)
+    # if no path is selected and no path topic is selected, we show all paths but we don't show their inner projects
+    # otherwise we show the projects of the selected paths
+    if path_id!=0 or path_topic_id!=0:
+        for i,e in dfpc.iterrows():  
+#             if e["tgt_nid"] not in added_nodes: 
+#                 added_nodes.add(e["tgt_nid"])
+#                 color=course_color
+#                 if (palette=="Topic" or palette=="Hybrid"):
+#                     color=e["topic_color"]
+#                 color=marker_color #debug 
+#                 if (show_titles):
+#                     g.add_node(e["tgt_nid"], e["course_title"],group="course",color=color,size=e["course_difficulty_grade"]*20 ,\
+#                                shape=marker_shape,physics=True,title=str(e["tgt_uid"])+"/"+str(e["tgt_nid"])+"/"+str(e["course_difficulty_grade"]*20))
+#                 else:
+#                     g.add_node(e["tgt_nid"], e["course_title"],group="course",color=color,size=e["course_difficulty_grade"]*20 ,\
+#                                shape=marker_shape,physics=True)
             try:
-                gns=g.get_node(e["src_nid"])
-                gnt=g.get_node(e["tgt_nid"])        
-                duration=int(e["course_duration_hours"])
-                if duration==np.nan:
-                    duration=0
-                color=link_colors["primary_requires"]
-                if (palette=="Topic"):
-                    color=e["topic_color"]
-                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color)    
+                fs=frozenset([int(e["src_nid"]),int(e["tgt_nid"])])
+                if fs not in added_edges: 
+                    added_edges.add(fs)
+                    gns=g.get_node(e["src_nid"])
+                    gnt=g.get_node(e["tgt_nid"])        
+                    duration=int(e["course_duration_hours"])
+                    if duration==np.nan:
+                        duration=0
+                    color=link_colors["primary_requires"]
+                    if (palette=="Topic"):
+                        color=e["topic_color"]
+                    g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color,value=2)    
             except:
-                print("error accessing data for project-course link ",e)
+                console_log("error accessing data for project-course link ",e)
                 return
         # end loop on links           
     else: # we do not show projects when no path is selected, so link project courses to path node instead
-        for i,e in dfpc.iterrows():  
-            color=course_color
-            if (palette=="Topic" or palette=="Hybrid"):
-                color=e["topic_color"]
-            if (show_titles):
-                g.add_node(e["tgt_nid"], e["course_title"],group="course",color=color,size=e["course_difficulty_grade"]*10 ,\
-                           shape=course_shape,physics=True,title=str(e["tgt_uid"])+"/"+str(e["tgt_nid"]))
-            else:
-                g.add_node(e["tgt_nid"], e["course_title"],group="course",color=color,size=e["course_difficulty_grade"]*10 ,\
-                           shape=course_shape,physics=True)
+        for i,e in dfpc.iterrows(): 
+#             if e["tgt_nid"] not in added_nodes: 
+#                 added_nodes.add(e["tgt_nid"])
+#                 color=course_color
+#                 if (palette=="Topic" or palette=="Hybrid"):
+#                     color=e["topic_color"]
+#                 color=marker_color #debug
+#                 if (show_titles):
+#                     g.add_node(e["tgt_nid"], e["course_title"],group="course",color=color,size=e["course_difficulty_grade"]*10 ,\
+#                                shape=marker_shape,physics=True,title=str(e["tgt_uid"])+"/"+str(e["tgt_nid"])+"/"+str(e["course_difficulty_grade"]*10))
+#                 else:
+#                     g.add_node(e["tgt_nid"], e["course_title"],group="course",color=color,size=e["course_difficulty_grade"]*10 ,\
+#                                shape=marker_shape,physics=True)
             try:
-                gns=g.get_node(e["path_nid"])
-                gnt=g.get_node(e["tgt_nid"])        
-                duration=int(e["course_duration_hours"])
-                if duration==np.nan:
-                    duration=0
-                color=link_colors["primary_requires"]
-                if (palette=="Topic"):
-                    color=e["topic_color"]
-                g.add_edge(int(e["path_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color)    
+                fs=frozenset([int(e["path_nid"]),int(e["tgt_nid"])])
+                if fs not in added_edges: 
+                    added_edges.add(fs)
+                    gns=g.get_node(e["path_nid"])
+                    gnt=g.get_node(e["tgt_nid"])        
+                    duration=int(e["course_duration_hours"])
+                    if duration==np.nan:
+                        duration=0
+                    color=link_colors["primary_requires"]
+                    if (palette=="Topic"):
+                        color=e["topic_color"]
+                    g.add_edge(int(e["path_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color)    
             except:
-                print("error accessing data for path-course link ",e)
+                console_log("error accessing data for path-course link ",e)
                 return
         # end loop on links           
     # attention, il y a des liens cassés car des cours connus par leur lien sont introuvables dans la liste des cours
 
-    # ------------ LINKING COURSES TO COURSES
-    # adding layer 0 of courses_layers
+    # ------------ LINKING COURSES TO COURSES 
+    # we use the set path_courses built with all courses belonging to the paths/projects requirement network under a given max-depth depth.
+    # (ie for links belonging to projects requirement structure)
     for i,e in dfcc.iterrows():
         if (e["src_nid"]==e["tgt_nid"]): #avoid auto linking
             continue
-        color="#ccc"
-        if (e["relation"]=="requires"):
-            color=link_colors["secundary_requires"]
-            if (palette=="Topic"):
-                color=get_lighter_color(e["tgt_topic_color"],20)
-        else:
-            if (show_only_requirement_relations==True):  
-                continue
-            color=link_colors["secundary_references"]
-            if (palette=="Topic"):
-                color=get_lighter_color(e["tgt_topic_color"],50)
-        duration=int(e["tgt_course_duration_hours"])
-        if duration==np.nan:
-            duration=0
-        g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color)    
+        fs=frozenset([int(e["src_nid"]),int(e["tgt_nid"])])
+        if fs not in added_edges: 
+            color="#ccc"
+            edge_value=0
+            if (e["relation"]=="requires"):
+                color=link_colors["secundary_requires"]
+                if path_id!=0 or path_topic_id!=0:
+                    edge_value=2
+                if (int(e["src_course_id"]) not in path_courses) or (int(e["tgt_course_id"]) not in path_courses):
+                    edge_value=0
+                    if (palette=="Hybrid"):
+                        color=get_lighter_color(e["tgt_topic_color"],20)
+                if (palette=="Topic"):
+                    color=get_lighter_color(e["tgt_topic_color"],20)
+            else:
+                if (show_only_requirement_relations==True):  
+                    continue
+                color=link_colors["secundary_references"]
+                if path_id!=0 or path_topic_id!=0:
+                    edge_value=2
+                if (int(e["src_course_id"]) not in path_courses) or (int(e["tgt_course_id"]) not in path_courses):
+                    edge_value=0
+                    if (palette=="Hybrid"):
+                        color=get_lighter_color(e["tgt_topic_color"],20)
+                if (palette=="Topic"):
+                    color=get_lighter_color(e["tgt_topic_color"],50) 
+            duration=int(e["tgt_course_duration_hours"])
+            if duration==np.nan:
+                duration=0
+            added_edges.add(fs)
+            if (edge_value==0):
+                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color)
+            else:
+                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color,value=edge_value)    
+            
     # end loop on links
     
     # finally animate and export the graph

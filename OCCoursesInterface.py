@@ -472,20 +472,37 @@ courses_height_slider = widgets.IntSlider(
 )
 courses_height_slider.layout=widgets.Layout(width="35px", height='80%')
 
+#select courses having a given topic
 courses_topic_selector= widgets.Dropdown(
     options=[("-",0)],
     value=0,
-    description="Topic"
+    description="Courses Topic"
 )
-courses_topic_selector.layout=widgets.Layout(width="250px", height='24px')
+courses_topic_selector.layout=widgets.Layout(width="300px", height='24px')
 
-
+#select courses having a given language
 courses_language_selector = widgets.Dropdown(
     options=["-"],
     value="-",
-    description="Lang"
+    description="Courses Lang"
 )
-courses_language_selector.layout=widgets.Layout(width="140px", height='24px')
+courses_language_selector.layout=widgets.Layout(width="180px", height='24px')
+
+#select paths having a given topic
+courses_path_topic_selector= widgets.Dropdown(
+    options=[("-",0)],
+    value=0,
+    description="Paths Topic"
+)
+courses_path_topic_selector.layout=widgets.Layout(width="300px", height='24px')
+
+#select paths having a given language
+courses_path_language_selector = widgets.Dropdown(
+    options=["-"],
+    value="-",
+    description="Paths Lang"
+)
+courses_path_language_selector.layout=widgets.Layout(width="180px", height='24px')
 
 courses_path_selector = widgets.Dropdown(
     options=[("-",0)],
@@ -518,39 +535,79 @@ courses_hidereferences_check = widgets.ToggleButton(
     tooltip='Just focus on mandatory courses requirements, and ignore informative references.',
     icon='clock' # (FontAwesome names without the `fa-` prefix)
 )
-courses_hidereferences_check.layout=widgets.Layout(width="160px", height='24px')
+courses_hidereferences_check.layout=widgets.Layout(width="140px", height='24px')
     
+
+courses_algo_check = widgets.ToggleButton(
+    value=False,
+    description='',
+    disabled=False,
+    button_style='', # 'success', 'info', 'warning', 'danger' or ''
+    tooltip='use ATLAS or BARNESHUT dynamic layout algorithm',
+    icon='globe' # (FontAwesome names without the `fa-` prefix)
+)
+courses_algo_check.layout=widgets.Layout(width="30px", height='24px')
+    
+courses_myway_check = widgets.ToggleButton(
+    value=True,
+    description='My Way',
+    disabled=False,
+    button_style='', # 'success', 'info', 'warning', 'danger' or ''
+    tooltip='Expose My Way (courses and path)',
+    icon='user-graduate' # (FontAwesome names without the `fa-` prefix)
+)
+courses_myway_check.layout=widgets.Layout(width="105px", height='24px')
 
 courses_palette_selector = widgets.Dropdown(
     options=["Topic","Dependency","Hybrid"],
     value="Topic",
-    description="palette",
+    description="Palette",
     tooltip='Choose between Topic dependency color palettes.'
 )
 courses_palette_selector.layout=widgets.Layout(width="200px", height='24px')
 
     
 def courses_filter_change(w):
-    global courses_height_slider,courses_topic_selector,courses_language_selector,courses_path_selector,courses_hidereferences_check, \
-    courses_max_depth_slider, courses_palette_selector, courses_out, menu_tab
+    global courses_height_slider,courses_topic_selector,courses_language_selector,\
+    courses_path_topic_selector,courses_path_language_selector,\
+    courses_path_selector,courses_hidereferences_check, courses_max_depth_slider,\
+    courses_algo_check, courses_myway_check, courses_palette_selector, courses_out, menu_tab
     
-    topic_id = courses_topic_selector.value
+    path_topic_id = courses_path_topic_selector.value
+    path_language = courses_path_language_selector.value
     path_id = courses_path_selector.value 
-#     if (topic_id == 0):
-#         return 
+     
+    if (w["owner"] == courses_path_topic_selector) or (w["owner"] == courses_path_language_selector):
+        opt=[("-",0)]
+        if (path_topic_id==0):
+            df = ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())]
+            df = ocd.OC_Paths.merge(df, on='topic_id', how='left').sort_values(by=["topic_name","path_language","path_title"]) 
+        else:
+            df = ocd.OC_Paths[ocd.OC_Paths["topic_id"].isin([path_topic_id])]
+            df = df.merge(ocd.OC_Topics[["topic_name","topic_id"]], on='topic_id', how='left').sort_values(by=["topic_name","path_language","path_title"]) 
+        if (path_language!='-'):
+            df = df[df["path_language"].isin([path_language])]
+        for i,r in df.iterrows(): 
+            opt.append((r["topic_name"][:3]+"-"+r["path_language"]+" : "+r["path_title"],r["path_id"]))
+        courses_path_selector.options= opt
+        courses_path_selector.value= 0
+
     if (w["owner"] == courses_height_slider):
-        courses_out.layout=widgets.Layout(width='98%', height=str(courses_height_slider.value+70)+'px')
- 
+        courses_out.layout=widgets.Layout(width='98%', height=str(courses_height_slider.value+70)+'px') 
     
     display_courses_section()
 #end function
 
 def populate_courses_selectors():
-    global courses_height_slider, courses_topic_selector, courses_language_selector,courses_path_selector,\
-    courses_max_depth_slider,courses_hidereferences_check, courses_palette_selector
+    global courses_height_slider, courses_topic_selector, courses_language_selector,\
+    courses_path_topic_selector,courses_path_language_selector,\
+    courses_path_selector, courses_max_depth_slider,courses_hidereferences_check,\
+    courses_algo_check, courses_myway_check, courses_palette_selector
     
-    selectors=[ courses_height_slider, courses_topic_selector,courses_language_selector,\
-               courses_path_selector,courses_max_depth_slider,courses_hidereferences_check,courses_palette_selector] 
+    selectors=[courses_height_slider, courses_topic_selector,courses_language_selector,\
+               courses_path_topic_selector,courses_path_language_selector,\
+               courses_path_selector,courses_max_depth_slider,courses_hidereferences_check,\
+               courses_algo_check, courses_myway_check, courses_palette_selector] 
     
     df=ocd.OC_Topics[["topic_name","topic_id"]].sort_values(by=["topic_name"]) #[ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())]
     opt=[("-",0)]
@@ -559,7 +616,15 @@ def populate_courses_selectors():
     courses_topic_selector.options= opt
     courses_topic_selector.value=0 
     
-    courses_language_selector.options =["-"] + list(ocd.OC_Paths["path_language"].unique())
+    df=ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())]
+    opt=[("-",0)]
+    for i,r in df.iterrows():
+        opt.append((r["topic_name"],r["topic_id"]))
+    courses_path_topic_selector.options= opt
+    courses_path_topic_selector.value=0 
+    
+    courses_language_selector.options =["-"] + list(ocd.OC_Courses["course_language"].unique())
+    courses_path_language_selector.options =["-"] + list(ocd.OC_Paths["path_language"].unique())
     
     df = ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())]
     df = ocd.OC_Paths.merge(df, on='topic_id', how='left').sort_values(by=["topic_name","path_language","path_title"])
@@ -574,9 +639,10 @@ def populate_courses_selectors():
         
 # end function
 
-courses_items_r1 =widgets.HBox([courses_topic_selector,courses_language_selector,courses_path_selector,courses_max_depth_slider])
+courses_items_r1 =widgets.HBox([courses_algo_check, courses_myway_check, courses_palette_selector,courses_topic_selector,courses_language_selector])
 courses_items_r1.layout=widgets.Layout(width='99%', height='30px')
-courses_items_r2 =widgets.HBox([courses_hidereferences_check,courses_palette_selector])
+courses_items_r2 =widgets.HBox([courses_hidereferences_check,courses_path_topic_selector,courses_path_language_selector,courses_path_selector,\
+                                courses_max_depth_slider])
 courses_items_r2.layout=widgets.Layout(width='99%', height='30px')
 
 courses_items =[] 
@@ -791,35 +857,42 @@ def display_schedule_section():
 # --------------------------------------- COURSES TAB    
 # --- Courses section GUI
 def display_courses_section():
-    global courses_out, \
-        courses_height_slider, courses_topic_selector, courses_language_selector, courses_path_selector,\
-        courses_hidereferences_check,courses_palette_selector
+    global courses_out,courses_palette_selector,\
+        courses_height_slider, courses_topic_selector, courses_language_selector,\
+        courses_path_topic_selector,courses_path_language_selector,\
+        courses_path_selector,courses_myway_check, courses_hidereferences_check
+        
     
     
     filter_options={
         "height"                             : courses_height_slider.value,
         "topic"                              : courses_topic_selector.value,
-        "language"                               : courses_language_selector.value,
+        "language"                           : courses_language_selector.value,
+        "path_topic"                         : courses_path_topic_selector.value,
+        "path_language"                      : courses_path_language_selector.value,
         "path"                               : courses_path_selector.value, 
         "max_depth"                          : courses_max_depth_slider.value,
         "hide_references"                    : courses_hidereferences_check.value,
+        "atlas_layout"                       : courses_algo_check.value,
+        "show_my_way"                        : courses_myway_check.value, 
         "palette"                            : courses_palette_selector.value
     }
     
-    courses_out.clear_output() 
-
-    topic_id = courses_topic_selector.value
-    path_id = courses_path_selector.value
-
-#     g = ocg.mini_graph("Select a Topic and a Path!",height=str(projects_height_slider.value)+'px', width='99%', 
-#                         bgcolor=occ.OCGraphsBackgroundColor, font_color=occ.OCGraphsTextColor,
-#                         directed=True,notebook=True,layout=False)
+    courses_out.clear_output()  
  
-    g = ocg.build_courses_graph(topic_id=topic_id,path_id=path_id,language=courses_language_selector.value,\
-                                max_depth=courses_max_depth_slider.value,show_only_requirement_relations=courses_hidereferences_check.value,\
-                                height=str(courses_height_slider.value)+'px', width='99%',\
-                                palette=courses_palette_selector.value,bgcolor=occ.OCGraphsBackgroundColor, font_color=occ.OCGraphsTextColor,\
-                                directed=True,notebook=True,layout=False,show_titles=True,\
+    g = ocg.build_courses_graph(topic_id=courses_topic_selector.value,
+                                language=courses_language_selector.value,
+                                path_topic_id=courses_path_topic_selector.value,
+                                path_language=courses_path_language_selector.value,
+                                path_id=courses_path_selector.value,
+                                max_depth=courses_max_depth_slider.value,
+                                atlas_layout=courses_algo_check.value,
+                                show_my_way=courses_myway_check.value,
+                                show_only_requirement_relations=courses_hidereferences_check.value,
+                                height=str(courses_height_slider.value)+'px', width='99%',
+                                palette=courses_palette_selector.value,
+                                bgcolor=occ.OCGraphsBackgroundColor, font_color=occ.OCGraphsTextColor,
+                                directed=True,notebook=True,layout=False,show_titles=True,
                                 show_buttons=False,filter_options=filter_options)  
     
     if (type(g)==type(None)):
