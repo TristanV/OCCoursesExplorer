@@ -478,7 +478,7 @@ courses_topic_selector= widgets.Dropdown(
     value=0,
     description="Courses Topic"
 )
-courses_topic_selector.layout=widgets.Layout(width="300px", height='24px')
+courses_topic_selector.layout=widgets.Layout(width="350px", height='24px')
 
 #select courses having a given language
 courses_language_selector = widgets.Dropdown(
@@ -494,7 +494,7 @@ courses_path_topic_selector= widgets.Dropdown(
     value=0,
     description="Paths Topic"
 )
-courses_path_topic_selector.layout=widgets.Layout(width="300px", height='24px')
+courses_path_topic_selector.layout=widgets.Layout(width="350px", height='24px')
 
 #select paths having a given language
 courses_path_language_selector = widgets.Dropdown(
@@ -735,6 +735,8 @@ def information_show_minidoc(w):
         information_out.clear_output()
         with information_out:
             display(HTML(filename="doc/minidoc.html"))
+    else :
+        information_show_logo(w)
 #end function
 
 def information_show_readme(w):
@@ -748,6 +750,8 @@ def information_show_readme(w):
             fin = open(filename, "rt", encoding="utf8")
             txt = fin.read()
             display(HTML("<pre>"+txt+"</pre>"))
+    else :
+        information_show_logo(w)            
 #end function
 
 def information_show_licence(w):
@@ -761,9 +765,15 @@ def information_show_licence(w):
             fin = open(filename, "rt", encoding="utf8")
             txt = fin.read()
             display(HTML("<pre>"+txt+"</pre>"))
+    else :
+        information_show_logo(w)            
 #end function
 
-
+def information_show_logo(w):
+    global information_out, information_minidoc_togglebutton, information_readme_togglebutton, information_licence_togglebutton
+    information_out.clear_output()
+    with information_out:
+        display(HTML("<img width=\"500\"  height=\"500\" src=\"https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/img/OCCoursesExplorer_logo.svg\">"))
 
 information_minidoc_togglebutton = widgets.ToggleButton(
     value=False,
@@ -819,7 +829,13 @@ for i, title in enumerate(menu_tabs):
     
 # --------------------------------------- INFORMATION TAB    
 # --- Information section GUI
-# nothing here : the display is activated when a button is pressed
+# just a splash screen here : the display is activated when a button is pressed
+def display_information_section():
+    global information_minidoc_togglebutton,information_readme_togglebutton,information_licence_togglebutton
+    if information_minidoc_togglebutton.value     == False \
+       and information_readme_togglebutton.value  == False \
+       and information_licence_togglebutton.value == False :
+        information_show_logo(True)
 
 # --------------------------------------- SCHEDULE TAB
 # --- Schedule section GUI
@@ -1560,7 +1576,8 @@ def display_GUI(load_datasets=True):
     populate_projects_selectors()
     display_projects_section()
     populate_courses_selectors()
-    display_courses_section()
+#     display_courses_section() # not shown on application startup to avoid JS freezing display. The section will be activated by the user 
     populate_schedule_selectors()
     display_schedule_section()
+    display_information_section()
 #fin fonction

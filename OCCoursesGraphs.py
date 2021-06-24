@@ -15,6 +15,9 @@ from OCCoursesConfig import pd, nx, Network, OCGraphsIconsURL, math ,np, random,
 import OCCoursesDatasets as ocd
 from OCCoursesPlots import get_lighter_color
 
+# PyVis uses an old release of vis.js, with a bug referenced here: https://github.com/visjs/vis-network/issues/12
+# I installed the bugfix version in the VizFolder (https://github.com/visjs/vis-network/pull/58)
+
 # For plenty reasons, it easier to conceive textual unique ids for nodes, than natural-numbering them:
 # - several dataframes may be joined to build the graph nodes and edges
 # - the semantic of a textual ID is more human-understandable than a raw integer number
@@ -201,7 +204,27 @@ def build_topics_and_paths_graph(height='640px', width='99%',bgcolor="#ffffff",
     else :
         g = Network(height = height, width=width, bgcolor=bgcolor, font_color=font_color, directed=directed,notebook=notebook,layout=layout,heading=heading)
     g.toggle_physics(True) 
-    g.hrepulsion()
+    
+    
+    if type(filter_options)!=type(None) and (filter_options["level"]!="-" or filter_options["topic"]!="-"):     
+        physics_model="barneshut"   #="barneshut" / forceatlas
+        if physics_model=="barneshut":
+            g.barnes_hut(gravity=-10000,
+                central_gravity=0.1,
+                spring_length=150,
+                spring_strength=0.02,
+                damping=0.03,
+                overlap=0.1)   
+        elif physics_model=="forceatlas":
+            g.force_atlas_2based(gravity=-400, 
+                                 central_gravity=0.02, 
+                                 spring_length=150, 
+                                 spring_strength=0.08, 
+                                 damping=0.4, 
+                                 overlap=0.2) 
+    else: 
+        g.hrepulsion()
+        
     # ------- ROOT NODE
     g.add_node(0, "OpenClassrooms",group="root",color="#7451eb" ,shape="image", image=OCGraphsIconsURL["OpenClassrooms"],mass=3,physics=False)
     
@@ -1061,8 +1084,7 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
         max_depth= filter_options["max_depth"] 
         atlas_layout=filter_options["atlas_layout"] 
         show_my_way= filter_options["show_my_way"] 
-        show_only_requirement_relations = filter_options["hide_references"]
-    
+        show_only_requirement_relations = filter_options["hide_references"] 
 #     display(filter_options)
 #     display(height,language,path_id,topic_id)
     # ------------ get the PATH
@@ -1344,13 +1366,12 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
         if (palette=="Topic" or palette=="Hybrid"): #topic palette
             color=n["topic_color"]
         if (show_my_way and n["status"]!="none"):
-            color=status_colors[n["status"]]
+            color=status_colors[n["status"]] 
         if (show_titles):
-            g.add_node(n["nid"], n["path_title"],group="path",color=color,shape=path_shape,size=path_size,\
+            g.add_node(n["nid"], n["path_title"],color=color,shape=path_shape,size=path_size,\
                        physics=True,title="<a href=\""+n["path_url"]+"\" target=\"_blank\">"+n["path_title"]+"</a>")
         else:
-            g.add_node(n["nid"], n["path_title"],group="path",color=color ,shape=path_shape,size=path_size,physics=True)
-#         print("adding path node : ",n["nid"],n)
+            g.add_node(n["nid"], n["path_title"],color=color ,shape=path_shape,size=path_size,physics=True) 
         
         # if no path is selected and no path topic is selected, we show all paths but we don't show their inner projects
         # otherwise we show the projects of the selected path or topic paths
@@ -1361,20 +1382,18 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
             for ii,nn in dfpr[dfpr["path_id"].isin([n["path_id"]])].iterrows():
                 if nn["nid"] not in added_nodes: 
                     added_nodes.add(nn["nid"])
-            #             length = plength+ nn["project_duration_hours"]
-        #             print("adding project node : ",nn["nid"],nn)
+            #             length = plength+ nn["project_duration_hours"] 
                     color=project_color
                     if (palette=="Topic"):
                         color=n["topic_color"]
                     if (show_my_way == True) and (nn["status"]!="none"):
-                        color=status_colors[nn["status"]]
+                        color=status_colors[nn["status"]] 
                     if (show_titles):
-                        g.add_node(int(nn["nid"]), str(nn["project_number"])+"-"+nn["project_title"], color=color,group="project",\
+                        g.add_node(int(nn["nid"]), str(nn["project_number"])+"-"+nn["project_title"], color=color,\
                                    shape=project_shape,size=project_size, physics=True,title=nn["project_title"])
                     else:
-                        g.add_node(int(nn["nid"]), str(nn["project_number"])+"-"+nn["project_title"], color=color,group="project",\
-                                   shape=project_shape,size=project_size, physics=True)
-            #             print("add project edge ",previous_nid,"-",nn["nid"],nn["project_duration_hours"])
+                        g.add_node(int(nn["nid"]), str(nn["project_number"])+"-"+nn["project_title"], color=color,\
+                                   shape=project_shape,size=project_size, physics=True) 
                 fs=frozenset([previous_nid,nn["nid"]])
                 if fs not in added_edges: 
                     added_edges.add(fs)
@@ -1409,14 +1428,14 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
         if int(n["course_id"]) in path_courses:
             size_coeff=2
         if (palette=="Topic" or palette=="Hybrid"):
-            color=n["topic_color"]
+            color=n["topic_color"] 
         if (show_my_way == True) and (n["status"]!="none"):
-            color=status_colors[n["status"]+"_course"]
+            color=status_colors[n["status"]+"_course"]  
         if (show_titles):
-            g.add_node(n["nid"], n["course_title"],group="course",color=color,size=n["course_difficulty_grade"]*10*size_coeff ,\
+            g.add_node(n["nid"], n["course_title"],color=color,size=n["course_difficulty_grade"]*10*size_coeff ,\
                        shape=course_shape,physics=True,title="<a href=\""+n["course_url"]+"\" target=\"_blank\">"+n["course_title"]+"</a>")
         else:
-            g.add_node(n["nid"], n["course_title"],group="course",color=color,size=n["course_difficulty_grade"]*10*size_coeff,\
+            g.add_node(n["nid"], n["course_title"],color=color,size=n["course_difficulty_grade"]*10*size_coeff,\
                        shape=course_shape,physics=True)
     
     
