@@ -34,32 +34,32 @@ path_id	project_id	project_number	skill
 106	0	7	Animer au quotidien son équipe
 106	0	7	Appliquer les règles du droit social dans son équipe
 106	0	7	Organiser le travail de son équipe
-106	0	8	Communiquer efficacement en anglais
+106	0	8	Utiliser les logiciels bureautiques et les outils collaboratifs
 106	0	8	Rédiger des écrits professionnels
 106	0	8	Établir des relations de qualité avec les parties prenantes
+106	0	8	Communiquer efficacement en anglais
 106	0	8	Concevoir une communication digitale
-106	0	8	Utiliser les logiciels bureautiques et les outils collaboratifs
 106	0	9	Élaborer et piloter un projet
 106	0	10	Réaliser un mémoire professionnel
+341	0	1	Adopter une posture de commercial
 341	0	1	Réaliser une veille sur les méthodes de vente
 341	0	1	Mettre en œuvre les bonnes pratiques de personal branding
-341	0	1	Adopter une posture de commercial
 341	0	2	Sourcer des prospects qualifiés
 341	0	2	Organiser une activité commerciale à l'aide d'un CRM
 341	0	2	Analyser le marché d'un secteur
-341	0	3	Suivre les résultats d'une prospection
 341	0	3	Maîtriser un pitch commercial
 341	0	3	Mener des entretiens de prospection
+341	0	3	Suivre les résultats d'une prospection
+341	0	4	Traiter les objections d'un prospect
 341	0	4	Préparer un rendez-vous commercial
 341	0	4	Présenter une proposition commerciale tarifée
 341	0	4	Réaliser un entretien de vente
-341	0	4	Traiter les objections d'un prospect
 341	0	5	Contractualiser dans le respect des exigences légales
 341	0	5	Négocier les conditions d'une vente
-341	0	6	Réaliser des ventes additionnelles pour les clients existants
-341	0	6	Gérer un portefeuille clients
-341	0	6	Capitaliser sur les clients existants
 341	0	6	Analyser les ventes pour développer la performance commerciale
+341	0	6	Gérer un portefeuille clients
+341	0	6	Réaliser des ventes additionnelles pour les clients existants
+341	0	6	Capitaliser sur les clients existants
 324	0	1	Élaborer un plan d'apprentissage personnalisé et un ensemble d'outils
 324	0	2	Générer des graphiques adaptés aux types de données
 324	0	2	Synthétiser des résultats à destination d'un client
@@ -92,11 +92,11 @@ path_id	project_id	project_number	skill
 324	0	10	Réaliser une régression linéaire
 324	0	10	Réaliser une analyse prédictive
 164	0	1	Construire pas à pas son projet professionnel
+164	0	2	Manipuler des données avec des librairies Python spécialisées
+164	0	2	Effectuer une représentation graphique à l'aide d'une librairie Python adaptée
 164	0	2	Maîtriser les opérations fondamentales du langage Python pour la Data Science
 164	0	2	Utiliser un notebook Jupyter pour faciliter la rédaction du code et la collaboration
 164	0	2	Mettre en place un environnement Python
-164	0	2	Effectuer une représentation graphique à l'aide d'une librairie Python adaptée
-164	0	2	Manipuler des données avec des librairies Python spécialisées
 164	0	3	Communiquer ses résultats à l’aide de représentations graphiques lisibles et pertinentes
 164	0	3	Effectuer des opérations de nettoyage sur des données structurées
 164	0	3	Effectuer une analyse statistique multivariée
@@ -105,10 +105,10 @@ path_id	project_id	project_number	skill
 164	0	4	Évaluer les performances d’un modèle d'apprentissage supervisé
 164	0	4	Adapter les hyperparamètres d'un algorithme d'apprentissage supervisé afin de l'améliorer
 164	0	4	Transformer les variables pertinentes d'un modèle d'apprentissage supervisé
+164	0	5	Mettre en place le modèle d'apprentissage non supervisé adapté au problème métier
+164	0	5	Transformer les variables pertinentes d'un modèle d'apprentissage non supervisé
 164	0	5	Adapter les hyperparamètres d'un algorithme non supervisé afin de l'améliorer
 164	0	5	Évaluer les performances d’un modèle d'apprentissage non supervisé
-164	0	5	Transformer les variables pertinentes d'un modèle d'apprentissage non supervisé
-164	0	5	Mettre en place le modèle d'apprentissage non supervisé adapté au problème métier
 164	0	6	Prétraiter des données image pour obtenir un jeu de données exploitable
 164	0	6	Mettre en œuvre des techniques de réduction de dimension
 164	0	6	Représenter graphiquement des données à grandes dimensions
@@ -130,19 +130,19 @@ path_id	project_id	project_number	skill
 148	0	3	Évaluer les performances d’un modèle d'apprentissage supervisé
 148	0	3	Adapter les hyperparamètres d'un algorithme d'apprentissage supervisé afin de l'améliorer
 148	0	3	Transformer les variables pertinentes d'un modèle d'apprentissage supervisé
+148	0	4	Mettre en place le modèle d'apprentissage non supervisé adapté au problème métier
+148	0	4	Transformer les variables pertinentes d'un modèle d'apprentissage non supervisé
 148	0	4	Adapter les hyperparamètres d'un algorithme non supervisé afin de l'améliorer
 148	0	4	Évaluer les performances d’un modèle d'apprentissage non supervisé
-148	0	4	Transformer les variables pertinentes d'un modèle d'apprentissage non supervisé
-148	0	4	Mettre en place le modèle d'apprentissage non supervisé adapté au problème métier
-148	0	5	Mettre en œuvre des techniques d’extraction de features pour des données non structurées
 148	0	5	Représenter graphiquement des données à grandes dimensions
 148	0	5	Prétraiter des données non structurées pour obtenir un jeu de données exploitable
+148	0	5	Mettre en œuvre des techniques d’extraction de features pour des données non structurées
 148	0	5	Mettre en œuvre des techniques de réduction de dimension
-148	0	6	Adapter les paramètres d'un modèle de Deep Learning afin de l’améliorer
-148	0	6	Sélectionner un modèle d'apprentissage Deep Learning adapté à une problèmatique métier
 148	0	6	Évaluer les performances d’un modèle de Deep Learning
-148	0	6	Transformer les variables pertinentes d'un modèle de Deep Learning
+148	0	6	Adapter les paramètres d'un modèle de Deep Learning afin de l’améliorer
 148	0	6	Mettre en place un modèle de Deep Learning
+148	0	6	Sélectionner un modèle d'apprentissage Deep Learning adapté à une problèmatique métier
+148	0	6	Transformer les variables pertinentes d'un modèle de Deep Learning
 148	0	7	Identifier des sources d'informations fiables et pertinentes
 148	0	7	"Identifier les méthodes ""état de l'art"" pour résoudre un problème de Data science"
 148	0	7	Développer une preuve de concept pour résoudre un problème de Data science
@@ -178,14 +178,14 @@ path_id	project_id	project_number	skill
 188	0	3	Effectuer des opérations de nettoyage sur des données structurées
 188	0	3	Communiquer ses résultats à l’aide de représentations graphiques lisibles et pertinentes
 188	0	3	Effectuer une analyse statistique multivariée
+188	0	4	Transformer les variables pertinentes pour un modèle supervisé classique
 188	0	4	Entraîner un modèle supervisé classique qui répond aux attentes des métiers
 188	0	4	Adapter les hyperparamètres d’un modèle d’apprentissage supervisé classique
 188	0	4	Evaluer les performances d’un modèle supervisé classique
-188	0	4	Transformer les variables pertinentes pour un modèle supervisé classique
+188	0	5	Mettre en place le modèle d'apprentissage non supervisé adapté au problème métier
+188	0	5	Transformer les variables pertinentes d'un modèle d'apprentissage non supervisé
 188	0	5	Adapter les hyperparamètres d'un algorithme non supervisé afin de l'améliorer
 188	0	5	Évaluer les performances d’un modèle d'apprentissage non supervisé
-188	0	5	Transformer les variables pertinentes d'un modèle d'apprentissage non supervisé
-188	0	5	Mettre en place le modèle d'apprentissage non supervisé adapté au problème métier
 188	0	6	Utiliser des techniques de réduction de la dimension
 188	0	6	Effectuer un pré-traitement de données non structurées
 188	0	6	Collecter des données venant d’une API qui correspondent à un besoin défini
@@ -198,11 +198,11 @@ path_id	project_id	project_number	skill
 188	0	8	Manipuler un jeu de données volumineux
 188	0	8	Entraîner un modèle de Deep Learning sur des images
 188	0	8	Evaluer la performance d’un modèle de Deep Learning sur des images
-188	0	9	Concevoir des scripts permettant d’exécuter une chaîne de traitements IA bout-en-bout
 188	0	9	Sélectionner l’architecture logicielle permettant de répondre au besoin métier
-188	0	10	Intégrer une chaîne de traitement IA dans un outil informatique via Git
-188	0	10	Piloter la performance du modèle en production
+188	0	9	Concevoir des scripts permettant d’exécuter une chaîne de traitements IA bout-en-bout
 188	0	10	Intégrer la sortie du modèle dans un produit informatique fini
+188	0	10	Piloter la performance du modèle en production
+188	0	10	Intégrer une chaîne de traitement IA dans un outil informatique via Git
 188	0	11	Identifier les enjeux éthiques et légaux relatifs à la collecte des données personnelles
 188	0	11	Identifier les ressources humaines, techniques et financières d'un projet IA
 188	0	11	Planifier des réponses adéquates en regard des risques projets significatifs
@@ -255,20 +255,20 @@ path_id	project_id	project_number	skill
 322	0	4	Structurer le code d'un programme Python en utilisant un design pattern
 322	0	4	Écrire un code Python robuste en utilisant la PEP 8
 322	0	5	Vous appliquerez des compétences préalablement validées à un contexte de test technique.
-322	0	6	Interagir avec une API REST
 322	0	6	Développer la partie Front-End d’une application avec HTML, CSS et JavaScript
+322	0	6	Interagir avec une API REST
 322	0	7	Déconstruire un problème
 322	0	7	Développer un algorithme pour résoudre un problème
 322	0	8	Vous appliquerez des compétences préalablement validées à un contexte de test technique.
 322	0	9	Développer une application web en utilisant Django
 322	0	9	Utiliser le rendu côté serveur dans Django
+322	0	10	Sécuriser une API afin qu'elle respecte les normes OWASP et RGPD
 322	0	10	Créer une API RESTful avec Django REST
 322	0	10	Documenter une application
-322	0	10	Sécuriser une API afin qu'elle respecte les normes OWASP et RGPD
 322	0	11	Analysez la performance d’une application avec Locust
 322	0	11	Debugger le code d’une application Python
-322	0	11	Gérer les erreurs et les exceptions en Python
 322	0	11	Implémentez une suite de tests Python
+322	0	11	Gérer les erreurs et les exceptions en Python
 322	0	12	Élaborer l'architecture d'une base de données relationnelle
 322	0	12	Mettre en œuvre une base de données sécurisée avec Django ORM et PostgreSQL
 322	0	13	Mettre en place un système de contrôle des codes en utilisant Sentry
@@ -276,9 +276,9 @@ path_id	project_id	project_number	skill
 322	0	13	Refactoriser une application pour réduire la dette technique
 322	0	13	Gérer la production de code en utilisant la méthodologie CI/CD avec CircleCI
 322	0	13	Appliquer une architecture modulaire dans une application Python
+185	0	1	Sélectionner des sources pertinentes pour une veille technologique
 185	0	1	Mettre en place un tableau de bord de veille technologique
 185	0	1	Élaborer un plan d'apprentissage personnalisé
-185	0	1	Sélectionner des sources pertinentes pour une veille technologique
 185	0	2	Utiliser un système de gestion de versions pour le suivi du projet et son hébergement
 185	0	2	Mettre en place son environnement Front-End
 185	0	2	Intégrer du contenu conformément à une maquette
@@ -286,42 +286,42 @@ path_id	project_id	project_number	skill
 185	0	3	Mettre en œuvre des effets CSS graphiques avancés
 185	0	3	Mettre en place une structure de navigation pour un site web
 185	0	3	Assurer la cohérence graphique d'un site web
-185	0	4	Réaliser une recherche des bonnes pratiques en développement web
 185	0	4	Assurer l'accessibilité d'un site web
 185	0	4	Écrire un code HTML et CSS maintenable
-185	0	4	Optimiser la taille et la vitesse d’un site web
 185	0	4	Optimiser le référencement d'un site web
+185	0	4	Réaliser une recherche des bonnes pratiques en développement web
+185	0	4	Optimiser la taille et la vitesse d’un site web
 185	0	5	Interagir avec un web service avec JavaScript
 185	0	5	Valider des données issues de sources externes
 185	0	5	Créer un plan de test pour une application
 185	0	5	Gérer des événements JavaScript
+185	0	6	Implémenter un modèle logique de données conformément à la réglementation
 185	0	6	Mettre en œuvre des opérations CRUD de manière sécurisée
 185	0	6	Stocker des données de manière sécurisée
-185	0	6	Implémenter un modèle logique de données conformément à la réglementation
 185	0	7	Personnaliser le contenu envoyé à un client web
+185	0	7	Authentifier un utilisateur et maintenir sa session
 185	0	7	Gérer un stockage de données à l'aide de SQL
 185	0	7	Implémenter un stockage de données sécurisé en utilisant SQL
-185	0	7	Authentifier un utilisateur et maintenir sa session
-169	0	1	Mettre en place un tableau de bord de veille technologique
-169	0	1	Établir un plan de formation
-169	0	1	Sélectionner les sources d’information pertinentes pour un ensemble de technologies
 169	0	1	Définir un poste pertinent pour un développeur Salesforce
+169	0	1	Sélectionner les sources d’information pertinentes pour un ensemble de technologies
+169	0	1	Mettre en place un tableau de bord de veille technologique
 169	0	1	Décrire les fonctionnalités et les objets natifs d’une application Salesforce
+169	0	1	Établir un plan de formation
+169	0	2	Mettre à jour une GUI Lightning
 169	0	2	Améliorer les processus d'une entreprise en utilisant un système d'automatisation
-169	0	2	Mettre à jour des configurations existantes
 169	0	2	Utiliser le CRM pour améliorer la performance d'une entreprise
 169	0	2	Réaliser l'audit de configurations existantes
-169	0	2	Mettre à jour une GUI Lightning
+169	0	2	Mettre à jour des configurations existantes
+169	0	3	Définir un modèle de données et ses règles métier
 169	0	3	Concevoir une solution et ses spécifications en fonction des besoins d'un client
 169	0	3	Analyser les besoins d'un client ou d'utilisateurs finaux
-169	0	3	Définir un modèle de données et ses règles métier
 169	0	3	Choisir la solution appropriée à un problème technique
 169	0	4	Comprendre le langage de programmation Java
 169	0	4	Construire un projet de code collaboratif
-169	0	5	Mettre en œuvre des tests unitaires
+169	0	5	Produire un rapport d'exécution de tests
 169	0	5	Mettre en œuvre des tests d'intégration
 169	0	5	Fournir des patchs correctifs lorsque le rapport de l’exécution des tests le suggère
-169	0	5	Produire un rapport d'exécution de tests
+169	0	5	Mettre en œuvre des tests unitaires
 169	0	6	Assurer la cohérence graphique d'un site web
 169	0	6	Créer l'interface frontend d'une application
 169	0	6	Mettre à jour le DOM en utilisant JavaScript
@@ -334,17 +334,17 @@ path_id	project_id	project_number	skill
 169	0	8	Mettre en place un backlog
 169	0	9	Implémenter les améliorations demandées par le client
 169	0	9	Optimiser l'utilisation des ressources backend
-169	0	10	Concevoir l'architecture technique d'une application Apex
 169	0	10	Implémenter le modèle de données d'une application Apex
 169	0	10	Définir le modèle de sécurité d'une application Apex
 169	0	10	Concevoir le modèle de données d'une application Apex
+169	0	10	Concevoir l'architecture technique d'une application Apex
 169	0	11	Développer un backend Apex
 169	0	11	Respecter les standards de développement Salesforce
 169	0	11	Sélectionner une solution technique adaptée
-169	0	12	Déployer une application Salesforce avec Heroku
 169	0	12	Communiquer avec un service web
-168	0	1	Définir un poste pertinent pour un développeur d’application
+169	0	12	Déployer une application Salesforce avec Heroku
 168	0	1	Établir un plan de formation
+168	0	1	Définir un poste pertinent pour un développeur d’application
 168	0	1	Mettre en place un tableau de bord de veille technologique
 168	0	1	Sélectionner les sources d’information pertinentes pour un ensemble de technologies
 168	0	2	Fournir des patchs correctifs lorsque le rapport de l’exécution des tests le suggère
@@ -371,15 +371,15 @@ path_id	project_id	project_number	skill
 168	0	8	Concevoir l’architecture technique d’une application à l’aide de diagrammes UML
 168	0	8	Implémenter le schéma de données dans la base
 168	0	8	Réaliser un schéma de conception de la base de données de l’application
-168	0	9	Apporter des améliorations de fonctionnalités demandées par le client
-168	0	9	Compléter une suite de tests unitaires et d’intégration afin de prendre en compte les modifications apportées
-168	0	9	Corriger des dysfonctionnements signalés par le client sur l’application
 168	0	9	Créer et configurer une base de données SQLite
 168	0	9	Gérer et afficher des messages de notification
 168	0	9	Exposer du contenu à des applications tierces
 168	0	9	Personnaliser la barre d'outils
 168	0	9	Stocker et récupérer les informations dans la base de données en langage SQL
 168	0	9	Créer une vue personnalisée
+168	0	9	Apporter des améliorations de fonctionnalités demandées par le client
+168	0	9	Compléter une suite de tests unitaires et d’intégration afin de prendre en compte les modifications apportées
+168	0	9	Corriger des dysfonctionnements signalés par le client sur l’application
 168	0	10	Produire une documentation technique et fonctionnelle de l’application
 314	0	1	Élaborer un plan d'apprentissage personnalisé
 314	0	2	Utiliser un système de gestion de versions pour le suivi du projet et son hébergement
@@ -424,9 +424,9 @@ path_id	project_id	project_number	skill
 69	0	1	Construire pas à pas son projet professionnel
 69	0	2	Versionner son projet et travailler en collaboration
 69	0	3	Programmer en orienté objet avec Swift
-69	0	4	Créer un design responsive à partir d'un mockup
 69	0	4	Interpréter les gestes sur un écran tactile
 69	0	4	Mettre en place une architecture adaptée à son projet
+69	0	4	Créer un design responsive à partir d'un mockup
 69	0	5	Apporter des améliorations de fonctionnalités à une application
 69	0	5	Corriger des dysfonctionnements sur une application
 69	0	5	Effectuer une suite de tests unitaires et d’intégration
@@ -458,14 +458,14 @@ path_id	project_id	project_number	skill
 191	0	1	Définir une stratégie d'apprentissage
 191	0	2	Comprendre le langage de programmation Java
 191	0	2	Construire un projet de code collaboratif
+191	0	3	Analyser un cahier des charges
+191	0	3	Rédiger les spécifications détaillées d'un projet
 191	0	3	Sélectionner une solution technique adaptée
 191	0	3	Lister les fonctionnalités demandées par un client
-191	0	3	Rédiger les spécifications détaillées d'un projet
-191	0	3	Analyser un cahier des charges
-191	0	4	Mettre en œuvre des tests unitaires
+191	0	4	Produire un rapport d'exécution de tests
 191	0	4	Mettre en œuvre des tests d'intégration
 191	0	4	Fournir des patchs correctifs lorsque le rapport de l’exécution des tests le suggère
-191	0	4	Produire un rapport d'exécution de tests
+191	0	4	Mettre en œuvre des tests unitaires
 191	0	5	Respecter les bonnes pratiques de développement en vigueur
 191	0	5	Développer une application proposant les fonctionnalités attendues par le client
 191	0	5	Sélectionner les langages de programmation adaptés pour le développement de l’application
@@ -474,10 +474,10 @@ path_id	project_id	project_number	skill
 191	0	6	Réaliser un schéma de conception de la base de données de l’application
 191	0	6	Implémenter un schéma de données dans une base relationnelle
 191	0	7	Implémenter une API en utilisant les bonnes pratiques de développement
-191	0	8	Compléter une suite de tests unitaires et d’intégration afin de prendre en compte les modifications apportées
-191	0	8	Apporter des améliorations de fonctionnalités demandées par le client
-191	0	8	Corriger des dysfonctionnements signalés par le client sur l’application
 191	0	8	Produire une documentation technique et fonctionnelle de l’application
+191	0	8	Corriger des dysfonctionnements signalés par le client sur l’application
+191	0	8	Apporter des améliorations de fonctionnalités demandées par le client
+191	0	8	Compléter une suite de tests unitaires et d’intégration afin de prendre en compte les modifications apportées
 191	0	9	Créer un microservice pour une application
 191	0	9	Implémenter une méthodologie agile pour gérer votre projet de code
 191	0	9	Utiliser des bases de données NoSQL
@@ -485,24 +485,24 @@ path_id	project_id	project_number	skill
 59	0	2	Adapter un thème Wordpress pour respecter les exigences du client
 59	0	2	Rédiger une documentation à l'intention d'utilisateurs non spécialistes
 59	0	2	Sélectionner un thème Wordpress adapté aux besoins du client
-59	0	3	Choisir une solution technique adaptée parmi les solutions existantes si cela est pertinent
-59	0	3	Analyser un cahier des charges
 59	0	3	Lister les fonctionnalités demandées par un client
+59	0	3	Analyser un cahier des charges
 59	0	3	Rédiger les spécifications détaillées du projet
-59	0	4	Réaliser des schémas UML cohérents et en accord avec les besoins énoncés
+59	0	3	Choisir une solution technique adaptée parmi les solutions existantes si cela est pertinent
 59	0	4	Concevoir l’architecture technique d’une application à l’aide de diagrammes UML
 59	0	4	Implémenter le schéma de données dans la base
 59	0	4	Réaliser un schéma de conception de la base de données de l’application
-59	0	5	Conceptualiser l'ensemble de son application en décrivant sa structure (Entités / Domain Objects)
-59	0	5	Choisir une solution technique adaptée parmi les solutions existantes si cela est pertinent
-59	0	5	Estimer une tâche et tenir les délais
+59	0	4	Réaliser des schémas UML cohérents et en accord avec les besoins énoncés
 59	0	5	Proposer un code propre et facilement évolutif
-59	0	5	Créer et maintenir l’architecture technique du site
-59	0	5	Gérer ses données avec une base de données
 59	0	5	Assurer le suivi qualité d’un projet
 59	0	5	Rédiger les spécifications détaillées du projet
 59	0	5	Créer une page web permettant de recueillir les informations saisies par un internaute
+59	0	5	Estimer une tâche et tenir les délais
 59	0	5	Analyser un cahier des charges
+59	0	5	Créer et maintenir l’architecture technique du site
+59	0	5	Choisir une solution technique adaptée parmi les solutions existantes si cela est pertinent
+59	0	5	Gérer ses données avec une base de données
+59	0	5	Conceptualiser l'ensemble de son application en décrivant sa structure (Entités / Domain Objects)
 59	0	6	Prendre en main le framework Symfony
 59	0	6	Développer une application proposant les fonctionnalités attendues par le client
 59	0	6	Gérer une base de données MySQL ou NoSQL avec Doctrine
@@ -510,13 +510,12 @@ path_id	project_id	project_number	skill
 59	0	6	Prendre en main le moteur de templating Twig
 59	0	6	Respecter les bonnes pratiques de développement en vigueur
 59	0	6	Sélectionner les langages de programmation adaptés pour le développement de l’application
-59	0	7	Exposer une API REST avec Symfony
-59	0	7	Concevoir une architecture efficace et adaptée
 59	0	7	Analyser et optimiser les performances d’une application
 59	0	7	Lancer une authentification à chaque requête HTTP
-59	0	7	Suivre la qualité d’un projet
+59	0	7	Exposer une API REST avec Symfony
+59	0	7	Concevoir une architecture efficace et adaptée
 59	0	7	Produire une documentation technique
-59	0	8	Proposer une série d’améliorations
+59	0	7	Suivre la qualité d’un projet
 59	0	8	Implémenter de nouvelles fonctionnalités au sein d’une application déjà initiée en suivant un plan de collaboration clair
 59	0	8	Lire et retranscrire le fonctionnement d’un morceau de code écrit par d’autres développeurs
 59	0	8	Mettre en œuvre des tests unitaires et fonctionnels
@@ -524,30 +523,31 @@ path_id	project_id	project_number	skill
 59	0	8	Analyser la qualité de code et la performance d’une application
 59	0	8	Établir un plan pour réduire la dette technique d’une application
 59	0	8	Fournir des patchs correctifs lorsque les tests le suggèrent
+59	0	8	Proposer une série d’améliorations
 59	0	9	Sélectionner des sources d’information pertinentes pour un certain ensemble de technologies
 59	0	9	Mettre en place un tableau de bord de veille technologique
-410	0	1	Définir une stratégie d'apprentissage
 410	0	1	Identifier les compétences requises pour devenir architecte logiciel
+410	0	1	Définir une stratégie d'apprentissage
 410	0	2	Extraire les besoins d'un projet depuis un brief business ou de réunions avec les clients
 410	0	2	Communiquer les guidelines du scope fonctionnel d'un projet aux parties prenantes
-410	0	3	Évaluer la pertinence des architectures d'une entreprise par rapport aux besoins business
-410	0	3	Justifier la valeur et la faisabilité d'un project technique
 410	0	3	Proposer une première stack technologique pour une application
 410	0	3	Recenser les risques techniques et les limitations d'un projet
 410	0	3	Répertorier les technologies et fonctionnalités d'une infrastructure existante
+410	0	3	Évaluer la pertinence des architectures d'une entreprise par rapport aux besoins business
+410	0	3	Justifier la valeur et la faisabilité d'un project technique
 410	0	4	Recommander des produits et services pour supporter des conceptions architecturales
 410	0	4	Surveiller le marché pour proposer des solutions architecturales optimisées
 410	0	4	Évaluer la pertinence des architectures d'une entreprise par rapport aux besoins business
+410	0	5	Elaborer des modèles, principes et normes d'architecture
 410	0	5	Concevoir des systèmes maintenables pour des plateformes web, cloud, ou mobile.
 410	0	5	Définir la structure, le comportement et les interactions d'une application
-410	0	5	Elaborer des modèles, principes et normes d'architecture
 410	0	6	Analyser l'impact d'une dette technique existante sur la portée d'un nouveau projet
 410	0	6	Concevoir la représentation architecturale d'entreprise avec des techniques standards
-410	0	7	Recommander une roadmap optimale
 410	0	7	S'assurer de la sécurité et de la stabilité opérationnelle avec un plan d'implémentation
-410	0	8	Définir des tests orientés business pour satisfaire les demandes du client
-410	0	8	Définir des solutions systèmes logiques et physiques via une documentation d'architecture
+410	0	7	Recommander une roadmap optimale
 410	0	8	Justifier des choix de solutions architecturales
+410	0	8	Définir des solutions systèmes logiques et physiques via une documentation d'architecture
+410	0	8	Définir des tests orientés business pour satisfaire les demandes du client
 410	0	9	Assurer l'implémentation de spécifications fonctionnelles requises dans l'architecture
 410	0	9	Implémenter des stratégies de mitigation de risques associés à l'architecture
 410	0	9	Implémenter un référentiel de gouvernance d'architecture
@@ -555,22 +555,22 @@ path_id	project_id	project_number	skill
 410	0	10	Assurer l'amélioration continue des pratiques de code
 410	0	10	Coordonner les ressources de l'équipe de développement grâce aux compétences requises
 410	0	10	Déterminer les tâches de développement nécessaires et répartissez-les dans l'équipe
-410	0	11	Implémenter et tester un POC pour valider les choix techniques avec les parties prenantes
 410	0	11	Assurer l'amélioration continue pendant l'implémentation
 410	0	11	Assurer la conformité des livrables avec les demandes produit
+410	0	11	Implémenter et tester un POC pour valider les choix techniques avec les parties prenantes
 410	0	12	Adapter une solution d'architecture en fonction des nouvelles contraintes
 410	0	12	Justifier les décisions de compromis entre plusieurs demandes business
-150	0	1	Sélectionner des sources d’information pertinentes pour un certain ensemble de technologies
 150	0	1	Partager des bonnes pratiques avec une équipe projet
 150	0	1	Utiliser des sources d'informations fiables et pertinentes
 150	0	1	Mettre en place un tableau de bord de veille technologique
-150	0	2	Structurer le contenu d'un site Web pour favoriser son référencement naturel
-150	0	2	Sélectionner les technologies adaptées au produit développé
-150	0	2	Analyser la performance d'un site Web
-150	0	2	Garantir le respect d'une charte graphique
+150	0	1	Sélectionner des sources d’information pertinentes pour un certain ensemble de technologies
 150	0	2	Créer un site Web avec un système de gestion de contenu
-150	0	3	Garantir le respect des normes de qualité Web dans le développement du produit
+150	0	2	Analyser la performance d'un site Web
+150	0	2	Sélectionner les technologies adaptées au produit développé
+150	0	2	Structurer le contenu d'un site Web pour favoriser son référencement naturel
+150	0	2	Garantir le respect d'une charte graphique
 150	0	3	Participer à la modélisation d'une base de données
+150	0	3	Garantir le respect des normes de qualité Web dans le développement du produit
 150	0	3	Contrôler la conformité d'une maquette graphique avec une maquette fonctionnelle
 150	0	4	Rédiger du contenu web en respectant une ligne éditoriale
 150	0	4	Définir une stratégie éditoriale pour garantir la cohérence des communications
@@ -605,25 +605,25 @@ path_id	project_id	project_number	skill
 150	0	10	Mettre en place des modèles de documents partagés
 150	0	10	Prémunir une équipe contre des risques de dysfonctionnements
 150	0	10	Répartir des tâches entre différents membres d'une équipe
-163	0	1	Adopter une posture d'apprentissage tout au long de la vie
 163	0	1	Participer activement à une communauté d'échanges de pratiques
-163	0	2	Recruter l’ensemble des membres de l’équipe pour constituer une équipe performante
-163	0	2	Assurer la cohésion au sein d'une équipe
+163	0	1	Adopter une posture d'apprentissage tout au long de la vie
 163	0	2	Adapter sa communication à différents corps de métier
 163	0	2	Affiner un backlog de user stories pour un développeur
-163	0	3	Participer à l'élaboration des spécifications techniques
-163	0	3	Conseiller des commanditaires sur l’optimisation des conditions de réalisation d’un projet
-163	0	3	Planifier un sprint de développement
-163	0	3	Améliorer des processus en continu en organisant régulièrement des rétrospectives
+163	0	2	Recruter l’ensemble des membres de l’équipe pour constituer une équipe performante
+163	0	2	Assurer la cohésion au sein d'une équipe
 163	0	3	Mettre en place une méthodologie de gestion de projet adaptée
-163	0	4	Planifier la mise en production d'un incrément produit
+163	0	3	Participer à l'élaboration des spécifications techniques
+163	0	3	Planifier un sprint de développement
+163	0	3	Conseiller des commanditaires sur l’optimisation des conditions de réalisation d’un projet
+163	0	3	Améliorer des processus en continu en organisant régulièrement des rétrospectives
 163	0	4	Inspecter la conformité d'un incrément produit avec des spécifications
+163	0	4	Planifier la mise en production d'un incrément produit
 163	0	5	Préparer des équipes supports au lancement d'un produit
 163	0	5	Animer une démonstration produit
-163	0	6	Analyser des données quantitatives pour mesurer la performance d'un produit
 163	0	6	Evaluer la qualité de l'UX/UI sur une interface
-163	0	6	Analyser des données qualitatives pour mesurer la performance d'un produit
 163	0	6	Synthétiser la proposition de valeur d'un produit
+163	0	6	Analyser des données quantitatives pour mesurer la performance d'un produit
+163	0	6	Analyser des données qualitatives pour mesurer la performance d'un produit
 163	0	7	Tirer les conclusions d'un cycle d'apprentissage lean
 163	0	7	Organiser un cycle d'apprentissage lean pour tester des hypothèses
 163	0	7	Recueillir les besoins de différentes parties prenantes
@@ -658,26 +658,26 @@ path_id	project_id	project_number	skill
 80	0	6	Définir des objectifs d'acquisition avec la méthode SMART
 80	0	6	Sélectionner des indicateurs pour évaluer la performance d'une campagne d'acquisition
 80	0	6	Établir une stratégie de référencement naturel et payant
-80	0	7	Fédérer une équipe autour d'un objectif commun
-80	0	7	Répartir un budget marketing et communication
+80	0	7	Élaborer un rétro-planning et un échéancier
+80	0	7	Organiser des post-tests pour évaluer l'impact d'actions marketing
 80	0	7	Rédiger un cahier des charges fonctionnel
 80	0	7	Optimiser la conversion d’une landing-page
-80	0	7	Organiser des post-tests pour évaluer l'impact d'actions marketing
-80	0	7	Élaborer un rétro-planning et un échéancier
 80	0	7	Mobiliser les ressources humaines appropriées pour réaliser un projet
-80	0	8	Négocier les conditions d'achat d'un prestataire de formation
+80	0	7	Fédérer une équipe autour d'un objectif commun
+80	0	7	Répartir un budget marketing et communication
 80	0	8	Incrémenter des variables d'ajustement pour s'adapter aux imprévus
 80	0	8	Assurer la conformité d'un projet marketing au cadre légal français
 80	0	8	Contrôler la conformité des livrables dans le respect du cadre contractuel d'un projet
 80	0	8	Mettre en place les outils de pilotage d'un projet
 80	0	8	Garantir le respect des règles de la propriété intellectuelle
 80	0	8	Rédiger des briefs pour communiquer sur l'avancement d'un projet
+80	0	8	Négocier les conditions d'achat d'un prestataire de formation
 80	0	9	Mener un audit marketing
 80	0	9	Présenter un rapport d'audit
 80	0	9	Traduire une recommandation stratégique en plan d'action
-81	0	1	Gérer un projet d'étude et de carrière
 81	0	1	Créer un plan d'apprentissage personnalisé
 81	0	1	Créer et mettre à jour votre CV
+81	0	1	Gérer un projet d'étude et de carrière
 81	0	2	Créer un plan marketing communautaire
 81	0	2	Rédiger des contenus marketing en respectant un discours de marque
 81	0	2	Créer et entretenir un calendrier de diffusion
@@ -703,9 +703,9 @@ path_id	project_id	project_number	skill
 81	0	6	Traduire un positionnement de marque par une grammaire créative
 81	0	6	Créer une vitrine pour exposer une offre de service
 81	0	7	Analyser des données marketing pour récolter des insights
+81	0	7	Recueillir les besoins en information d'une organisation marketing et communication
 81	0	7	Etablir le cahier des charges pour la mise en place d'un SIM
 81	0	7	Modéliser un parcours client pour mieux l'optimiser
-81	0	7	Recueillir les besoins en information d'une organisation marketing et communication
 81	0	8	Auditer une organisation marketing et communication
 81	0	8	Présenter un rapport d'audit à un comité de direction
 336	0	1	Élaborer un plan d'apprentissage personnalisé
@@ -739,8 +739,8 @@ path_id	project_id	project_number	skill
 82	0	1	Développer votre visibilité sur les réseaux sociaux d'entreprise
 82	0	1	Définir une stratégie d'apprentissage
 82	0	1	Créer et mettre à jour votre CV
-82	0	2	Mettre en place une veille pour rester à jour dans ses pratiques pédagogiques
 82	0	2	Documenter et partager ses expériences pour développer sa communauté d'apprentissage
+82	0	2	Mettre en place une veille pour rester à jour dans ses pratiques pédagogiques
 82	0	3	Organiser une/des séance(s) de test en amont de la formation
 82	0	3	Sélectionner et mettre en œuvre la/les méthode(s) d’évaluation la/les plus adaptée(s)
 82	0	3	Exploiter des ressources pédagogiques externes en respectant la propriété intellectuelle
@@ -790,34 +790,29 @@ path_id	project_id	project_number	skill
 86	0	9	Analyser un dispositif pédagogique
 86	0	9	Analyser un public d'apprenants pour adapter une séquence pédagogique
 86	0	10	Animer ou co-animer une activité pédagogique
-86	0	10	Responsabiliser les apprenants pour favoriser un apprentissage asynchrone autodirigé
 86	0	10	Favoriser un comportement d'échange et de bienveillance dans l'espace pédagogique
 93	0	1	Construire pas à pas son projet professionnel
 93	0	2	Décrire le métier de Gestionnaire de paie
-93	0	3	Renseigner l'outil informatique (SIRH ou tableaux de bords sociaux)
-93	0	3	Exercer une veille sociale
+93	0	3	Renseigner les informations personnelles et professionnelles des salariés sur les tableaux
+93	0	3	Exercer une veille juridique pour se tenir à jour de la réglementation
 93	0	3	Créer le dossier permanent social et juridique du client interne ou externe
 93	0	3	Surveiller les indicateurs sociaux pour conseiller le client et la direction
-93	0	4	Répercuter les changements de situation pour en assurer la conformité avec les textes
-93	0	4	Gérer l'entrée du salarié pour répondre aux obligations légales
-93	0	4	Gérer le départ du salarié pour clore légalement et définitivement la collaboration
-93	0	4	Gérer les avantages individuels et collectifs pour la mise en conformité des bulletins
-93	0	4	Gérer les temps et les évènements des salariés
-93	0	4	Accompagner dans le quotidien professionnel les éléments de la vie privée des salariés
+93	0	4	Gérer les entrées et sorties des salariés en conformité avec les obligations légales
+93	0	4	Suivre et répercuter l’évolution des avantages collectifs et individuels
+93	0	4	Suivre et renseigner les événements personnels et professionnels des salariés
 93	0	4	Gérer les réclamations du client ou du salarié pour désamorcer les situations de tension
+93	0	5	Créer le dossier de l'entreprise dans le logiciel de paie
 93	0	5	Paramétrer le plan de paie pour garantir l'exactitude des calculs et des bulletins
 93	0	5	Créer les profils des salariés pour individualiser les éléments de paie
-93	0	5	Créer le dossier de l'entreprise dans le logiciel de paie
+93	0	6	Contrôler les états de paie pour faire valider les paies par la hiérarchie
 93	0	6	Établir une paie conforme aux situations individuelles et aux obligations légales
 93	0	6	Ajuster les éléments de paie impactés par l'activité du salarié
 93	0	6	Editer la totalité des bulletins de paie et procéder au versement des salaires
-93	0	6	Contrôler les états de paie pour les faire valider
-93	0	6	Ajuster les éléments variables de rémunération
 93	0	7	Assurer le reporting social et RH
-93	0	7	Elaborer mensuellement le fichier DSN pour en assurer la bonne transmission
-93	0	7	Vérifier la présence des éditions obligatoires
-93	0	7	Editer et compiler les états de charges sociales pour les déclarer et les payer
+93	0	7	Établir la DSN Urssaf mensuelle
+93	0	7	Vérifier la présence des éditions obligatoires pour les contrôles
 93	0	7	Editer les journaux de paie
+93	0	7	Compiler les états de charges sociales à destination des organismes sociaux
 87	0	1	Construire pas à pas son projet professionnel
 87	0	2	Identifier vos compétences existantes et vos motivations pour ce métier
 87	0	2	Construire pas à pas son projet professionnel
@@ -861,14 +856,14 @@ path_id	project_id	project_number	skill
 87	0	9	Contribuer avec les responsables opérationnels à la mise en place des procédures qualité
 87	0	9	Identifier les actions correctives et préventives sur les risques
 87	0	9	Mettre en place des procédures de contrôle interne du respect du cadre légal
-87	0	10	Fédérer, en interne, autour des enjeux de l'entreprise
-87	0	10	Réaliser un état des lieux des ressources humaines de l'entreprise
 87	0	10	Organiser et synthétiser les informations
+87	0	10	Fédérer, en interne, autour des enjeux de l'entreprise
+87	0	10	Mesurer le potentiel et l’impact de la marque employeur
+87	0	10	Réaliser un état des lieux des ressources humaines de l'entreprise
+87	0	10	Rendre attractives, à l'extérieur, les valeurs identitaires de l’entreprise
+87	0	10	Concevoir les outils nécessaires à la conduite de projet GPEC
 87	0	10	Conduire une veille sur les facteurs d’évolution de l’emploi et de l’entreprise
 87	0	10	Contribuer à la promotion de la marque employeur sur les réseaux sociaux
-87	0	10	Concevoir les outils nécessaires à la conduite de projet GPEC
-87	0	10	Mesurer le potentiel et l’impact de la marque employeur
-87	0	10	Rendre attractives, à l'extérieur, les valeurs identitaires de l’entreprise
 87	0	11	Rechercher des prestataires de formation internes ou externes
 87	0	11	Apporter les évolutions nécessaires aux dispositifs de formation
 87	0	11	Déterminer la nature, la cible, la durée, le contenu des actions de formation nécessaires
@@ -879,21 +874,21 @@ path_id	project_id	project_number	skill
 90	0	1	Créer et mettre à jour votre CV
 90	0	1	Gérer un projet d'étude et de carrière
 90	0	1	Créer un plan d'apprentissage personnalisé
-90	0	2	Proposer les modes d’optimisation RH en adéquation avec le niveau d’activité
-90	0	2	Proposer de nouveaux process RH dans le cadre d’une veille sur l’évolution des métiers
-90	0	2	Identifier le mode de recrutement de nouvelles ressources humaines
 90	0	2	Identifier la compétence adéquate au regard d’un contexte de recrutement donné
+90	0	2	Proposer les modes d’optimisation RH en adéquation avec le niveau d’activité
 90	0	2	Identifier les besoins RH quantitatifs et qualitatifs au sein d’une entité
+90	0	2	Identifier le mode de recrutement de nouvelles ressources humaines
+90	0	2	Proposer de nouveaux process RH dans le cadre d’une veille sur l’évolution des métiers
 90	0	3	Analyser un mode d’organisation au sein du département RH
 90	0	3	Proposer une solution permettant d’atteindre les objectifs du service
 90	0	3	Motiver et susciter l’adhésion autour d’un projet
-90	0	4	Réaliser une enquête auprès des salariés afin d’évaluer l’adhésion au projet d’entreprise
-90	0	4	Appliquer les règles adéquates dans le cadre du fonctionnement d’une unité de travail
 90	0	4	Analyser une relation de travail d’un point de vue juridique et administratif
-90	0	4	Proposer les évolutions possibles et adaptées aux contraintes de l'entreprise
-90	0	4	Identifier les usages de rémunération
-90	0	4	Analyser la pyramide de rémunérations
+90	0	4	Réaliser une enquête auprès des salariés afin d’évaluer l’adhésion au projet d’entreprise
 90	0	4	Proposer un plan d’action
+90	0	4	Analyser la pyramide de rémunérations
+90	0	4	Proposer les évolutions possibles et adaptées aux contraintes de l'entreprise
+90	0	4	Appliquer les règles adéquates dans le cadre du fonctionnement d’une unité de travail
+90	0	4	Identifier les usages de rémunération
 90	0	5	Préconiser des axes d’amélioration des conditions de travail
 90	0	5	Réaliser une enquête auprès des salariés afin d’évaluer les conditions de travail
 90	0	5	Proposer la mise en place d’une GPEC conforme au référentiel de compétences
@@ -925,12 +920,12 @@ path_id	project_id	project_number	skill
 122	0	3	Organiser et structurer les données
 122	0	3	Elaborer des tableaux de bords de suivi
 122	0	4	Sécuriser les parcours professionnels des collaborateurs
-122	0	4	Comprendre l’actualité et les évolutions de l’entreprise, du secteur
 122	0	4	Comprendre les enjeux et projets de l’entreprise et l’intérêt d’un accord GPEC
 122	0	4	Construire une relation de partenariat avec le management, les IRP et la direction
+122	0	4	Comprendre l’actualité et les évolutions de l’entreprise, du secteur
+122	0	5	Élaborer un référentiel métier
 122	0	5	Conduire un diagnostic compétences
 122	0	5	Repérer et déployer les dispositifs de validation de compétences
-122	0	5	Élaborer un référentiel métier
 122	0	5	Mettre en place une démarche de transfert des savoir-faire
 122	0	5	Réaliser un bilan quantitatif des effectifs
 122	0	6	Adapter sa pédagogie aux objectifs et aux publics visés
@@ -973,9 +968,9 @@ path_id	project_id	project_number	skill
 143	0	2	Se positionner avec la bonne distance par rapport à une personne accompagnée
 143	0	2	Appliquer une déontologie dans sa pratique de conseil
 143	0	3	Utiliser des outils de pilotage pour suivre des dossiers d’accompagnement
+143	0	4	Développer un réseau de partenaires locaux
 143	0	4	Participer activement à une communauté d'échanges de pratiques
 143	0	4	Réaliser une veille du marché de l'emploi sur un secteur ou un territoire
-143	0	4	Développer un réseau de partenaires locaux
 143	0	5	Réaliser un diagnostic de la situation professionnelle d'une personne accompagnée
 143	0	5	Orienter une personne accompagnée vers les interlocuteurs et dispositifs adéquats
 143	0	5	Établir l'action à conduire en fonction de la demande et des contraintes
@@ -993,15 +988,15 @@ path_id	project_id	project_number	skill
 143	0	9	Animer des ateliers d'évolution professionnelle en présentiel ou en ligne
 143	0	10	Aider à lever les situations de blocage des personnes accompagnées
 143	0	10	Gérer les situations conflictuelles et les comportements inadaptés de bénéficiaires
-143	0	10	Proposer des outils clé en main lorsque la personne accompagnée est peu autonome
 143	0	10	Identifier les limites de son intervention pour solliciter les experts adéquats
+143	0	10	Proposer des outils clé en main lorsque la personne accompagnée est peu autonome
+125	0	1	Décrire le rôle de chef de projet SI dans son contexte
 125	0	1	Adopter une posture d'apprentissage tout au long de la vie
 125	0	1	Préparer un entretien de recrutement pour un rôle de Chef de Projet SI
-125	0	1	Décrire le rôle de chef de projet SI dans son contexte
-125	0	2	Prendre en compte les propositions et les retours des acteurs sur un projet SI
-125	0	2	Analyser un besoin client et son impact sur un SI
 125	0	2	Établir une proposition formalisée d'un projet SI
+125	0	2	Prendre en compte les propositions et les retours des acteurs sur un projet SI
 125	0	2	Formuler des propositions cohérentes face à un besoin client et les spécificités d'un SI
+125	0	2	Analyser un besoin client et son impact sur un SI
 125	0	3	Assister la maîtrise d'ouvrage
 125	0	3	Proposer une solution technique à un besoin client
 125	0	4	Établir le périmètre d'un projet SI
@@ -1029,15 +1024,15 @@ path_id	project_id	project_number	skill
 102	0	1	Personnaliser un programme de formation
 102	0	2	Identifier vos compétences existantes et vos motivations pour ce métier
 102	0	2	Construire pas à pas son projet professionnel
-102	0	3	Configurer un pare-feu
 102	0	3	Configurer des VLAN avec un switch
 102	0	3	Configurer un serveur Linux sécurisé
 102	0	3	Installer une infrastructure virtuelle
-102	0	3	Sécuriser Windows avec Active Directory
 102	0	3	Sécuriser un serveur web Apache
+102	0	3	Sécuriser Windows avec Active Directory
+102	0	3	Configurer un pare-feu
 102	0	4	Définir les exigences de sécurité
-102	0	4	Rédiger des tests de sécurité
 102	0	4	Détecter les vulnérabilités dans le code
+102	0	4	Rédiger des tests de sécurité
 102	0	5	Conduire des tests d'intrusion
 102	0	5	Rédiger un plan d'audit
 102	0	6	Configurer la journalisation des éléments du SI
@@ -1074,80 +1069,53 @@ path_id	project_id	project_number	skill
 319	0	8	Assurer une veille technologique sur les services et les produits innovants
 319	0	8	Comprendre son environnement professionnel et anticiper ses évolutions
 319	0	8	Savoir préconiser l’acquisition de matériel informatique et numérique
-414	0	1	Personnaliser un programme de formation
-414	0	1	Créer et mettre à jour votre CV
-414	0	1	Fixer des objectifs clairs
-414	0	1	Comprendre votre environnement de travail
-414	0	2	Construire pas à pas son projet professionnel
-414	0	2	Identifier les grands rôles de l'AIC en fonction du type d'entreprise
-414	0	2	Identifier vos compétences existantes et vos motivations pour ce métier
-414	0	3	Câbler des points d'accès et terminaux
-414	0	3	Tester le bon fonctionnement des terminaux installés et des services associés
-414	0	3	Valider l'installation et la mise en service des appareils
-414	0	3	Administrer des postes et des comptes utilisateurs
-414	0	3	Réaliser et tester un design réseau intégrant l'ensemble des routes nécessaires
-414	0	3	Mettre sous tension des appareils
-414	0	4	Optimiser des performances réseau
-414	0	4	Sécuriser des applications informatiques
-414	0	4	Configurer et administrer des réseaux Linux
-414	0	4	Acquérir des matériels et appareils informatiques
-414	0	4	Paramétrer des dispositifs réseaux (serveurs, routeurs...)
-414	0	4	Vérifier l'installation du système
-414	0	4	Configurer et administrer des services transverses
-414	0	5	Monter un VPN entre 2 sites distants
-414	0	5	Configurer des services avancés avec Windows server et Active Directory
-414	0	5	Installer et paramétrer des SI
-414	0	6	Partager son code avec la communauté en open-source sur Git
-414	0	6	Documenter la rédaction d'un script pour permettre sa ré-utilisation ou sa modification
-414	0	6	Développer des programmes courts en Python afin d'automatiser des tâches répétitives
-414	0	6	Identifier des tâches automatisables
-414	0	6	Exécuter des tâches répétives sur des serveurs de façon automatique à partir de scripts
-414	0	7	Gérer des alertes d'incidents informatiques
-414	0	7	Installer et mettre en place un outil de monitoring (= supervision)
-414	0	7	Piloter la télémaintenance (détecter les incidents)
-414	0	8	Gérer des migrations informatiques
-414	0	8	Mettre à jour un réseau et des SI
-414	0	8	Planifier des interventions
-414	0	8	Réaliser des interventions techniques
-414	0	9	Tester une solution de sauvegarde (backup)
-414	0	9	Rédiger un rapport d'intervention et de traitement d'incident
-414	0	9	Résoudre des incidents signalés
-414	0	10	Veiller au bon fonctionnement et à la sécurité du réseau informatique en cloud
-414	0	10	Interconnecter un centre de données et l’infrastructure dans le Cloud
-414	0	10	Installer, configurer et administrer un réseau dans un environnement cloud
-414	0	10	Installer, configurer et administrer un système d’exploitation dans un environnement cloud
-414	0	10	Mettre en place un réseau et système dans un environnement cloud
-414	0	10	Sécuriser son réseau et protocoles en cloud
-414	0	11	Réaliser un CV
-414	0	12	Assimiler les demandes afin de prendre en compte les besoins
-414	0	12	Conseiller les ingénieurs réseaux dans la conception de réseau
-414	0	12	Demander l'acquisition de matériel informatique
-414	0	12	Gérer des contrats de maintenance et licences fournisseurs
-414	0	12	Installer et mettre à jour des logiciels de travail (bureautiques)
-414	0	12	Promouvoir le respect de la qualité, sécurité et sûreté à travers le règlement interne
-414	0	12	Répondre aux sollicitations de collaborateurs
-414	0	12	Analyser et identifier les solutions à fournir
-414	0	12	Apporter des informations techniques et informer des collaborateurs
-414	0	13	Analyser le système existant
-414	0	13	Préconiser des améliorations
-414	0	13	Vérifier la protection et la sécurité du réseau
-414	0	14	Encadrer des projets et pilotage du cycle de vie
+406	0	1	Construire pas à pas son projet professionnel
+406	0	2	Concevoir la topologie d'un réseau
+406	0	2	Construire un réseau TCP-IP
+406	0	3	Mettre en place le processus de support aux utilisateurs
+406	0	3	Réaliser des interventions techniques sur le SI
+406	0	4	Installer les composantes d'un SI
+406	0	4	Modéliser un système d'information
+406	0	5	Installer un service FTP sécurisé
+406	0	5	Installer un service HTTPD sécurisé
+406	0	5	Protéger les services web d’un serveur
+406	0	6	Installer un annuaire d'entreprise
+406	0	6	Installer un système d'exploitation en version serveur
+406	0	6	Administrer des postes et des comptes utilisateurs
+406	0	6	Configurer des partages de données
+406	0	6	Configurer le VPN
+406	0	7	Configurer des services réseaux
+406	0	7	Configurer des équipements d'interconnexion
+406	0	7	Optimiser des performances réseau
+406	0	7	Mettre en place un réseau local virtuel
+406	0	8	Exploiter les données de supervision
+406	0	8	Mettre en place un outil de supervision du SI
+406	0	8	Superviser les équipements du SI
+406	0	9	Rédiger un rapport d'intervention et de traitement d'incident
+406	0	9	Installer une solution de sauvegarde efficace
+406	0	9	Restaurer une sauvegarde
+406	0	10	Auditer la sécurité d’ un système d’exploitation
+406	0	11	Sécuriser un système d'informations
+406	0	11	Garantir le respect des règles de sécurité du SI
+406	0	11	Sécuriser l'architecture réseau
+406	0	12	Assurer une veille technologique sur les différents aspects de l'infrastructure
+406	0	12	Pilotez un projet d'amélioration du SI
+172	0	1	Create a strategic digital transformation roadmap
 172	0	1	Perform an organizational analysis to identify digital transformation opportunities
 172	0	1	Pitch a digital transformation strategy to key stakeholders
 172	0	1	Spread an innovation-driven culture within a business
-172	0	1	Create a strategic digital transformation roadmap
-172	0	2	Leverage digital technologies and innovation to develop a business model
 172	0	2	Plan the transformation of an organizational structure
-172	0	3	Monitor business performance by using data
+172	0	2	Leverage digital technologies and innovation to develop a business model
 172	0	3	Identify new business opportunities by using consumer centric data
-172	0	3	Train coworkers to make data driven decisions
 172	0	3	Define metrics related to a sector
+172	0	3	Monitor business performance by using data
+172	0	3	Train coworkers to make data driven decisions
 172	0	4	Choose an appropriate technology to solve a problem
 172	0	4	Assess cybersecurity risks within a business
 172	0	4	Communicate efficiently with technical stakeholders
 172	0	4	Analyze the impact of technological change within a sector
-172	0	5	Improve communication within an organization using appropriate digital tools
 172	0	5	Create a change management plan
+172	0	5	Improve communication within an organization using appropriate digital tools
 167	0	1	Use a pre-trained model in the cloud
 167	0	2	Conduct a univariate statistical analysis
 167	0	2	Use specialized Python libraries to conduct an exploratory data analysis
@@ -1195,26 +1163,26 @@ path_id	project_id	project_number	skill
 146	0	5	Transform a dataset for analysis
 146	0	6	Perform a statistical test
 146	0	6	Carry out a hierarchical clustering
-146	0	7	Select the appropriate model to meet business requirements
 146	0	7	Apply a modeling technique
 146	0	7	Perform a classification with the k-means algorithm
 146	0	7	Select the appropriate classification algorithm
+146	0	7	Select the appropriate model to meet business requirements
 146	0	7	Describe a dataset through principal component analysis
 146	0	8	Apply an ANOVA
-146	0	8	Apply a linear regression
 146	0	8	Select the appropriate model to meet business requirements
+146	0	8	Apply a linear regression
 146	0	9	Identify project needs to create a relevant dashboard
 146	0	9	Create a dashboard to inform and assist decision making
-76	0	1	Communicate using UX vocabulary
 76	0	1	Apply a human-centered approach to design
-76	0	1	Give a compelling presentation using storytelling principles
 76	0	1	Use mind mapping to express ideas
+76	0	1	Communicate using UX vocabulary
+76	0	1	Give a compelling presentation using storytelling principles
+76	0	2	Create meaningful personas
 76	0	2	Conduct field research to understand user needs
 76	0	2	Write research documentation and conduct interviews
 76	0	2	Map a customer journey
 76	0	2	Analyze and synthesize actual user practices
 76	0	2	Identify the key discoveries and limits of a research study
-76	0	2	Create meaningful personas
 76	0	3	Use card sorting to understand mental models
 76	0	3	Frame and conduct usability studies
 76	0	4	Create a clickable prototype
@@ -1240,13 +1208,13 @@ path_id	project_id	project_number	skill
 76	0	10	Showcase your work through a portfolio and case studies
 76	0	10	Design and manage your online presence
 141	0	1	Develop a personalized learning plan and toolset
-141	0	2	Implement a responsive layout
 141	0	2	Integrate web content according to a mockup using HTML & CSS
 141	0	2	Track a code project with version control on GitHub
+141	0	2	Implement a responsive layout
 141	0	2	Set up a development environment
+141	0	3	Ensure design consistency on a website
 141	0	3	Develop a navigation structure for a website
 141	0	3	Implement design effects using CSS & Sass
-141	0	3	Ensure design consistency on a website
 141	0	4	Write current, maintainable code in HTML & CSS
 141	0	4	Ensure the accessibility of a website according to WCAG2.0
 141	0	4	Analyze the search engine performance of a website
@@ -1256,21 +1224,21 @@ path_id	project_id	project_number	skill
 141	0	5	Create a test plan for an application
 141	0	5	Interact with a web service using JavaScript
 141	0	5	Manage website events with JavaScript
-141	0	6	Store data securely using NoSQL
 141	0	6	Enable users to interact with a database using CRUD operations
 141	0	6	Implement a data model
-141	0	7	Build a full-stack solution
-141	0	7	Store data securely using SQL
+141	0	6	Store data securely using NoSQL
 141	0	7	Send personalized content to a client
 141	0	7	Manage a user session
+141	0	7	Build a full-stack solution
+141	0	7	Store data securely using SQL
 315	0	1	Develop a personalized learning plan and toolset
-315	0	2	Implement a responsive layout
 315	0	2	Integrate web content according to a mockup using HTML & CSS
 315	0	2	Track a code project with version control on GitHub
+315	0	2	Implement a responsive layout
 315	0	2	Set up a development environment
+315	0	3	Ensure design consistency on a website
 315	0	3	Develop a navigation structure for a website
 315	0	3	Implement design effects using CSS & Sass
-315	0	3	Ensure design consistency on a website
 315	0	4	Program using fundamentals of JavaScript
 315	0	5	Write HTML, CSS and JavaScript syntax
 315	0	6	Ensure the accessibility of a website
@@ -1303,43 +1271,43 @@ path_id	project_id	project_number	skill
 315	0	14	Code in JavaScript with functional programming
 315	0	14	Deploy a front-end web app
 315	0	14	Refactor an application to reduce technical debt
-166	0	1	Set up a system for staying up to date with Salesforce innovations
 166	0	1	Identify tools and resources for staying up to date with technology
+166	0	1	Identify the features of the Salesforce platform
+166	0	1	Set up a system for staying up to date with Salesforce innovations
 166	0	1	Create a plan for completing your learning path
 166	0	1	Describe the role of a Salesforce professional
 166	0	1	Describe a CRM system and its components
-166	0	1	Identify the features of the Salesforce platform
 166	0	2	Audit existing configurations
 166	0	2	Use CRM to improve business efficiency
 166	0	2	Use an automation tool to improve a business process
 166	0	2	Update existing configurations
 166	0	2	Update a Lightning GUI
-166	0	3	Analyze a client's requirements
-166	0	3	Choose an appropriate solution for a technical problem
 166	0	3	Define a data model and its business rules
 166	0	3	Formalize a solution and its specifications to meet a client's requirements
+166	0	3	Analyze a client's requirements
+166	0	3	Choose an appropriate solution for a technical problem
 166	0	4	Build a collaborative code project
 166	0	4	Program using Java fundamentals
-166	0	5	Produce a test execution report
 166	0	5	Implement integration tests
-166	0	5	Fix an application according to a test execution report
+166	0	5	Produce a test execution report
 166	0	5	Implement unit tests
+166	0	5	Fix an application according to a test execution report
+166	0	6	Update the DOM using JavaScript
 166	0	6	Create a front-end interface for an application
 166	0	6	Respect best practices in using HTML and CSS
 166	0	6	Ensure the graphical consistency of a web site
-166	0	6	Update the DOM using JavaScript
 166	0	7	Integrate wireframes into a design process
 166	0	7	Write technical and functional documentation for an application
-166	0	8	Complete a unit and integration test suite
 166	0	8	Work in sprints
+166	0	8	Complete a unit and integration test suite
 166	0	8	Define a backlog
 166	0	8	Set up a backlog
 166	0	9	Implement improvements requested by a client
 166	0	9	Optimize a back-end resource usage
-166	0	10	Define the security model of an Apex application
 166	0	10	Design the data model of an Apex application
 166	0	10	Design the technical architecture of an Apex application
 166	0	10	Implement the data model of an Apex application
+166	0	10	Define the security model of an Apex application
 166	0	11	Select a suitable implementation approach for the development of an application
 166	0	11	Develop an Apex back end
 166	0	11	Respect the Salesforce industry standard practices
@@ -1388,10 +1356,10 @@ path_id	project_id	project_number	skill
 207	0	3	List functionalities requested by the client
 207	0	3	Select a suitable technical solution
 207	0	3	Write detailed specifications
-207	0	4	Produce a test execution report
 207	0	4	Implement integration tests
-207	0	4	Fix an application according to a test execution report
+207	0	4	Produce a test execution report
 207	0	4	Implement unit tests
+207	0	4	Fix an application according to a test execution report
 207	0	5	Develop a Spring Boot application
 207	0	5	Justify the application design & programming languages selected
 207	0	5	Respect industry standard coding practices
@@ -1399,9 +1367,9 @@ path_id	project_id	project_number	skill
 207	0	6	Produce a database design schema
 207	0	6	Implement a data schema in a database
 207	0	7	Implement REST APIs using best practices
-207	0	8	Fix faults reported by the customer on an application
-207	0	8	Complete a Unit and Integration test suite to account for changes
 207	0	8	Produce technical and functional documentation for the application
+207	0	8	Complete a Unit and Integration test suite to account for changes
+207	0	8	Fix faults reported by the customer on an application
 207	0	8	Improve an application as per a customer request
 207	0	9	Create a microservice for an application
 207	0	9	Create a segmented REST API
@@ -1415,22 +1383,22 @@ path_id	project_id	project_number	skill
 156	0	3	Implement integration tests for a new functionality in a C# application
 156	0	3	Implement unit tests for a new functionality in a C# application
 156	0	4	Analyze customer requirements
+156	0	4	List functionalities required by the customer
 156	0	4	Select a suitable technical solution
 156	0	4	Write detailed specifications
-156	0	4	List functionalities required by the customer
 156	0	5	Respect good coding practices
-156	0	5	Select suitable programming languages for an MVC web application
 156	0	5	Develop an application with the functionalities expected by the client
+156	0	5	Select suitable programming languages for an MVC web application
+156	0	6	Produce the design schema of an application database
 156	0	6	Design the technical architecture of an application database using an ERD
 156	0	6	Implement a data schema in a database
-156	0	6	Produce the design schema of an application database
 156	0	7	Implement REST APIs using best practices
 156	0	8	Complete a Unit and Integration test suite to account for changes
 156	0	8	Fix faults reported by the customer on an application
 156	0	8	Produce technical and functional documentation for the application
 156	0	8	Improve an application as per a customer request
-156	0	9	Identify tools and resources for staying up to date with technology
 156	0	9	Set up a system for staying up to date with technology
+156	0	9	Identify tools and resources for staying up to date with technology
 156	0	10	Create a microservice for an application
 156	0	10	Create a segmented REST API
 156	0	10	Implement Agile methodology to manage your code project
@@ -1455,23 +1423,23 @@ path_id	project_id	project_number	skill
 74	0	6	Set up a first database
 74	0	6	Use a schema when designing a database
 74	0	6	Design a database schema
-74	0	7	Build an app using persistent data storage, local notifications, and 3rd party libraries
-74	0	7	Build a UI using table view and tab bar controller
 74	0	7	Produce a test execution report
 74	0	7	Provide a fix when suggested by the test execution report
+74	0	7	Build an app using persistent data storage, local notifications, and 3rd party libraries
+74	0	7	Build a UI using table view and tab bar controller
 74	0	7	Implement unit tests
 74	0	7	Implement integration tests
 74	0	8	Read and generate online documentation
 74	0	8	Write documentation destined for non-technical users
-74	0	9	Select the appropriate programming languages for the development of the application
 74	0	9	Develop an application offering the features expected by the client
 74	0	9	Respect Industry Standard development practices
-74	0	10	Produce technical and functional documentation for the application
+74	0	9	Select the appropriate programming languages for the development of the application
 74	0	10	Complete a suite of unit and integration tests to reflect changes made
 74	0	10	Correct application faults reported by the customer
 74	0	10	Provide feature enhancements requested by the customer
-74	0	11	Identify tools and resources for staying up to date with technology
+74	0	10	Produce technical and functional documentation for the application
 74	0	11	Set up a system for staying up to date with technology
+74	0	11	Identify tools and resources for staying up to date with technology
 104	0	1	Create and update your CV or resume
 104	0	1	Set clear goals
 104	0	2	Write documentation destined for non-technical users
@@ -1497,12 +1465,12 @@ path_id	project_id	project_number	skill
 104	0	8	Deploy Rails apps
 104	0	8	Design wireframes for web or mobile
 104	0	8	Create a Rails app
-104	0	9	Identify tools and resources for staying up to date with technology
 104	0	9	Set up a system for staying up to date with technology
+104	0	9	Identify tools and resources for staying up to date with technology
 75	0	1	Create and update your CV or resume
 75	0	1	Set clear goals
-75	0	2	Identify tools and resources for staying up to date with technology
 75	0	2	Set up a system for staying up to date with technology
+75	0	2	Identify tools and resources for staying up to date with technology
 75	0	3	List functionalities requested by the client
 75	0	3	Detail project specifications
 75	0	3	Choose an appropriate technical solution
@@ -1517,30 +1485,30 @@ path_id	project_id	project_number	skill
 75	0	5	Use a schema when designing a database
 75	0	5	Design a database schema
 75	0	6	Select the appropriate programming languages for the development of the application
-75	0	6	Launch an application on the emulator or on real equipment
-75	0	6	Master the life cycle of an application and its components
-75	0	6	Develop an application offering the features expected by the client
 75	0	6	Debug Android code
 75	0	6	Install and use an external library
+75	0	6	Launch an application on the emulator or on real equipment
+75	0	6	Master the life cycle of an application and its components
+75	0	6	Respect Industry Standard development practices
 75	0	6	Use the Android Studio environment
 75	0	6	Write a Java unit test
-75	0	6	Respect Industry Standard development practices
+75	0	6	Develop an application offering the features expected by the client
 75	0	7	Implement integration tests
-75	0	7	Program and run a background task
-75	0	7	Architect a user interface in XML
+75	0	7	Provide a fix when suggested by the test execution report
+75	0	7	Produce a test execution report
 75	0	7	Write an Android unit test
 75	0	7	Use widgets for user interactions
-75	0	7	Produce a test execution report
+75	0	7	Program and run a background task
 75	0	7	Write an interface unit test
-75	0	7	Provide a fix when suggested by the test execution report
-75	0	7	Implement unit tests
 75	0	7	Save user preferences
+75	0	7	Architect a user interface in XML
 75	0	7	Access remote data
-75	0	8	Modify an existing Android project
+75	0	7	Implement unit tests
 75	0	8	Create, manage, and show interface fragments
 75	0	8	Define and apply a global theme
 75	0	8	Show a data list with RecyclerView and an Adapter
 75	0	8	Show content in multiple languages
+75	0	8	Modify an existing Android project
 75	0	8	Configure settings of an Android project
 75	0	8	Create and show a menu
 75	0	9	Complete a suite of unit and integration tests to reflect changes made
@@ -1561,24 +1529,24 @@ path_id	project_id	project_number	skill
 411	0	3	Catalogue the technologies and functionalities of an existing infrastructure
 411	0	3	Justify the value and feasibility of a technical projet
 411	0	3	Map out technical risks and limitations for the project
-411	0	3	Assess enterprise architectures for relevance and suitability in supporting business needs
 411	0	3	Propose a preliminary technology stack for the application solution
+411	0	3	Assess enterprise architectures for relevance and suitability in supporting business needs
 411	0	4	Monitor the market for architectural solutions supporting optimization
 411	0	4	Recommend products and services in support of the architecture designs
 411	0	4	Assess architectural solutions to optimize deployment, operation & continuous enhancements
-411	0	5	Devise maintainable digital system architectures for online, cloud or mobile platforms
 411	0	5	Define the structure and behaviour of applications and their interactions
 411	0	5	Develop maintainable architecture operating models & technical design principles
-411	0	6	Analyze the impact of existing technical debt on the scope of a new project
+411	0	5	Devise maintainable digital system architectures for online, cloud or mobile platforms
 411	0	6	Design a coherent enterprise architecture representation via industry standard techniques
+411	0	6	Analyze the impact of existing technical debt on the scope of a new project
 411	0	7	Ensure maintenance of operational stability and security via system implementation plans
 411	0	7	Recommend an optimal delivery roadmap
+411	0	8	Define business driven tests to validate client requirements
 411	0	8	Justify architectural solutions to stakeholders in the context of business strategy
 411	0	8	Define logical and physical system solutions via client-facing architecture documentation
-411	0	8	Define business driven tests to validate client requirements
-411	0	9	Ensure the implementation of technical specs for required architecture functionalities
 411	0	9	Implement architectural design governance frameworks
 411	0	9	Implement risk mitigation strategies associated with the architecture
+411	0	9	Ensure the implementation of technical specs for required architecture functionalities
 411	0	10	Coordinate development team resources based on skill requirements
 411	0	10	Ensure continuous improvement of practices and code
 411	0	10	Determine necessary development tasks and their distribution among team members
@@ -1586,8 +1554,8 @@ path_id	project_id	project_number	skill
 411	0	11	Develop a fully-tested PoC to validate implementation choices to stakeholders
 411	0	11	Ensure the application of continuous integration practices during implementation
 411	0	11	Ensure the conformity of the final deliverables with product requirements
-411	0	12	Justify decisions to stakeholders when reconciling conflicting business requirements
 411	0	12	Adapt an architecture solution & its documentation according to changing constraints
+411	0	12	Justify decisions to stakeholders when reconciling conflicting business requirements
 151	0	1	Set up a system for staying up to date with technology
 151	0	1	Share good practices with a team
 151	0	1	Use reliable and relevant sources of information
@@ -1601,10 +1569,10 @@ path_id	project_id	project_number	skill
 151	0	3	Draft a model of a database with appropriate diagrams
 151	0	3	Ensure compliance with web quality standards over the course of product development
 151	0	4	Write content which follows a specific editorial line
-151	0	4	Design an operational marketing plan
-151	0	4	Follow an editorial calendar
 151	0	4	Create a style guide
 151	0	4	Define an editorial strategy to ensure consistency in communication efforts
+151	0	4	Design an operational marketing plan
+151	0	4	Follow an editorial calendar
 151	0	5	Benchmark competitors
 151	0	5	Define KPIs
 151	0	5	Define the scope of a project
@@ -1613,36 +1581,36 @@ path_id	project_id	project_number	skill
 151	0	6	Analyze the needs of a client or end users
 151	0	6	Define the functional scope of the project
 151	0	6	Choose the appropriate project methodology
-151	0	7	Analyze the feasibility of a project by taking the constraints and risks into account
 151	0	7	Identify the human and technical resources and the budget required for a digital project
+151	0	7	Analyze the feasibility of a project by taking the constraints and risks into account
+151	0	8	Present a business proposal
 151	0	8	Ensure a project complies with the relevant legal framework
 151	0	8	Justify your methodology, technical and design choices
-151	0	8	Present a business proposal
 151	0	8	Write a business proposal
-151	0	9	Ensure quantitative and qualitative project reporting to an internal/external client
 151	0	9	Plan for test and quality assurance processes
 151	0	9	Recommend and update an improvement plan of a project
 151	0	9	Document a digital project for its delivery and evolvement
+151	0	9	Ensure quantitative and qualitative project reporting to an internal/external client
 151	0	9	Structure user support to optimize use of the delivered product
-151	0	10	Set up the team roster
-151	0	10	Lead productive meetings
 151	0	10	Take stock of lessons learned in a project
 151	0	10	Monitor budget expenditure closely throughout a project
 151	0	10	Streamline the division of tasks among team members
 151	0	10	Report on the progress of a project and individual contributions
 151	0	10	Monitor advances in production and adherence to a production schedule
+151	0	10	Set up the team roster
+151	0	10	Lead productive meetings
 151	0	10	Anticipate and minimize risks for the team
 151	0	10	Initiate the use of common document templates
-162	0	1	Participate in a learning community with other members of the profession
 162	0	1	Adopt a lifelong learning mindset
-162	0	2	Communicate efficiently with different professional stakeholders
+162	0	1	Participate in a learning community with other members of the profession
 162	0	2	Foster a healthy group dynamic
 162	0	2	Manage the workload of a development team
+162	0	2	Communicate efficiently with different professional stakeholders
 162	0	2	Recruit team members to build a high-performing team
 162	0	3	Select the appropriate project management methodology
 162	0	3	Plan a development sprint
-162	0	3	Improve team performance through a regular retrospective analysis of sprints
 162	0	3	Enable sponsors to make the right decisions for a project
+162	0	3	Improve team performance through a regular retrospective analysis of sprints
 162	0	3	Take part in documenting technical specifications
 162	0	4	Coordinate the live release of a new feature
 162	0	4	Check a developed feature's functionality against your documented specifications
@@ -1652,14 +1620,14 @@ path_id	project_id	project_number	skill
 162	0	6	Describe the core value proposition of a product
 162	0	6	Monitor quantitative key performance indicators
 162	0	6	Monitor qualitative key performance indicators
+162	0	7	Draw conclusions from a lean learning cycle
+162	0	7	Measure the results of an experiment
 162	0	7	Determine the needs of different stakeholders
 162	0	7	Plan a lean learning cycle to test assumptions
 162	0	7	Build an interactive prototype without the need for engineering or development resources
-162	0	7	Draw conclusions from a lean learning cycle
-162	0	7	Measure the results of an experiment
 162	0	8	Define UX methodologies to help a client through their creative process
-162	0	8	Determine the feasibility of a project
 162	0	8	Document technical specifications
+162	0	8	Determine the feasibility of a project
 162	0	9	Get buy-in on a roadmap using data
 162	0	9	Assess a product opportunity through a business case
 162	0	9	Present a product vision throughout an organization
@@ -1668,14 +1636,14 @@ path_id	project_id	project_number	skill
 287	0	1	Describe the role of digital marketing in a modern business
 287	0	1	Identify new content trends
 287	0	1	Adopt a lifelong learning mindset
+287	0	2	Describe an audience using data
+287	0	2	Segment customers
 287	0	2	Identify customer needs
 287	0	2	Complete a competitive analysis
-287	0	2	Segment customers
-287	0	2	Describe an audience using data
-287	0	3	Create emails using basic HTML and CSS
-287	0	3	Set up automated emails based on triggers in user behavior
 287	0	3	Edit landing pages on a website
+287	0	3	Create emails using basic HTML and CSS
 287	0	3	Report on the effectiveness of a lead generation campaign and goal conversions
+287	0	3	Set up automated emails based on triggers in user behavior
 287	0	4	Develop an editorial calendar
 287	0	4	Drive traffic to your website by integrating SEO best practices into content production
 287	0	4	Report on the effectiveness of a content marketing strategy
@@ -1693,20 +1661,20 @@ path_id	project_id	project_number	skill
 287	0	7	Report on the effectiveness of a social media strategy
 144	0	1	Create your personalized learning plan
 144	0	1	Set clear goals
+144	0	2	Determine the key skills of a career coach
 144	0	2	Develop an appropriate professional relationship and distance with someone being coached
 144	0	2	Provide advice while following a code of ethics at all times
-144	0	2	Determine the key skills of a career coach
 144	0	3	Establish record-keeping and processes to manage a large database of clients
 144	0	4	Build a professional network
 144	0	4	Monitor the job market in a specific sector or area
 144	0	4	Participate in a learning community with other career coaches
+144	0	5	Establish a neutral, caring, and confidential relationship with clients
+144	0	5	Establish the next steps for a client to take, based on their needs and constraints
 144	0	5	Foster client autonomy and self-sufficiency
 144	0	5	Mobilize a range of interview techniques
 144	0	5	Refer a client to a bank of resources and relevant support programmes
-144	0	5	Establish a neutral, caring, and confidential relationship with clients
-144	0	5	Establish the next steps for a client to take, based on their needs and constraints
-144	0	6	Identify a client's motivational drivers
 144	0	6	Assess the skills and experiences of a client
+144	0	6	Identify a client's motivational drivers
 144	0	7	Foster job placement by recommending appropriate jobsearch tools
 144	0	8	Advise a client on how to cover their living costs during a jobsearch period
 144	0	8	Review a client's career plan in order to adapt it to potential personal constraints
@@ -1714,7 +1682,7 @@ path_id	project_id	project_number	skill
 144	0	9	Design in person or online workshops
 144	0	9	Lead in person or online workshops
 144	0	9	Speak at events about your area of expertise
+144	0	10	Support clients in identifying and overcoming obstacles
+144	0	10	Create ready-to-use templates for clients lacking self-sufficiency
 144	0	10	Manage conflicts and identify inappropriate behaviour
 144	0	10	Refer a client to appropriate alternative support when necessary
-144	0	10	Create ready-to-use templates for clients lacking self-sufficiency
-144	0	10	Support clients in identifying and overcoming obstacles

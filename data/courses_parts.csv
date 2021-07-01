@@ -2,11 +2,11 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4929811	1		Prenez en main votre fichier Excel		
 4929811	2		Travaillez sur votre fichier Excel		
 4929811	3		Manipulez des données sur Excel		
+5870121	1		Préparez vos contenus et prenez en main les outils		
+5870121	2		Créez et présentez votre diaporama		
 5870066	1		Maîtrisez les fondamentaux d’un traitement de texte		
 5870066	2		Utilisez les fonctionnalités de base du traitement de texte		
 5870066	3		Optimisez votre productivité		
-5870121	1		Préparez vos contenus et prenez en main les outils		
-5870121	2		Créez et présentez votre diaporama		
 5737801	1		Utilisez du matériel informatique		
 5737801	2		Repérez-vous sur votre ordinateur		
 5737801	3		Créez du contenu sur votre ordinateur		
@@ -18,6 +18,9 @@ course_id	part_number	part_name	part_title	part_description	part_url
 5870131	1		Découvrez les outils digitaux de communication et de collaboration		
 5870131	2		Exprimez-vous en ligne		
 5870131	3		Collaborez en ligne		
+7168336	1		Prenez en main votre fichier Excel		
+7168336	2		Travaillez sur votre fichier Excel		
+7168336	3		Manipulez des données sur Excel		
 825502	1		Prise en main d'Excel		
 825502	2		Analyse des données et dynamisme du classeur		
 825502	3		Les bases du langage VBA		
@@ -46,9 +49,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6380896	1		Organisez votre prospection		
 6380896	2		Menez un entretien de prospection		
 6380896	3		Suivez les résultats de votre prospection		
-5192206	1		Préparez votre plan d’action de growth hacking		
-5192206	2		Appliquez l’entonnoir de conversion pour créer vos hacks		
-5192206	3		Structurez votre méthode de growth hacking		
 4963261	1		Appréhendez le contexte des reportings et des budgets		
 4963261	2		Analysez le passé avec le reporting		
 4963261	3		Anticipez l'avenir avec le budget		
@@ -60,6 +60,9 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6316366	1		Identifiez les opportunités de fidélisation		
 6316366	2		Développez une expérience client irréprochable		
 6316366	3		Animez votre portefeuille clients		
+5192206	1		Préparez votre plan d’action de growth hacking		
+5192206	2		Appliquez l’entonnoir de conversion pour créer vos hacks		
+5192206	3		Structurez votre méthode de growth hacking		
 5185316	1		Respectez vos obligations comptables		
 5185316	2		Facturez vos clients pour être payé		
 5185316	3		Sécurisez vos finances de freelance		
@@ -73,6 +76,9 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4781491	2		Préparez votre prototype		
 4781491	3		Construisez et testez votre prototype		
 4781491	4		Tirez les apprentissages de votre expérience		
+7080836	1		Adoptez les bons réflexes en télétravail		
+7080836	2		Organisez-vous pour télétravailler efficacement		
+7080836	3		Collaborez à distance		
 3044291	1		Découvrez vos talents d'innovateur		
 3044291	2		Apprenez à reconnaître des opportunités		
 3044291	3		Comment analyser vos idées		
@@ -94,9 +100,11 @@ course_id	part_number	part_name	part_title	part_description	part_url
 3199026	2		Les premières étapes du Business Plan		
 3199026	3		Le client au coeur du Business Plan		
 3199026	4		Construire son financier		
-7080836	1		Adoptez les bons réflexes en télétravail		
-7080836	2		Organisez-vous pour télétravailler efficacement		
-7080836	3		Collaborez à distance		
+2954176	1		Convertissez votre idée en nombres		
+2954176	2		Produisez les états financiers de votre startup		
+2954176	3		Le Business Plan : écrivez l’histoire		
+2954176	4		Maîtrisez l’art du pitch		
+2954176	5		Early stage management : quelques principes de survie en environnement hostile		
 2101626	1		Qu’est-ce qu’une start-up ?		
 2101626	2		Qu’est-ce que l’écosystème start-up ?		
 2101626	3		Les premiers pas vers l'entrepreneuriat		
@@ -117,14 +125,14 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4449026	3		Manipulez les données grâce à l'algèbre relationnelle		
 4449026	4		Appliquez l'algèbre relationnelle avec SQL		
 4449026	5		Découvrez d'autres fonctionnalités pour vos requêtes SELECT		
-4011851	1		Identifiez les possibilités du Machine Learning		
-4011851	2		Identifiez les techniques et outils du Machine Learning		
-4011851	3		Entraînez votre premier algorithme de Machine Learning		
-4011851	4		Appréhendez les limites du Machine Learning		
 4525256	1		Mettez en place votre environnement de travail R		
 4525256	2		Utilisez les différents objets R		
 4525256	3		Sélectionnez des éléments dans les objets R		
 4525256	4		Manipulez des données avec R		
+4011851	1		Identifiez les possibilités du Machine Learning		
+4011851	2		Identifiez les techniques et outils du Machine Learning		
+4011851	3		Entraînez votre premier algorithme de Machine Learning		
+4011851	4		Appréhendez les limites du Machine Learning		
 4452741	1		Mettez en place votre environnement de travail		
 4452741	2		Initiez-vous à la librairie Numpy		
 4452741	3		Manipulez des données avec Numpy et Matplotlib		
@@ -146,11 +154,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4297166	2		Réalisez des calculs massivement parallèles avec MapReduce		
 4297166	3		Effectuez des calculs distribués sous forme de graphes avec Spark		
 4297166	4		Passez à l'échelle dans le cloud		
-4525306	1		Découvrez les statistiques inférentielles		
-4525306	2		Réalisez une estimation ponctuelle		
-4525306	3		Déterminez des intervalles de confiance		
-4525306	4		Réalisez des tests statistiques		
-4525306	5		Conclusion		
 4525296	1		Explorez les espaces probabilisés		
 4525296	2		Apprenez à manipuler les variables aléatoires		
 4525296	3		Découvrez les couples de variables aléatoires		
@@ -161,6 +164,11 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4470531	1		Améliorez l’aspect visuel de vos images		
 4470531	2		Détectez et décrivez efficacement les zones d’intérêts dans une image		
 4470531	3		Classifiez les images à l’aide de réseaux de neurones convolutifs		
+4525306	1		Découvrez les statistiques inférentielles		
+4525306	2		Réalisez une estimation ponctuelle		
+4525306	3		Déterminez des intervalles de confiance		
+4525306	4		Réalisez des tests statistiques		
+4525306	5		Conclusion		
 4525371	1		Introduction		
 4525371	2		Corrigez une série temporelle des variations saisonnières		
 4525371	3		Prévoyez une série à l'aide des méthodes de lissage exponentiel		
@@ -262,14 +270,14 @@ course_id	part_number	part_name	part_title	part_description	part_url
 1603881	3		Mettez en page votre site		
 1603881	4		Découvrez des fonctionnalités évoluées		
 1603881	5		Annexes		
+4262331	1		Faites connaissance avec Python		
+4262331	2		Posez les fondations de votre programme		
+4262331	3		Manipulez des objets		
+4262331	4		Utilisez des ressources externes		
 6175841	1		Utilisez les données et les types de données dans JavaScript		
 6175841	2		Gérez la logique d'un programme en JavaScript		
 6175841	3		Écrivez du code propre et facile à maintenir		
 6175841	4		Retenez les notions du cours		
-19980	1		Les bases de la programmation en C		
-19980	2		Techniques « avancées » du langage C		
-19980	3		Création de jeux 2D en SDL		
-19980	4		Les structures de données		
 6173501	1		Gérez les variables de votre programme en Java		
 6173501	2		Programmez en orienté objet avec Java		
 6173501	3		Utilisez quelques principes de programmation avancés en Java		
@@ -279,14 +287,10 @@ course_id	part_number	part_name	part_title	part_description	part_url
 918836	4		Stockez des informations dans une base de données		
 918836	5		Allez plus loin avec PHP		
 918836	6		Annexes		
-5641721	1		Faites vos premiers pas avec Git		
-5641721	2		Corrigez vos erreurs lors de l'utilisation de GitHub		
-5641721	3		Gérez plusieurs versions avec Git		
-5641721	4		Gérez un travail d’équipe avec les workflows		
-4262331	1		Faites connaissance avec Python		
-4262331	2		Posez les fondations de votre programme		
-4262331	3		Manipulez des objets		
-4262331	4		Utilisez des ressources externes		
+19980	1		Les bases de la programmation en C		
+19980	2		Techniques « avancées » du langage C		
+19980	3		Création de jeux 2D en SDL		
+19980	4		Les structures de données		
 4366701	1		Familiarisez-vous avec l'algorithmique		
 4366701	2		Découvrez la programmation structurée		
 4366701	3		Choisissez le type et la structure de données adéquats		
@@ -305,12 +309,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 5489551	3		Choisissez, installez et configurez les composants WordPress adaptés à votre projet		
 5489551	4		Personnalisez les contenus et le design de votre site WordPress		
 5489551	5		Finalisez et lancez votre site WordPress		
-1894236	1		[Théorie] Découverte de la programmation en C++		
-1894236	2		[Théorie] La Programmation Orientée Objet		
-1894236	3		[Pratique] Créez vos propres fenêtres avec Qt		
-1894236	4		[Théorie] Utilisez la bibliothèque standard		
-1894236	5		[Théorie] Notions avancées		
-1894236	6		Annexes		
 1946386	1		Découvrez le web et ses origines		
 1946386	2		Distinguez les différents langages du web		
 1946386	3		Découvrez le fonctionnement du réseau		
@@ -319,6 +317,12 @@ course_id	part_number	part_name	part_title	part_description	part_url
 5543061	2		Communiquez via une API avec un service web		
 5543061	3		Parallélisez vos longues tâches avec la programmation asynchrone		
 5543061	4		Mettez en place les bons outils pour travailler		
+1894236	1		[Théorie] Découverte de la programmation en C++		
+1894236	2		[Théorie] La Programmation Orientée Objet		
+1894236	3		[Pratique] Créez vos propres fenêtres avec Qt		
+1894236	4		[Théorie] Utilisez la bibliothèque standard		
+1894236	5		[Théorie] Notions avancées		
+1894236	6		Annexes		
 6390246	1		Créez un serveur Express simple		
 6390246	2		Créez une API RESTful		
 6390246	3		Mettez en place un système d'authentification sur votre application		
@@ -335,6 +339,10 @@ course_id	part_number	part_name	part_title	part_description	part_url
 7162856	1		Faites vos premiers pas avec Git		
 7162856	2		Utilisez les commandes de base de Git		
 7162856	3		Pratiquez et corrigez les erreurs courantes		
+5641721	1		Faites vos premiers pas avec Git		
+5641721	2		Corrigez vos erreurs lors de l'utilisation de GitHub		
+5641721	3		Gérez plusieurs versions avec Git		
+5641721	4		Gérez un travail d’équipe avec les workflows		
 4902061	1		Créez votre première application React Native		
 4902061	2		Maîtrisez les bases de React Native		
 4902061	3		Gérez plusieurs vues en React Native		
@@ -346,9 +354,10 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4302126	2		Érigez les fondations du programme		
 4302126	3		Créez la grille		
 4302126	4		Peaufinez les finitions		
-4517166	1		Créez votre première application		
-4517166	2		Étendez les fonctionnalités de votre application		
-4517166	3		Perfectionnez votre application		
+7008001	1		Initiez-vous aux principes de React		
+7008001	2		Créez votre première application complète avec Create React App		
+7008001	3		Stockez et récupérez des données avec le state et les effets		
+7008001	4		Conclusion		
 5489656	1		Développez votre première application Symfony		
 5489656	2		Dynamisez vos pages à l’aide de Twig et Doctrine ORM		
 5489656	3		Mettez en production un site de qualité professionnelle		
@@ -357,13 +366,12 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6390311	3		Créez des composants réutilisables dans Vue.js		
 6390311	4		Gérez les données de votre application		
 6390311	5		Résumé du cours		
+4517166	1		Créez votre première application		
+4517166	2		Étendez les fonctionnalités de votre application		
+4517166	3		Perfectionnez votre application		
 6106181	1		Structurez et organisez votre code		
 6106181	2		Créez du code maintenable grâce aux techniques Sass intermédiaires		
 6106181	3		Optimisez votre code en utilisant les techniques avancées de Sass		
-7008001	1		Initiez-vous aux principes de React		
-7008001	2		Créez votre première application complète avec Create React App		
-7008001	3		Stockez et récupérez des données avec le state et les effets		
-7008001	4		Conclusion		
 6817086	1		Situez le métier de développeur dans l’entreprise		
 6817086	2		Explorez les différents métiers de développeur		
 6817086	3		Évoluez en tant que développeur		
@@ -373,13 +381,13 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4425076	4		Traitez des données via un formulaire		
 4425076	5		Ajoutez une interface d'administration		
 4425076	6		Préparez-vous au décollage		
+6106191	1		Identifiez les outils nécessaires pour coder en Java		
+6106191	2		Exploitez Eclipse pour coder, tester et structurer vos projets Java		
+6106191	3		Contribuez à un projet Open Source avec Eclipse		
 1665806	1		[Théorie] Les bases de la POO		
 1665806	2		[Théorie] Techniques avancées		
 1665806	3		[Pratique] Réalisation d'un site web		
 1665806	4		Annexes		
-6106191	1		Identifiez les outils nécessaires pour coder en Java		
-6106191	2		Exploitez Eclipse pour coder, tester et structurer vos projets Java		
-6106191	3		Contribuez à un projet Open Source avec Eclipse		
 5919246	1		Réalisez vos premières animations CSS		
 5919246	2		Maîtrisez les translations, les rotations et l’opacité		
 5919246	3		Réalisez des animations dynamiques avec les @keyframes		
@@ -387,9 +395,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4670706	2		Factorisez votre code dans une architecture MVC		
 4670706	3		Passez à une architecture MVC orientée objet		
 6943241	1		Mettez en place votre environnement		
-4425111	1		Travaillez comme un pro !		
-4425111	2		Approfondissez votre utilisation de Python		
-4425111	3		Écrivez un code plus pythonique		
 3504431	1		Découper une maquette		
 3504431	2		Intégrer une maquette		
 4055451	1		Modélisez votre domaine fonctionnel		
@@ -404,6 +409,9 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6900101	2		Découvrez les étapes clés de tout projet Spring Boot		
 6900101	3		Créez une API avec Spring Boot		
 6900101	4		Créez une application web avec Spring Boot		
+4425111	1		Travaillez comme un pro !		
+4425111	2		Approfondissez votre utilisation de Python		
+4425111	3		Écrivez un code plus pythonique		
 6739646	1		Découvrez le rôle de la documentation projet		
 6739646	2		Préparez un cahier des charges fonctionnel		
 6739646	3		Utilisez la méthodologie agile pour communiquer la portée d'un projet		
@@ -413,6 +421,10 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4668056	2		Améliorez votre Microservice		
 5647281	1		Identifiez les besoins utilisateurs avec la méthode de Domain-Driven Design		
 5647281	2		Formalisez les besoins de vos utilisateurs		
+6971126	1		Créez votre base de données avec MySQL pour stocker les données de votre application		
+6971126	2		Manipulez vos données avec les opérations CRUD		
+6971126	3		Effectuez des requêtes SQL avancées		
+6971126	4		Modifiez le format de vos données selon les évolutions de votre application		
 1811341	1		Les bases de Laravel		
 1811341	2		Les bases de données		
 1811341	3		Plus loin avec Laravel		
@@ -427,9 +439,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4287521	3		Utilisez les collections et les optionnels		
 4287521	4		Clarifiez votre code avec les fonctions		
 4287521	5		Conclusion		
-5353106	1		Effectuez vos premiers pas en Kotlin		
-5353106	2		Découvrez les structures de contrôle en Kotlin		
-5353106	3		Maîtrisez la puissance de Kotlin		
 4425066	1		Posez les fondations du site		
 4425066	2		Développez vos premières fonctionnalités		
 4425066	3		Fignolez les détails		
@@ -439,6 +448,9 @@ course_id	part_number	part_name	part_title	part_description	part_url
 2675311	3		La programmation avec Blueprint		
 2675311	4		Techniques avancées		
 2675311	5		Annexes		
+5353106	1		Effectuez vos premiers pas en Kotlin		
+5353106	2		Découvrez les structures de contrôle en Kotlin		
+5353106	3		Maîtrisez la puissance de Kotlin		
 3925766	1		Le principe du Bitcoin et de la blockchain		
 3925766	2		Utiliser des Bitcoins		
 3925766	3		Au-delà du Bitcoin		
@@ -461,12 +473,19 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6031886	1		Initiez-vous aux API		
 6031886	2		Utilisez une API dans un projet de développement		
 6031886	3		Suivez les étapes de conception d'une API REST		
+6951236	1		Gérez des paquets Python à l'aide de pip		
+6951236	2		Créez un environnement virtuel Python avec virtualenv		
+6951236	3		Configurez un projet dans un IDE à l'aide de PyCharm		
 5098931	1		Commencez avec Ionic		
 5098931	2		Créez une application basique		
 5098931	3		Dynamisez votre application		
 5098931	4		Testez et déployez votre application		
 6691451	1		Structurez votre code HTML avec ARIA pour le rendre accessible		
 6691451	2		Rendez les interactions sur votre site web accessibles avec CSS et ARIA		
+1730486	1		Identifiez les responsabilités du Centre de services		
+1730486	2		Gérez les incidents avec ITIL et GLPI		
+1730486	3		Gérez les problèmes dans GLPI		
+1730486	4		Gérez les demandes de changement avec ITIL et GLPI		
 4087036	1		Qu'est-ce que REST ?		
 4087036	2		Organiser l'ensemble de son application Symfony grâce au FOSRestBundle		
 4087036	3		Aller plus loin		
@@ -489,13 +508,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6179306	1		Identifiez les principales attaques web et les règles de sécurité à adopter		
 6179306	2		Protégez votre code avec l’OWASP		
 6179306	3		Testez et appliquez l'OWASP		
-6951236	1		Gérez des paquets Python à l'aide de pip		
-6951236	2		Créez un environnement virtuel Python avec virtualenv		
-6951236	3		Configurez un projet dans un IDE à l'aide de PyCharm		
-1730486	1		Identifiez les responsabilités du Centre de services		
-1730486	2		Gérez les incidents avec ITIL et GLPI		
-1730486	3		Gérez les problèmes dans GLPI		
-1730486	4		Gérez les demandes de changement avec ITIL et GLPI		
 6398056	1		Documentez votre code pour le rendre maintenable et réutilisable		
 6398056	2		Créez la documentation technique de votre architecture		
 3504461	1		Comprenez les tests		
@@ -505,9 +517,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 5511091	3		Découvrez l'architecture de Redux		
 5511091	4		Implémentez votre application		
 5511091	5		Communiquez avec l'extérieur grâce à l'API		
-4872916	1		Déployez une stratégie d’authentification sur Firebase		
-4872916	2		Sauvegardez et récupérer des données en temps réel sur Firebase		
-4872916	3		Partagez des fichiers et gérer des notifications sur Firebase		
 4425126	1		Partie 1 : Introduction		
 4425126	2		Partie 2 : Les tests unitaires		
 4425126	3		Partie 3 : Le Test-Driven Development		
@@ -526,6 +535,9 @@ course_id	part_number	part_name	part_title	part_description	part_url
 2582746	3		Interagissez avec votre app		
 2582746	4		Optimisez votre code		
 2582746	5		Finalisez votre app et envoyez-la sur le Store		
+4872916	1		Déployez une stratégie d’authentification sur Firebase		
+4872916	2		Sauvegardez et récupérer des données en temps réel sur Firebase		
+4872916	3		Partagez des fichiers et gérer des notifications sur Firebase		
 4568596	1		Créez votre première interface utilisateur flexible et adaptative		
 4568596	2		Rendez votre interface utilisateur modulable grâce aux fragments		
 4568596	3		Implémentez vos premiers composants graphiques de navigation		
@@ -582,6 +594,11 @@ course_id	part_number	part_name	part_title	part_description	part_url
 5079046	2		Initiez-vous à l’architecture de services REST appliquée à OM2M		
 5079046	3		Gérez l’accès aux services dans une architecture d’objets dans OM2M		
 5079046	4		Découvrez l’interopérabilité des technologies et des données dans l’Internet des Objets		
+7160741	1		Orientation du cours		
+7160741	2		Appliquez le guide de style PEP 8 au code Python		
+7160741	3		Résolvez des problèmes de programmation courants avec des design patterns en Python		
+7160741	4		Appliquez les principes SOLID au code Python		
+7160741	5		Félicitations  !		
 3979376	1		Construisez la structure de votre jeu avec BabylonJS		
 3979376	2		Développez les premiers éléments du jeu		
 3979376	3		Passez en mode multijoueur		
@@ -596,6 +613,10 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4568621	1		Personnalisez vos interfaces graphiques grâce aux thèmes		
 4568621	2		Appliquez le Material Design à vos applications		
 4568621	3		Améliorez l’expérience utilisateur de vos applications		
+7150616	1		Écrivez des méthodes et des classes avec Python		
+7150616	2		Utilisez le comportement hérité dans un programme Python		
+7150616	3		Structurez votre code dans un programme Python		
+7150616	4		Récapitulons		
 4504831	1		Découvrez Struts, un framework MVC pour la création d'applications web		
 4504831	2		Utilisez Struts comme un pro		
 4570776	1		Découvrez le responsive		
@@ -621,24 +642,25 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4504866	1		Découvrez les protocoles		
 4504866	2		Créez votre Table View		
 4504866	3		Améliorez la Table View		
-4729291	1		Partez à la chasse aux bugs !		
-4729291	2		Renforcez votre application avec les tests		
-4729291	3		Rédigez les tests avant le code		
-7160741	1		Orientation du cours		
-7160741	2		Appliquez le guide de style PEP 8 au code Python		
-7160741	3		Résolvez des problèmes de programmation courants avec des design patterns en Python		
-7160741	4		Appliquez les principes SOLID au code Python		
-7160741	5		Félicitations  !		
-6971126	1		Créez votre base de données avec MySQL pour stocker les données de votre application		
-6971126	2		Manipulez vos données avec les opérations CRUD		
-6971126	3		Effectuez des requêtes SQL avancées		
-6971126	4		Modifiez le format de vos données selon les évolutions de votre application		
 6982461	1		Connectez une application Java à une base de données		
 6982461	2		Récupérez des données avec Spring Data JPA		
 6982461	3		Créez, modifiez et supprimez des données avec Spring Data JPA		
+4729291	1		Partez à la chasse aux bugs !		
+4729291	2		Renforcez votre application avec les tests		
+4729291	3		Rédigez les tests avant le code		
+7150606	1		Créez une Single Page Application à l’architecture robuste		
+7150606	2		Incorporez des données dans une application React avec les hooks		
+7150606	3		Testez une application React avec Jest et React Testing Library		
+7150606	4		Évoluez dans l'écosystème React		
 7137741	1		Analysez l’architecture d’une application existante		
 7137741	2		Séparez les couches de votre application avec le design pattern Modèle-Vue-Contrôleur		
 7137741	3		Implémentez la communication entre les couches de votre application		
+7159296	1		Tirez le maximum de ce cours		
+7159296	2		Identifiez les différents types de bug de votre interface Front-End		
+7159296	3		Déboguez votre HTML/CSS		
+7159296	4		Résolvez des bugs sur le DOM		
+7159296	5		Solutionnez des bugs sur l’API		
+7159296	6		Déboguez une application		
 3178966	1		Introduction et principes élémentaires de programmation		
 3178966	2		Créez la version ultra basique du jeu		
 3178966	3		Créez le jeu avec une interface graphique		
@@ -686,12 +708,12 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4104731	3		Améliorez la collaboration au sein de vos équipes grâce au leadership		
 4104731	4		Maintenez votre posture de leader en développant vos ressources personnelles		
 3656151	1		Transformation digitale, épisode 8		
-5774866	1		Intégrez l'analyse des risques dans le cycle de vie d'un projet		
-5774866	2		Repérez les risques		
-5774866	3		Élaborez votre plan de prévention		
 4511316	1		Maîtrisez différentes méthodologies agiles		
 4511316	2		Exercez-vous au design thinking		
 4511316	3		Facilitez l'agilité à grande échelle		
+5774866	1		Intégrez l'analyse des risques dans le cycle de vie d'un projet		
+5774866	2		Repérez les risques		
+5774866	3		Élaborez votre plan de prévention		
 5774771	1		Retenez les sites et critères pertinents à étudier		
 5774771	2		Construisez les outils support		
 5774771	3		Réalisez votre premier benchmark		
@@ -705,12 +727,12 @@ course_id	part_number	part_name	part_title	part_description	part_url
 5228301	2		Découvrez l'environnement réglementaire, normatif et juridique du BIM		
 5228301	3		Découvrez l'impact du BIM dans votre activité		
 3656191	1		Transformation digitale, épisode 11		
-5218141	1		Identifiez votre capital compétences		
-5218141	2		Construisez votre projet professionnel		
-5218141	3		Explorez le marché du travail qui vous correspond		
 5218221	1		Rédigez efficacement votre CV		
 5218221	2		Optimisez votre présence sur le web		
 5218221	3		Adaptez vos outils de recherche d’emploi à votre projet		
+5218141	1		Identifiez votre capital compétences		
+5218141	2		Construisez votre projet professionnel		
+5218141	3		Explorez le marché du travail qui vous correspond		
 6045521	1		Préparez-vous aux tests techniques		
 5218241	1		Décryptez l'offre et valorisez votre candidature		
 5218241	2		Rédigez des lettres de motivation ciblées		
@@ -858,15 +880,15 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4669186	2		Inspirez-vous de dispositifs pédagogiques existants		
 4669186	3		Passez une formation en blended learning		
 4669186	4		Anticipez les difficultés de déploiement du blended learning		
+5197181	1		Identifiez les missions de l’évaluateur		
+5197181	2		Évaluez les compétences d’un étudiant		
+5197181	3		Donnez des retours constructifs et personnalisés à un étudiant		
+5197181	4		Conclusion		
 4669246	1		Sensibilisez-vous à l'audit de formation		
 4669246	2		Préparez une mission d'audit de formation		
 4669246	3		Menez une mission d'audit de formation		
 4669246	4		Exploitez les données issues de l'audit		
 4669246	5		Formulez des recommandations		
-5197181	1		Identifiez les missions de l’évaluateur		
-5197181	2		Évaluez les compétences d’un étudiant		
-5197181	3		Donnez des retours constructifs et personnalisés à un étudiant		
-5197181	4		Conclusion		
 4297421	1		Animez un atelier autour de l’identité numérique		
 2710836	1		Donnez envie d'apprendre à travers l'expérimentation		
 4225026	1		3, 2, 1… Concevez votre projet		
@@ -899,9 +921,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4722866	1		Appliquez les bonnes pratiques du gestionnaire de paie		
 4722866	2		Maîtrisez le processus de paie		
 4722866	3		Suivez les différentes étapes de contrôle de paie		
-4722851	1		Découvrez le fonctionnement de la protection sociale en France		
-4722851	2		Apprenez à reproduire et contrôler les calculs des cotisations sociales		
-4722851	3		Maîtrisez les déclarations relatives aux cotisations sociales		
 6369836	1		Identifiez les évolutions des dispositifs et du financement de la formation		
 6369836	2		Mobilisez le CPF comme outil de financement		
 6369836	3		Optimisez les dispositifs de la formation professionnelle		
@@ -929,6 +948,9 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4539271	1		Préparez l'intégration du collaborateur		
 4539271	2		Accueillez le nouveau collaborateur		
 4539271	3		Construisez un parcours d’intégration		
+4722851	1		Découvrez le fonctionnement de la protection sociale en France		
+4722851	2		Apprenez à reproduire et contrôler les calculs des cotisations sociales		
+4722851	3		Maîtrisez les déclarations relatives aux cotisations sociales		
 4722911	1		Maîtrisez les congés payés en France		
 4722911	2		Calculez correctement en paie les différents éléments de la maladie		
 4722911	3		Sachez répercuter sur le bulletin d’autres événements de la vie des salariés		
@@ -1027,26 +1049,26 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6911101	1		Stimulez votre créativité		
 6911101	2		Utilisez la pensée divergente et convergente pour perfectionner votre créativité		
 6911101	3		Appliquez des outils de pensée créative pour résoudre des problèmes au travail		
+6909446	1		Analysez comment le cerveau décide		
+6909446	2		Abordez la décision de façon méthodique		
 6836021	1		Prenez conscience des biais cognitifs		
 6836021	2		Questionnez les situations grâce à votre esprit critique		
 6836021	3		Déjouez les pièges de l’argumentation		
-6909446	1		Analysez comment le cerveau décide		
-6909446	2		Abordez la décision de façon méthodique		
 4421146	1		Préparez un atelier sur le fond et sur la forme		
 4421146	2		Animez un brainstorming avec un groupe de participants		
 4421146	3		Gérez la suite d'un atelier avec les parties prenantes		
 6510596	1		(Re)découvrez le sens du service		
 6510596	2		Personnalisez vos relations		
 6510596	3		Gérez des situations difficiles		
+857447	1		Comment communiquer sur un réseau local ?		
+857447	2		Communiquer entre réseaux		
+857447	3		Communiquer entre applications		
+857447	4		Les services réseau		
 43538	1		Découvrir et installer Linux		
 43538	2		Manipuler la console et les fichiers		
 43538	3		Contrôler les processus et les flux de données		
 43538	4		Transférer des données à travers le réseau		
 43538	5		Automatisez vos tâches avec des scripts Bash		
-857447	1		Comment communiquer sur un réseau local ?		
-857447	2		Communiquer entre réseaux		
-857447	3		Communiquer entre applications		
-857447	4		Les services réseau		
 2035766	1		Prenez en main Docker		
 2035766	2		Lancez vos images Docker avec les Dockerfiles		
 2035766	3		Gérez vos images Docker avec Docker Compose		
@@ -1066,19 +1088,19 @@ course_id	part_number	part_name	part_title	part_description	part_url
 2100086	2		Découvrez le périmètre de la Direction des Systèmes d'Information		
 2100086	3		Découvrez les missions autour du SI		
 2100086	4		Saisissez les grands enjeux du monde des SI		
-2557196	1		Administrez un réseau grâce aux routeurs et switch CISCO		
-2557196	2		Mettez en relation les PC et serveurs de l’entreprise en configurant le LAN		
-2557196	3		Connectez l’entreprise à Internet grâce aux protocoles de routage		
-2557196	4		Sécurisez vos routeurs		
 2581701	1		Découvrez la simulation réseaux avec GNS3		
 2581701	2		Créez et simulez une maquette réseaux		
+1730516	1		Découvrez les enjeux de la gestion de parc		
+1730516	2		Organisez l'inventaire de votre parc informatique		
+1730516	3		Gérez votre parc administrativement et financièrement		
 1372996	1		Initiez-vous à l'architecture système		
 1372996	2		Découvrez la méthode : les 4 couches d’une architecture		
 1372996	3		Préparez un Document d’Architecture Technique		
 1372996	4		Apprenez-en plus sur la révolution du Cloud et l’architecture continue		
-1730516	1		Découvrez les enjeux de la gestion de parc		
-1730516	2		Organisez l'inventaire de votre parc informatique		
-1730516	3		Gérez votre parc administrativement et financièrement		
+2557196	1		Administrez un réseau grâce aux routeurs et switch CISCO		
+2557196	2		Mettez en relation les PC et serveurs de l’entreprise en configurant le LAN		
+2557196	3		Connectez l’entreprise à Internet grâce aux protocoles de routage		
+2557196	4		Sécurisez vos routeurs		
 1757741	1		Maîtrisez les bases de la cryptographie moderne avec la cryptographie symétrique		
 1757741	2		Sécurisez vos communications avec la cryptographie asymétrique		
 1757741	3		Utilisez les principaux protocoles et outils cryptographiques		
@@ -1093,25 +1115,31 @@ course_id	part_number	part_name	part_title	part_description	part_url
 1946106	2		Rentrez au cœur des règles firewalls en bloquant les bons protocoles		
 1946106	3		Sécurisez une entreprise grâce au firewall pfSense		
 1946106	4		Créez un lien sécurisé entre deux entreprises à l’aide d’un VPN		
-2356316	1		Découvrez l’administration de serveur		
-2356316	2		Gérez le stockage de fichiers de A à Z		
-2356316	3		Partagez vos fichiers sur un réseau local		
 2035796	1		Automatisez vos opérations d'installation et de configuration		
 2035796	2		Déployez automatiquement une application avec Ansible		
 2035796	3		Créez votre propre module Ansible personnalisé avec Python		
 1733741	1		Effectuez votre veille en cybersécurité		
 2035736	1		Mettez en place l'intégration continue		
 2035736	2		Mettez en place la livraison continue		
+2356316	1		Découvrez l’administration de serveur		
+2356316	2		Gérez le stockage de fichiers de A à Z		
+2356316	3		Partagez vos fichiers sur un réseau local		
 6344196	1		Planifiez vos tâches avec des scripts Powershell sur Windows Server		
-5668856	1		Faites vos premiers pas avec Windows 10		
-5668856	2		Devenez l'administrateur de Windows 10		
-5668856	3		Sécurisez Windows 10		
 1733551	1		Montez un serveur de temps et un annuaire LDAP		
 1733551	2		Configurez votre premier serveur LAMP		
 1733551	3		Gérez une infrastructure web complexe		
+5668856	1		Faites vos premiers pas avec Windows 10		
+5668856	2		Devenez l'administrateur de Windows 10		
+5668856	3		Sécurisez Windows 10		
 1756296	1		Préparez votre test d’intrusion		
 1756296	2		Réalisez votre test d’intrusion		
 1756296	3		Rédigez votre rapport de test d’intrusion		
+1733046	1		Découvrez les technologies de prise de contrôle avec VNC		
+1733046	2		Installez et configurez un serveur TightVNC		
+1733046	3		Installez et configurez le client VNC		
+2013451	1		Adoptez un référentiel de bonnes pratiques ITIL		
+2013451	2		Réalisez une procédure de gestion des changements		
+2013451	3		Concevez, testez et déployez votre SI		
 1761876	1		Sécurisez l’architecture du Système d'Information		
 1761876	2		Mettez en œuvre la sécurité réseau		
 1761876	3		Sécurisez votre Active Directory		
@@ -1119,22 +1147,9 @@ course_id	part_number	part_name	part_title	part_description	part_url
 2340511	1		Maîtrisez le protocole IP		
 2340511	2		Approfondissez le protocole TCP et le suivi des connexions		
 2340511	3		Mettez en œuvre une solution de messagerie complète		
-2013451	1		Adoptez un référentiel de bonnes pratiques ITIL		
-2013451	2		Réalisez une procédure de gestion des changements		
-2013451	3		Concevez, testez et déployez votre SI		
-1733046	1		Découvrez les technologies de prise de contrôle avec VNC		
-1733046	2		Installez et configurez un serveur TightVNC		
-1733046	3		Installez et configurez le client VNC		
-6227516	1		Caractérisez un processus SI		
-6227516	2		Identifiez les risques et opportunités du processus SI		
-6227516	3		Pilotez un processus SI		
-6227516	4		Annexe		
 2035786	1		Initiez-vous à la supervision		
 2035786	2		Mettez en place votre environnement de supervision		
 2035786	3		Exécutez vos premières sondes de supervision		
-1734201	1		Identifiez les enjeux d'une politique de sécurité pour votre entreprise		
-1734201	2		Rédigez la PSSI de votre entreprise		
-1734201	3		Implémentez durablement la PSSI au sein de votre entreprise		
 2035746	1		Découvrez le contexte de l'audit		
 2035746	2		Auditez le processus de démarrage		
 2035746	3		Auditez le système		
@@ -1149,10 +1164,17 @@ course_id	part_number	part_name	part_title	part_description	part_url
 1734211	1		Préparez votre analyse de risques SI		
 1734211	2		Appréciez et traitez les risques qui pèsent sur votre SI		
 1734211	3		Faites vivre votre analyse de risques		
+1734201	1		Identifiez les enjeux d'une politique de sécurité pour votre entreprise		
+1734201	2		Rédigez la PSSI de votre entreprise		
+1734201	3		Implémentez durablement la PSSI au sein de votre entreprise		
 1761931	1		Découvrez les principes de sécurité des applications		
 1761931	2		Gérez les identités de vos utilisateurs		
 1761931	3		Manipulez les données de manière sécurisée		
 1761931	4		Intégrez la sécurité dans le processus de développement logiciel		
+6227516	1		Caractérisez un processus SI		
+6227516	2		Identifiez les risques et opportunités du processus SI		
+6227516	3		Pilotez un processus SI		
+6227516	4		Annexe		
 6227466	1		Découvrez le rôle du chef de projet SI		
 6227466	2		Projetez-vous dans les missions du chef de projet SI		
 6227466	3		Évoluez en tant que chef de projet SI		
@@ -1198,10 +1220,17 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6825041	2		Identifiez vos missions de technicien informatique		
 6825041	3		Évoluez dans le métier de technicien informatique		
 6825041	4		Annexes		
+7170491	1		Tirez un maximum de ce cours		
+7170491	2		Faites vos premiers pas sur Linux		
+7170491	3		Exploitez Linux en tant que poste de travail		
+7170491	4		Utilisez Linux dans votre activité professionnelle		
 1750566	1		Découvrez les enjeux de la surveillance du SI		
 1750566	2		Identifiez les sources de données et optimisez la collecte de logs		
 1750566	3		Centralisez vos alertes avec ELK Stack		
 1750566	4		Identifiez des scénarios d’attaque grâce à la matrice ATT&CK		
+6944606	1		Créez l’architecture physique de votre réseau		
+6944606	2		Configurez votre réseau pour assurer la communication		
+6944606	3		Optimisez votre réseau en ajoutant des services		
 1561696	1		Le concept et les bases		
 1561696	2		Un modèle qui en tient une couche		
 1561696	3		Veuillez vous identifier pour communiquer		
@@ -1277,7 +1306,7 @@ course_id	part_number	part_name	part_title	part_description	part_url
 5280946	3		Sécurisez les traitements de données sensibles		
 5280946	4		Anonymisez les données		
 6263906	1		Découvrez le coaching chez OpenClassrooms		
-6263906	2		Accompagnez les étudiants vers l'emploi		
+6263906	2		Accompagnez les étudiants		
 6263906	3		Gérez votre prestation		
 6112876	1		Découvrez l'éthique et la responsabilité en lien avec le numérique		
 6112876	2		Situez les enjeux éthiques liées au numérique		
@@ -1328,14 +1357,14 @@ course_id	part_number	part_name	part_title	part_description	part_url
 5433211	2		Modélisez le réseau sous forme de graphe		
 5433211	3		Partagez un médium commun entre plusieurs machines		
 5433211	4		Communiquez entre client et serveur dans l’architecture TCP/IP		
-5439126	1		Définissez votre projet de système embarqué communicant		
-5439126	2		Approfondissez le développement de votre projet par des analyses métier		
-5439126	3		Finalisez votre projet de système roulant agricole		
-5439126	4		Annexe		
 4617941	1		Détectez les cibles et estimez les paramètres radars		
 4617941	2		Utilisez l’équation de propagation et l’équation du radar		
 4617941	3		Étudiez le système radar impulsionnel		
 4617941	4		Étudiez le système radar à ondes continues		
+5439126	1		Définissez votre projet de système embarqué communicant		
+5439126	2		Approfondissez le développement de votre projet par des analyses métier		
+5439126	3		Finalisez votre projet de système roulant agricole		
+5439126	4		Annexe		
 6294936	1		Les rendements des fonds en euros		
 6294936	2		Les fonds en unités de compte		
 6294936	3		Définir l’allocation de capital de vos clients		
@@ -1403,6 +1432,10 @@ course_id	part_number	part_name	part_title	part_description	part_url
 2304731	2		Use data and data types in Python		
 2304731	3		Manage program logic in Python		
 2304731	4		Write functions in Python		
+7078811	1		Construct a Definition of Artificial Intelligence		
+7078811	2		Discover the Societal Impact of Artificial Intelligence		
+7078811	3		Describe the Inner Workings of an Artificial Intelligence Project		
+7078811	4		You've Reached the End!		
 2071486	1		Represent data using the relational model		
 2071486	2		Manipulate data using relational algebra operations		
 2071486	3		Execute simple SQL queries		
@@ -1435,10 +1468,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6532301	1		Preprocess Text Data		
 6532301	2		Vectorize Text for Classification Using Bag-of-Words		
 6532301	3		Vectorize Text for Exploration Using Word Embeddings		
-7078811	1		Construct a Definition of Artificial Intelligence		
-7078811	2		Discover the Societal Impact of Artificial Intelligence		
-7078811	3		Describe the Inner Workings of an Artificial Intelligence Project		
-7078811	4		You've Reached the End!		
 4555376	1		Communicate Your Ideas Visually		
 4555376	2		Explore Graphic Design Basics		
 4555376	3		Engage your audience		
@@ -1517,14 +1546,14 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4286486	1		Set up a React development environment		
 4286486	2		Build components		
 4286486	3		Build an app		
-5671626	1		Take your first steps with Git		
-5671626	2		Fix your mistakes when using GitHub		
-5671626	3		Manage your code using advanced versioning techniques		
-5671626	4		Use Git tools to work as a team		
 5493201	1		Manipulate the DOM		
 5493201	2		Get data from users and from servers		
 5493201	3		Use asynchronous programming to make multiple requests		
 5493201	4		Build in your local environment		
+5671626	1		Take your first steps with Git		
+5671626	2		Fix your mistakes when using GitHub		
+5671626	3		Manage your code using advanced versioning techniques		
+5671626	4		Use Git tools to work as a team		
 1306056	1		Improve the indexing of a website		
 1306056	2		Increase the Speed of Your Website		
 1306056	3		Optimize a Website Built With a JavaScript Framework		
@@ -1551,15 +1580,15 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4661936	1		Create Your First Application		
 4661936	2		Add Functionality		
 4661936	3		Improve the Experience		
-5625816	1		Get started with CSS Animations		
-5625816	2		Translations, rotations, and opacity, oh my!		
-5625816	3		Make your animations dynamic		
 5625786	1		Structure your code efficiently		
 5625786	2		Create efficient, maintainable code with intermediate Sass techniques		
 5625786	3		Streamline your code using advanced Sass techniques		
 4544611	1		Discover Agile Requirements: user stories and acceptance tests		
 4544611	2		Store user stories and acceptance tests in Agile Documentation Format		
 4544611	3		Testing and writing bug reports		
+5625816	1		Get started with CSS Animations		
+5625816	2		Translations, rotations, and opacity, oh my!		
+5625816	3		Make your animations dynamic		
 6031801	1		Design Your Database		
 6031801	2		Construct and Maintain Your Database		
 4544631	1		Learn the nature of planning and estimating in agile development		
@@ -1612,9 +1641,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 5671481	1		Organize C# Code Using MVC Architecture		
 5671481	2		Apply the SOLID Principles to C# code		
 5671481	3		Solve Common Programming Problems With Design Patterns in C#		
-4544576	1		Prototyping Basics		
-4544576	2		Learn Sketch		
-4544576	3		Creating High-Fidelity Prototypes with Sketch and InVision		
 6031811	1		Persist Data Within Your Java Applications		
 6031811	2		Persist Java Object into a Relational Database Using JDBC and Hibernate		
 6031811	3		Organize Persistence Logic in Your Code with the Repository Pattern		
@@ -1633,13 +1659,13 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4511061	1		Learn the Ruby Environment		
 4511061	2		Learn How Ruby Works		
 4511061	3		Write Object-Oriented Ruby		
+4544576	1		Prototyping Basics		
+4544576	2		Learn Sketch		
+4544576	3		Creating High-Fidelity Prototypes with Sketch and InVision		
 4542131	1		Establish the basics of Swift		
 4542131	2		Organize your code with the control flows		
 4542131	3		Utilize collections and optionals		
 4542131	4		Optimize your code with functions		
-4561586	1		Store your data in an Android file		
-4561586	2		Store data in a structured way using a SQLite database		
-4561586	3		Hone your app’s architecture		
 4539111	1		Introduction to iOS development		
 4539111	2		Create your first application		
 4539111	3		Start coding!		
@@ -1670,12 +1696,12 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6397781	1		Discover the Role of an Effective Client Brief		
 6397781	2		Analyze a Project to Prepare a Client Brief		
 6397781	3		Use Agile to Communicate Project Scope to Clients		
+4561586	1		Store your data in an Android file		
+4561586	2		Store data in a structured way using a SQLite database		
+4561586	3		Hone your app’s architecture		
 5671901	1		Analyze the Architecture of an Existing Application		
 5671901	2		Separate Application Layers Using Model-View-Controller		
 5671901	3		Implement Communication Between Application Layers		
-4788266	1		Execute background code		
-4788266	2		Make Network Calls		
-4788266	3		Display Data in a List		
 5671936	1		Protect Against Common Security Threats With .NET Core		
 5671936	2		Manage Access to Your .NET MVC Web Application		
 5671936	3		Build a GDPR-Compliant Data Protection Layer in Your .NET Application		
@@ -1686,11 +1712,18 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4554326	2		Spice It Up!		
 4554326	3		Make Your App “Remember”		
 4554326	4		Explore Navigation and Use Third Party Resources		
+4788266	1		Execute background code		
+4788266	2		Make Network Calls		
+4788266	3		Display Data in a List		
 4554306	1		Navigate the iOS app project		
 4554306	2		Discover UI components		
 4554306	3		Implement data model and logic		
 4554306	4		Revive your app		
 4554306	5		Accommodate different points of view		
+7132446	1		Learn How React Works		
+7132446	2		Create a Complete Application Using Create React App (CRA)		
+7132446	3		Manage Data in a React App Using State and Effects		
+7132446	4		Conclusion		
 5670606	1		Understand the problem in debugging code		
 5670606	2		Manage the execution flow in a C# unit test		
 5670606	3		Debugging data in C#		
@@ -1703,10 +1736,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6663461	1		Course Orientation		
 6663461	2		Create Accessible Web Pages Using Semantic HTML and ARIA Attributes		
 6663461	3		Create Accessible Interactive Content on a Web Page		
-7132446	1		Learn How React Works		
-7132446	2		Create a Complete Application Using Create React App (CRA)		
-7132446	3		Manage Data in a React App Using State and Effects		
-7132446	4		Conclusion		
 4544621	1		Learn the Principles of Agile Project Management		
 4544621	2		Discover the SCRUM Framework and the Product Owner Role		
 4544621	3		Prepare Requirements in SCRUM		
@@ -1766,6 +1795,11 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6863126	1		Develop an Advertising Strategy		
 6863126	2		Create an Advertising Campaign		
 6863126	3		Measure the Effectiveness and Cost of Your Campaigns		
+7149791	1		Develop an Email Strategy		
+7149791	2		Write a Persuasive Marketing Email		
+7149791	3		Send an Email Campaign		
+7149791	4		Optimize Campaign Performance		
+7149791	5		Improve Campaign Deliverability		
 5281811	1		Prepare yourself to learn		
 5281811	2		Define your learning strategy		
 5281811	3		Create your personalised learning plan		
@@ -1786,12 +1820,12 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6663471	1		Explore Practical Techniques to Nurture Your Creative Capacity		
 6663471	2		Apply Divergent and Convergent Thinking to Hone Your Creativity		
 6663471	3		Apply Creative-Thinking Tools to Problem-Solve in the Working World		
-6951366	1		Explore Why Soft Skills Are Essential		
-6951366	2		Assess Your Soft Skills		
-6951366	3		Create Your Action Plan		
 5164326	1		Find your place in the team		
 5164326	2		Communicate with your team members		
 5164326	3		Organize yourself and boost your performance in your team		
+6951366	1		Explore Why Soft Skills Are Essential		
+6951366	2		Assess Your Soft Skills		
+6951366	3		Create Your Action Plan		
 5291566	1		Make a proper assessment of the issues around autonomy today		
 5291566	2		Equip yourself with the necessary tools to work autonomously		
 5291566	3		Develop your autonomy by working with others		
@@ -1807,6 +1841,16 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6911361	2		Communicate Effectively		
 6911361	3		Personalize Professional Relationships		
 6911361	4		Overcome Relational Challenges		
+7132546	1		Course Orientation		
+7132546	2		Select the Essential Components of a Computer		
+7132546	3		Select Computer Components for Specific Needs		
+7132546	4		Assemble the Components of a Computer		
+7132511	1		Course Orientation		
+7132511	2		Take Your First Steps With Windows 10		
+7132511	3		Become an Administrator in Windows 10		
+7132511	4		Protect Your Windows 10 Operating System		
+7088391	1		Install and Set Up Windows 10		
+7088391	2		Deploy Windows 10 Using Sysprep		
 3851206	1		Who We Are		
 3851206	2		What We Do		
 3851206	3		OpenClassrooms Teams		

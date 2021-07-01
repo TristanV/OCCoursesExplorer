@@ -6,13 +6,13 @@ course_id	skill
 4929811	utiliser la validation des données sur Excel ;
 4929811	réaliser des tableaux croisés dynamiques ;
 4929811	réaliser des graphiques. 
-5870066	maîtriser les fondamentaux d’un traitement de texte ;
-5870066	utiliser les fonctionnalités de base du traitement de texte ;
-5870066	optimiser votre productivité. 
 5870121	choisir des contenus appropriés pour un diaporama ;
 5870121	créer un document de présentation en autonomie ;
 5870121	appliquer les bonnes pratiques de mise en page d'un document de présentation ;
 5870121	lister les bonnes pratiques de présentation d'un diaporama devant un auditoire.
+5870066	maîtriser les fondamentaux d’un traitement de texte ;
+5870066	utiliser les fonctionnalités de base du traitement de texte ;
+5870066	optimiser votre productivité. 
 5737801	Utiliser du matériel informatique 
 5737801	Vous repérer sur votre bureau
 5737801	Créer du contenu sur votre ordinateur
@@ -25,6 +25,9 @@ course_id	skill
 5870131	repérer une fausse identité, un faux profil et un bot ;
 5870131	utiliser un réseau social en respectant ses usages ;
 5870131	collaborer en ligne grâce à des outils spécifiques.
+7168336	Prendre en main votre fichier Excel.
+7168336	Mettre en page votre fichier Excel.
+7168336	Manipuler des données sur Excel.
 5191546	Rédiger un business plan
 5191546	Mener les étapes incontournables d'un business plan
 5191546	Construire des projections financières à partir d'un business plan
@@ -46,9 +49,6 @@ course_id	skill
 6380896	mener un entretien de prospection ;
 6380896	élaborer un plan de prospection en adoptant les bonnes pratiques ;
 6380896	suivre vos campagnes de prospection.
-5192206	préparer un plan d'action de growth hacking ;
-5192206	créer des hacks en appliquant le funnel AARRR ;
-5192206	structurer votre méthode de growth hacking.
 4963261	Vous adapter au contexte particulier dans lequel vous préparez un budget ou un reporting
 4963261	Utiliser les principaux concepts d’analyse des coûts et de la rentabilité
 4963261	Réaliser un budget à partir d’hypothèses de flux
@@ -61,6 +61,9 @@ course_id	skill
 6316366	Identifier des opportunités de fidélisation ;
 6316366	Développer une expérience client irréprochable ;
 6316366	Animer un portefeuille clients.
+5192206	préparer un plan d'action de growth hacking ;
+5192206	créer des hacks en appliquant le funnel AARRR ;
+5192206	structurer votre méthode de growth hacking.
 5185316	respecter vos obligations comptables de freelance,
 5185316	tenir votre comptabilité,
 5185316	facturer et vous faire payer par vos clients,
@@ -72,6 +75,9 @@ course_id	skill
 4781491	Structurer une idée produit en priorisant ses fonctionnalités
 4781491	Construire un prototype fonctionnel sans ressource technique
 4781491	Apprendre d'une expérimentation pour valider ou non une hypothèse
+7080836	adopter les bons réflexes pour télétravailler ;
+7080836	organiser votre temps de travail ; 
+7080836	collaborer à distance. 
 3044291	Définir les caractéristiques d'un entrepreneur innovant
 3044291	Développer un état d'esprit créatif et innovant
 3044291	Appliquer les 5 méthodes de sourcing d'idée génératrice d'opportunité
@@ -95,9 +101,11 @@ course_id	skill
 3199026	Identifier les éléments financiers de son Business plan 
 3199026	Construire un plan de financement de démarrage à 3 ans 
 3199026	Définir les éléments constituant un compte d'exploitation prévisionnel
-7080836	adopter les bons réflexes pour télétravailler ;
-7080836	organiser votre temps de travail ; 
-7080836	collaborer à distance. 
+2954176	Identifier les éléments constituant un Business plan
+2954176	Réaliser des projections financières
+2954176	Appliquer les méthodes de modalisation d'un marché adressable à partir de calculs
+2954176	"Déterminer la structure de coût d'un modèle de vente """
+2954176	Pitcher à l'oral un projet entrepreneurial
 6417031	expliquer ce qu'est l'intelligence artificielle ;
 6417031	identifier ses défis et ses opportunités ; 
 6417031	décrire scientifiquement un projet d'IA et ses sous-disciplines. 
@@ -109,16 +117,16 @@ course_id	skill
 4449026	Appliquer les opérations de l’algèbre relationnelle aux requêtes SQL
 4449026	Composer des requêtes SQL simples
 4449026	Composer des requêtes SQL avancées 
-4011851	Resituer le Machine Learning au sein de la Data Science
-4011851	Identifier les possibilités du Machine Learning
-4011851	Identifier les techniques et outils du Machine Learning
-4011851	Entraîner un algorithme de régression linéaire
-4011851	Identifier les limites du Machine Learning
 4525256	Mettre en place l'environnement de travail R
 4525256	Utiliser les différents objets R
 4525256	Sélectionner des éléments dans les objets R
 4525256	Importer et exporter des données
 4525256	Analyser un jeu de données
+4011851	Resituer le Machine Learning au sein de la Data Science
+4011851	Identifier les possibilités du Machine Learning
+4011851	Identifier les techniques et outils du Machine Learning
+4011851	Entraîner un algorithme de régression linéaire
+4011851	Identifier les limites du Machine Learning
 4452741	Modifier et exécuter un notebook Jupyter
 4452741	Créer et installer des modules Python
 4452741	Visualiser des données avec Matplotlib et Seaborn
@@ -139,12 +147,6 @@ course_id	skill
 4297166	Utiliser Spark pour distribuer des calculs sous forme de graphes
 4297166	Formaliser un problème sous forme distribuée en comprenant le concept de Resilient Distributed Dataset
 4297166	Déployer, administrer et débugger une plateforme de calcul distribué avec Amazon Web Services
-4525306	Comprendre la notion d’inférence.
-4525306	Etablir un lien entre des observations et un modèle probabiliste.
-4525306	Réaliser une estimation ponctuelle.
-4525306	Calculer un intervalle de confiance pour une proportion et une moyenne.
-4525306	Tester une hypothèse sur une proportion, une moyenne ou une variance.
-4525306	Tester l’adéquation à une loi par un test statistique.
 4525296	 Comprendre les notions d'univers, événement, probabilité et probabilité conditionnelle (partie 1)
 4525296	Découvrir les variables aléatoires, loi de probabilité, espérance et variance (partie 2)
 4525296	Découvrir les notions de couple de variables aléatoires, covariance et corrélation linéaire (partie 3)
@@ -158,6 +160,12 @@ course_id	skill
 4470531	Classifier des images avec les algorithmes de l'apprentissage supervisé
 4470531	Classifier des images avec les réseaux de neurones convolutifs (Deep Learning), en particulier avec la technique de Transfer Learning 
 4470531	Maîtriser la bibliothèque Keras, qui permet de faire du Deep Learning en Python
+4525306	Comprendre la notion d’inférence.
+4525306	Etablir un lien entre des observations et un modèle probabiliste.
+4525306	Réaliser une estimation ponctuelle.
+4525306	Calculer un intervalle de confiance pour une proportion et une moyenne.
+4525306	Tester une hypothèse sur une proportion, une moyenne ou une variance.
+4525306	Tester l’adéquation à une loi par un test statistique.
 4525371	Découvrir différentes séries temporelles
 4525371	Comprendre la problématique posée par le lien temporel
 4525371	Corriger une série temporelle des variations saisonnières
@@ -267,6 +275,9 @@ course_id	skill
 1603881	modifier l'agencement d'une page HTML avec CSS ;
 1603881	intégrer des formules dans une page web ;
 1603881	adapter une page pour les petites résolutions en CSS.
+4262331	Utiliser le vocabulaire de base de Python
+4262331	Poser les fondations d’un programme Python
+4262331	Manipuler des objets en Python 
 6175841	Utiliser les données et les types de données dans JavaScript.
 6175841	Gérer la logique d'un programme en JavaScript (conditions, boucles et erreurs).
 6175841	Écrire du code propre et facile à maintenir à l'aide de méthodes en JavaScript.
@@ -283,13 +294,6 @@ course_id	skill
 918836	communiquer avec la base de données en SQL ;
 918836	écrire des fonctions SQL basiques ;
 918836	utiliser les expressions régulières en PHP.
-5641721	utiliser les commandes de base de Git ;
-5641721	corriger les erreurs courantes sur GitHub ;
-5641721	gérer plusieurs versions sur GitHub ;
-5641721	collaborer grâce à GitHub en utilisant les workflows.
-4262331	Utiliser le vocabulaire de base de Python
-4262331	Poser les fondations d’un programme Python
-4262331	Manipuler des objets en Python 
 1959476	Créer une base de données
 1959476	Créer et modifier des tables
 1959476	Insérer, modifier, supprimer et sélectionner des données dans la base
@@ -314,14 +318,6 @@ course_id	skill
 5489551	configurer le thème et les extensions d’un site WordPress ;
 5489551	personnaliser les contenus et le design d’un site WordPress ;
 5489551	optimiser la configuration d’un site WordPress.
-1894236	Décrire les éléments fondamentaux du C++
-1894236	Adapter un algorithme existant en C++
-1894236	Lire un fichier de dictionnaire
-1894236	 Expliquer les principes de l'orienté objet en C++
-1894236	Décrire le fonctionnement de la bibliothèque graphique Qt
-1894236	Décrire les fonctionnalités de la bibliothèque standard (STL)
-1894236	Développer un code bien lisible et indenté
-1894236	Implémenter un algorithme de cryptage en C++ 
 1946386	Définir le web et ses origines
 1946386	Distinguer les différents langages du Web
 1946386	Décrire le fonctionnement du réseau
@@ -331,6 +327,14 @@ course_id	skill
 5543061	Communiquer avec un service web ;
 5543061	Utiliser des méthodes asynchrones ;
 5543061	Utiliser un environnement de développement.
+1894236	Décrire les éléments fondamentaux du C++
+1894236	Adapter un algorithme existant en C++
+1894236	Lire un fichier de dictionnaire
+1894236	 Expliquer les principes de l'orienté objet en C++
+1894236	Décrire le fonctionnement de la bibliothèque graphique Qt
+1894236	Décrire les fonctionnalités de la bibliothèque standard (STL)
+1894236	Développer un code bien lisible et indenté
+1894236	Implémenter un algorithme de cryptage en C++ 
 6390246	créer un serveur Web simple avec Express ;
 6390246	créer une API REST avec Node, Express et MongoDB ;
 6390246	mettre en place un système d'authentification sur une application Express ;
@@ -349,6 +353,10 @@ course_id	skill
 7162856	installer et configurer Git et GitHub ;
 7162856	utiliser les commandes de base de Git ;
 7162856	corriger les erreurs courantes sur GitHub.
+5641721	utiliser les commandes de base de Git ;
+5641721	corriger les erreurs courantes sur GitHub ;
+5641721	gérer plusieurs versions sur GitHub ;
+5641721	collaborer grâce à GitHub en utilisant les workflows.
 4902061	Décrire les avantages de React Native et le fonctionnement d’une Create React Native App
 4902061	Expliquer les notions de base de React Native
 4902061	Expliquer comment les vues sont gérées en React Native
@@ -359,14 +367,9 @@ course_id	skill
 6573181	utiliser des API REST pour vos projets de code ;
 6573181	formuler des requêtes et envoyer des réponses avec une API REST ;
 6573181	concevoir des API REST.
-4517166	Utiliser les widgets d'interaction utilisateur (champs de saisie, boutons)
-4517166	Lancer l'application sur l'émulateur ou un équipement réel
-4517166	Créer un widget de type Bouton
-4517166	Créer une nouvelle activité avec son fichier layout
-4517166	Gérer l’événement de clic sur un bouton
-4517166	Démarrer une nouvelle activité
-4517166	Afficher une liste de widgets
-4517166	Stocker des informations avec la SharedPreferences API
+7008001	comprendre le fonctionnement de React ;
+7008001	créer une application React complète avec Create React App ;
+7008001	stocker et récupérer des données avec le state et les effets.
 5489656	Expliquer les éléments fondamentaux du framework Symfony
 5489656	Rédiger un code propre et facilement utilisable par d'autres développeurs
 5489656	Développer un programme Symfony fonctionnel
@@ -376,12 +379,17 @@ course_id	skill
 6390311	augmenter les capacités d'une application avec Vue CLI ;
 6390311	créer des composants réutilisables dans Vue.js ;
 6390311	gérer les données d'une application.
+4517166	Utiliser les widgets d'interaction utilisateur (champs de saisie, boutons)
+4517166	Lancer l'application sur l'émulateur ou un équipement réel
+4517166	Créer un widget de type Bouton
+4517166	Créer une nouvelle activité avec son fichier layout
+4517166	Gérer l’événement de clic sur un bouton
+4517166	Démarrer une nouvelle activité
+4517166	Afficher une liste de widgets
+4517166	Stocker des informations avec la SharedPreferences API
 6106181	structurer et organiser votre code ;
 6106181	créer du code maintenable grâce aux techniques Sass intermédiaires ;
 6106181	optimiser votre code en utilisant les techniques avancées de Sass. 
-7008001	comprendre le fonctionnement de React ;
-7008001	créer une application React complète avec Create React App ;
-7008001	stocker et récupérer des données avec le state et les effets.
 6817086	situer le métier de développeur dans l'entreprise ;
 6817086	différencier les responsabilités de chaque spécialité de développeur ;
 6817086	évoluer en tant que développeur.
@@ -391,13 +399,13 @@ course_id	skill
 4425076	Créer des gabarits,
 4425076	Tester un projet Django avec des tests unitaires,
 4425076	Mettre en ligne une application Django sur Heroku
+6106191	Identifier les outils nécessaires pour coder en Java ;
+6106191	Utiliser Eclipse pour coder, tester et structurer vos projets Java ;
+6106191	Contribuer à un projet open source avec Eclipse.
 1665806	Procéder à un héritage
 1665806	Utiliser une classe pour créer des objets
 1665806	Connaître des techniques avancées pour programmer en PHP
 1665806	Créer une application PHP orientée objet
-6106191	Identifier les outils nécessaires pour coder en Java ;
-6106191	Utiliser Eclipse pour coder, tester et structurer vos projets Java ;
-6106191	Contribuer à un projet open source avec Eclipse.
 5919246	réaliser vos premières animations CSS ;
 5919246	maîtriser les translations, les rotations et l’opacité ;
 5919246	réaliser des animations dynamiques.
@@ -434,6 +442,10 @@ course_id	skill
 4668056	Filtrer les éléments renvoyés par le Microservice 
 5647281	Identifier les besoins utilisateurs avec la méthode de Domain-Driven Design ;
 5647281	Formaliser les besoins des utilisateurs dans un modèle de domaine.
+6971126	Créer votre base de données avec MySQL.
+6971126	Manipuler vos données avec les opérations CRUD.
+6971126	Effectuer des requêtes SQL avancées.
+6971126	Transformer la structure d’une base de données.
 4975451	Positionner Java en tant qu'écosystème de développement d'applications
 4975451	Analyser le fonctionnement d'une boucle et d'une condition en Java
 4975451	Discuter des bonnes pratiques de développement avec le TDD et Git
@@ -442,17 +454,17 @@ course_id	skill
 4287521	Découvrir et utiliser le Playground
 4287521	Maîtriser les fondamentaux de Swift
 4287521	Utiliser le terminal pour exécuter un programme Swift
+4425066	Créer une application web avec Flask
+4425066	Organiser un projet MVT (Modèle / Vue / Template)
+4425066	Utiliser un ORM pour interagir avec une base de données
+4425066	Tester un parcours utilisateur avec des tests fonctionnels et Selenium
+4425066	Mettre en ligne une application Flask sur Heroku
 5353106	Comprendre le fonctionnement des variables et des fonctions en Kotlin
 5353106	Connaître les mécanismes d’une classe en Kotlin
 5353106	Gérer des structures de contrôle en Kotlin
 5353106	Utiliser des lambdas en Kotlin
 5353106	Implémenter des extensions en Kotlin
 5353106	Maîtriser la conception d’une classe en Kotlin
-4425066	Créer une application web avec Flask
-4425066	Organiser un projet MVT (Modèle / Vue / Template)
-4425066	Utiliser un ORM pour interagir avec une base de données
-4425066	Tester un parcours utilisateur avec des tests fonctionnels et Selenium
-4425066	Mettre en ligne une application Flask sur Heroku
 5922626	Diagnostiquer la crawlabilité de votre site ;
 5922626	Corriger des erreurs techniques sur votre site afin d'améliorer sa crawlabilité ;
 5922626	Augmenter la vitesse d'un site ;
@@ -487,6 +499,10 @@ course_id	skill
 5098931	Tester et déployer une application complète 
 6691451	coder une page HTML respectant les règles d'accessibilité WCAG avec ARIA ;
 6691451	implémenter des éléments interactifs respectant les règles WCAG avec CSS et ARIA.
+1730486	identifier les responsabilités du centre de services ;
+1730486	gérer les tickets d'incidents avec ITIL sur GLPI ;
+1730486	gérer les tickets de problèmes avec ITIL sur GLPI ;
+1730486	gérer les demandes de changements avec ITIL sur GLPI.
 4087036	Respecter les contraintes de REST et les règles du modèle de maturité de Richardson
 4087036	Exposer une API REST avec Symfony
 4087036	Sérialisation et désérialisation de ressources
@@ -515,10 +531,6 @@ course_id	skill
 6179306	identifier les principales attaques web et les règles de sécurité à adopter ;
 6179306	protéger du code avec l'OWASP ;
 6179306	tester et appliquer l'OWASP.
-1730486	identifier les responsabilités du centre de services ;
-1730486	gérer les tickets d'incidents avec ITIL sur GLPI ;
-1730486	gérer les tickets de problèmes avec ITIL sur GLPI ;
-1730486	gérer les demandes de changements avec ITIL sur GLPI.
 6398056	documenter votre code pour le rendre maintenable et réutilisable ;
 6398056	créer de la documentation pour une architecture. 
 3504461	Développer avec les méthodes BDD et TDD
@@ -531,10 +543,6 @@ course_id	skill
 5511091	Tester son code Redux
 5511091	Architecturer un projet React + Redux
 5511091	Développer un projet React + Redux fonctionnel
-4872916	Déployer un système d’authentification sur un backend
-4872916	Concevoir une architecture NoSQL orientée document
-4872916	Sauvegarder et récupérer des données sur un backend
-4872916	Gérer et afficher des messages de notification
 6810956	Structurer du code Java avec l'architecture MVC.
 6810956	Appliquer les principes SOLID au code Java.
 6810956	Résoudre des problèmes de programmation courants à l'aide de design patterns en Java. 
@@ -548,6 +556,10 @@ course_id	skill
 5162341	Respecter les obligations légales liées au numérique ;
 5162341	Assurer la conformité de vos pratiques au RGPD ;
 5162341	Maîtriser l'environnement juridique d'un projet informatique.
+4872916	Déployer un système d’authentification sur un backend
+4872916	Concevoir une architecture NoSQL orientée document
+4872916	Sauvegarder et récupérer des données sur un backend
+4872916	Gérer et afficher des messages de notification
 4568596	Déployer un système de navigation au sein d’une application
 4568596	Adapter votre application aux différentes résolutions et orientations d’un terminal
 4568596	Implémenter et personnaliser la barre d’outils (Toolbar)
@@ -628,6 +640,9 @@ Déployer et configurer une architecture IoT en utilisant OM2M
 Interagir avec les objets en utilisant une architecture REST"
 5079046	Déployer et configurer une architecture IoT en utilisant OM2M
 5079046	Interagir avec les objets en utilisant une architecture REST
+7160741	Appliquer le guide de style PEP 8 au code Python. 
+7160741	Résoudre des problèmes de programmation courants à l’aide de design patterns en Python. 
+7160741	Appliquer les principes SOLID au code Python.
 3979376	Développer de premières applications en WebGL
 3979376	Connaître et savoir utiliser le HTML et le CSS
 3979376	Maîtriser les grands principes du JavaScript (fonctions et programmation orientée objet nécessaires)
@@ -647,6 +662,9 @@ Interagir avec les objets en utilisant une architecture REST"
 4568621	Appliquer un style personnalisé à des vues
 4568621	Afficher du contenu multi-langue
 4568621	Implémenter le Material Design dans une application Android
+7150616	Écrire des méthodes et des classes avec Python. 
+7150616	Utiliser le comportement hérité dans un programme Python. 
+7150616	Structurer votre code dans un programme Python.
 4570776	Connaître les différentes tailles d’écran en iOS
 4570776	Utiliser le mode aperçu d’Xcode
 4570776	Créer et manipuler des contraintes avec AutoLayout
@@ -680,6 +698,9 @@ Interagir avec les objets en utilisant une architecture REST"
 4504866	Créer une cellule customisée
 4504866	Utiliser les protocoles pour créer des interfaces homogènes
 4504866	Supprimer une cellule
+6982461	Connecter une application Java à une base de données relationnelle.
+6982461	Récupérer des données stockées en base de données.
+6982461	Ajouter, modifier et supprimer des données.
 4729291	Analyser une pile de plantage
 4729291	Créer des points d’arrêts
 4729291	Utiliser le débugueur
@@ -688,19 +709,18 @@ Interagir avec les objets en utilisant une architecture REST"
 4729291	Créer des tests unitaires
 4729291	Inspecter la couverture de vos tests
 4729291	Développer en test driven development
-7160741	Appliquer le guide de style PEP 8 au code Python. 
-7160741	Résoudre des problèmes de programmation courants à l’aide de design patterns en Python. 
-7160741	Appliquer les principes SOLID au code Python.
-6971126	Créer votre base de données avec MySQL.
-6971126	Manipuler vos données avec les opérations CRUD.
-6971126	Effectuer des requêtes SQL avancées.
-6971126	Transformer la structure d’une base de données.
-6982461	Connecter une application Java à une base de données relationnelle.
-6982461	Récupérer des données stockées en base de données.
-6982461	Ajouter, modifier et supprimer des données.
+7150606	construire une Single Page Application complète qui respecte une architecture robuste ;
+7150606	maîtriser les hooks ;
+7150606	tester votre application React ;
+7150606	évoluer dans une codebase qui utilise des composants classe.
 7137741	Analyser l’architecture d’une application existante.
 7137741	Séparer les couches d’application avec le Modèle-Vue-Contrôleur et la refactorisation.
 7137741	Implémenter la communication entre les couches d’application.
+7159296	Identifier le type de bug ;
+7159296	Déboguer du HTML et CSS ;
+7159296	Déboguer des bugs sur le DOM ;
+7159296	Déboguer des bugs sur l’API ;
+7159296	Déboguer une application. 
 3178966	Connaître les principaux éléments de programmation de Windows 10
 3178966	Connaître des éléments de programmation avancés de Windows 10
 3178966	Connaître les éléments pour créer une interface graphique avec Windows 10
@@ -742,11 +762,6 @@ Interagir avec les objets en utilisant une architecture REST"
 4104731	Assurer plus aisément et plus efficacement vos responsabilités de manager (fixer des objectifs, motiver vos collaborateurs, les évaluer et partager du feedback constructif, traiter les erreurs, etc.) ;
 4104731	Exploiter le potentiel collaboratif de vos équipes en conduisant des réunions, et en facilitant la communication et la prise de décision ;
 4104731	Mieux gérer les situations de tension professionnelle et garder un équilibre de vie professionnelle et personnelle en développant votre intelligence émotionnelle et organisant votre temps. 
-5774866	Intégrer une approche d'analyse de risques à un projet ;
-5774866	Détecter les risques d'un projet ;
-5774866	Prioriser le traitement des risques d'un projet selon leur criticité ;
-5774866	Établir un plan de prévention ;
-5774866	Présenter votre analyse des risques et les parades identifiées à un tiers.
 4511316	Manager un projet avec une combinaison de pratiques agiles.
 4511316	Développer votre créativité et votre capacité à innover.
 4511316	Mener des ateliers de brainstorming en équipe.
@@ -754,6 +769,11 @@ Interagir avec les objets en utilisant une architecture REST"
 4511316	Animer le management de projet avec une veille stratégique.
 4511316	Mesurer la vélocité de plusieurs équipes Scrum.
 4511316	Définir un modèle agile pour plusieurs équipes Scrum.
+5774866	Intégrer une approche d'analyse de risques à un projet ;
+5774866	Détecter les risques d'un projet ;
+5774866	Prioriser le traitement des risques d'un projet selon leur criticité ;
+5774866	Établir un plan de prévention ;
+5774866	Présenter votre analyse des risques et les parades identifiées à un tiers.
 5780081	Situer le Product Manager dans une entreprise et une équipe ;
 5780081	Appréhender les missions du Product Manager ;
 5780081	Maîtriser le vocabulaire utile au Product Manager ;
@@ -766,16 +786,16 @@ Interagir avec les objets en utilisant une architecture REST"
 5228301	Décrire l'environnement national et international du BIM
 5228301	Décrire l'environnement réglementaire, normatif et juridique du BIM en France
 5228301	Lister les applications, les avantages et risques liés au BIM
-5218141	Identifier vos compétences et leurs réalisations
-5218141	Comparer votre niveau de compétence à celui de votre métier cible
-5218141	Définir votre projet professionnel
-5218141	Identifier les caractéristiques du marché du travail
-5218141	Organiser votre veille du marché du travail
 5218221	Rédiger efficacement votre CV
 5218221	Maîtriser votre e-réputation
 5218221	Optimiser votre profil sur LinkedIn
 5218221	Composer votre ePortfolio
 5218221	Adapter vos outils de recherche d’emploi à votre projet
+5218141	Identifier vos compétences et leurs réalisations
+5218141	Comparer votre niveau de compétence à celui de votre métier cible
+5218141	Définir votre projet professionnel
+5218141	Identifier les caractéristiques du marché du travail
+5218141	Organiser votre veille du marché du travail
 6045521	Décrire les bonnes pratiques pour réussir une discussion technique ;
 6045521	Décrire les bonnes pratiques pour résoudre un test d'algorithmique ;
 6045521	Réaliser un mini-projet de développement ;
@@ -952,6 +972,9 @@ Interagir avec les objets en utilisant une architecture REST"
 4669186	Sélectionner les activités en présentiel et en distanciel
 4669186	Mettre en œuvre l'hybridation d'une formation
 4669186	Anticiper les difficultés de déploiement du blended learning
+5197181	identifier les missions de l'évaluateur ;
+5197181	évaluer les compétences d'un étudiant ;
+5197181	donner des retours constructifs et personnalisés à un étudiant.
 4669246	identifier les différents types d'audits de formation ;
 4669246	préparer un audit de formation de manière méthodologique ;
 4669246	réaliser un audit de formation ;
@@ -959,9 +982,6 @@ Interagir avec les objets en utilisant une architecture REST"
 4669246	exploiter les données issues de l'audit ;
 4669246	rédiger un rapport d'audit ;
 4669246	formuler des recommandations à vos cibles.  
-5197181	identifier les missions de l'évaluateur ;
-5197181	évaluer les compétences d'un étudiant ;
-5197181	donner des retours constructifs et personnalisés à un étudiant.
 4225026	Maîtriser les différentes étapes de la gestion d’un projet de création informatique personnel : brainstorming, conception, réalisation, test, évaluation (donner et recevoir du feedback)
 4225026	Accompagner les enfants dans la gestion d’un projet
 4225026	Découvrir les différentes méthodes de gestion de projet, choisir la méthode adaptée à votre projet
@@ -999,11 +1019,6 @@ Interagir avec les objets en utilisant une architecture REST"
 4722866	répercuter correctement les éléments sur les bulletins ;
 4722866	vous organiser pour gérer le cycle mensuel sereinement ;
 4722866	appliquer les mécanismes de contrôle des bulletins.
-4722851	expliquer ce que sont les cotisations sociales et à quoi elles servent ;
-4722851	nommer les acteurs du système social en France ;
-4722851	identifier et expliquer chaque rubrique de cotisation sociale ;
-4722851	retrouver et expliquer le calcul des cotisations ;
-4722851	assurer la gestion des déclarations et leur contrôle.
 6369836	identifier les évolutions des dispositifs et du financement de la formation,
 6369836	mobiliser le CPF comme outil de financement de la formation,
 6369836	optimiser le choix d'un dispositif de financement de la formation
@@ -1048,6 +1063,11 @@ Interagir avec les objets en utilisant une architecture REST"
 4539271	Concevoir un programme d’intégration en lien avec le manager
 4539271	Accompagner les managers durant la phase d’adaptation
 4539271	Réaliser des bilans d’intégration avec les nouveaux collaborateurs et les managers
+4722851	expliquer ce que sont les cotisations sociales et à quoi elles servent ;
+4722851	nommer les acteurs du système social en France ;
+4722851	identifier et expliquer chaque rubrique de cotisation sociale ;
+4722851	retrouver et expliquer le calcul des cotisations ;
+4722851	assurer la gestion des déclarations et leur contrôle.
 4722911	Analyser les éléments nécessaires au bon calcul des congés payés.
 4722911	Maîtriser les différents aspects des arrêts de travail.
 4722911	Identifier les autres catégories d'absence des salariés.
@@ -1169,11 +1189,11 @@ Interagir avec les objets en utilisant une architecture REST"
 6911101	stimuler votre créativité ;
 6911101	utiliser la pensée latérale et analytique pour perfectionner votre créativité ;
 6911101	appliquer des outils de pensée créative pour résoudre des problèmes dans votre travail.
+6909446	analyser comment le cerveau décide ;
+6909446	aborder une décision de façon méthodique.
 6836021	prendre conscience des biais cognitifs ;
 6836021	questionner des situations en faisant preuve d'esprit critique ; 
 6836021	déjouer les pièges de l'argumentation.
-6909446	analyser comment le cerveau décide ;
-6909446	aborder une décision de façon méthodique.
 4421146	Rédiger un plan d'animation.
 4421146	Créer des supports pour l'animation d'un atelier.
 4421146	Utiliser différentes techniques d'animation.
@@ -1204,20 +1224,20 @@ Interagir avec les objets en utilisant une architecture REST"
 6093671	identifier les méthodes d'implémentation du DevOps en entreprise.
 1733521	Installer et paramétrer Windows 10 ;
 1733521	Déployer Windows 10 avec Sysprep.
+1730516	identifier les responsabilités et les outils du gestionnaire de parc informatique ;
+1730516	inventorier et organiser le matériel informatique dans GLPI ;
+1730516	mettre en place la gestion financière et administrative du parc.
+1372996	Adopter une posture d'architecte système, 
+1372996	Identifier les éléments d'une architecture,
+1372996	Représenter visuellement une architecture, 
+1372996	Concevoir une architecture efficace et adaptée,
+1372996	Élaborer un Document d'Architecture Technique. 
 2557196	Connecter et configurer le matériel Cisco pour le réseau
 2557196	Configurer des VLAN pour segmenter le réseau
 2557196	Mettre en place les protocoles pour le LAN 
 2557196	Interconnecter et configurer des routeurs Cisco (OSPF, EIGRP)
 2557196	Mettre en place des sécurités sur des routeurs
 2557196	Gérer des accès réseau grâce au serveur RADIUS
-1372996	Adopter une posture d'architecte système, 
-1372996	Identifier les éléments d'une architecture,
-1372996	Représenter visuellement une architecture, 
-1372996	Concevoir une architecture efficace et adaptée,
-1372996	Élaborer un Document d'Architecture Technique. 
-1730516	identifier les responsabilités et les outils du gestionnaire de parc informatique ;
-1730516	inventorier et organiser le matériel informatique dans GLPI ;
-1730516	mettre en place la gestion financière et administrative du parc.
 1757741	protéger vos fichiers avec le chiffrement symétrique ;
 1757741	protéger vos données avec le chiffrement asymétrique ;
 1757741	protéger vos systèmes (connexions et applications). 
@@ -1235,6 +1255,11 @@ Interagir avec les objets en utilisant une architecture REST"
 1946106	Rédiger des règles firewalls
 1946106	Mettre en place un VPN sécurisé
 1946106	Définir une politique de sécurité simple
+2035796	installer et configurer un node manager Ansible ;
+2035796	automatiser le déploiement d'une application avec Ansible ;
+2035796	créer un module Ansible personnalisé avec Python.
+2035736	mettre en place un pipeline d'intégration continue avec GitLab ;
+2035736	mettre en place un pipeline de livraison continue avec GitLab.
 2356316	Maîtriser les bases d’un serveur et ses services
 2356316	Mettre en place un environnement de travail
 2356316	Identifier ses besoins pour choisir une architecture adaptée
@@ -1245,15 +1270,7 @@ Interagir avec les objets en utilisant une architecture REST"
 2356316	Identifier les différentes techniques de sécurisation des données
 2356316	Partager ses fichiers sur un réseau Linux avec NFS
 2356316	Partager ses fichiers sur un réseau hétérogène avec Samba
-2035796	installer et configurer un node manager Ansible ;
-2035796	automatiser le déploiement d'une application avec Ansible ;
-2035796	créer un module Ansible personnalisé avec Python.
-2035736	mettre en place un pipeline d'intégration continue avec GitLab ;
-2035736	mettre en place un pipeline de livraison continue avec GitLab.
 6344196	automatiser des tâches avec des scripts PowerShell.
-5668856	Identifier les fonctionnalités spécifiques à Windows 10 ;
-5668856	Administrer un ordinateur sous Windows 10 ;
-5668856	Sécuriser votre système.
 1733551	Maîtriser le fonctionnement des services sous Linux
 1733551	Gérer les services avec systemd
 1733551	Installer un serveur de temps
@@ -1265,34 +1282,31 @@ Interagir avec les objets en utilisant une architecture REST"
 1733551	Mettre en œuvre un reverse-proxy sous Nginx
 1733551	Mettre en œuvre un proxy-cache sous Squid
 1733551	Identifier les différentes stratégies de croissance d’une infrastructure
+5668856	Identifier les fonctionnalités spécifiques à Windows 10 ;
+5668856	Administrer un ordinateur sous Windows 10 ;
+5668856	Sécuriser votre système.
 1756296	Définir un test d’intrusion (ou pentest)
 1756296	Sélectionner un type de test d'intrusion en fonction du besoin
 1756296	Scanner les vulnérabilités d’un système informatique
 1756296	Réaliser un test d’intrusion
 1756296	Proposer des solutions correctives
 1756296	Rédiger et présenter un rapport de test d'intrusion
-1761876	Sécuriser l'architecture de votre système d'information 
-1761876	Cloisonner et filtrer un réseau 
-1761876	Sécuriser Active Directory 
-1761876	Sécuriser des systèmes Windows et Linux
-1761876	Sécurisez le système réseau avec OpenSSH
-2013451	Décrire les concepts de base qui structurent ce référentiel de bonnes pratiques ;
-2013451	Réaliser une procédure qui sécurise le déploiement d’un SI ; 
-2013451	Identifier les différentes étapes de mise en production d'un changement. 
 1733046	Maitriser le fonctionnement des architectures client/serveur des technologies VNC ; 
 1733046	Configurer le serveur VNC afin de la sécuriser ; 
 1733046	Contrôler et vérifier les ouvertures de ports sur serveur VNC ; 
 1733046	Mettre en oeuvre le dialogue réseau entre un client et un serveur VNC ; 
 1733046	"Mettre en place les options de ""Reverse connection"" des clients et serveurs VNC. "
-6227516	appliquer les principes du management de la qualité dans un processus SI ;
-6227516	identifier des actions face aux risques et opportunités d’un processus SI ;
-6227516	mettre en place une dynamique d’amélioration continue pour piloter un processus SI.
+2013451	Décrire les concepts de base qui structurent ce référentiel de bonnes pratiques ;
+2013451	Réaliser une procédure qui sécurise le déploiement d’un SI ; 
+2013451	Identifier les différentes étapes de mise en production d'un changement. 
+1761876	Sécuriser l'architecture de votre système d'information 
+1761876	Cloisonner et filtrer un réseau 
+1761876	Sécuriser Active Directory 
+1761876	Sécuriser des systèmes Windows et Linux
+1761876	Sécurisez le système réseau avec OpenSSH
 2035786	Comprendre les enjeux de la supervision ;
 2035786	Installer et configurer la solution Nagios ;
 2035786	Configurez un service à superviser grâce aux commandes Nagios.
-1734201	identifier les enjeux d'une politique de sécurité ; 
-1734201	rédiger le document de PSSI ; 
-1734201	et l'implémenter durablement au sein de votre entreprise. 
 2035746	"Auditer la sécurité d'un système d'exploitation, c'est-à-dire, en détails : 
 le processus de démarrage 
 le système 
@@ -1311,10 +1325,16 @@ les accès réseaux "
 1734211	 préparer une analyse de risques SI ;
 1734211	 mener cette analyse ;
 1734211	 et la faire vivre dans le temps.
+1734201	identifier les enjeux d'une politique de sécurité ; 
+1734201	rédiger le document de PSSI ; 
+1734201	et l'implémenter durablement au sein de votre entreprise. 
 1761931	Identifier les vulnérabilités d'une application web ;
 1761931	Assurer la sécurité des identités des utilisateurs d'une application ;
 1761931	Implémenter les outils de protection des données d'une application ;
 1761931	Appliquez les principes de sécurité dès la conception d'une application.
+6227516	appliquer les principes du management de la qualité dans un processus SI ;
+6227516	identifier des actions face aux risques et opportunités d’un processus SI ;
+6227516	mettre en place une dynamique d’amélioration continue pour piloter un processus SI.
 6227466	Identifier le rôle du chef de projet SI 
 6227466	Décrire les missions d'un chef de projet SI  
 6227466	Identifier les moyens d'évolution du chef de projet SI 
@@ -1367,10 +1387,16 @@ les accès réseaux "
 6825041	découvrir le rôle du technicien informatique ;
 6825041	identifier les missions de technicien informatique ;
 6825041	évoluer dans le métier de technicien informatique.
+7170491	Mettre en place Linux sur votre ordinateur avec une distribution comme Ubuntu.
+7170491	Interagir avec votre ordinateur en entrant des lignes de commande dans un terminal.
+7170491	Utiliser les bons outils pour exploiter Linux dans votre vie professionnelle.
 1750566	Identifier les objectifs de la supervision du SI ;
 1750566	Analyser des logs ;
 1750566	Mettre en place un SIEM et créer des règles de détection ;
 1750566	Proposer des scénarios d'attaque adaptés. 
+6944606	Créer l'architecture physique de votre réseau ;
+6944606	Configurer votre réseau pour assurer la communication ;
+6944606	Optimiser votre réseau en ajoutant des services.
 5439146	définir le concept de codage de l’information ;
 5439146	décrire le code binaire et ses variantes ;
 5439146	décrire les fonctions élémentaires ;
@@ -1491,12 +1517,6 @@ les accès réseaux "
 5433211	identifier l'utilisation de la théorie des graphes dans la modélisation d'un réseau ;
 5433211	décrire les différentes techniques d'accès sur un canal de communication partagé ;
 5433211	identifier le rôle et le fonctionnement des protocoles et mécanismes de la pile TCP/IP.
-5439126	présenter les domaines des systèmes embarqués connectés, les métiers et les applications ;
-5439126	utiliser le concept de Penser Système pour aborder un système dans son contexte ;
-5439126	discuter de problématiques liées aux objets connectés pour des applications agricoles ;
-5439126	justifier l’intérêt d’une analyse pluridisciplinaire pour les systèmes embarqués complexes ;
-5439126	décrire l’intégration de processus techniques et organisationnels pour l’embarqué ;
-5439126	décrire la problématique de l'industrialisation en PME.
 4617941	Savoir retrouver et manipuler l’équation du radar
 4617941	Faire un bilan de liaison entre un émetteur et un récepteur
 4617941	Faire le lien entre les notions de détection, d’estimation et de rapport signal à bruit
@@ -1505,6 +1525,12 @@ les accès réseaux "
 4617941	Identifier les capacités de détection pour chaque type de radar (distance, vitesse)
 4617941	Établir les performances et limitations pour chaque type de radar
 4617941	Décrire les traitements du signal pour des applications de détection et d’estimation de distance et de vitesse
+5439126	présenter les domaines des systèmes embarqués connectés, les métiers et les applications ;
+5439126	utiliser le concept de Penser Système pour aborder un système dans son contexte ;
+5439126	discuter de problématiques liées aux objets connectés pour des applications agricoles ;
+5439126	justifier l’intérêt d’une analyse pluridisciplinaire pour les systèmes embarqués complexes ;
+5439126	décrire l’intégration de processus techniques et organisationnels pour l’embarqué ;
+5439126	décrire la problématique de l'industrialisation en PME.
 6294936	tenir une discussion technique au sujet des contraintes liées à la détention d'assurance vie, y compris avec des gérants de fonds ;
 6294936	"expliquer les différents enjeux liés à la garantie en capital proposée sur les fonds ""Euros"" ;"
 6294936	comprendre et expliquer les méthodes et objectifs des différentes typologies de gestion d'actifs ;
@@ -1580,6 +1606,9 @@ les accès réseaux "
 6356111	Identify opportunities and roadblocks in a digital transformation project.
 6356111	Win support for your digital transformation strategy.
 6356111	Change your approach to innovation to ensure long-term success of digital transformation projects.
+7078811	Construct a definition of artificial intelligence.
+7078811	Discover the societal impact of artificial intelligence.
+7078811	Describe the inner workings of an AI engineering project.  
 2071486	Represent data with the relational model
 2071486	Manipulate data using relational algebra operations 
 2071486	Apply relational algebra operations using SQL
@@ -1604,9 +1633,6 @@ les accès réseaux "
 6532301	Preprocess text data.
 6532301	Vectorize text for classification using bag-of-words.
 6532301	Vectorize text for exploration using word embeddings. 
-7078811	Construct a definition of artificial intelligence.
-7078811	Discover the societal impact of artificial intelligence.
-7078811	Describe the inner workings of an AI engineering project.  
 4555376	Build skills for ideation (sketching, mind mapping, storyboarding)
 4555376	Use graphic design to communicate ideas clearly
 4555376	Create a professional looking presentation 
@@ -1721,10 +1747,6 @@ les accès réseaux "
 4286486	Describe JavaScript frameworks, their advantages and disadvantages
 4286486	"Use ""create-react-app"" to generate, develop, and build your React project"
 4286486	Turn specifications into a well-architected React application, including composing components, managing state, and maintaining unidirectional data flow
-5671626	Explain how to save your code locally and remotely using GitHub repositories.
-5671626	Correct common errors when using GitHub.
-5671626	Manage your code using advanced versioning techniques.
-5671626	Define procedures for effective organizational strategies in teams.
 5493201	access and modify DOM elements
 5493201	capture DOM events
 5493201	handle user input
@@ -1733,6 +1755,10 @@ les accès réseaux "
 5493201	use async/await
 5493201	handle errors
 5493201	use Gulp for basic build tasks
+5671626	Explain how to save your code locally and remotely using GitHub repositories.
+5671626	Correct common errors when using GitHub.
+5671626	Manage your code using advanced versioning techniques.
+5671626	Define procedures for effective organizational strategies in teams.
 1306056	Analyze the crawlability of a website.
 1306056	Remove technical errors on a website to improve crawlability.
 1306056	Increase the speed of a website.
@@ -1816,15 +1842,6 @@ les accès réseaux "
 3523361	Understand the Jasmine framework
 3523361	Define specs, suites, expectations, and more
 3523361	Write great tests that keep your code in A+ condition
-4544576	when to prototype and the principles of effective prototyping
-4544576	how to define a prototyping goal for your project
-4544576	when to use the different types of prototype
-4544576	how to sketch on paper and create paper prototypes in minutes with the POP app
-4544576	how to master artboards and layers, how to work with shapes and text in Sketch 
-4544576	how to create real-looking graphic designs for a mobile app in Sketch
-4544576	how to create a high-fidelity clickable prototype using these designs and Invision.
-4544576	how to install your real looking prototype on your mobile phone
-4544576	how to get feedback (and how not to get feedback) from real customers on your prototype
 5670561	Identify the strengths of Visual Studio as an IDE for the .NET ecosystem
 5670561	Install Visual Studio Community and set up a project
 5670561	Work through the life cycle of a .NET application
@@ -1834,6 +1851,15 @@ les accès réseaux "
 4511061	Gain solid foundation for advanced understanding of the language
 4511061	Begin incorporating object-oriented design principles in your code
 4511061	Know how to use ruby documentation
+4544576	when to prototype and the principles of effective prototyping
+4544576	how to define a prototyping goal for your project
+4544576	when to use the different types of prototype
+4544576	how to sketch on paper and create paper prototypes in minutes with the POP app
+4544576	how to master artboards and layers, how to work with shapes and text in Sketch 
+4544576	how to create real-looking graphic designs for a mobile app in Sketch
+4544576	how to create a high-fidelity clickable prototype using these designs and Invision.
+4544576	how to install your real looking prototype on your mobile phone
+4544576	how to get feedback (and how not to get feedback) from real customers on your prototype
 4539111	Understand what iOS development is
 4539111	Discover the Xcode software and its main features
 4539111	Learn the basics of Swift
@@ -1872,6 +1898,9 @@ les accès réseaux "
 4554306	Master the essential components of iOS (UIViewController and UIView) 
 4554306	Implement adaptive layout
 4554306	Create a functional app to start building your portfolio - FrameIT!
+7132446	Understand React components and JSX.
+7132446	Create a complete application using Create React App (CRA).
+7132446	Manage data in a React app using state and effects.
 5670606	Manage the execution flow in a C# unit test.
 5670606	View and edit your data in the Visual Studio debugger.
 4554336	Interpret requirements description and translate it into a clean design
@@ -1881,9 +1910,6 @@ les accès réseaux "
 4554336	Apply clean code principles
 6663461	Create accessible web pages using semantic HTML and ARIA attributes.
 6663461	Create accessible interactive content on a web page.  
-7132446	Understand React components and JSX.
-7132446	Create a complete application using Create React App (CRA).
-7132446	Manage data in a React app using state and effects.
 4849646	Recognize the components of key project management frameworks, models, and methodologies.
 4849646	Identify when to apply project management methodology within product management.
 4849646	Explain how to identify and communicate with stakeholders.
@@ -1965,6 +1991,11 @@ les accès réseaux "
 6863126	Develop an advertising strategy.
 6863126	Create a campaign.
 6863126	Measure the effectiveness and cost of a campaign. 
+7149791	Develop an email strategy.
+7149791	Write a persuasive marketing email.
+7149791	Send an email campaign.
+7149791	Optimize campaign performance.
+7149791	Improve campaign deliverability.
 5281811	Adopt a stance that encourages learning;
 5281811	Conduct your learning in an autonomous way;
 5281811	Create your personalised learning plan;
@@ -2000,6 +2031,14 @@ les accès réseaux "
 6911361	Communicate effectively.
 6911361	Personalize professional relationships.
 6911361	Overcome relational challenges.
+7132546	Select the essential components of a computer.
+7132546	Select computer components for specific needs.
+7132546	Assemble the components of a computer.
+7132511	Identify the specific features of Windows 10
+7132511	Manage your Windows 10 operating system
+7132511	Protect your Windows 10 operating system  
+7088391	Install and set up Windows 10.
+7088391	Deploy Windows 10 using Sysprep.
 3675646	
 3675646	
 3675646	
