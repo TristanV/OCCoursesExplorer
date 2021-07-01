@@ -1345,7 +1345,7 @@ def display_data_section():
             scrap_OC_Projects_button.layout=widgets.Layout(width='220px', height='30px') 
             scrap_OC_Projects_button.on_click(scrap_OC_Projects)
             cells.append(scrap_OC_Projects_button)
-        cells.append(wcell("20m",width='80px'))
+        cells.append(wcell("10m",width='80px'))
         rows.append(wrow(cells))        
 
         cells=[]
@@ -1375,7 +1375,7 @@ def display_data_section():
                 scrap_OC_ProjectsCoursesLinks_button.on_click(scrap_OC_ProjectsCoursesLinks)
                 cells.append(scrap_OC_ProjectsCoursesLinks_button)
         
-        cells.append(wcell("30min",width='80px'))
+        cells.append(wcell("10min",width='80px'))
         rows.append(wrow(cells))            
         #--- END PROJECTS
         

@@ -1,6 +1,10 @@
 # Selenium Gecko Driver Log
 geckodriver.log
 
+# custom and user generated html visualizations
+viz/custom*.html
+viz/oc*.html
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

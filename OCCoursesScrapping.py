@@ -340,7 +340,7 @@ def scrap_OC_Courses(b):
     # the search page provides the total count of search results in a html element appearing only when window is phone-size
     # let's force this element to appear
     bs = OC_browser.get_window_size()
-    print(bs)
+#     print(bs)
     OC_browser.set_window_position(0, 0)
     OC_browser.set_window_size(640, 480)
     OC_browser_hide_overlays()
@@ -439,10 +439,12 @@ def scrap_OC_Courses(b):
                     course_date=""
                     course_author=""
                     course_is_certified=""
-                    #["topic_id","course_id","course_name","course_date","course_title","course_description","course_language","course_difficulty","course_duration_hours","course_author","course_partner","course_illustration","course_is_certified","course_url"]
+                    course_activities_count=""
+                    course_exercises_count=""
+                    #["topic_id","course_id","course_name","course_date","course_title","course_description","course_language","course_difficulty","course_duration_hours","course_author","course_partner","course_illustration","course_is_certified","course_url","course_activities_count","course_exercises_count"]
                     course = [topic_id,course_id,course_name,course_date,course_title,course_description,lang,
                               course_difficulty,course_duration_hours,course_author,course_partner,
-                              course_illustration,course_is_certified,course_full_url]
+                              course_illustration,course_is_certified,course_full_url,course_activities_count,course_exercises_count]
                     #display(course)
                     courses.append(course)
                     set_progress(len(courses),'courses')
@@ -469,7 +471,7 @@ def scrap_OC_CoursesDetails(b):
     success=True #until it gets False
     console_log("Scrapping courses details") 
     toggle_scrap_buttons(True)
-#     OC_Courses_cols             = ["topic_id","course_id","course_name","course_date","course_title","course_description","course_language","course_difficulty","course_duration_hours","course_author","course_partner","course_illustration","course_is_certified","course_url"]
+#     OC_Courses_cols             = ["topic_id","course_id","course_name","course_date","course_title","course_description","course_language","course_difficulty","course_duration_hours","course_author","course_partner","course_illustration","course_is_certified","course_url","course_activities_count","course_exercises_count"]
 #     OC_CoursesParts_cols        = ["course_id","part_number","part_name","part_title","part_description","part_url"]
 #     OC_CoursesChapters_cols     = ["course_id","part_number","chapter_id","chapter_number","chapter_name","chapter_title","chapter_description","chapter_url"]
 #     OC_CoursesSkills_cols      = ["course_id","skill"]
@@ -716,7 +718,12 @@ def scrap_OC_CoursesLinks(b):
     #start a browser to avoid window loading latency within the loop
     OC_browser_get(url_search)
     
-    courses = ocd.OC_Courses[["topic_id","course_id","course_name","course_title","course_language","course_url"]]
+    courses_ids = set(ocd.OC_Courses.course_id.values)
+    courses_links = set(ocd.OC_CoursesLinks.src_course_id.values)
+    courses_to_visit=courses_ids-courses_links
+    
+    courses = ocd.OC_Courses[ocd.OC_Courses["course_id"].isin(courses_to_visit)][["topic_id","course_id","course_name","course_title","course_language","course_url"]]
+    
 #     [OC_Courses["topic_id"].isin([3])]
     chapters = ocd.OC_CoursesChapters[["course_id","part_number","chapter_id","chapter_number","chapter_name","chapter_title","chapter_url"]]
     init_progress('courses links',0,0,len(courses)+len(chapters))
@@ -1155,15 +1162,20 @@ def scrap_OC_Projects(b):
         OC_browser_hide_overlays() 
         time.sleep(1)
 
-        #navigate to the "Projets" button and find a way to click on this hide-and-seek element
-        OC_browser.execute_script("window.scrollBy(0,1000)", "") 
-        elt = OC_browser.find_element_by_xpath("//button[@role='tab' and @aria-controls='path-overview-tab']/./..") # and contains(., 'Aperçu')
-        location = elt.location
-        OC_browser.execute_script("window.scrollBy(0,"+str(location["y"]+30)+")", "")
-        time.sleep(1)
-        elt = OC_browser.find_element_by_xpath("//button[@role='tab' and @aria-controls='path-project-tab']") # and contains(., 'Projets')
-        elt.click()
-        time.sleep(2)
+        
+        OC_browser.execute_script("""
+        function FindByAttributeValue(attribute, value, element_type)    {
+          element_type = element_type || "*";
+          var All = document.getElementsByTagName(element_type);
+          for (var i = 0; i < All.length; i++)       {
+            if (All[i].getAttribute(attribute) == value) { return All[i]; }
+          }
+        }
+        project_button=FindByAttributeValue("aria-controls", "path-project-tab", "button");  
+        project_button.click();
+        
+        ""","")
+        
 
         # now collect info
         path_id=p["path_id"]
@@ -1231,20 +1243,23 @@ def scrap_OC_ProjectsCoursesLinks(b):
     for i , p in df.iterrows(): 
         counter+=1 
         OC_browser_get(p["path_url"]+"#path-tabs")
-        time.sleep(2)
+        time.sleep(3)
         OC_browser_hide_overlays() 
-        time.sleep(2)
-
-        
-        #navigate to the "Projets" button and find a way to click on this hide-and-seek element
-        OC_browser.execute_script("window.scrollBy(0,1100)", "") 
-        elt = OC_browser.find_element_by_xpath("//button[@role='tab' and @aria-controls='path-overview-tab']/./..") # and contains(., 'Aperçu')
-        location = elt.location
-        OC_browser.execute_script("window.scrollBy(0,"+str(location["y"]+50)+")", "")
         time.sleep(1)
-        elt = OC_browser.find_element_by_xpath("//button[@role='tab' and @aria-controls='path-project-tab']") # and contains(., 'Projets')
-        elt.click()
-        time.sleep(2)
+        
+        OC_browser.execute_script("""
+        function FindByAttributeValue(attribute, value, element_type)    {
+          element_type = element_type || "*";
+          var All = document.getElementsByTagName(element_type);
+          for (var i = 0; i < All.length; i++)       {
+            if (All[i].getAttribute(attribute) == value) { return All[i]; }
+          }
+        }
+        project_button=FindByAttributeValue("aria-controls", "path-project-tab", "button");  
+        project_button.click();
+        
+        ""","")
+        
 
         # now collect info
         path_id=p["path_id"]
