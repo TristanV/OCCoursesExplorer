@@ -100,7 +100,8 @@ def mini_graph(text, height, width, bgcolor, font_color, directed,notebook,layou
     g = Network(height = height, width=width, bgcolor=bgcolor, font_color=font_color, directed=directed,notebook=notebook,layout=layout)
     g.add_node(0, "OpenClassrooms",group="root",color="#7451eb" ,shape="image", image=OCGraphsIconsURL["OpenClassrooms"],physics=False)
     g.add_node(1, text,group="root",color="font_color" ,title=text,shape="text", physics=True)
-    g.add_edge(0, 1,hidden=False,color="#91B4FE")
+    color="#B491FE"
+    g.add_edge(0, 1,hidden=False,color={'color':color, 'inherit':'false'})
     if (notebook==True):
         g.prep_notebook(custom_template=True, custom_template_path=VizTemplate)
     else:
@@ -112,7 +113,8 @@ def empty_graph(height, width, bgcolor, font_color, directed,notebook,layout):
     g = Network(height = height, width=width, bgcolor=bgcolor, font_color=font_color, directed=directed,notebook=notebook,layout=layout)
     g.add_node(0, "OpenClassrooms",group="root",color="#7451eb" ,shape="image", image=OCGraphsIconsURL["OpenClassrooms"],physics=False)
     g.add_node(1, "Nothing to show!",group="root",color="#C951eb" ,title="404 : Nothing found!",shape="text", physics=False)
-    g.add_edge(0, 1,hidden=False,length=120,color="#B491FE")
+    color="#B491FE"
+    g.add_edge(0, 1,hidden=False,length=120,color={'color':color, 'inherit':'false'})
     if (notebook==True):
         g.prep_notebook(custom_template=True, custom_template_path=VizTemplate)
     else: 
@@ -203,7 +205,7 @@ def build_topics_and_paths_graph(height='640px', width='99%',bgcolor="#ffffff",
         g = Network(height = height, width=width, bgcolor=bgcolor, font_color=font_color, directed=directed,notebook=notebook,layout=layout)
     else :
         g = Network(height = height, width=width, bgcolor=bgcolor, font_color=font_color, directed=directed,notebook=notebook,layout=layout,heading=heading)
-    g.toggle_physics(True) 
+    g.toggle_physics(True)  
     
     
     if type(filter_options)!=type(None) and (filter_options["level"]!="-" or filter_options["topic"]!="-"):     
@@ -247,10 +249,12 @@ def build_topics_and_paths_graph(height='640px', width='99%',bgcolor="#ffffff",
             first_nid=previous_nid
         else :
             if len(topic_nodes) >3:
-                g.add_edge(previous_nid, int(n["nid"]),hidden=False,length=120,color="#B491FE")
+                color="#B491FE"
+                g.add_edge(previous_nid, int(n["nid"]),hidden=False,length=120,color={'color':color, 'inherit':'false'})
             previous_nid=int(n["nid"])
     if len(topic_nodes) >3:
-        g.add_edge(previous_nid, first_nid,hidden=False,length=120,color="#B491FE")
+        color="#B491FE"
+        g.add_edge(previous_nid, first_nid,hidden=False,length=120,color={'color':color, 'inherit':'false'})
     
     
     # ------- LANG
@@ -266,7 +270,8 @@ def build_topics_and_paths_graph(height='640px', width='99%',bgcolor="#ffffff",
         topic_nid=int(e["src_nid"])
         topic_id=aia.get_object_id_for_numeric_id(topic_nid)
         nb_paths=len(dftp[dftp["topic_id"].isin([topic_id])])
-        g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]), length=(ray_topic_lang*magic_coeff)+(nb_paths*(1+magic_coeff)*10), color="#B491FE")     
+        color="#B491FE"
+        g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]), length=(ray_topic_lang*magic_coeff)+(nb_paths*(1+magic_coeff)*10), color={'color':color, 'inherit':'false'})     
     
     
     # ------- LANG WHEEL
@@ -289,7 +294,8 @@ def build_topics_and_paths_graph(height='640px', width='99%',bgcolor="#ffffff",
                     topic_id=aia.get_object_id_for_numeric_id(topic_nid)
                     nb_paths=len(dftp[dftp["topic_id"].isin([topic_id])])
                     length=lang_distance_iso*magic_coeff*math.sqrt(nb_paths)
-                    g.add_edge(previous_nid, nid, hidden=False, length=length,title=str(length), color="#B491FE") 
+                    color="#B491FE"
+                    g.add_edge(previous_nid, nid, hidden=False, length=length,title=str(length), color={'color':color, 'inherit':'false'}) 
                     previous_nid=nid
     
     # ------- PATHS
@@ -302,7 +308,8 @@ def build_topics_and_paths_graph(height='640px', width='99%',bgcolor="#ffffff",
 
     # ------- LANG - PATHS 
     for i,e in lang_path_edges.iterrows():
-        g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=e["label"], color="#B491FE")
+        color="#B491FE"
+        g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=e["label"], color={'color':color, 'inherit':'false'})
 
             
     if (show_buttons):
@@ -457,7 +464,7 @@ def add_pseudo_nodes_between(g, aia, src_nid, tgt_nid, src_uid, tgt_uid, parenth
         if (show_titles):
             title=str(parenthood)+" / "+uid
         g.add_node(nid,label=" ",group="longlink",mass=1,shape="dot",size=1,color=color)
-        g.add_edge(from_nid,nid,length=short_link,color=color,title=title) 
+        g.add_edge(from_nid,nid,length=short_link,color={'color':color, 'inherit':'false'},title=title) 
         from_nid=nid
         from_uid=uid
         
@@ -469,7 +476,7 @@ def add_pseudo_nodes_between(g, aia, src_nid, tgt_nid, src_uid, tgt_uid, parenth
     if (show_titles):
         title=uid
     g.add_node(nid,label=" ",group="longlink",mass=1,shape="dot",size=1,color=color,title=title)
-    g.add_edge(nid,to_nid,length=short_link,color=color,title=title)    
+    g.add_edge(nid,to_nid,length=short_link,color={'color':color, 'inherit':'false'},title=title)    
     to_nid=nid 
     to_uid=uid
         
@@ -482,7 +489,7 @@ def add_pseudo_nodes_between(g, aia, src_nid, tgt_nid, src_uid, tgt_uid, parenth
         if (show_titles):
             title=uid
         g.add_node(nid,label=" ",group="longlink",mass=1,shape="dot",size=1,color=color,title=title)
-        g.add_edge(nid,to_nid,length=short_link,color=color,title=title)    
+        g.add_edge(nid,to_nid,length=short_link,color={'color':color, 'inherit':'false'},title=title)    
         to_nid=nid     
         to_uid=uid
     
@@ -493,7 +500,7 @@ def add_pseudo_nodes_between(g, aia, src_nid, tgt_nid, src_uid, tgt_uid, parenth
     title=None
     if (show_titles):
         title="longlink_from_"+str(src_uid)+"_to_"+str(tgt_uid) 
-    g.add_edge(from_nid,to_nid,length=edge_length,color=color,title=title)  
+    g.add_edge(from_nid,to_nid,length=edge_length,color={'color':color, 'inherit':'false'},title=title)  
 #end function
         
 
@@ -534,13 +541,12 @@ def progression_to_status(progression):
 #    hide_non_required_references => show_only_requirement_relations
 #    hide_relations_over_parenthood_degree => show_relations_max_distance
 def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_once=True, show_only_requirement_relations = True,
-                                      show_relations_max_distance=0,create_pseudo_nodes_over_max_distance=True,
+                                      show_relations_max_distance=0,create_pseudo_nodes_over_max_distance=True, show_my_way = True,
                                       height='640px', width='99%',bgcolor="#ffffff",
                                       font_color=False,heading=None,shape="mountain", directed=False,notebook=True,layout=False,
                                       show_titles=True,show_buttons=False,filter_options=None):
     from OCCoursesGraphs import OCGraphsIconsURL
-    global zig_zag, ga_bu_zo_meu
-    show_my_courses = True
+    global zig_zag, ga_bu_zo_meu 
 #     filter_options={
 #         "height"                             : projects_height_slider.value
 #         "topic"                              : projects_topic_selector.value,
@@ -550,7 +556,8 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
 #         "hide_references"                    : projects_hidereferences_check.value,
 #         "relations_max_distance"             : projects_relations_max_distance_slider.value,
 #         "pseudo_nodes"                       : projects_pseudonodes_check.value,
-#         "mountain_shape"                     : projects_mountainshape_selector.value
+#         "mountain_shape"                     : projects_mountainshape_selector.value,
+#         "show_my_way"                        : projects_myway_check.value
 #     }
     
     if type(filter_options)!=type(None): 
@@ -561,6 +568,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
         max_depth = filter_options["max_depth"]
         show_relations_max_distance = filter_options["relations_max_distance"]
         create_pseudo_nodes_over_max_distance = filter_options["pseudo_nodes"]
+        show_my_way=filter_options["show_my_way"] 
 #         shape options=[("Mountain",0),("OC Wheel",1),("StaiZway to OC",2),("Shad'OC Ladder GaBuZoMeu",3)],
         if filter_options["mountain_shape"]==0:
             shape = "mountain"
@@ -710,7 +718,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
         g = Network(height = height, width=width, bgcolor=bgcolor, font_color=font_color, directed=directed,notebook=notebook,layout=layout)
     else : 
         g = Network(height = height, width=width, bgcolor=bgcolor, font_color=font_color, directed=directed,notebook=notebook,layout=layout,heading=heading)
-    g.toggle_physics(True)
+    g.toggle_physics(True) 
     oc_colors=["#7451eb","#9471fb","#B491FE"]
     path_color="#7451eb"
     project_color="#5451db"
@@ -759,7 +767,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
         px , py = climb_project_mountain(ph,hmax,ymax,shape)
         #py+=plength*random.random()-int(plength/2)
         image=OCGraphsIconsURL["project"]
-        if (show_my_courses==True):
+        if (show_my_way==True):
             status=n["status"]
             if (status!="none"):
                 image=OCGraphsIconsURL["project"+"_"+status]
@@ -813,7 +821,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
                 continue
         else :
             image=OCGraphsIconsURL["course"]
-            if (show_my_courses==True):
+            if (show_my_way==True):
                 status=e["status"]
                 if (status!="none"):
                     image=OCGraphsIconsURL["course"+"_"+status]
@@ -825,7 +833,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
                 g.add_node(int(e["tgt_nid"]), e["course_title"], size=e["course_difficulty_grade"]*10,group="course",\
                            color=course_color,shape="image", image=image) 
             length = plength+ e["course_duration_hours"]
-            g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["course_duration_hours"]))+"h",color=link_colors["primary_requires"],title="1st req")    
+            g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["course_duration_hours"]))+"h",color={'color':link_colors["primary_requires"], 'inherit':'false'},title="1st req")    
             already_visited_courses.append(e["course_id"])
         
         
@@ -898,7 +906,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
             
             srcimage=OCGraphsIconsURL["course"]
             tgtimage=OCGraphsIconsURL["course"]
-            if (show_my_courses==True):
+            if (show_my_way==True):
                 srcstatus=e["src_status"]
                 tgtstatus=e["tgt_status"]
                 if (srcstatus!="none"):
@@ -923,7 +931,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
                 add_pseudo_nodes_between(g,aia,int(e["src_nid"]), int(e["tgt_nid"]), e["src_uid"], e["tgt_uid"],show_relations_max_distance,int(e["parenthood"]),color=link_colors["long_link"],show_titles=show_titles)
             else:
                 edge_title = "2nd req / "+str(int(e["parenthood"]))+" : "+str(e["parenthood_uid"])
-                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["tgt_course_duration_hours"]))+"h",color=color,title=edge_title)  
+                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["tgt_course_duration_hours"]))+"h",color={'color':color, 'inherit':'false'},title=edge_title)  
             already_added_relations.append((int(e["src_nid"]), int(e["tgt_nid"])))
 
         # then add edges with relation other than "requires"
@@ -940,7 +948,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
                 color=link_colors["secundary_references"] 
                 srcimage=OCGraphsIconsURL["course"]
                 tgtimage=OCGraphsIconsURL["course"]
-                if (show_my_courses==True):
+                if (show_my_way==True):
                     srcstatus=e["src_status"]
                     tgtstatus=e["tgt_status"]
                     if (srcstatus!="none"):
@@ -965,7 +973,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
                     add_pseudo_nodes_between(g,aia,int(e["src_nid"]), int(e["tgt_nid"]), e["src_uid"], e["tgt_uid"],show_relations_max_distance,int(e["parenthood"]),color=link_colors["long_link"],show_titles=show_titles)
                 else:
                     edge_title = "2nd ref / "+str(int(e["parenthood"]))+" : "+str(e["parenthood_uid"])
-                    g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["tgt_course_duration_hours"]))+"h",color=color,title=edge_title)
+                    g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["tgt_course_duration_hours"]))+"h",color={'color':color, 'inherit':'false'},title=edge_title)
                 already_added_relations.append((int(e["src_nid"]), int(e["tgt_nid"])))
         # end if we show 'non required' references 
     #end loop over courses_layers
@@ -997,7 +1005,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
         already_visited_courses.append(e["tgt_course_id"])
         srcimage=OCGraphsIconsURL["course"]
         tgtimage=OCGraphsIconsURL["course"]
-        if (show_my_courses==True):
+        if (show_my_way==True):
             srcstatus=e["src_status"]
             tgtstatus=e["tgt_status"]
             if (srcstatus!="none"):
@@ -1021,7 +1029,7 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
 #             print("adding longlink ", int(e["parenthood"]), e["src_course_title"],int(e["src_nid"]), e["tgt_course_title"], int(e["tgt_nid"]))
             add_pseudo_nodes_between(g,aia,int(e["src_nid"]), int(e["tgt_nid"]), e["src_uid"], e["tgt_uid"],show_relations_max_distance,int(e["parenthood"]),color=link_colors["long_link"],show_titles=show_titles)
         else:
-            g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["tgt_course_duration_hours"]))+"h",color=color,title=edge_title) 
+            g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["tgt_course_duration_hours"]))+"h",color={'color':color, 'inherit':'false'},title=edge_title) 
         already_added_relations.append((int(e["src_nid"]), int(e["tgt_nid"])))
     # end if we don't hide    
     
@@ -1052,9 +1060,10 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
 # if path_topic_id is selected (not equal to 0), only paths belonging to this topic will be shown
 # if path_language is selected (not equal to '-'), only paths belonging to this language will be shown
 # If path_id is selected (not equal to 0), only the path structure of this path will be shown
-
+#
+# if connex_paths is True, only the courses connected to the selected paths will be shown
 def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-',\
-                        path_id=0,max_depth=20,show_my_way=True,show_only_requirement_relations = True,\
+                        path_id=0,max_depth=20,show_my_way=True,show_only_requirement_relations = True,connex_paths=False,\
                         atlas_layout=False,height='640px', width='99%',palette="Topic", bgcolor="#ffffff",\
                         font_color=False,heading=None,directed=True,notebook=True,layout=False,\
                         show_titles=True,show_buttons=False,filter_options=None):
@@ -1070,7 +1079,8 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
 #         "hide_references"                    : courses_hidereferences_check.value,
 #         "atlas_layout"                       : courses_algo_check.value,
 #         "show_my_way"                        : courses_myway_check.value, 
-#         "palette"                            : courses_palette_selector.value
+#         "palette"                            : courses_palette_selector.value,
+#         "connex_paths"                       : courses_connexpaths_check.value
 #     }
 #     show_buttons=True
     if type(filter_options)!=type(None): 
@@ -1085,6 +1095,7 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
         atlas_layout=filter_options["atlas_layout"] 
         show_my_way= filter_options["show_my_way"] 
         show_only_requirement_relations = filter_options["hide_references"] 
+        connex_paths=filter_options["connex_paths"] 
 #     display(filter_options)
 #     display(height,language,path_id,topic_id)
     # ------------ get the PATH
@@ -1119,27 +1130,42 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
     # ------------ get the COURSES IMMEDIATELY REQUIRED FOR THE PROJECTs and relevant for the filter
     dfpc= ocd.OC_ProjectsCoursesLinks[ocd.OC_ProjectsCoursesLinks["path_id"].isin(dfpa.path_id.unique()) &\
                                       ocd.OC_ProjectsCoursesLinks["course_id"].isin(filter_courses)] # courses referenced/required by the project
+    
+    # ----------- get the COURSES INDIRECTLY CONNECTED FOR THE PROJECTs (and relevant for the filter)
         
     # build an array of layers of courses, starting from the paths project courses, and iterating to max_depth 
     #use sets to have unique courses IDs and avoid counting the same courses twice or more
     path_courses = set(dfpc.course_id.unique())
-    courses_layers=[path_courses]
+    courses_layers=[path_courses] 
     depth=0 
     linked_courses_found=True
     while linked_courses_found and depth<max_depth:
         linked_courses_found = False
         depth+=1
-        df=ocd.OC_CoursesLinks[(ocd.OC_CoursesLinks["src_course_id"].isin(path_courses)) &\
-                               (ocd.OC_CoursesLinks["tgt_course_id"].isin(filter_courses)) &\
-                               ~(ocd.OC_CoursesLinks["tgt_course_id"].isin([0]))]
+        if (show_only_requirement_relations):
+            df=ocd.OC_CoursesLinks[(ocd.OC_CoursesLinks["src_course_id"].isin(path_courses)) &\
+                                   (ocd.OC_CoursesLinks["tgt_course_id"].isin(filter_courses)) &\
+                                   (ocd.OC_CoursesLinks["relation"].isin(["requires"])) &\
+                                   ~(ocd.OC_CoursesLinks["tgt_course_id"].isin([0]))]
+        else:
+            df=ocd.OC_CoursesLinks[(ocd.OC_CoursesLinks["src_course_id"].isin(path_courses)) &\
+                                   (ocd.OC_CoursesLinks["tgt_course_id"].isin(filter_courses)) &\
+                                   ~(ocd.OC_CoursesLinks["tgt_course_id"].isin([0]))]
         tgt_courses=set(df.tgt_course_id.values) - path_courses
         #now iterate
         if (len(tgt_courses)>0):
             linked_courses_found = True
             courses_layers.append(tgt_courses)
-            path_courses=path_courses | tgt_courses
+            path_courses=path_courses | tgt_courses 
     # end while 
      
+        
+    if connex_paths:
+        #recompute dfc
+        dfc=dfc[dfc["course_id"].isin(path_courses)]
+        filter_courses=path_courses
+        
+        
     dfcc=ocd.OC_CoursesLinks[(ocd.OC_CoursesLinks["src_course_id"].isin(filter_courses)) & \
                              (ocd.OC_CoursesLinks["tgt_course_id"].isin(filter_courses))].drop_duplicates(subset=["src_course_id","tgt_course_id","relation"])
     
@@ -1276,7 +1302,7 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
         g = Network(height = height, width=width, bgcolor=bgcolor, font_color=font_color, directed=directed,notebook=notebook,layout=layout)
     else : 
         g = Network(height = height, width=width, bgcolor=bgcolor, font_color=font_color, directed=directed,notebook=notebook,layout=layout,heading=heading)
-    g.toggle_physics(True)
+    g.toggle_physics(True) 
     
     grav=-8000
     if (len(dfc)>500 or (len(dfcc)+len(dfpc)>500)):
@@ -1468,7 +1494,7 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
                     color=link_colors["primary_requires"]
                     if (palette=="Topic"):
                         color=e["topic_color"]
-                    g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color,value=2)    
+                    g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color={'color':color, 'inherit':'false'},value=2)    
             except:
                 console_log("error accessing data for project-course link ",e)
                 return
@@ -1499,7 +1525,7 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
                     color=link_colors["primary_requires"]
                     if (palette=="Topic"):
                         color=e["topic_color"]
-                    g.add_edge(int(e["path_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color)    
+                    g.add_edge(int(e["path_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color={'color':color, 'inherit':'false'})    
             except:
                 console_log("error accessing data for path-course link ",e)
                 return
@@ -1515,37 +1541,44 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
         fs=frozenset([int(e["src_nid"]),int(e["tgt_nid"])])
         if fs not in added_edges: 
             color="#ccc"
+            title="unknown link"
             edge_value=0
             if (e["relation"]=="requires"):
                 color=link_colors["secundary_requires"]
+                title="requires 2"
                 if path_id!=0 or path_topic_id!=0:
                     edge_value=2
                 if (int(e["src_course_id"]) not in path_courses) or (int(e["tgt_course_id"]) not in path_courses):
                     edge_value=0
                     if (palette=="Hybrid"):
                         color=get_lighter_color(e["tgt_topic_color"],20)
+                        title="requires 2 out of path"
                 if (palette=="Topic"):
                     color=get_lighter_color(e["tgt_topic_color"],20)
+                    title="requires 2 forced topic color"
             else:
                 if (show_only_requirement_relations==True):  
                     continue
                 color=link_colors["secundary_references"]
+                title="references 2"
                 if path_id!=0 or path_topic_id!=0:
                     edge_value=2
                 if (int(e["src_course_id"]) not in path_courses) or (int(e["tgt_course_id"]) not in path_courses):
                     edge_value=0
                     if (palette=="Hybrid"):
                         color=get_lighter_color(e["tgt_topic_color"],20)
+                        title="references 2 out of path"
                 if (palette=="Topic"):
                     color=get_lighter_color(e["tgt_topic_color"],50) 
+                    title="references 2 forced topic color"
             duration=int(e["tgt_course_duration_hours"])
             if duration==np.nan:
                 duration=0
             added_edges.add(fs)
             if (edge_value==0):
-                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color)
+                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color={'color':color, 'inherit':'false'})
             else:
-                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color=color,value=edge_value)    
+                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(duration)+"h",color={'color':color, 'inherit':'false'},value=edge_value)    
             
     # end loop on links
     

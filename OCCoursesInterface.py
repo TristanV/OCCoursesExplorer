@@ -380,14 +380,27 @@ projects_pseudonodes_check = widgets.ToggleButton(
     icon='share-alt' # (FontAwesome names without the `fa-` prefix)
 )
 projects_pseudonodes_check.layout=widgets.Layout(width="160px", height='24px')
-    
+
+
+
+projects_myway_check = widgets.ToggleButton(
+    value=True,
+    description='My Way',
+    disabled=False,
+    button_style='', # 'success', 'info', 'warning', 'danger' or ''
+    tooltip='Expose My Way (courses and projects)',
+    icon='user-graduate' # (FontAwesome names without the `fa-` prefix)
+)
+projects_myway_check.layout=widgets.Layout(width="105px", height='24px')
+
 projects_link_area=widgets.HTML()
 projects_link_area.layout=widgets.Layout(width="200", height='24px')
  
 
 def projects_filter_change(w):
     global projects_height_slider, projects_topic_selector, projects_path_selector, projects_mountainshape_selector, projects_max_depth_slider, \
-    projects_ireadmycoursesonce_check, projects_hidereferences_check, projects_relations_max_distance_slider , projects_pseudonodes_check, projects_link_area , \
+    projects_ireadmycoursesonce_check, projects_hidereferences_check, projects_relations_max_distance_slider , projects_pseudonodes_check,\
+    projects_myway_check, projects_link_area , \
     projects_out, menu_tab
     
     topic_id = projects_topic_selector.value
@@ -421,10 +434,10 @@ def projects_filter_change(w):
 def populate_projects_selectors():
     global projects_height_slider, projects_topic_selector, projects_path_selector, projects_mountainshape_selector, projects_max_depth_slider, \
         projects_ireadmycoursesonce_check, projects_hidereferences_check, projects_relations_max_distance_slider , \
-        projects_pseudonodes_check, projects_link_area   \
+        projects_pseudonodes_check, projects_myway_check, projects_link_area   \
     
     selectors=[ projects_height_slider, projects_topic_selector, projects_path_selector, projects_mountainshape_selector, projects_max_depth_slider, \
-        projects_ireadmycoursesonce_check, projects_hidereferences_check, projects_relations_max_distance_slider , \
+        projects_ireadmycoursesonce_check, projects_hidereferences_check, projects_relations_max_distance_slider , projects_myway_check,\
         projects_pseudonodes_check   \
     ] 
     
@@ -441,7 +454,8 @@ def populate_projects_selectors():
 #     projects_pseudonodes_check.observe(projects_filter_change,names="value")
 # end function
 
-projects_items_r1 =widgets.HBox([projects_topic_selector,projects_path_selector,projects_mountainshape_selector, projects_max_depth_slider])
+projects_items_r1 =widgets.HBox([projects_myway_check, projects_topic_selector,projects_path_selector,\
+                                 projects_mountainshape_selector, projects_max_depth_slider])
 projects_items_r1.layout=widgets.Layout(width='99%', height='30px')
 projects_items_r2 =widgets.HBox([projects_ireadmycoursesonce_check,projects_hidereferences_check,projects_relations_max_distance_slider,\
                     projects_pseudonodes_check,projects_link_area])
@@ -558,6 +572,17 @@ courses_myway_check = widgets.ToggleButton(
 )
 courses_myway_check.layout=widgets.Layout(width="105px", height='24px')
 
+
+courses_connexpaths_check = widgets.ToggleButton(
+    value=False,
+    description='Connex paths',
+    disabled=False,
+    button_style='', # 'success', 'info', 'warning', 'danger' or ''
+    tooltip='Show only courses related to the selected paths (courses belonging to paths connex graph)',
+    icon='project-diagram' # (FontAwesome names without the `fa-` prefix)
+)
+courses_connexpaths_check.layout=widgets.Layout(width="105px", height='24px')
+
 courses_palette_selector = widgets.Dropdown(
     options=["Topic","Dependency","Hybrid"],
     value="Topic",
@@ -571,7 +596,8 @@ def courses_filter_change(w):
     global courses_height_slider,courses_topic_selector,courses_language_selector,\
     courses_path_topic_selector,courses_path_language_selector,\
     courses_path_selector,courses_hidereferences_check, courses_max_depth_slider,\
-    courses_algo_check, courses_myway_check, courses_palette_selector, courses_out, menu_tab
+    courses_algo_check, courses_myway_check, courses_palette_selector, courses_connexpaths_check,\
+    courses_out, menu_tab
     
     path_topic_id = courses_path_topic_selector.value
     path_language = courses_path_language_selector.value
@@ -602,12 +628,12 @@ def populate_courses_selectors():
     global courses_height_slider, courses_topic_selector, courses_language_selector,\
     courses_path_topic_selector,courses_path_language_selector,\
     courses_path_selector, courses_max_depth_slider,courses_hidereferences_check,\
-    courses_algo_check, courses_myway_check, courses_palette_selector
+    courses_algo_check, courses_myway_check, courses_palette_selector, courses_connexpaths_check
     
     selectors=[courses_height_slider, courses_topic_selector,courses_language_selector,\
                courses_path_topic_selector,courses_path_language_selector,\
                courses_path_selector,courses_max_depth_slider,courses_hidereferences_check,\
-               courses_algo_check, courses_myway_check, courses_palette_selector] 
+               courses_algo_check, courses_myway_check, courses_palette_selector,courses_connexpaths_check] 
     
     df=ocd.OC_Topics[["topic_name","topic_id"]].sort_values(by=["topic_name"]) #[ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())]
     opt=[("-",0)]
@@ -639,7 +665,7 @@ def populate_courses_selectors():
         
 # end function
 
-courses_items_r1 =widgets.HBox([courses_algo_check, courses_myway_check, courses_palette_selector,courses_topic_selector,courses_language_selector])
+courses_items_r1 =widgets.HBox([courses_algo_check, courses_myway_check, courses_connexpaths_check, courses_palette_selector,courses_topic_selector,courses_language_selector])
 courses_items_r1.layout=widgets.Layout(width='99%', height='30px')
 courses_items_r2 =widgets.HBox([courses_hidereferences_check,courses_path_topic_selector,courses_path_language_selector,courses_path_selector,\
                                 courses_max_depth_slider])
@@ -690,19 +716,27 @@ schedule_references_max_depth_slider = widgets.IntSlider(
     readout_format='d'
 )
 schedule_references_max_depth_slider.layout=widgets.Layout(width="300px", height='24px') 
- 
+
+schedule_myway_check = widgets.ToggleButton(
+    value=True,
+    description='My Way',
+    disabled=False,
+    button_style='', # 'success', 'info', 'warning', 'danger' or ''
+    tooltip='Expose My Way (courses and projects)',
+    icon='user-graduate' # (FontAwesome names without the `fa-` prefix)
+)
+schedule_myway_check.layout=widgets.Layout(width="105px", height='24px')
     
 def schedule_filter_change(w):
     global schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider, schedule_out, menu_tab
-    
-    path_id = schedule_path_selector.value 
+     
     display_schedule_section()
 #end function
 
 def populate_schedule_selectors():
-    global schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider
+    global schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider,schedule_myway_check
     
-    selectors=[schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider] 
+    selectors=[schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider,schedule_myway_check] 
     
     df = ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())]
     df = ocd.OC_Paths.merge(df, on='topic_id', how='left').sort_values(by=["topic_name","path_language","path_title"])
@@ -717,7 +751,7 @@ def populate_schedule_selectors():
         
 # end function
 
-schedule_items_r1 =widgets.HBox([schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider])
+schedule_items_r1 =widgets.HBox([schedule_myway_check,schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider])
 schedule_items_r1.layout=widgets.Layout(width='99%', height='30px')
 
 schedule_out = widgets.Output()
@@ -840,9 +874,10 @@ def display_information_section():
 # --------------------------------------- SCHEDULE TAB
 # --- Schedule section GUI
 def display_schedule_section():
-    global schedule_out, schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider
+    global schedule_out, schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider, schedule_myway_check
     
     filter_options={
+        "show_my_way"                        : schedule_myway_check.value, 
         "path"                               : schedule_path_selector.value, 
         "required_max_depth"                          : schedule_requires_max_depth_slider.value,
         "references_max_depth"                    : schedule_references_max_depth_slider.value
@@ -876,7 +911,7 @@ def display_courses_section():
     global courses_out,courses_palette_selector,\
         courses_height_slider, courses_topic_selector, courses_language_selector,\
         courses_path_topic_selector,courses_path_language_selector,\
-        courses_path_selector,courses_myway_check, courses_hidereferences_check
+        courses_path_selector,courses_myway_check, courses_hidereferences_check, courses_connexpaths_check
         
     
     
@@ -891,7 +926,8 @@ def display_courses_section():
         "hide_references"                    : courses_hidereferences_check.value,
         "atlas_layout"                       : courses_algo_check.value,
         "show_my_way"                        : courses_myway_check.value, 
-        "palette"                            : courses_palette_selector.value
+        "palette"                            : courses_palette_selector.value,
+        "connex_paths"                       : courses_connexpaths_check.value
     }
     
     courses_out.clear_output()  
@@ -928,7 +964,7 @@ def display_projects_section():
     global projects_out, \
         projects_height_slider, projects_path_selector, projects_topic_selector,  projects_mountainshape_selector, projects_max_depth_slider, \
         projects_ireadmycoursesonce_check, projects_hidereferences_check, projects_relations_max_distance_slider , \
-        projects_pseudonodes_check, projects_link_area   
+        projects_pseudonodes_check, projects_myway_check, projects_link_area   
     
     
     filter_options={
@@ -940,7 +976,8 @@ def display_projects_section():
         "hide_references"                    : projects_hidereferences_check.value,
         "relations_max_distance"             : projects_relations_max_distance_slider.value,
         "pseudo_nodes"                       : projects_pseudonodes_check.value,
-        "mountain_shape"                     : projects_mountainshape_selector.value
+        "mountain_shape"                     : projects_mountainshape_selector.value,
+        "show_my_way"                        : projects_myway_check.value
     }
     
     projects_out.clear_output() 
