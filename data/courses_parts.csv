@@ -26,13 +26,13 @@ course_id	part_number	part_name	part_title	part_description	part_url
 825502	3		Les bases du langage VBA		
 825502	4		Interagir avec l'utilisateur		
 825502	5		Annexes		
-5191546	1		Préparez votre business plan		
-5191546	2		Menez les étapes clés du business plan		
-5191546	3		Construisez des projections financières		
 4750821	1		Prospectez et développez votre base de clients		
 4750821	2		Menez des échanges commerciaux jusqu'à la signature		
 4750821	3		Mesurez vos résultats et fidélisez vos clients		
 4750821	4		Découvrez le métier de commercial chargée d'affaires		
+5191546	1		Préparez votre business plan		
+5191546	2		Menez les étapes clés du business plan		
+5191546	3		Construisez des projections financières		
 4137661	1		Lancez-vous en tant que freelance		
 4137661	2		Trouvez et fidélisez vos clients		
 4137661	3		Communiquez votre expertise efficacement		
@@ -304,25 +304,19 @@ course_id	part_number	part_name	part_title	part_description	part_url
 1959476	7		Gérez les utilisateurs et configurez le serveur		
 6173491	1		Partie 1 :  Découvrez les bases du Terminal		
 6173491	2		Partie 2 : Manipulez des fichiers avec un terminal		
+1946386	1		Découvrez le web et ses origines		
+1946386	2		Distinguez les différents langages du web		
+1946386	3		Découvrez le fonctionnement du réseau		
+1946386	4		Identifiez plusieurs métiers du web		
 5489551	1		Découvrez WordPress et déployez votre site rapidement		
 5489551	2		Prenez en main l’administration de votre site WordPress		
 5489551	3		Choisissez, installez et configurez les composants WordPress adaptés à votre projet		
 5489551	4		Personnalisez les contenus et le design de votre site WordPress		
 5489551	5		Finalisez et lancez votre site WordPress		
-1946386	1		Découvrez le web et ses origines		
-1946386	2		Distinguez les différents langages du web		
-1946386	3		Découvrez le fonctionnement du réseau		
-1946386	4		Identifiez plusieurs métiers du web		
 5543061	1		Manipulez le DOM		
 5543061	2		Communiquez via une API avec un service web		
 5543061	3		Parallélisez vos longues tâches avec la programmation asynchrone		
 5543061	4		Mettez en place les bons outils pour travailler		
-1894236	1		[Théorie] Découverte de la programmation en C++		
-1894236	2		[Théorie] La Programmation Orientée Objet		
-1894236	3		[Pratique] Créez vos propres fenêtres avec Qt		
-1894236	4		[Théorie] Utilisez la bibliothèque standard		
-1894236	5		[Théorie] Notions avancées		
-1894236	6		Annexes		
 6390246	1		Créez un serveur Express simple		
 6390246	2		Créez une API RESTful		
 6390246	3		Mettez en place un système d'authentification sur votre application		
@@ -331,6 +325,12 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4668271	2		Construisez une application Angular		
 4668271	3		Enrichissez votre application		
 4668271	4		Interagissez avec un utilisateur et un serveur		
+1894236	1		[Théorie] Découverte de la programmation en C++		
+1894236	2		[Théorie] La Programmation Orientée Objet		
+1894236	3		[Pratique] Créez vos propres fenêtres avec Qt		
+1894236	4		[Théorie] Utilisez la bibliothèque standard		
+1894236	5		[Théorie] Notions avancées		
+1894236	6		Annexes		
 6391096	1		Identifiez les avantages de Bootstrap		
 6391096	2		Créez des mises en page responsives		
 6391096	3		Utilisez les composants d'interface utilisateur de Bootstrap pour afficher le contenu		
@@ -350,14 +350,14 @@ course_id	part_number	part_name	part_title	part_description	part_url
 6573181	1		Utilisez des API REST pour vos projets de code		
 6573181	2		Formulez des requêtes et envoyez des réponses avec une API REST		
 6573181	3		Concevez des API REST		
-4302126	1		Appréhendez la programmation orientée objet		
-4302126	2		Érigez les fondations du programme		
-4302126	3		Créez la grille		
-4302126	4		Peaufinez les finitions		
 7008001	1		Initiez-vous aux principes de React		
 7008001	2		Créez votre première application complète avec Create React App		
 7008001	3		Stockez et récupérez des données avec le state et les effets		
 7008001	4		Conclusion		
+4302126	1		Appréhendez la programmation orientée objet		
+4302126	2		Érigez les fondations du programme		
+4302126	3		Créez la grille		
+4302126	4		Peaufinez les finitions		
 5489656	1		Développez votre première application Symfony		
 5489656	2		Dynamisez vos pages à l’aide de Twig et Doctrine ORM		
 5489656	3		Mettez en production un site de qualité professionnelle		
@@ -400,11 +400,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4055451	1		Modélisez votre domaine fonctionnel		
 4055451	2		Créez votre première base de données		
 4055451	3		Interagissez avec votre base de données grâce au SQL		
-2434016	1		Premiers pas avec Java EE		
-2434016	2		Comprendre les Servlets et les JSPs		
-2434016	3		Des vues puissantes avec la JSTL		
-2434016	4		Développer une application web		
-2434016	5		Enregistrer dans une base de données		
 6900101	1		Identifiez pourquoi et quand utiliser Spring Boot		
 6900101	2		Découvrez les étapes clés de tout projet Spring Boot		
 6900101	3		Créez une API avec Spring Boot		
@@ -412,6 +407,11 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4425111	1		Travaillez comme un pro !		
 4425111	2		Approfondissez votre utilisation de Python		
 4425111	3		Écrivez un code plus pythonique		
+2434016	1		Premiers pas avec Java EE		
+2434016	2		Comprendre les Servlets et les JSPs		
+2434016	3		Des vues puissantes avec la JSTL		
+2434016	4		Développer une application web		
+2434016	5		Enregistrer dans une base de données		
 6739646	1		Découvrez le rôle de la documentation projet		
 6739646	2		Préparez un cahier des charges fonctionnel		
 6739646	3		Utilisez la méthodologie agile pour communiquer la portée d'un projet		
@@ -439,10 +439,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 4287521	3		Utilisez les collections et les optionnels		
 4287521	4		Clarifiez votre code avec les fonctions		
 4287521	5		Conclusion		
-4425066	1		Posez les fondations du site		
-4425066	2		Développez vos premières fonctionnalités		
-4425066	3		Fignolez les détails		
-4425066	4		Préparez la mise en ligne		
 2675311	1		Introduction au développement de jeux vidéo		
 2675311	2		Votre première scène de jeu		
 2675311	3		La programmation avec Blueprint		
@@ -451,6 +447,10 @@ course_id	part_number	part_name	part_title	part_description	part_url
 5353106	1		Effectuez vos premiers pas en Kotlin		
 5353106	2		Découvrez les structures de contrôle en Kotlin		
 5353106	3		Maîtrisez la puissance de Kotlin		
+4425066	1		Posez les fondations du site		
+4425066	2		Développez vos premières fonctionnalités		
+4425066	3		Fignolez les détails		
+4425066	4		Préparez la mise en ligne		
 3925766	1		Le principe du Bitcoin et de la blockchain		
 3925766	2		Utiliser des Bitcoins		
 3925766	3		Au-delà du Bitcoin		
@@ -536,8 +536,8 @@ course_id	part_number	part_name	part_title	part_description	part_url
 2582746	4		Optimisez votre code		
 2582746	5		Finalisez votre app et envoyez-la sur le Store		
 4872916	1		Déployez une stratégie d’authentification sur Firebase		
-4872916	2		Sauvegardez et récupérer des données en temps réel sur Firebase		
-4872916	3		Partagez des fichiers et gérer des notifications sur Firebase		
+4872916	2		Sauvegardez et récupérez des données en temps réel sur Firebase		
+4872916	3		Partagez des fichiers et gérez des notifications sur Firebase		
 4568596	1		Créez votre première interface utilisateur flexible et adaptative		
 4568596	2		Rendez votre interface utilisateur modulable grâce aux fragments		
 4568596	3		Implémentez vos premiers composants graphiques de navigation		
@@ -655,6 +655,8 @@ course_id	part_number	part_name	part_title	part_description	part_url
 7137741	1		Analysez l’architecture d’une application existante		
 7137741	2		Séparez les couches de votre application avec le design pattern Modèle-Vue-Contrôleur		
 7137741	3		Implémentez la communication entre les couches de votre application		
+7137776	1		Intégrez des paramètres de sécurité basiques à vos applications Java		
+7137776	2		Créez une connexion sécurisée pour votre application Spring avec OAuth 2.0		
 7159296	1		Tirez le maximum de ce cours		
 7159296	2		Identifiez les différents types de bug de votre interface Front-End		
 7159296	3		Déboguez votre HTML/CSS		
@@ -1072,11 +1074,11 @@ course_id	part_number	part_name	part_title	part_description	part_url
 2035766	1		Prenez en main Docker		
 2035766	2		Lancez vos images Docker avec les Dockerfiles		
 2035766	3		Gérez vos images Docker avec Docker Compose		
+5492081	1		Pourquoi la cybersécurité est-elle un enjeu majeur ?		
 2356306	1		Comprenez le fonctionnement de Windows Server		
 2356306	2		Maîtrisez les services réseaux de base		
 2356306	3		Installez des services réseaux avancés		
 2356306	4		Administrez votre Windows Server		
-5492081	1		Pourquoi la cybersécurité est-elle un enjeu majeur ?		
 4810836	1		Découvrir AWS		
 4810836	2		Monter un serveur web sur EC2		
 4810836	3		Monter une base de données sur RDS		
@@ -1097,13 +1099,13 @@ course_id	part_number	part_name	part_title	part_description	part_url
 1372996	2		Découvrez la méthode : les 4 couches d’une architecture		
 1372996	3		Préparez un Document d’Architecture Technique		
 1372996	4		Apprenez-en plus sur la révolution du Cloud et l’architecture continue		
+1757741	1		Maîtrisez les bases de la cryptographie moderne avec la cryptographie symétrique		
+1757741	2		Sécurisez vos communications avec la cryptographie asymétrique		
+1757741	3		Utilisez les principaux protocoles et outils cryptographiques		
 2557196	1		Administrez un réseau grâce aux routeurs et switch CISCO		
 2557196	2		Mettez en relation les PC et serveurs de l’entreprise en configurant le LAN		
 2557196	3		Connectez l’entreprise à Internet grâce aux protocoles de routage		
 2557196	4		Sécurisez vos routeurs		
-1757741	1		Maîtrisez les bases de la cryptographie moderne avec la cryptographie symétrique		
-1757741	2		Sécurisez vos communications avec la cryptographie asymétrique		
-1757741	3		Utilisez les principaux protocoles et outils cryptographiques		
 2035806	1		Choisissez l'outil de virtualisation adapté		
 2035806	2		Mettez en place un environnement de test avec VirtualBox (hyperviseur de type 2)		
 2035806	3		Virtualisez une architecture simple avec vSphere (hyperviseur de type 1)		
@@ -1128,9 +1130,10 @@ course_id	part_number	part_name	part_title	part_description	part_url
 1733551	1		Montez un serveur de temps et un annuaire LDAP		
 1733551	2		Configurez votre premier serveur LAMP		
 1733551	3		Gérez une infrastructure web complexe		
-5668856	1		Faites vos premiers pas avec Windows 10		
-5668856	2		Devenez l'administrateur de Windows 10		
-5668856	3		Sécurisez Windows 10		
+5668856	1		Orientation du cours		
+5668856	2		Faites vos premiers pas avec Windows 10		
+5668856	3		Devenez l'administrateur de Windows 10		
+5668856	4		Sécurisez Windows 10		
 1756296	1		Préparez votre test d’intrusion		
 1756296	2		Réalisez votre test d’intrusion		
 1756296	3		Rédigez votre rapport de test d’intrusion		
@@ -1198,17 +1201,20 @@ course_id	part_number	part_name	part_title	part_description	part_url
 1733141	1		Analysez les besoins logiciels de vos utilisateurs		
 1733141	2		Préparez l’installation des logiciels de vos utilisateurs		
 1733141	3		Installez les logiciels et clonez le système		
-4776036	1		Analysez les différents enjeux de sécurité pour vos objets connectés		
-4776036	2		Soyez vigilant vis-à-vis de vos outils de production		
-4776036	3		Restez vigilant en utilisant les réseaux		
-4776036	4		Appliquez des bonnes pratiques de sécurité à vos objets connectés		
 4297411	1		Faites-vous une place sur le Web !		
 4297411	2		Découvrez l’envers du Web		
 4297411	3		Faites communiquer les machines		
 6227526	1		Identifiez les enjeux de la continuité d'activité		
 6227526	2		Préparez votre plan de continuité d'activité		
 6227526	3		Mettez en œuvre votre plan de continuité d'activité		
+4776036	1		Analysez les différents enjeux de sécurité pour vos objets connectés		
+4776036	2		Soyez vigilant vis-à-vis de vos outils de production		
+4776036	3		Restez vigilant en utilisant les réseaux		
+4776036	4		Appliquez des bonnes pratiques de sécurité à vos objets connectés		
 6227476	1		Déployez des actions pour rendre le numérique plus écologique		
+6944606	1		Créez l’architecture physique de votre réseau		
+6944606	2		Configurez votre réseau pour assurer la communication		
+6944606	3		Optimisez votre réseau en ajoutant des services		
 3930076	1		3, 2, 1... Codez l'information !		
 3930076	2		Optimisez le codage de l'information		
 3930076	3		Gardez le contrôle de vos données		
@@ -1228,9 +1234,6 @@ course_id	part_number	part_name	part_title	part_description	part_url
 1750566	2		Identifiez les sources de données et optimisez la collecte de logs		
 1750566	3		Centralisez vos alertes avec ELK Stack		
 1750566	4		Identifiez des scénarios d’attaque grâce à la matrice ATT&CK		
-6944606	1		Créez l’architecture physique de votre réseau		
-6944606	2		Configurez votre réseau pour assurer la communication		
-6944606	3		Optimisez votre réseau en ajoutant des services		
 1561696	1		Le concept et les bases		
 1561696	2		Un modèle qui en tient une couche		
 1561696	3		Veuillez vous identifier pour communiquer		

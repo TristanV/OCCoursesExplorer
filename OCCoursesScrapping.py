@@ -469,7 +469,7 @@ def scrap_OC_CoursesDetails(b):
         url_search, search_language_options, search_topic_param, search_language_param, search_page_param, search_path_or_course_param\
     
     success=True #until it gets False
-    console_log("Scrapping courses details") 
+    console_log("Scrapping courses details!") 
     toggle_scrap_buttons(True)
 #     OC_Courses_cols             = ["topic_id","course_id","course_name","course_date","course_title","course_description","course_language","course_difficulty","course_duration_hours","course_author","course_partner","course_illustration","course_is_certified","course_url","course_activities_count","course_exercises_count"]
 #     OC_CoursesParts_cols        = ["course_id","part_number","part_name","part_title","part_description","part_url"]
@@ -552,17 +552,47 @@ def scrap_OC_CoursesDetails(b):
             # end loop on activities/exercises of a part        
         # end loop on course parts
         
-        patterns=["Objectifs","capable de","Learning goals","able to","aprenderás lo siguiente"]
+        skills_found=False
+        patterns=["Objectifs","capable de","capables de","fin de ce cours","vous apprendrez","fin de cette fiche", "vous saurez",\
+                  "Vous apprendrez à","Compétences","compétences suivantes","Vous apprendrez à",\
+                  "Learning goal","Learning Goal","able to","Learning outcome","Learning Outcome","Learning Outcomes",\
+                  "Learning objective","Learning Objective","objective","Objective","you will learn","Instructional goal",\
+                  "aprenderás lo siguiente"]
         for pat in patterns:
             s_elts=OC_browser.find_elements_by_xpath("//aside[@data-claire-semantic='information']//p[contains(.,'"+pat+"')]/./..//li")
             if (len(s_elts)>0):
                 for e in s_elts:
-                    #print(e.text)
-                    course_skill=e.text
+                    #print(e.text.strip())
+                    course_skill=e.text.strip()
+                    skills_found=True
                     cs_entries.append([course_id,course_skill])
                 break 
             #end if
         # en loop on skills
+        
+        # in a few cases, the skills are not exposed in an info box, but just after a <p> tag containing a given text
+        # in such a case, we look for an exact long pattern rather than a few words. 
+        # The skills are in a bullet list just after the pattern
+        if (skills_found==False):
+            patterns=["fin de ce cours, vous serez capables de","fin de ce cours, vous serez capable de",\
+                      "fin de cette fiche vous serez capable de","démontrer vos capacités à","être capable de faire",\
+                      "fin de cette fiche vous connaîtrez","la fin de cette fiche, vous serez capable de",\
+                      "issue de ce cours, vous saurez comment","ce cours, vous apprendrez à","objectifs de ce cours",\
+                     "By the end of the course,  you will be able to","you will be able to","ll learn how to"]
+            for pat in patterns:
+                s_elts=OC_browser.find_elements_by_xpath("//p[contains(.,'"+pat+"')]/following-sibling::*[position()<3]/descendant::li") 
+                if (len(s_elts)>0):
+                    for e in s_elts:
+#                         print(e.text.strip())
+                        course_skill=e.text.strip()
+                        skills_found=True
+                        cs_entries.append([course_id,course_skill])
+                    break 
+                #end if
+        # en loop on skills
+        
+        if (skills_found==False):
+            console_log("no skills scrapped for this course")
         
         # now let's fill some blanks in the course dataframe
         ocd.OC_Courses.loc[ind,"course_activities_count"]=course_activities_count

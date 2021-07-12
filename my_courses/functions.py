@@ -104,7 +104,7 @@ def display_scree_plot(pca):
     plt.show(block=False)
 
 def plot_dendrogram(Z, names):
-    plt.figure(figsize=(10,25))
+    plt.figure(figsize=(20,35))
     plt.title('Hierarchical Clustering Dendrogram')
     plt.xlabel('distance')
     dendrogram(

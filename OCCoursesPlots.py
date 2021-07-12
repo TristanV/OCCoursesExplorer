@@ -17,6 +17,14 @@ def get_lighter_color(hexcol,percent):
 #end function
 
 
+def get_darker_color(hexcol,percent):
+    rgb = matplotlib.colors.ColorConverter.to_rgb(hexcol)
+#     print(rgb,hexcol,percent)
+    hexcolor="#"+"".join('%02x' %max(int(x*255-((255-x*255)*percent/100)),0) for x in rgb)
+    return hexcolor
+#end function
+
+
 
 def draw_micro_topics_plot():
     dt=ocd.OC_Topics.sort_values(by="topic_name")

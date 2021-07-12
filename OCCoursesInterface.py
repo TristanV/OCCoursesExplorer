@@ -726,17 +726,26 @@ schedule_myway_check = widgets.ToggleButton(
     icon='user-graduate' # (FontAwesome names without the `fa-` prefix)
 )
 schedule_myway_check.layout=widgets.Layout(width="105px", height='24px')
+
+
+schedule_details_check = widgets.ToggleButton(
+    value=False,
+    description='Details',
+    disabled=False,
+    button_style='', # 'success', 'info', 'warning', 'danger' or ''
+    tooltip='Show projects and courses details, chapters and skills',
+    icon='asterisk' # (FontAwesome names without the `fa-` prefix)
+)
+schedule_details_check.layout=widgets.Layout(width="105px", height='24px')
     
 def schedule_filter_change(w):
-    global schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider, schedule_out, menu_tab
-     
     display_schedule_section()
 #end function
 
 def populate_schedule_selectors():
-    global schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider,schedule_myway_check
+    global schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider,schedule_myway_check,schedule_details_check
     
-    selectors=[schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider,schedule_myway_check] 
+    selectors=[schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider,schedule_myway_check,schedule_details_check] 
     
     df = ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())]
     df = ocd.OC_Paths.merge(df, on='topic_id', how='left').sort_values(by=["topic_name","path_language","path_title"])
@@ -751,7 +760,7 @@ def populate_schedule_selectors():
         
 # end function
 
-schedule_items_r1 =widgets.HBox([schedule_myway_check,schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider])
+schedule_items_r1 =widgets.HBox([schedule_myway_check,schedule_details_check,schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider])
 schedule_items_r1.layout=widgets.Layout(width='99%', height='30px')
 
 schedule_out = widgets.Output()
@@ -874,10 +883,11 @@ def display_information_section():
 # --------------------------------------- SCHEDULE TAB
 # --- Schedule section GUI
 def display_schedule_section():
-    global schedule_out, schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider, schedule_myway_check
+    global schedule_out, schedule_path_selector,schedule_requires_max_depth_slider, schedule_references_max_depth_slider, schedule_myway_check,schedule_details_check
     
     filter_options={
         "show_my_way"                        : schedule_myway_check.value, 
+        "show_details"                       : schedule_details_check.value,
         "path"                               : schedule_path_selector.value, 
         "required_max_depth"                          : schedule_requires_max_depth_slider.value,
         "references_max_depth"                    : schedule_references_max_depth_slider.value

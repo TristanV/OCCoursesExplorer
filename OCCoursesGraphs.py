@@ -13,7 +13,7 @@ Created on Sat May 29 00:23:34 2021
  
 from OCCoursesConfig import pd, nx, Network, OCGraphsIconsURL, math ,np, random, VizTemplate, VizFolder
 import OCCoursesDatasets as ocd
-from OCCoursesPlots import get_lighter_color
+from OCCoursesPlots import get_lighter_color, get_darker_color
 
 # PyVis uses an old release of vis.js, with a bug referenced here: https://github.com/visjs/vis-network/issues/12
 # I installed the bugfix version in the VizFolder (https://github.com/visjs/vis-network/pull/58)
@@ -1414,6 +1414,7 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
                         color=n["topic_color"]
                     if (show_my_way == True) and (nn["status"]!="none"):
                         color=status_colors[nn["status"]] 
+                    color=get_darker_color(color,30)
                     if (show_titles):
                         g.add_node(int(nn["nid"]), str(nn["project_number"])+"-"+nn["project_title"], color=color,\
                                    shape=project_shape,size=project_size, physics=True,title=nn["project_title"])
@@ -1428,7 +1429,8 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
                         color=nn["topic_color"]
                     if (show_my_way == True) and (nn["status"]!="none"):
                         color=status_colors[nn["status"]]
-                    g.add_edge(previous_nid, int(nn["nid"]),label=str(int(nn["project_duration_hours"]))+"h",color=color,value=2)
+                    color=get_darker_color(color,30)
+                    g.add_edge(previous_nid, int(nn["nid"]),label=str(int(nn["project_duration_hours"]))+"h",color={'color':color, 'inherit':'false'},value=2)
                 previous_uid=nn["uid"]
                 previous_nid=int(nn["nid"])
             # end loop on projects
@@ -1545,17 +1547,14 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
             edge_value=0
             if (e["relation"]=="requires"):
                 color=link_colors["secundary_requires"]
-                title="requires 2"
                 if path_id!=0 or path_topic_id!=0:
                     edge_value=2
                 if (int(e["src_course_id"]) not in path_courses) or (int(e["tgt_course_id"]) not in path_courses):
                     edge_value=0
                     if (palette=="Hybrid"):
                         color=get_lighter_color(e["tgt_topic_color"],20)
-                        title="requires 2 out of path"
                 if (palette=="Topic"):
                     color=get_lighter_color(e["tgt_topic_color"],20)
-                    title="requires 2 forced topic color"
             else:
                 if (show_only_requirement_relations==True):  
                     continue
@@ -1567,10 +1566,8 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
                     edge_value=0
                     if (palette=="Hybrid"):
                         color=get_lighter_color(e["tgt_topic_color"],20)
-                        title="references 2 out of path"
                 if (palette=="Topic"):
                     color=get_lighter_color(e["tgt_topic_color"],50) 
-                    title="references 2 forced topic color"
             duration=int(e["tgt_course_duration_hours"])
             if duration==np.nan:
                 duration=0

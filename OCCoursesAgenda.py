@@ -18,6 +18,15 @@ def get_agenda_html_page(body):
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=latin"/>    
 <style type="text/css">
+    p {
+        display:block;
+        clear: left;
+    }
+    p>img {
+        float: left;
+        border: 1px solid black;
+        margin: 5px 10px 10px 0px;
+    }
     table {
         width: 98%;
         border-collapse: collapse;
@@ -35,10 +44,7 @@ def get_agenda_html_page(body):
     thead tr{
         background-color: #f1f1f1;
     }
-    
-    
-    
-    
+        
     thead th {
         color: #141414;
         border-top: 1px solid #141414;
@@ -274,12 +280,21 @@ def get_project_dependencies(path_id,project_number,required_max_depth,reference
 # end function
 
 # --------------------------------------------------------------------------------------------------
+def clean_special_chars(ht):
+    ht=ht.replace('\u2009',' ') # tiny space
+    ht=ht.replace('\u0301','¤') # acute accent
+    ht=ht.replace('\u0300','¤') # grave accent 
+    return ht
+# end function
+
 # --------------------------------------------------------------------------------------------------
-def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,show_my_way=True,options=None):
+# --------------------------------------------------------------------------------------------------
+def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,show_my_way=True,show_details=False,options=None):
     ht="Please select a path"
     
 #     options={
 #         "show_my_way"                        : schedule_myway_check.value, 
+#         "show_details"                       : schedule_details_check.value,
 #         "path"                               : schedule_path_selector.value,   
 #         "requires_max_depth"                          : schedule_requires_max_depth_slider.value,
 #         "references_max_depth"                    : schedule_references_max_depth_slider.value
@@ -289,6 +304,7 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,s
         required_max_depth=options["required_max_depth"]
         references_max_depth=options["references_max_depth"] 
         show_my_way=options["show_my_way"] 
+        show_details=options["show_details"] 
     
     # ------------ get the PATH
     dfpa= ocd.OC_Paths[ocd.OC_Paths["path_id"].isin([path_id])]
@@ -312,12 +328,22 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,s
     else:
         path= next(ocd.OC_Paths[ocd.OC_Paths["path_id"].isin([path_id])].iterrows())[1]
         path_title=path["path_title"]#.encode('utf-8').decode('latin')
+        path_href='<a href="'+path["path_url"]+'" target="_blank">'+path_title+'</a>'
         ht=""
         img=""
         if (path["path_illustration"]!="" and path["path_illustration"]!=np.nan):
             img='<img width="180"/ valign="middle" src="'+path["path_illustration"]+'">' 
-        ht+='<h1>'+img+'&nbsp;Schedule for the path '+path_title+'</h1>'
-        ht+="<p>Language : "+path["path_language"]+" / Duration : "+str(path["path_duration_months"])+"m</p>" 
+        ht+='<h1>'+img+'&nbsp;Schedule for the path '+path_href+'</h1>'
+        ht+="<p>Language : "+path["path_language"]+" / Duration : "+str(path["path_duration_months"])+"m / Level : "+str(path["path_level"])+"</p>" 
+        if show_details:
+            ht+="<p>"+path["path_description"]+"</p>" 
+            skills = ocd.OC_PathsSkills[ocd.OC_PathsSkills["path_id"].isin([path["path_id"]])].skill.values
+            if (len(skills)>0):
+                ht+="<p>Skills:</p>"
+                ht+="<ul>"
+                for s in skills:
+                    ht+="<li>"+str(s)+"</li>"
+                ht+="</ul>"
         ht+="<p>Hereunder is the schedule for required courses (depth="+str(required_max_depth)+")</p>"
         if (references_max_depth>0):
             ht+="<p>Recommended references are also explored (depth="+str(references_max_depth)+")</p>" 
@@ -362,7 +388,16 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,s
     total_courses_done=0
     for ii,nn in dfpr[dfpr["path_id"].isin([path_id])].iterrows():
         ht+="<h2>"+str(nn["project_number"])+"-"+nn["project_title"]+"</h2>" 
-        
+        if show_details:
+            ht+="<p>"+nn["project_description"]+"</p>" 
+            skills = ocd.OC_ProjectsSkills[ocd.OC_ProjectsSkills["path_id"].isin([nn["path_id"]]) &\
+                                           ocd.OC_ProjectsSkills["project_number"].isin([nn["project_number"]])].skill.values
+            if (len(skills)>0):
+                ht+="<p>Skills:</p>"
+                ht+="<ul>"
+                for s in skills:
+                    ht+="<li>"+str(s)+"</li>"
+                ht+="</ul>"      
         project_allocated_duration = nn["project_duration_hours"]
         project_scheduled_duration=0
         project_courses_critical_count=0
@@ -481,13 +516,36 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,s
                     img=""
                     if r["course_illustration"]!=np.nan and r["course_illustration"]!="":
                         img='<img src="'+r["course_illustration"]+'" height="80" align="middle"/>&nbsp;'
-                    ht+="<td>"
+                    ht+="<td colspan='2'>"
+                    ht+="<p>"
                     ht+=img
-                    ht+="</td>"
-                    # ---------------
-                    ht+="<td>"
+
+#                     ht+="</td>"
+#                     # ---------------
+#                     ht+="<td>"
                     ht+= str(r["course_id"])+"-<a href=\""+r["course_url"]+"\" target=\"_blank\">"+r["course_title"]+"</a>"
                     ht+="<br/>Course difficulty : "+str(r["course_difficulty_grade"])
+                    ht+="</p>"
+        
+                    if show_details:
+                        ht+="<p>"+r["course_description"]+"</p>" 
+                        dfparts = ocd.OC_CoursesParts[ocd.OC_CoursesParts["course_id"].isin([r["course_id"]])]
+                        ht+="<ol>"
+                        for ip,rp in dfparts.iterrows():
+                            ht+="<li>"+rp["part_title"]+"</li>"
+                            dfchapters = ocd.OC_CoursesChapters[ocd.OC_CoursesChapters["course_id"].isin([r["course_id"]]) & ocd.OC_CoursesChapters["part_number"].isin([rp["part_number"]])]
+                            ht+="<ol>"
+                            for ic,rc in dfchapters.iterrows():
+                                ht+="<li>"+rc["chapter_title"]+"</li>"
+                            ht+="</ol>"
+                        ht+="</ol>" 
+                        skills = ocd.OC_CoursesSkills[ocd.OC_CoursesSkills["course_id"].isin([r["course_id"]])].skill.values
+                        if (len(skills)>0):
+                            ht+="<p>Skills:</p>"
+                            ht+="<ul>"
+                            for s in skills:
+                                ht+="<li>"+str(s)+"</li>"
+                            ht+="</ul>"        
                     ht+="</td>"
                     # ---------------
                     ht+="<td>" 
@@ -625,5 +683,5 @@ def build_path_agenda_html(path_id,required_max_depth=1,references_max_depth=0,s
     ht+="<br/>"
     ht+="<br/>"
     # ------------- Finish
-    return get_agenda_html_page(ht)
+    return get_agenda_html_page(clean_special_chars(ht))
 # end function
