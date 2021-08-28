@@ -31,9 +31,9 @@ def draw_micro_topics_plot():
     dt["topic_uid"]=dt.agg(lambda x: f"{x['topic_name'][:3]}", axis=1)
     dt=dt.sort_values(by="topic_name")
     
-    sns.set(font_scale =3)
+    sns.set(font_scale =2)
     p= sns.catplot(x="topic_uid", kind="count", data=dt,legend=False, \
-                   palette=sns.color_palette(dt.topic_color.values),height=2.1,aspect=6.5)
+                   palette=sns.color_palette(dt.topic_color.values),height=1.8,aspect=6.5)
     sns.despine() 
     p.set(yticklabels=[])  
     p.set(title=None)

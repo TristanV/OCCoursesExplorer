@@ -210,6 +210,12 @@ img.logo {
     <main class="content">
 	<article>
 	
+	 <section>
+    <h2>Known issues</h2>
+	<p> OCCourses Explorer will not work on Chrome because of a known Jupyter Lab limitiation : 
+	<br/><b>Issue with Chrome browser</b> <a href="https://github.com/jupyterlab/jupyterlab/issues/7539 )" target="_blank">https://github.com/jupyterlab/jupyterlab/issues/7539 </a>
+	<p><b>Please use Firefox to launch the notebook!</b></p>
+	</section>
     
     <section>
     <h2>Introduction</h2>
@@ -372,7 +378,7 @@ img.logo {
 			<br/>jupyter labextension install @jupyterlab/toc
 			<br/>conda install -c conda-forge matplotlib 
 			<br/>conda install -c conda-forge numpy
-			<br/>conda install -c conda-forge networkx 
+			<br/>conda install -c conda-forge networkx=2.5 
 			<br/>conda install -c conda-forge pandas
 			<br/>conda install -c conda-forge pip 
 			<br/>conda install -c conda-forge plotly 
@@ -383,6 +389,7 @@ img.logo {
 			<br/>conda install -c conda-forge selenium
 			<br/>conda install -c conda-forge seaborn 
 		</div>
+        This setup was tested with Python 3.9.6
 	</li>  
     </ul>
     <ul>
