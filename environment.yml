@@ -1,20 +1,17 @@
 name: OCCoursesExplorer
 channels:
+  - conda-forge
   - defaults
 dependencies:
-  - python
+  - python=3.9
   - jupyterlab
+  - matplotlib
+  - seaborn
   - voila
   - ipywidgets
-  - nodejs
-  - matplotlib
-  - networkx=2.5
   - pandas
-  - pip
-  - plotly
-  - pyvis
-  - scipy
-  - scikit-learn
   - selenium
-  - seaborn
-prefix: C:\anaconda\envs\OCCoursesExplorer
+  - nodejs
+  - scikit-learn
+  - pyvis
+prefix: F:\anaconda3\envs\OCCoursesExplorer
