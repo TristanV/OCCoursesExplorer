@@ -31,7 +31,7 @@ def draw_micro_topics_plot():
     dt=ocd.OC_Topics.sort_values(by="topic_name")
     dt["topic_uid"]=dt.agg(lambda x: f"{x['topic_name'][:3]}", axis=1)
     dt=dt.sort_values(by="topic_name")
-    
+     
 #     sns.set(font_scale =3)
 #     p= sns.catplot(x="topic_uid", kind="count", data=dt,legend=False, \
 #                    palette=sns.color_palette(dt.topic_color.values),height=1,aspect=len(dt))
@@ -55,9 +55,12 @@ def draw_micro_topics_plot():
     
     sns.set_style("white")
     sns.axes_style('white')
-    sns.set(font_scale =2.2)
+    # sns.set(font_scale =2.2)
+    # p= sns.catplot(x="topic_uid", kind="count", data=dt,legend=False, \
+    #                palette=sns.color_palette(dt.topic_color.values),height=2,aspect=6)#,height=1,aspect=6.8
+    sns.set(font_scale =2)
     p= sns.catplot(x="topic_uid", kind="count", data=dt,legend=False, \
-                   palette=sns.color_palette(dt.topic_color.values),height=2,aspect=6)#,height=1,aspect=6.8
+                   palette=sns.color_palette(dt.topic_color.values),height=1.8,aspect=6.5)
     sns.despine() 
     # plt.yscale('log')
     # plt.axis('off')
