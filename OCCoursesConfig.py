@@ -60,10 +60,10 @@ from pyvis.network import Network
 import networkx as nx
 
 #quick setup
-pd.set_option("max_columns", None) # show all cols
+pd.set_option("display.max_columns", None) # show all cols
 #pd.set_option("max_rows", None) # show all rows
-pd.set_option('max_colwidth', 80) # show full width of showing cols
-pd.set_option("expand_frame_repr", False) # print cols side by side as it's supposed to be
+pd.set_option('display.max_colwidth', 80) # show full width of showing cols
+pd.set_option("display.expand_frame_repr", False) # print cols side by side as it's supposed to be
 
 plt.rcParams['figure.dpi'] = 100
 plt.rcParams['figure.figsize'] = [6, 2]

@@ -8,6 +8,7 @@
 from OCCoursesConfig import pd, plt,sns, display,math
 import OCCoursesDatasets as ocd
 import matplotlib
+import numpy as np
 
 def get_lighter_color(hexcol,percent):
     rgb = matplotlib.colors.ColorConverter.to_rgb(hexcol)
@@ -31,17 +32,50 @@ def draw_micro_topics_plot():
     dt["topic_uid"]=dt.agg(lambda x: f"{x['topic_name'][:3]}", axis=1)
     dt=dt.sort_values(by="topic_name")
     
-    sns.set(font_scale =3)
+#     sns.set(font_scale =3)
+#     p= sns.catplot(x="topic_uid", kind="count", data=dt,legend=False, \
+#                    palette=sns.color_palette(dt.topic_color.values),height=1,aspect=len(dt))
+#     sns.despine() 
+#     plt.yscale('log')
+#     plt.axis('off')
+#     p.set(yticklabels=[])  
+#     p.set(xticklabels=dt.topic_uid.values)
+#     p.set(title=None)
+#     p.set(xlabel=None)
+#     p.set(ylabel=None)
+#     sns.set(font_scale =1)
+    
+#     plt.tight_layout()
+    
+#     plt.show()
+#     # sns.set(font_scale =1)
+    
+    
+    #display("df")
+    
+    sns.set_style("white")
+    sns.axes_style('white')
+    sns.set(font_scale =2.2)
     p= sns.catplot(x="topic_uid", kind="count", data=dt,legend=False, \
-                   palette=sns.color_palette(dt.topic_color.values),height=2.1,aspect=6.5)
+                   palette=sns.color_palette(dt.topic_color.values),height=2,aspect=6)#,height=1,aspect=6.8
     sns.despine() 
+    # plt.yscale('log')
+    # plt.axis('off')
+    plt.yticks(None,None)
+    # plt.xticks(ticks=np.arange(len(dt)),labels=dt.topic_uid.values)
     p.set(yticklabels=[])  
+    p.set(xticks=np.arange(len(dt)))
+    p.set(xticklabels=dt.topic_uid.values)
     p.set(title=None)
     p.set(xlabel=None)
     p.set(ylabel=None)
+    sns.set(font_scale =1)
+
+    # plt.tight_layout()
+
     plt.show()
     sns.set(font_scale =1)
-    #display("df")
+    
 # end function
 
 def draw_micro_courses_plot():
@@ -113,7 +147,7 @@ def draw_micro_paths_plot():
     dt=dt.sort_values(by="topic_name")
     df=dt.merge(ocd.OC_Paths, on='topic_id', how='left')
     p= sns.catplot(x="topic_uid", kind="count", data=df,legend=False, \
-                   palette=sns.color_palette(dt.topic_color.values),height=3,aspect=6.3)
+                   palette=sns.color_palette(dt.topic_color.values),height=5,aspect=5.3) #height=3,aspect=6.3
     sns.despine() 
 #     plt.yscale('log')
     plt.axis('off')
@@ -132,7 +166,7 @@ def draw_micro_projects_plot():
     df=dt.merge(ocd.OC_Paths, on='topic_id', how='left')
     df=df.merge(ocd.OC_Projects, on='path_id', how='left')
     p= sns.catplot(x="topic_uid", kind="count", data=df,legend=False, \
-                   palette=sns.color_palette(dt.topic_color.values),height=5,aspect=3.8)
+                   palette=sns.color_palette(dt.topic_color.values),height=5.6,aspect=3.8) #,height=5,aspect=3.8
     sns.despine() 
 #     plt.yscale('log')
     plt.axis('off')

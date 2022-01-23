@@ -673,11 +673,11 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
     #courses-courses edges
     #display(dfcc[dfcc.duplicated(subset=["src_course_id","tgt_course_id","relation"],keep=False)])
     dfcc=dfcc.merge(dfoccourses, left_on='src_course_id', right_on='course_id', how='left')
-    dfcc=dfcc[['src_course_id','relation', 'tgt_course_id','course_title','course_difficulty','course_duration_hours','status']].copy ()
-    dfcc.columns=['src_course_id','relation', 'tgt_course_id','src_course_title','src_course_difficulty','src_course_duration_hours','src_status']
+    dfcc=dfcc[['src_course_id','relation', 'tgt_course_id','course_title','course_url','course_difficulty','course_duration_hours','status']].copy ()
+    dfcc.columns=['src_course_id','relation', 'tgt_course_id','src_course_title','src_course_url','src_course_difficulty','src_course_duration_hours','src_status']
     dfcc=dfcc.merge(dfoccourses, left_on='tgt_course_id', right_on='course_id', how='left')
-    dfcc=dfcc[['src_course_id','relation', 'tgt_course_id','src_course_title','src_course_difficulty','src_course_duration_hours','src_status','course_title','course_difficulty','course_duration_hours','status']].copy ()
-    dfcc.columns=['src_course_id','relation', 'tgt_course_id','src_course_title','src_course_difficulty','src_course_duration_hours','src_status','tgt_course_title','tgt_course_difficulty','tgt_course_duration_hours','tgt_status']
+    dfcc=dfcc[['src_course_id','relation', 'tgt_course_id','src_course_title','src_course_url','src_course_difficulty','src_course_duration_hours','src_status','course_title','course_url','course_difficulty','course_duration_hours','status']].copy ()
+    dfcc.columns=['src_course_id','relation', 'tgt_course_id','src_course_title','src_course_url','src_course_difficulty','src_course_duration_hours','src_status','tgt_course_title','tgt_course_url','tgt_course_difficulty','tgt_course_duration_hours','tgt_status']
     # add unique ids and other columns for the graph
     dfpa["uid"]=dfpa["path_id"]
     
@@ -753,11 +753,11 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
     
     # --------- PATH
     if (show_titles):
-        g.add_node(path["nid"], path["path_title"],group="root",color=path_color ,shape="image", image=OCGraphsIconsURL["path"], physics=False,x=px,y=py,title=str(path["uid"])+"/"+str(path["nid"]))
+        g.add_node(path["nid"], path["path_title"],group="root",color=path_color ,shape="image", image=OCGraphsIconsURL["path"], physics=False,x=px,y=py,title=str(path["path_title"]))
     else:
         g.add_node(path["nid"], path["path_title"],group="root",color=path_color ,shape="image", image=OCGraphsIconsURL["path"], physics=False,x=px,y=py)
-    skeleton_nodes = skeleton_nodes.append({"uid": path["uid"],"nid" : path["nid"]}, ignore_index = True)
-    
+    # skeleton_nodes = skeleton_nodes.append({"uid": path["uid"],"nid" : path["nid"]}, ignore_index = True)
+    skeleton_nodes = pd.concat([skeleton_nodes,pd.DataFrame([{"uid": path["uid"],"nid" : path["nid"]}])],ignore_index=True)
     # ---------- PROJECTS IN A MOUNTAIN
     previous_uid=0
     previous_nid=0
@@ -774,21 +774,24 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
             
         if (show_titles):
             g.add_node(int(n["nid"]), str(n["project_number"])+"-"+n["project_title"], color=project_color,group="project",shape="image",\
-                       image=image,physics=False,x=px,y=py,title=n["uid"]+"/"+str(n["nid"]))
+                       image=image,physics=False,x=px,y=py,title=str(path["path_title"])+" / "+str(n["project_title"]))
         else:
             g.add_node(int(n["nid"]), str(n["project_number"])+"-"+n["project_title"], color=project_color,group="project",shape="image",\
                        image=image,physics=False,x=px,y=py)
-        skeleton_nodes.append([n["uid"],n["nid"]])
-        skeleton_nodes = skeleton_nodes.append({"uid": n["uid"],"nid" : n["nid"]}, ignore_index = True) 
+        #skeleton_nodes.append([n["uid"],n["nid"]]) #???
+        #skeleton_nodes = skeleton_nodes.append({"uid": n["uid"],"nid" : n["nid"]}, ignore_index = True)
+        skeleton_nodes = pd.concat([skeleton_nodes,pd.DataFrame([{"uid": n["uid"],"nid" : n["nid"]}])],ignore_index=True)
 
         if (previous_nid==0):
             g.add_edge(path["nid"], int(n["nid"]),label=str(n["project_duration_hours"])+"h")
-            skeleton_edges = skeleton_edges.append({"src_uid": path["uid"],"src_nid" : path["nid"],"relation":"precedes","tgt_uid":n["uid"],"tgt_nid":n["nid"]}, ignore_index = True)
+            #skeleton_edges = skeleton_edges.append({"src_uid": path["uid"],"src_nid" : path["nid"],"relation":"precedes","tgt_uid":n["uid"],"tgt_nid":n["nid"]}, ignore_index = True)
+            skeleton_edges = pd.concat([skeleton_edges,pd.DataFrame([{"src_uid": path["uid"],"src_nid" : path["nid"],"relation":"precedes","tgt_uid":n["uid"],"tgt_nid":n["nid"]}])],ignore_index=True)
             previous_uid=n["uid"]
             previous_nid=int(n["nid"])
         else :
             g.add_edge(previous_nid, int(n["nid"]),label=str(n["project_duration_hours"])+"h") #,hidden=True 
-            skeleton_edges = skeleton_edges.append({"src_uid": previous_uid,"src_nid" : previous_nid,"relation":"precedes","tgt_uid":n["uid"],"tgt_nid":n["nid"]}, ignore_index = True)
+            # skeleton_edges = skeleton_edges.append({"src_uid": previous_uid,"src_nid" : previous_nid,"relation":"precedes","tgt_uid":n["uid"],"tgt_nid":n["nid"]}, ignore_index = True)
+            skeleton_edges = pd.concat([skeleton_edges,pd.DataFrame([{"src_uid": previous_uid,"src_nid" : previous_nid,"relation":"precedes","tgt_uid":n["uid"],"tgt_nid":n["nid"]}])],ignore_index=True)
             previous_uid=n["uid"]
             previous_nid=int(n["nid"])
     
@@ -807,7 +810,8 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
     # we do not add courses from the dataframe "dfc" because some of them should not be shown on the graph due to edge-cutting optimization
     # for now let us "just" complete the skeleton
     for i,n in dfc.iterrows():
-        skeleton_nodes = skeleton_nodes.append({"uid": n["uid"],"nid" : n["nid"]}, ignore_index = True)
+        # skeleton_nodes = skeleton_nodes.append({"uid": n["uid"],"nid" : n["nid"]}, ignore_index = True)
+        skeleton_nodes = pd.concat([skeleton_nodes,pd.DataFrame([{"uid": n["uid"],"nid" : n["nid"]}])],ignore_index=True)
     
 
     # ---------- LINKING PROJECTS TO COURSES
@@ -816,7 +820,8 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
     already_visited_courses=[]
     # adding layer 0 of courses_layers
     for i,e in dfpc.iterrows():
-        skeleton_edges = skeleton_edges.append({"src_uid": e["src_uid"],"src_nid" : e["src_nid"],"relation":"project_requires","tgt_uid":e["tgt_uid"],"tgt_nid":e["tgt_nid"]}, ignore_index = True)
+        #skeleton_edges = skeleton_edges.append({"src_uid": e["src_uid"],"src_nid" : e["src_nid"],"relation":"project_requires","tgt_uid":e["tgt_uid"],"tgt_nid":e["tgt_nid"]}, ignore_index = True)
+        skeleton_edges = pd.concat([skeleton_edges,pd.DataFrame([{"src_uid": e["src_uid"],"src_nid" : e["src_nid"],"relation":"project_requires","tgt_uid":e["tgt_uid"],"tgt_nid":e["tgt_nid"]}])],ignore_index=True)
         if (i_read_my_courses_once and  e["course_id"] in already_visited_courses):
                 continue
         else :
@@ -826,11 +831,11 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
                 if (status!="none"):
                     image=OCGraphsIconsURL["course"+"_"+status]
             if (show_titles):
-                g.add_node(int(e["tgt_nid"]), e["course_title"], size=e["course_difficulty_grade"]*10,group="course",\
+                g.add_node(int(e["tgt_nid"]), e["course_title"], size=e["course_difficulty_grade"]*10,\
                            color=course_color,shape="image", image=image,
-                           title="depth = 0 / "+e["tgt_uid"]+"/"+str(e["tgt_nid"]))
+                           title="<a href=\""+e["course_url"]+"\" target=\"_blank\">"+e["course_title"]+"</a>")
             else : 
-                g.add_node(int(e["tgt_nid"]), e["course_title"], size=e["course_difficulty_grade"]*10,group="course",\
+                g.add_node(int(e["tgt_nid"]), e["course_title"], size=e["course_difficulty_grade"]*10,\
                            color=course_color,shape="image", image=image) 
             length = plength+ e["course_duration_hours"]
             g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["course_duration_hours"]))+"h",color={'color':link_colors["primary_requires"], 'inherit':'false'},title="1st req")    
@@ -847,7 +852,8 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
         # avoid self-references in the graph
         if (e["src_nid"]==e["tgt_nid"]):
             continue
-        skeleton_edges = skeleton_edges.append({"src_uid": e["src_uid"],"src_nid" : e["src_nid"],"relation":e["relation"],"tgt_uid":e["tgt_uid"],"tgt_nid":e["tgt_nid"]}, ignore_index = True)
+        # skeleton_edges = skeleton_edges.append({"src_uid": e["src_uid"],"src_nid" : e["src_nid"],"relation":e["relation"],"tgt_uid":e["tgt_uid"],"tgt_nid":e["tgt_nid"]}, ignore_index = True)
+        skeleton_edges = pd.concat([skeleton_edges,pd.DataFrame([{"src_uid": e["src_uid"],"src_nid" : e["src_nid"],"relation":e["relation"],"tgt_uid":e["tgt_uid"],"tgt_nid":e["tgt_nid"]}])],ignore_index=True)
     
     # compute parenthoods in the skeleton graph
     #skeleton_edges.agg(lambda x: get_parenthood_degree_between(x['src_uid'],x['tgt_uid'],skeleton_edges), axis=1) 
@@ -916,10 +922,10 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
             if (show_titles):
                 g.add_node(int(e["src_nid"]), e["src_course_title"], size=e["src_course_difficulty_grade"]*10,group="course",\
                            color=course_color,shape="image", image=srcimage,\
-                           title="depth = "+str(depth)+" / "+e["src_uid"]+"/"+str(e["src_nid"]))
+                           title="<a href=\""+e["src_course_url"]+"\" target=\"_blank\">"+e["src_course_title"]+"</a>")
                 g.add_node(int(e["tgt_nid"]), e["tgt_course_title"], size=e["tgt_course_difficulty_grade"]*10,group="course",\
                            color=course_color,shape="image", image=tgtimage,\
-                           title="depth = "+str(depth)+" / "+e["tgt_uid"]+"/"+str(e["tgt_nid"]))
+                           title="<a href=\""+e["tgt_course_url"]+"\" target=\"_blank\">"+e["tgt_course_title"]+"</a>")
             else : 
                 g.add_node(int(e["src_nid"]), e["src_course_title"], size=e["src_course_difficulty_grade"]*10,group="course",\
                            color=course_color,shape="image", image=srcimage)
@@ -928,10 +934,13 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
             if (e["parenthood"]>show_relations_max_distance and create_pseudo_nodes_over_max_distance==True):
                 #create smthng
 #                 print("adding longlink ", int(e["parenthood"]), e["src_course_title"],int(e["src_nid"]), e["tgt_course_title"], int(e["tgt_nid"]))
-                add_pseudo_nodes_between(g,aia,int(e["src_nid"]), int(e["tgt_nid"]), e["src_uid"], e["tgt_uid"],show_relations_max_distance,int(e["parenthood"]),color=link_colors["long_link"],show_titles=show_titles)
+                add_pseudo_nodes_between(g,aia,int(e["src_nid"]), int(e["tgt_nid"]), e["src_uid"],\
+                                         e["tgt_uid"],show_relations_max_distance,int(e["parenthood"]),\
+                                         color=link_colors["long_link"],show_titles=show_titles)
             else:
                 edge_title = "2nd req / "+str(int(e["parenthood"]))+" : "+str(e["parenthood_uid"])
-                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["tgt_course_duration_hours"]))+"h",color={'color':color, 'inherit':'false'},title=edge_title)  
+                g.add_edge(int(e["src_nid"]), int(e["tgt_nid"]),label=str(int(e["tgt_course_duration_hours"]))+"h",\
+                           color={'color':color, 'inherit':'false'},title=edge_title)  
             already_added_relations.append((int(e["src_nid"]), int(e["tgt_nid"])))
 
         # then add edges with relation other than "requires"
@@ -958,10 +967,10 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
                 if (show_titles):
                     g.add_node(int(e["src_nid"]), e["src_course_title"], size=e["src_course_difficulty_grade"]*10,group="course",\
                                color=course_color,shape="image", image=srcimage,\
-                               title="depth = "+str(depth)+" / "+e["src_uid"]+"/"+str(e["src_nid"]))
+                               title="<a href=\""+e["src_course_url"]+"\" target=\"_blank\">"+e["src_course_title"]+"</a>")
                     g.add_node(int(e["tgt_nid"]), e["tgt_course_title"], size=e["tgt_course_difficulty_grade"]*10,group="course",\
                                color=course_color,shape="image", image=tgtimage,\
-                               title="depth = "+str(depth)+" / "+e["tgt_uid"]+"/"+str(e["tgt_nid"]))
+                               title="<a href=\""+e["tgt_course_url"]+"\" target=\"_blank\">"+e["tgt_course_title"]+"</a>")
                 else : 
                     g.add_node(int(e["src_nid"]), e["src_course_title"], size=e["src_course_difficulty_grade"]*10,group="course",\
                                color=course_color,shape="image", image=srcimage)
@@ -1015,10 +1024,10 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
         if (show_titles):
             g.add_node(int(e["src_nid"]), e["src_course_title"], size=e["src_course_difficulty_grade"]*10,group="course",\
                        color=course_color,shape="image", image=srcimage,\
-                       title="depth = ? / "+e["src_uid"]+"/"+str(e["src_nid"]))
+                       title="<a href=\""+e["src_course_url"]+"\" target=\"_blank\">"+e["src_course_title"]+"</a>")
             g.add_node(int(e["tgt_nid"]), e["tgt_course_title"], size=e["tgt_course_difficulty_grade"]*10,group="course",\
                        color=course_color,shape="image", image=tgtimage,\
-                       title="depth = ? / "+e["tgt_uid"]+"/"+str(e["tgt_nid"]))
+                       title="<a href=\""+e["tgt_course_url"]+"\" target=\"_blank\">"+e["tgt_course_title"]+"</a>")
         else : 
             g.add_node(int(e["src_nid"]), e["src_course_title"], size=e["src_course_difficulty_grade"]*10,group="course",\
                        color=course_color,shape="image", image=srcimage)
