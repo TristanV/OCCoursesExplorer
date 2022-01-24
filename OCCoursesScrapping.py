@@ -14,6 +14,8 @@ import OCCoursesDatasets as ocd # to have datasets available everywhere read+wri
         # OC_CoursesParts_cols, OC_CoursesChapters_cols, OC_ProjectsCoursesLinks_cols,OC_CoursesLinks_cols, OC_MyCourses_cols
 # from OCCoursesDatasets import
 
+import traceback
+import sys
 
 # ------------------------------------------------- Interaction functions
 OC_browser = None # Selenium browser to get logged in pages
@@ -184,6 +186,7 @@ def OC_browser_get(url,time_gap=2,console_trace=True):
     except:
         if (console_trace):
             console_log(" ... Something went wrong, but we escaped safely! Where are we now?")
+            traceback.print_exception(*sys.exc_info())
         return False
     return True
 # fin fonction
@@ -1022,8 +1025,12 @@ def scrap_OC_Paths(b):
                         path_level=vect[0]
                     if (len(vect)>1):
                         path_duration=vect[1]
-                        val=path_duration.split(" ")[1]
-                        path_duration_months=int(val)
+                        # "À plein temps :  2 mois" 
+                        path_duration = path_duration.replace("À plein temps : ","")
+                        path_duration = path_duration.replace("mois","")
+                        path_duration = path_duration.replace(" ","")
+                        # val=path_duration.split(" ")[1]
+                        path_duration_months=int(path_duration)
                     if (len(vect)>2) and (vect[2] == "Emploi garanti"):
                         path_employment_warranty=1
                         
@@ -1273,7 +1280,10 @@ def scrap_OC_ProjectsCoursesLinks(b):
     for i , p in df.iterrows(): 
         counter+=1 
         OC_browser_get(p["path_url"]+"#path-tabs")
-        time.sleep(3)
+        
+        OC_browser.set_window_position(0, 0)
+        OC_browser.set_window_size(1600, 1200)
+        time.sleep(2)
         OC_browser_hide_overlays() 
         time.sleep(1)
         
