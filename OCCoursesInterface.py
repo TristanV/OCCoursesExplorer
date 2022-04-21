@@ -9,12 +9,21 @@ import OCCoursesConfig as occ
 from OCCoursesConfig import widgets, display, HTML, IFrame, OCGraphsIconsLocal
 from OCCoursesDatasets import save_OC_datasets
 import OCCoursesDatasets as ocd
-# from OCCoursesScrapping import OC_browser_get_connexion_info, \
-#    OC_browser_get_connexion_status,\
-#    OC_browser_connect,\
-#    OC_browser_disconnect,\
-#    scrap_OC_Topics, scrap_OC_Paths,scrap_OC_PathsSkills,scrap_OC_Projects,scrap_OC_ProjectsCoursesLinks,\
-#    scrap_OC_Courses,scrap_OC_CoursesDetails,scrap_OC_CoursesLinks,scrap_OC_MyCourses,scrap_OC_RepairCoursesLinks
+# from OCCoursesScrapping import 
+#    OC_browser_get_connexion_info,
+#    OC_browser_get_connexion_status,
+#    OC_browser_connect,
+#    OC_browser_disconnect,
+#    scrap_OC_Topics,
+#    scrap_OC_Paths,
+#    scrap_OC_PathsSkills,
+#    scrap_OC_Projects,
+#    scrap_OC_ProjectsCoursesLinks,
+#    scrap_OC_Courses,
+#    scrap_OC_CoursesDetails,
+#    scrap_OC_CoursesLinks,
+#    scrap_OC_MyCourses,
+#    scrap_OC_RepairCoursesLinks
 
 import OCCoursesGraphs as ocg
 import OCCoursesPlots as ocp
@@ -107,58 +116,57 @@ header_box = widgets.HBox([main_console,
 # --- Data tab elements
 
 
-def display_connexion_info():
-    # from OCCoursesScrapping import OC_connexion_info
-    global data_OC_connexion_info
-
-    occi = OC_browser_get_connexion_info()
-    if (type(occi) == type(None)):
-        data_OC_connexion_info.value = "&nbsp;<i>You are not logged in."
-    else:
-        t = "&nbsp;Hello&nbsp;"
-        t += occi["user"]["displayableName"]
-        if (occi["user"]["profilePicture"] != ""):
-            t += '&nbsp;<img src="' + occi["user"]["profilePicture"] + '" height="36" valign="bottom"/>'
-        data_OC_connexion_info.value = t
-
-
-# fin fonction
-
-def OC_browser_connect_action(b):
-    global data_OC_login, data_OC_password, data_OC_connect_button, data_OC_disconnect_button
-    if (OC_browser_get_connexion_status() == True):  # already connected
-        console_log("You are already connected! Why would you connect twice?")
-        return
-    if (data_OC_login.value == "") or (data_OC_password.value == ""):  # blanks may not work very well to login
-        console_log("Login or Password is empty")
-        return
-
-    OC_browser_connect(data_OC_login.value, data_OC_password.value)
-
-    if (OC_browser_get_connexion_status() == True):  # now being connected is what we want
-        console_log("Login worked pretty fine")
-        display_data_section()
-        display_connexion_info()
-        data_OC_connect_button.disabled = True
-        data_OC_disconnect_button.disabled = False
-    else:
-        console_log("Login seems to have failed")
+# TODO - def display_connexion_info():
+# TODO -     global data_OC_connexion_info
+# TODO - 
+# TODO -     occi = OC_browser_get_connexion_info()
+# TODO -     if (type(occi) == type(None)):
+# TODO -         data_OC_connexion_info.value = "&nbsp;<i>You are not logged in."
+# TODO -     else:
+# TODO -         t = "&nbsp;Hello&nbsp;"
+# TODO -         t += occi["user"]["displayableName"]
+# TODO -         if (occi["user"]["profilePicture"] != ""):
+# TODO -             t += '&nbsp;<img src="' + occi["user"]["profilePicture"] + '" height="36" valign="bottom"/>'
+# TODO -         data_OC_connexion_info.value = t
 
 
 # fin fonction
 
-def OC_browser_disconnect_action(b):
-    global data_OC_connect_button, data_OC_disconnect_button
-    if (OC_browser_get_connexion_status() == False):  # already disconnected
-        console_log("You are already disconnected! Why would you disconnect twice?")
-        return
-    OC_browser_disconnect()
-    if (OC_browser_get_connexion_status() == False):  # now being disconnected is what we want
-        console_log("Disconnected you are!")
-        display_data_section()
-        display_connexion_info()
-        data_OC_connect_button.disabled = False
-        data_OC_disconnect_button.disabled = True
+# TODO - def OC_browser_connect_action(b):
+# TODO -     global data_OC_login, data_OC_password, data_OC_connect_button, data_OC_disconnect_button
+# TODO -     if (OC_browser_get_connexion_status() == True):  # already connected
+# TODO -         console_log("You are already connected! Why would you connect twice?")
+# TODO -         return
+# TODO -     if (data_OC_login.value == "") or (data_OC_password.value == ""):  # blanks may not work very well to login
+# TODO -         console_log("Login or Password is empty")
+# TODO -         return
+# TODO - 
+# TODO -     OC_browser_connect(data_OC_login.value, data_OC_password.value)
+# TODO - 
+# TODO -     if (OC_browser_get_connexion_status() == True):  # now being connected is what we want
+# TODO -         console_log("Login worked pretty fine")
+# TODO -         display_data_section()
+# TODO -         # TODO - display_connexion_info()
+# TODO -         data_OC_connect_button.disabled = True
+# TODO -         data_OC_disconnect_button.disabled = False
+# TODO -     else:
+# TODO -         console_log("Login seems to have failed")
+
+
+# fin fonction
+
+# TODO - def OC_browser_disconnect_action(b):
+# TODO -     global data_OC_connect_button, data_OC_disconnect_button
+# TODO -     if (OC_browser_get_connexion_status() == False):  # already disconnected
+# TODO -         console_log("You are already disconnected! Why would you disconnect twice?")
+# TODO -         return
+# TODO -     OC_browser_disconnect()
+# TODO -     if (OC_browser_get_connexion_status() == False):  # now being disconnected is what we want
+# TODO -         console_log("Disconnected you are!")
+# TODO -         display_data_section()
+# TODO -         display_connexion_info()
+# TODO -         data_OC_connect_button.disabled = False
+# TODO -         data_OC_disconnect_button.disabled = True
 
 
 # fin fonction
@@ -180,11 +188,11 @@ data_OC_password.layout = widgets.Layout(width='200px', height='30px')
 
 data_OC_connect_button = widgets.Button(description="Connect OpenClassrooms", icon="sign-in-alt", disabled=False)
 data_OC_connect_button.layout = widgets.Layout(width='200px', height='30px')
-data_OC_connect_button.on_click(OC_browser_connect_action)
+# TODO - data_OC_connect_button.on_click(OC_browser_connect_action)
 
-data_OC_disconnect_button = widgets.Button(description="Disconnect", icon="sign-out-alt", disabled=True)
-data_OC_disconnect_button.layout = widgets.Layout(width='100px', height='30px')
-data_OC_disconnect_button.on_click(OC_browser_disconnect_action)
+# TODO - data_OC_disconnect_button = widgets.Button(description="Disconnect", icon="sign-out-alt", disabled=True)
+# TODO - data_OC_disconnect_button.layout = widgets.Layout(width='100px', height='30px')
+# TODO - data_OC_disconnect_button.on_click(OC_browser_disconnect_action)
 
 data_OC_connexion_info = widgets.HTML("&nbsp;")
 data_OC_connexion_info.layout = widgets.Layout(width='350px', height='30px')
@@ -193,7 +201,7 @@ data_OC_items = [
     data_OC_login,
     data_OC_password,
     data_OC_connect_button,
-    data_OC_disconnect_button,
+    # TODO - data_OC_disconnect_button,
     data_OC_connexion_info
 ]
 
@@ -202,7 +210,8 @@ data_OC_login_items.layout = widgets.Layout(width='99%', height='50px')
 
 data_OC_out = widgets.Output()
 data_OC_out.layout = widgets.Layout(width='99%', height='580px')
-data_OC_box = widgets.VBox([data_OC_login_items, data_OC_out])
+# TODO - data_OC_box = widgets.VBox([data_OC_login_items, data_OC_out])
+data_OC_box = widgets.VBox([data_OC_out])
 
 # --- Paths tab elements
 
@@ -456,8 +465,8 @@ def projects_filter_change(w):
 def populate_projects_selectors():
     global projects_height_slider, projects_topic_selector, projects_path_selector, projects_mountainshape_selector, projects_max_depth_slider, \
         projects_ireadmycoursesonce_check, projects_hidereferences_check, projects_relations_max_distance_slider, \
-        projects_pseudonodes_check, projects_myway_check, projects_link_area \
- \
+        projects_pseudonodes_check, projects_myway_check, projects_link_area
+
     selectors = [projects_height_slider, projects_topic_selector, projects_path_selector,
                  projects_mountainshape_selector, projects_max_depth_slider, \
                  projects_ireadmycoursesonce_check, projects_hidereferences_check,
@@ -1329,7 +1338,7 @@ def display_data_section():
         cells.append(wcell(get_data_status(ocd.OC_Topics, ocd.OC_Topics_cols), width='80px', color=color))
         scrap_OC_Topics_button = widgets.Button(description="Collect !", icon="cube")
         scrap_OC_Topics_button.layout = widgets.Layout(width='220px', height='30px')
-        scrap_OC_Topics_button.on_click(scrap_OC_Topics)
+        # TODO - scrap_OC_Topics_button.on_click(scrap_OC_Topics)
         cells.append(scrap_OC_Topics_button)
         cells.append(wcell("1min", width='80px'))
         rows.append(wrow(cells))
@@ -1349,7 +1358,7 @@ def display_data_section():
         else:
             scrap_OC_Courses_button = widgets.Button(description="Collect !", icon="cube")
             scrap_OC_Courses_button.layout = widgets.Layout(width='220px', height='30px')
-            scrap_OC_Courses_button.on_click(scrap_OC_Courses)
+            # TODO - scrap_OC_Courses_button.on_click(scrap_OC_Courses)
             cells.append(scrap_OC_Courses_button)
         cells.append(wcell("15min", width='80px'))
         rows.append(wrow(cells))
@@ -1363,11 +1372,11 @@ def display_data_section():
         if (len(ocd.OC_Courses) == 0):
             t = "<i>waiting for Courses</i>"
             cells.append(wcell(t, width='220px'))
-        else:
-            scrap_OC_CoursesDetails_button = widgets.Button(description="Collect !", icon="cubes")
-            scrap_OC_CoursesDetails_button.layout = widgets.Layout(width='220px', height='30px')
-            scrap_OC_CoursesDetails_button.on_click(scrap_OC_CoursesDetails)
-            cells.append(scrap_OC_CoursesDetails_button)
+        # TODO - else:
+            # TODO - scrap_OC_CoursesDetails_button = widgets.Button(description="Collect !", icon="cubes")
+            # TODO - scrap_OC_CoursesDetails_button.layout = widgets.Layout(width='220px', height='30px')
+            # TODO - scrap_OC_CoursesDetails_button.on_click(scrap_OC_CoursesDetails)
+            # TODO - cells.append(scrap_OC_CoursesDetails_button)
         cells.append(wcell("45min", width='80px'))
         rows.append(wrow(cells))
 
@@ -1400,11 +1409,11 @@ def display_data_section():
         if (len(ocd.OC_Courses) == 0) or (len(ocd.OC_CoursesChapters) == 0):
             t = "<i>waiting for Courses and Chapters</i>"
             cells.append(wcell(t, width='220px'))
-        else:
-            scrap_OC_CoursesLinks_button = widgets.Button(description="Collect !", icon="cube")
-            scrap_OC_CoursesLinks_button.layout = widgets.Layout(width='220px', height='30px')
-            scrap_OC_CoursesLinks_button.on_click(scrap_OC_CoursesLinks)
-            cells.append(scrap_OC_CoursesLinks_button)
+        # TODO - else:
+            # TODO - scrap_OC_CoursesLinks_button = widgets.Button(description="Collect !", icon="cube")
+            # TODO - scrap_OC_CoursesLinks_button.layout = widgets.Layout(width='220px', height='30px')
+            # TODO - scrap_OC_CoursesLinks_button.on_click(scrap_OC_CoursesLinks)
+            # TODO - cells.append(scrap_OC_CoursesLinks_button)
         cells.append(wcell("6 h !", width='80px', color='#D33'))
         rows.append(wrow(cells))
 
@@ -1414,13 +1423,13 @@ def display_data_section():
             cells.append(wemptycell(width='250px'))
             cells.append(wemptycell(width='100px'))
             cells.append(wemptycell(width='80px'))
-            scrap_OC_RepairCoursesLinks_button = widgets.Button(
-                description="Repair " + str(missing_cl + duplicates_cl) + " links!",
-                icon="medkit",
-                title=str(missing_cl) + " links are missing and " + str(duplicates_cl) + " are duplicated")
-            scrap_OC_RepairCoursesLinks_button.layout = widgets.Layout(width='220px', height='30px')
-            scrap_OC_RepairCoursesLinks_button.on_click(scrap_OC_RepairCoursesLinks)
-            cells.append(scrap_OC_RepairCoursesLinks_button)
+            # TODO - scrap_OC_RepairCoursesLinks_button = widgets.Button(
+            # TODO -     description="Repair " + str(missing_cl + duplicates_cl) + " links!",
+            # TODO -     icon="medkit",
+            # TODO -     title=str(missing_cl) + " links are missing and " + str(duplicates_cl) + " are duplicated")
+            # TODO - scrap_OC_RepairCoursesLinks_button.layout = widgets.Layout(width='220px', height='30px')
+            # TODO - scrap_OC_RepairCoursesLinks_button.on_click(scrap_OC_RepairCoursesLinks)
+            # TODO - cells.append(scrap_OC_RepairCoursesLinks_button)
             est_time = int((missing_cl * 5) / 60) + 1
             cells.append(wcell(str(est_time) + "m", width='80px'))
             rows.append(wrow(cells))
@@ -1438,11 +1447,11 @@ def display_data_section():
         if (len(ocd.OC_Topics) == 0):
             t = "<i>waiting for Topics</i>"
             cells.append(wcell(t, width='220px'))
-        else:
-            scrap_OC_Paths_button = widgets.Button(description="Collect !", icon="cube")
-            scrap_OC_Paths_button.layout = widgets.Layout(width='220px', height='30px')
-            scrap_OC_Paths_button.on_click(scrap_OC_Paths)
-            cells.append(scrap_OC_Paths_button)
+        # TODO - else:
+            # TODO - scrap_OC_Paths_button = widgets.Button(description="Collect !", icon="cube")
+            # TODO - scrap_OC_Paths_button.layout = widgets.Layout(width='220px', height='30px')
+            # TODO - scrap_OC_Paths_button.on_click(scrap_OC_Paths)
+            # TODO - cells.append(scrap_OC_Paths_button)
         cells.append(wcell("10m", width='80px'))
         rows.append(wrow(cells))
 
@@ -1454,11 +1463,11 @@ def display_data_section():
         if (len(ocd.OC_Paths) == 0):
             t = "<i>waiting for Paths</i>"
             cells.append(wcell(t, width='220px'))
-        else:
-            scrap_OC_PathsSkills_button = widgets.Button(description="Collect !", icon="cubes")
-            scrap_OC_PathsSkills_button.layout = widgets.Layout(width='220px', height='30px')
-            scrap_OC_PathsSkills_button.on_click(scrap_OC_PathsSkills)
-            cells.append(scrap_OC_PathsSkills_button)
+        # TODO - else:
+        # TODO -     scrap_OC_PathsSkills_button = widgets.Button(description="Collect !", icon="cubes")
+        # TODO -     scrap_OC_PathsSkills_button.layout = widgets.Layout(width='220px', height='30px')
+        # TODO -     scrap_OC_PathsSkills_button.on_click(scrap_OC_PathsSkills)
+        # TODO -     cells.append(scrap_OC_PathsSkills_button)
         cells.append(wcell("15m", width='80px'))
         rows.append(wrow(cells))
         # --- END PATHS
@@ -1474,11 +1483,11 @@ def display_data_section():
         if (len(ocd.OC_Paths) == 0):
             t = "<i>waiting for Paths</i>"
             cells.append(wcell(t, width='220px'))
-        else:
-            scrap_OC_Projects_button = widgets.Button(description="Collect !", icon="cubes")
-            scrap_OC_Projects_button.layout = widgets.Layout(width='220px', height='30px')
-            scrap_OC_Projects_button.on_click(scrap_OC_Projects)
-            cells.append(scrap_OC_Projects_button)
+        # TODO - else:
+        # TODO -     scrap_OC_Projects_button = widgets.Button(description="Collect !", icon="cubes")
+        # TODO -     scrap_OC_Projects_button.layout = widgets.Layout(width='220px', height='30px')
+        # TODO -     scrap_OC_Projects_button.on_click(scrap_OC_Projects)
+        # TODO -     cells.append(scrap_OC_Projects_button)
         cells.append(wcell("10m", width='80px'))
         rows.append(wrow(cells))
 
@@ -1501,15 +1510,15 @@ def display_data_section():
         if (len(ocd.OC_Projects) == 0) or (len(ocd.OC_Courses) == 0):
             t = "<i>waiting for Projects and Courses</i>"
             cells.append(wcell(t, width='220px'))
-        else:
-            if (OC_browser_get_connexion_status() == False):
-                t = "<i>connexion required</i>"
-                cells.append(wcell(t, width='220px'))
-            else:
-                scrap_OC_ProjectsCoursesLinks_button = widgets.Button(description="Collect !", icon="cube")
-                scrap_OC_ProjectsCoursesLinks_button.layout = widgets.Layout(width='220px', height='30px')
-                scrap_OC_ProjectsCoursesLinks_button.on_click(scrap_OC_ProjectsCoursesLinks)
-                cells.append(scrap_OC_ProjectsCoursesLinks_button)
+        # TODO - else:
+        # TODO -     if (OC_browser_get_connexion_status() == False):
+        # TODO -         t = "<i>connexion required</i>"
+        # TODO -         cells.append(wcell(t, width='220px'))
+        # TODO -     else:
+        # TODO -         scrap_OC_ProjectsCoursesLinks_button = widgets.Button(description="Collect !", icon="cube")
+        # TODO -         scrap_OC_ProjectsCoursesLinks_button.layout = widgets.Layout(width='220px', height='30px')
+        # TODO -         scrap_OC_ProjectsCoursesLinks_button.on_click(scrap_OC_ProjectsCoursesLinks)
+        # TODO -         cells.append(scrap_OC_ProjectsCoursesLinks_button)
 
         cells.append(wcell("10min", width='80px'))
         rows.append(wrow(cells))
@@ -1526,15 +1535,15 @@ def display_data_section():
         if (len(ocd.OC_Courses) == 0):
             t = "<i>waiting for Courses</i>"
             cells.append(wcell(t, width='220px'))
-        else:
-            if (OC_browser_get_connexion_status() == False):
-                t = "<i>connexion required</i>"
-                cells.append(wcell(t, width='220px'))
-            else:
-                scrap_OC_MyCourses_button = widgets.Button(description="Collect !", icon="cubes")
-                scrap_OC_MyCourses_button.layout = widgets.Layout(width='220px', height='30px')
-                scrap_OC_MyCourses_button.on_click(scrap_OC_MyCourses)
-                cells.append(scrap_OC_MyCourses_button)
+        # TODO - else:
+        # TODO -     if (OC_browser_get_connexion_status() == False):
+        # TODO -         t = "<i>connexion required</i>"
+        # TODO -         cells.append(wcell(t, width='220px'))
+        # TODO -     else:
+        # TODO -         scrap_OC_MyCourses_button = widgets.Button(description="Collect !", icon="cubes")
+        # TODO -         scrap_OC_MyCourses_button.layout = widgets.Layout(width='220px', height='30px')
+        # TODO -         scrap_OC_MyCourses_button.on_click(scrap_OC_MyCourses)
+        # TODO -         cells.append(scrap_OC_MyCourses_button)
 
         cells.append(wcell("2min", width='80px'))
         rows.append(wrow(cells))
@@ -1706,7 +1715,7 @@ def display_GUI(load_datasets=True):
 
     #     clear_output(wait=True)
     # --- as the "data" tab is the first to appear, show some data and interaction
-    display_connexion_info()
+    # TODO - display_connexion_info()
     display_data_status()
     display_data_section()
     populate_paths_selectors()
@@ -1714,7 +1723,7 @@ def display_GUI(load_datasets=True):
     populate_projects_selectors()
     display_projects_section()
     populate_courses_selectors()
-    #     display_courses_section() # not shown on application startup to avoid JS freezing display. The section will be activated by the user
+    # TODO - display_courses_section() # not shown on application startup to avoid JS freezing display. The section will be activated by the user
     populate_schedule_selectors()
     display_schedule_section()
     display_information_section()
