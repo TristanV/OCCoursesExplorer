@@ -79,8 +79,13 @@ pycparser
 Pygments
 pyOpenSSL
 pyparsing
+<<<<<<< Updated upstream
 PyQt5==5.15.6
 PyQt5_sip
+=======
+PyQt5_sip
+PyQt5
+>>>>>>> Stashed changes
 PyQtChart
 PyQtWebEngine
 pyrsistent
@@ -88,7 +93,11 @@ PySocks
 python-dateutil
 pytz
 pyvis
+<<<<<<< Updated upstream
 pywin32
+=======
+pywin32==303
+>>>>>>> Stashed changes
 pywinpty
 pyzmq
 requests
