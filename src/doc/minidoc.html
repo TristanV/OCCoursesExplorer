@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Source+Code+Pro:wght@300&family=Varta:wght@300&display=swap" rel="stylesheet"> 
+  <meta charset="utf-8">
+    <title>OpenClassrooms Courses Explorer minidoc</title>
+    
+    <style>
+    
+* {
+	box-sizing: border-box; 
+}
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: row;
+	margin: 0;
+	font-family: 'Varta', sans-serif;
+}
+
+.col-1 {
+	background: #315279;
+	flex: 1;
+}
+.col-2 {
+	display: flex;
+	flex-direction: column;
+	flex: 6;
+}
+.content {
+	display: flex;
+	flex-direction: row;
+}
+.content > article {
+	flex: 4;
+	min-height: 60vh;
+	background: #F5EBD1;
+}
+
+section {
+	margin-top:20px;
+	margin-bottom:20px;
+	background:#dbd7ce;
+	padding: 1em;
+	color: #141414;
+	overflow:auto; /*clearfix*/
+}
+
+.content > aside {
+	background: #C7AD78;
+	flex: 1;
+}
+header {
+	background: #315279; /*#DAD4C6;*/ 
+}
+
+
+footer {
+	background: #C7AD78;
+	height: 20vh;
+}
+
+
+header, footer, article, nav, aside {
+	padding: 1em;
+}
+
+
+h1 {
+  font-weight: bold;
+  color: #eee;
+  font-size: 32px;
+  font-family: 'Roboto', sans-serif;
+  font-weight:500;
+}
+
+h2 {
+  color: #111111;
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
+  font-weight:500;
+}
+h3 {
+  font-weight: bold;
+  color: #111111;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight:400;
+}
+
+p{
+	text-align: justify;
+}
+
+p > ul {
+margin-left:20px;
+}
+
+div.code{
+	font-family: 'Source Code Pro', monospace;
+	background : #141414;
+	color : #AAFFAA;
+	font-size : 14px;
+	display : block;
+	width:80%;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+span.code{
+	font-family: 'Source Code Pro', monospace;
+	background : #141414;
+	color : #AAFFAA;
+	font-size : 14px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:3px;
+	padding-bottom:3px;
+}
+
+div.coderesult, span.coderesult{
+	color : #FAFAFA;
+}
+
+pre {
+	font-family: 'Source Code Pro', monospace;
+	font-size : 14px;
+}
+img { 
+	  display: block;
+	  margin-left: auto;
+	  margin-right: auto; 
+}
+p {
+	margin-top:10px;
+	display:block;
+	clear: left;
+}
+p>img {
+    float: left;
+    border: 1px solid black;
+    margin: 5px 10px 10px 0px;
+}
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+
+a:link {
+  color: #2A4566;
+}
+
+a:visited {
+  color: #2A4566;
+}
+
+a:focus {
+  border-bottom: 1px solid;
+  background: #BAE498;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+  background: #c7ad78;
+}
+
+a:active {
+  background: #2A4566;
+  color: #CDFEAA;
+}
+
+header a, footer a {
+  color: #fff;
+}
+header a:link, footer a:link {
+  color: #fff;
+}
+header a:visited, footer a:visited {
+  color: #fff;
+}
+header a:focus, footer a:focus {
+  border-bottom: 1px solid;
+  color: #fff;
+}
+header a:hover, footer a:hover {
+  color: #fff;
+  background: #CFB98D;
+}
+img.logo { 
+    float: left;
+    border: 1px solid black;
+    margin: 5px 10px 10px 0px;
+}
+</style>
+  </head>
+  <body>
+  <nav class="col-1"> 
+  </nav>
+  <div class="col-2">
+     <header>
+	<h1>OpenClassrooms Courses Explorer : et Voil&agrave;!</h1>
+      <p>
+	<a href="https://github.com/TristanV/OCCoursesExplorer">OpenClassrooms Courses Explorer on Github</a>
+      </p>
+    </header>
+    <main class="content">
+	<article>
+	
+	 <section>
+    <h2>Known issues</h2>
+	<p> OCCourses Explorer will not work on Chrome because of a known Jupyter Lab limitiation : 
+	<br/><b>Issue with Chrome browser</b> <a href="https://github.com/jupyterlab/jupyterlab/issues/7539 )" target="_blank">https://github.com/jupyterlab/jupyterlab/issues/7539 </a>
+	<p><b>Please use Firefox to launch the notebook!</b></p>
+	</section>
+    
+    <section>
+    <h2>Introduction</h2>
+    <p><img width="240" class="logo" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/img/OCCoursesExplorer_logo.svg">
+	<br/>When you start a <b>path</b> at <a href="https://www.openclassrooms.com">OpenClassrooms</a>, the simplest way not to get lost is to follow the guideline, from project to project, until success!
+    <br/><br/>When you start a <b>project</b> at OpenClassrooms, the simplest way not to get lost is to follow the required courses, from course to course, until success!
+    <br/><br/>When you start a <b>course</b> at OpenClassrooms, the simplest way not to get lost is to follow the guide, chapter after chapter, until success!
+    <br/><br/>However, <b>courses have prerequisites</b> : it is recommended to follow courses B,C and D before starting course A. And B,C,D require themselves several courses...
+    </p>
+    <p>This is where things start to get tricky: 
+    <ul>
+	<li>Even by <b>reducing healthy learner curiosity</b> (avoid non-necessary references, skip light requirements), you will still need to keep track of all the required courses to achieve a given course.</li>
+	<li><b>Cross references, circular references</b> add some fun to your attempt to follow the links: a paper and a pen become bad companions for this journey</li>
+	<li>Moreover, <b>Scheduling correcly your projects agenda</b> becomes a <b>time-consuming task</b> itself, with few time for that!</li>
+    </ul>
+    </p>
+    
+    <p><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/spawn_in_the_dark.png"/>Imagine you start your journey in an unknown place. Somewhere in front of you a few tracks enter <i>the depths of Knowwood-OC</i> the forest-of-OpenClassrooms-knowledge, but you won't know where they will take you to! 
+    </p>
+    <p><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/dora_has_a_map.jpg"/>Perhaps it is a <b>purposeful choice</b> to let students find their ways by themselves, to let them discover some treasures along the road if curiosity and serendipity are in a good day, but... Even Dora the explorer has a map, hasn't she? 
+    </p>
+    <p><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/path_milestone.png"/>Perhaps the <b>complexity of paths and references between courses</b> has grown with time?
+    <br/>Perhaps a given uncertainty regarding the <b>student's preestablished knowledge of the courses requirements</b>, added to a given uncertainty regarding the <b>student's curiosity and available time "to read further"</b>, has discouraged the desire to build a "step-by-step" schedule for each path?
+    <br/>Would these sources of fuzziness (complexity and uncertainty) explain the <b>absence of a full path-project-course map</b> at OC?  
+    </p>
+    <p><img width="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/labyrinth.png"/>When achieving my third project, I was used to find my way along the courses links, and well aware of the interest to self-discover goldnuts along the way. 
+    <br/>I started project 4 with same curiosity, interest, will to learn, motivation as before, and began to take note of the prerequisites for this new project.
+    <br/>The cross references between courses, chapters, other courses, other chapters, overwhelmed me progressively with a feeling of being lost again. <i>As we will see soon below, this feeling was totally predictible and understandable.</i> 
+    </p>
+    <p><img width="500" height="170" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/openclassmaze.gif"/> Moreover, the floor, the walls, the doors and windows of this maze seem to be moving slightly: following the OpenClassrooms courses structure refactoring, some courses names are changing, some courses are archived and replaced by other ones. Some of them are even melted in a more compound one.
+    <br/>This is certainly a good thing to update the courses and spring-cleanup the house now and again, but the cost for learners is to find their way in a courses structure that is <b>changing in time, with no trace of the past structure</b>. Another loss of precious time is when you wonder why your "achieved" courses are archived, and whether you have to follow or not the new updated courses with (probably better-fresher-more-recent content).
+    </p>
+    <p><img width="500" height="672" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/turning_in_circles.png"/> For instance with the best intentions, this is how OpenClassrooms becomes <b>OpenClassMaze</b> for the student fellow: 
+    <br/>- The course <a href="https://openclassrooms.com/fr/courses/4262331-demarrez-votre-projet-avec-python" target="_blank">Démarrez votre projet avec Python</a> will be archived in july 2021, so we are invited to follow this one: <a href="https://openclassrooms.com/fr/courses/4302126-decouvrez-la-programmation-orientee-objet-avec-python" target="_blank">Découvrez la programmation orienté objet avec Python</a>
+    <br/>-But when landing on the page <a href="https://openclassrooms.com/fr/courses/4302126-decouvrez-la-programmation-orientee-objet-avec-python" target="_blank">Découvrez la programmation orienté objet avec Python</a>, we are invited to take note that the course has been updated into a new version that we can find here: <a href="https://openclassrooms.com/fr/courses/7150616-apprenez-la-programmation-orientee-objet-avec-python" target="_blank">Apprenez la programmation orienté objet avec Python</a>
+    <br/>- Finally, reading this new course prerequisites, we are still invited to follow the course <a href="https://openclassrooms.com/fr/courses/4262331-demarrez-votre-projet-avec-python" target="_blank">Démarrez votre projet avec Python</a> <b>(The one that will be archived soon and replaced by a one that redirects to the current page? Yeah!)</b>.
+    <br/>-(re)Finally, reading further this new course prerequisites, we are also invited to follow two new courses <a href="https://openclassrooms.com/fr/courses/6943241-mettez-en-place-votre-environnement-front-end" target="_blank">Mettez en place votre environnement front-end (with Visual Studio)</a> and <a href="https://openclassrooms.com/fr/courses/6951236-mettez-en-place-votre-environnement-python" target="_blank">Mettez en place votre environnement Python (with Pycharm)</a>.
+    </p>
+    <p>After a few attempts to calm down this growing feeling, I came to a first conclusion : <b>paper, pen, post'it, calc-sheet, Jira, ... whatever tool you use to draw your learning roadmap is unuseful without a clear sight of the whole links and requirement-dependencies between courses!</b>.
+    <br/>To understand my mindset when I started following the courses of my 4th project, here is a screenshot of the dense relational network between courses of the 3rd and 4th projects in the path "Ing&eacute;nieur IA":
+    <br/>In front of such a complex network, one can easily understand that a student can feel a bit lost, and feel a bit uncomfortable when following courses, chapter after chapter.
+    </p>
+    <br/><img width="800" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_projects_complex_zoom.PNG">
+    <p>After very frustrating moments in front of such an undemanded complexity, wondering how not to loose more time, I came to a second conclusion : <b>this is a problem to be solved by a computer scientist, a data engineer, a motivated database architect, and a person who has 2 weeks in front of him!</b>.
+    </p>
+    <p><img width="320" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/gaston_has_an_idea.png">Then, I looked around and found out I could do the job: I fortunately had achieved my 3rd project 2 weeks before the deadline, had some robust experience of databases, good knowledge about graphs traversal, and a strong need to practice Python programming (started 3 months ago) to strenghten my little knowledge of Pandas, Matplotlib and other tools. 
+    </p>
+    <p><img width="120" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/by-nc-sa.png"/> There was a final question : is it possible to collect the courses requirements data without breaking any licence? Quick answer : <b>all OC courses are provided with a Creative Commons By-SA Licence</b>. Technical answer : All the data is here, availble and usable for my needs, so let's program an explorer and do some automated things with it.
+    </p>
+    <p>
+        <b>That was the story , <a href="https://github.com/TristanV/OCCoursesExplorer" target="_blank">here is OpenClassrooms Courses Explorer!</a></b>
+    </p>
+    </section>
+    
+    <section>
+    <h2>What is OC-C-E ?</h2>
+    <ul>
+            <li>OC-C-E is a tribute to OC : this is the cost I pay to get a full overview of OC courses interconnexions.</li>
+            <li>OC-C-E is again a tribute to OC : this is a work motivated by the will to loose less time and embrace as much <b>good OC Courses content</b> as possible to avoid missing goldnuts somewhere</li>
+            <li>OC-C-E is a submarine project between project 3 and project 4: I used all python data science programming I had learned the 3 last months</li>
+            <li>OC-C-E is an OpenClassrooms Courses Explorer</li>
+    </ul>
+    </section>
+    <section>
+    <h2>What is *NOT* OC-C-E ?</h2>
+    <ul>
+	<li>OC-C-E is <b>NOT</b> a work of OpenClassrooms, it was not demanded by anyone in OC Organization. For this reason, do not ask OC any support or information about this tool.</li>
+	<li>OC-C-E is <b>NOT</b> a commercial industrial tool : it is free, it is "as is", and there is a licence to explain how to use it.</li>
+	<li>OC-C-E is <b>NOT</b> for me myself and I (anymore). It was first motivated by my own needs, but the product belongs now to the data-python-scientists and other OC students who will want to do something with it..</li>
+    </ul>
+    </section>
+    <section>
+    <h2>Where are the OC-C-E entry points ?</h2> 
+    <ul>
+	<li>Launch with Jupyter Lab : several notebooks are provided, one with the full application and some others with tutorial step by step examples.
+	<ul>
+		<li>Full application :
+		<div class="code">jupyter lab OCCoursesExplorer.ipynb</div>
+		</li>
+		<li>Step by step exploration with the datasets:
+		<div class="code">jupyter lab OCCoursesExplorer_stepbystep.ipynb</div>
+		</li>
+		<li>Courses and paths network exploration:
+		<div class="code">jupyter lab OCCoursesExplorer_courses_and_paths.ipynb</div>
+		</li>
+		<li>Courses scheduler exploration:
+		<div class="code">jupyter lab OCCoursesExplorer_schedule.ipynb</div>
+		</li>
+	</ul>
+	</li>
+	<li>Launch with Jupyter Notebook: same as above, with <span class="code coderesult">notebook</span> instead of <span class="code coderesult">lab</span></li>
+	<li>Launch with Voilà: the main full application will start with Voilà!
+	<div class='code' >voila --enable_nbextensions=True --VoilaConfiguration.file_whitelist="['.*\.(csv|html|png|jpg)', 'viz.*', 'data.*']"  OCCoursesExplorer.ipynb</div>
+	</li>
+    </ul>
+    <br/><i>See below for installation instructions</i>
+    </section>
+    <section>
+    <h2>Why OC-C-E ?</h2> 
+    <p><img width="500" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/idefix_in_a_maze.png"/> 
+        The personal story leading to develop OpenClassrooms Courses Explorer is now 3 weeks behind. It took me way more time than expected to finally achieve the scheduling tool. 
+        <br/>There is no "in-between" approach : between building a bunch of scripts and building a clean application with a documented code, I chose the second one. Moreover I wanted to practice Pandas, Matplotlib, Voila, web scrapping... 
+        <br/>Now it is time to deliver the job and let <b>you</b> do something with it.
+        <br/><img width="320" height="180" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/together.png"/>
+        <br/>There are plenty things that can be done with the OCCoursesExplorer datasets, with a community of students eager to improve their learning experience.
+    </p>
+    </section>
+    <section>
+    <h2>Who can use OC-C-E ?</h2>
+	<ul>
+	  <li>Someone with Python + Jupyter understanding</li>
+	  <li>Someone who knows someone who does that</li>
+	</ul>
+        <p>For now, I do not plan to make it a standalone "one-click-install" application.</p>
+    </section>
+    <section>
+    <h2>What can I really do with OC-C-E ?</h2> 
+        <ul>
+            <li>Use the datasets provided with the application</li>
+            <li>Refresh the datasets from time to time</li>
+            <li>Explore Topics and Paths</li>
+            <li>Explore Paths and Projects</li>
+            <li>Explore Courses and Chapters</li>
+            <li>Explore Skills (this will be delivered in a later version)</li>
+            <li>Schedule your path and take your progression in account</li>
+            <li>Plenty things I do not even know, that you will imagine with the datasets.</li>
+        </ul>
+    </section>
+    
+    <section>
+    <h2>OpenClassrooms Courses Explorer : How To install OC-C-E</h2>
+    <h3>Download or clone the git repository</h3>
+	<p>Download or clone the git repository in a local folder where you will setup the python environment.</p>
+	<div class="code">
+	git clone https://github.com/TristanV/OCCoursesExplorer.git
+	</div>
+    <h3>Requirements</h3>
+    <ul>
+	<li>Install all packages listed in the file requirements.txt + Jupyter Lab and Jupyter Notebook with widgetsnbextension.
+		<ul>
+			<li>If running <b>Anaconda</b> : create the OCCoursesExplorer environment with the environment.yml file : 
+			<div class="code">conda env create -n OCCoursesExplorer -f environment.yml</div>
+			</li>
+			<li>If running python <b>VirtualEnv</b> : use the pip_requirements.txt file
+			</li>
+		</ul>
+	</li>
+	<li>Alternatively, the following manual setup works with <b>conda</b> from the folder where you have downloaded the git content:<br/>
+		<div class="code">
+			conda create -n OCCoursesExplorer python
+			<br/>conda activate OCCoursesExplorer
+			<br/>conda install -c conda-forge jupyterlab
+			<br/>conda install -c conda-forge notebook
+			<br/>conda install -c conda-forge voila
+			<br/>conda install -c conda-forge IPython
+			<br/>conda install -c conda-forge ipywidgets
+			<br/>jupyter nbextension enable --py widgetsnbextension
+			<br/>conda install -c conda-forge nodejs
+			<br/>jupyter labextension install @jupyter-widgets/jupyterlab-manager
+			<br/>jupyter labextension install @jupyterlab/toc
+			<br/>conda install -c conda-forge matplotlib 
+			<br/>conda install -c conda-forge numpy
+			<br/>conda install -c conda-forge networkx=2.5 
+			<br/>conda install -c conda-forge pandas
+			<br/>conda install -c conda-forge pip 
+			<br/>conda install -c conda-forge plotly 
+			<br/>conda install -c conda-forge pyvis 
+			<br/>conda install -c conda-forge requests
+			<br/>conda install -c conda-forge scipy
+			<br/>conda install -c conda-forge scikit-learn
+			<br/>conda install -c conda-forge selenium
+			<br/>conda install -c conda-forge seaborn 
+		</div>
+        This setup was tested with Python 3.9.6
+	</li>  
+    </ul>
+    <ul>
+	<li>To use the notebooks with Jupyter and Jupyter Lab, be sure to have setup the widgets as nbextension.
+		<ul>
+			<li>By running the following commands, you should see <span class="code coderesult">widgetsnbextension</span> and <span class="code coderesult">jupyter-widgets</span> extensions enabled:
+			<div class="code">
+				jupyter nbextension list 
+			</div>
+			<div class="code coderesult">
+				notebook section
+				<br/>plotlywidget/extension enabled
+				<br/>- Validating: ok
+				<br/>voila-gridstack/extension enabled
+				<br/>- Validating: ok
+				<br/>voila/extension enabled
+				<br/>- Validating: ok
+				<br/>jupyter-js-widgets/extension enabled
+				<br/>- Validating: ok
+			</div>
+			<div class="code">jupyter labextension list
+			</div>
+			<div class="code coderesult">
+				@jupyter-widgets/jupyterlab-manager v2.0.0 enabled  ok 
+			</div>
+			<br/>If you don't see these extensions enabled, please run the following commands:
+			</li>
+			<li>For Jupyter Notebook : <div class="code">jupyter nbextension enable --py widgetsnbextension</div></li>
+			<li>For Jupyter Lab : <div class="code">jupyter labextension install @jupyter-widgets/jupyterlab-manager</div></li>
+			
+		</ul>
+	</li>
+	<li>The <b>web scrapper</b> used by this app is Selenium, with a Firefox Driver. 
+		<br/>For convenience, a copy of the geckodriver.exe file is included in this repository, in the "driver" folder, but if you dislike exe files falling from unknown Github repositories, you may also download it manually from here : <a href="https://github.com/mozilla/geckodriver/releases">Last release of the Gecko (Firefox) Driver</a> .
+		<br/>If you don't want to use Firefox and prefer Chrome, Opera, Safari or whatever else, then you'll have to download the corresponding Web Driver into the driver/ folder. Here is a <a href="https://www.selenium.dev/documentation/fr/webdriver/driver_requirements/">list of possible web drivers for Selenium</a>
+		<br/>However, please note that in this early stage of development, the OCCoursesExplorer application is not programmed (yet) to work with another web driver than Firefox. So if you really want to avoid Firefox and prefer your own web driver, you'll also have to replace a piece of Python code in the OCCoursesScrapping.py file.
+	</li>
+    </ul> 
+    <h3>Configuration</h3>
+    <p>Once installed, there are few manual configuration steps.</p>
+    <ul>
+    <li>The web scrapper used by this app is Selenium, with a Firefox Driver. 
+    <br/>Selenium needs the <b>absolute path</b> towards this Firefox Driver to be set: open <span class="code coderesult">OCCoursesConfig.py</span> in a text editor, then find the line where the variable <span class="code coderesult">FirefoxWebdriverPath</span> is set, and change the String to correspond with the absolute path towards your Firefox web driver!
+    <div class="code">
+    FirefoxWebdriverPath = r"C:\path\towards\OCCoursesExplorer\driver\geckodriver.exe" # the path to the webdriver must be absolute
+    </div>
+    </li>
+    </ul>
+    </section>
+    <section>
+    <h2>How to explore Topics, Paths, Projects and Courses</h2> 
+        <p>Here are some captures of the application. The widgets are self-explanatory.</p>
+        <h3>The Data Interface</h3>
+        <img width="800" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_data.PNG">
+        <h3>The Paths tab</h3>
+        <img width="800" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_paths.PNG">
+        <h3>The Projects tab</h3>
+        <img width="800" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_projects.PNG">
+        <h3>The Courses tab</h3>
+        <img width="800" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_courses.PNG">
+        <h3>The Schedule tab</h3>
+        <img width="800" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_schedule.PNG">
+    </section>
+    <section>
+    <h2>How to use OC-C-E with Notebooks?</h2>
+        <p>Feel free to use and adapt the tutorial notebooks provided : step by step, courses and paths, scheduler ...</p>
+        <h3>Launch some queries on the datasets</h3>
+        <img width="800" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_query_from_notebook.PNG">
+        <h3>Create some dynamic graphs</h3>
+        <img width="800" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_graph_from_notebook.PNG">
+        <h3>Create a schedule</h3>
+        <img width="800" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_schedule_from_notebook.PNG">
+    </section>
+    <section>
+    <h2>How to analyze my Courses progression?</h2> 
+        <p>In the "my_courses" folder, there is a notebook analyzing your progression: it is largely using an exercise correction given in a Course about exploratory analysis.
+            <br/><a  target="_blank" href="https://openclassrooms.com/fr/courses/4525281-realisez-une-analyse-exploratoire-de-donnees/5148885-telechargez-les-jeux-de-donnees-analyses-dans-ce-cours">Here is the course analyzing OC courses progression.</a>
+	  <br/>Launch the notebook with the command:
+	  <div class="code">jupyter lab my_courses/my_courses_analysis.ipynb</div>
+        </p>
+    </section>
+    <section>
+    <h2>How to export my Path Schedule towards CSV or Jira?</h2> 
+        <p>In a next version of the application.</p>
+    </section>
+    <section>
+    <h2>How to contribute?</h2> 
+        <p><img  class="logo" width="400" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/img/OCCoursesExplorer_logo.svg"> 
+        <br/>People interested, mostly OC students following the DATA paths but also Python dev and any other curious dev, are welcome to contribute: contact me via the OC Workplace!
+        <br/>If we start a teamwork, the project copyright will evolve accordingly. 
+        <br/><img width="270" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/collaborate.png"/>
+        </p>
+    </section>
+    <section>
+    <h2>Checkpoint</h2>
+        <p><img width="128" src="https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/blueprint.png">Remember all of this is just a Proof of Concept, a Work in Progress. I will be very happy if someone gets something useful from this tool. Please let me know!</p>
+        
+    </section>
+    </article>
+    <aside>
+	
+    </aside>
+    </main>
+  <footer>
+	<p>
+	<a href="https://github.com/TristanV/OCCoursesExplorer">OpenClassrooms Courses Explorer on Github</a>
+	</p>
+  </footer>
+  </div>
+  </body>
+</html>
