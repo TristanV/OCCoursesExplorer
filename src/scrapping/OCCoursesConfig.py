@@ -82,10 +82,9 @@ VizFolder = r"viz/"
 VoilaVizFolder = r"viz/"
 # in some environments, it can be a solution to use the original template, because it looks for vis-network.min.js in some internet location
 # VizTemplate= r"viz/pyvis_original_template.html" 
-VizTemplate= r"viz/vis_template.html"
+VizTemplate = r"viz/vis_template.html"
 
-FirefoxWebdriverPath = r"F:\AIDEV\OCCoursesExplorer\driver\geckodriver_V0.30.0.exe" # the path to the webdriver must be absolute
-
+FirefoxWebdriverPath = r"D:\sources\oc\OCCoursesExplorer\driver\geckodriver_V0.30.0.exe" # the path to the webdriver must be absolute
 OCGraphsIconsFolderURL = "https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/img/" # Icons must be stored somewhere on the web. PyVis won't accept local drives paths
 OCGraphsIconsFolderLocal="img/"
 
