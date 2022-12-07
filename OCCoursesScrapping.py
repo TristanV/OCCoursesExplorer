@@ -271,7 +271,7 @@ def OC_close_requests_session():
 
 
 
-# --------------------------------------- OC SCRAPPING
+# --------------------------------------- OC SCRAPING
 # --- preparing the scrapper
  
 #URL racine pour récupérer les infos et projets d'un parcours (paths) 
@@ -298,13 +298,16 @@ def scrap_OC_Topics(b):
     from OCCoursesInterface  import console_log, display_data_status, display_data_section, toggle_scrap_buttons
     global OC_browser, url_search
     success=True #until it gets False
-    console_log("Scrapping topics")  
+    console_log("Scraping topics")  
     toggle_scrap_buttons(True)
     
     OC_browser_get(url_search)
     time.sleep(10)
     OC_browser_hide_overlays()
-    elts=OC_browser.find_elements_by_xpath('//button[contains(string(),"Thème")]/..//following-sibling::ul/li/span/button/span/span')
+    # older structure
+    # elts=OC_browser.find_elements_by_xpath('//button[contains(string(),"Thème")]/..//following-sibling::ul/li/span/button/span/span')
+    # 2022-12-06 structure
+    elts=OC_browser.find_elements_by_xpath('//button[contains(string(),"Thème")]/..//following-sibling::ul/li/span/button/span')
     data = []
     i=1
     for e in elts: 
@@ -315,8 +318,10 @@ def scrap_OC_Topics(b):
             rgb=rgbvals.split(",")
             hexcolor="#"+"".join('%02x' %int(x) for x in rgb)
             color=hexcolor
-        data.append([i,html.unescape(txt),txt,color])
-        i+=1
+        if len(txt)>0:
+            console_log("Scraped topic : "+html.unescape(txt)+"; color = #"+str(color)) 
+            data.append([i,html.unescape(txt),txt,color])
+            i+=1
     ocd.OC_Topics=pd.DataFrame(data, columns=ocd.OC_Topics_cols)
     # OC_Topics_cols              = ["topic_id","topic_name","topic_html_name"]
     # OC_Topics                   = pd.DataFrame(columns=OC_Topics_cols)
@@ -333,7 +338,7 @@ def scrap_OC_Courses(b):
     global OC_browser, url_courses, url_search, \
         search_language_options, search_topic_param, search_language_param, search_page_param, search_path_or_course_param 
     success=True #until it gets False
-    console_log("Scrapping courses")  
+    console_log("Scraping courses")  
     toggle_scrap_buttons(True)
     
     courses = []
@@ -349,7 +354,7 @@ def scrap_OC_Courses(b):
     OC_browser_hide_overlays()
     time.sleep(2)
     nb_courses=0
-    elt=OC_browser.find_element_by_xpath('//*[text() = "filtres (1)"]')
+    elt=OC_browser.find_element_by_xpath('//*[text() = "Filtres (1)"]')
     elt.click()
     time.sleep(2)
     elt=OC_browser.find_element_by_xpath('//span[contains(string(),"Voir les")]')
@@ -360,18 +365,19 @@ def scrap_OC_Courses(b):
     # revenir à la taille de démarrage pour retrouver les éléments de notre recherche
     OC_browser.set_window_size(bs["width"],bs["height"])
     init_progress('courses',0,0,nb_courses)
-    
+    console_log("Now parsing "+str(nb_courses)+" courses descriptions")  
     # For each language
     for lang in search_language_options:
         console_log("LANG = "+lang)
         # get the topics available for this language
         OC_browser_get(url_search+"?"+search_language_param+"="+lang+"&"+search_path_or_course_param+"=course")
         time.sleep(2)
-        elts=OC_browser.find_elements_by_xpath('//button[contains(string(),"Thème")]/..//following-sibling::ul/li/span/button/span/span')
+        elts=OC_browser.find_elements_by_xpath('//button[contains(string(),"Thème")]/..//following-sibling::ul/li/span/button/span')
         topics = []
         for e in elts: 
             txt = e.get_attribute('innerHTML')
-            topics.append(txt)
+            if len(txt)>0:
+                topics.append(txt)
         #display("AVAILABLE TOPICS = ")
         #display(topics)
         # for each topic available for the given language
@@ -472,7 +478,7 @@ def scrap_OC_CoursesDetails(b):
         url_search, search_language_options, search_topic_param, search_language_param, search_page_param, search_path_or_course_param\
     
     success=True #until it gets False
-    console_log("Scrapping courses details!") 
+    console_log("Scraping courses details!") 
     toggle_scrap_buttons(True)
 #     OC_Courses_cols             = ["topic_id","course_id","course_name","course_date","course_title","course_description","course_language","course_difficulty","course_duration_hours","course_author","course_partner","course_illustration","course_is_certified","course_url","course_activities_count","course_exercises_count"]
 #     OC_CoursesParts_cols        = ["course_id","part_number","part_name","part_title","part_description","part_url"]
@@ -740,7 +746,7 @@ def scrap_OC_CoursesLinks(b):
         search_language_options, search_topic_param, search_language_param, search_page_param, search_path_or_course_param\
     
     success=True #until it gets False
-    console_log("Scrapping courses links (may take some hours...)") 
+    console_log("Scraping courses links (may take some hours...)") 
     toggle_scrap_buttons(True)
 #     OC_Courses_cols             = ["topic_id","course_id","course_name","course_date","course_title","course_description","course_language","course_difficulty","course_duration_hours","course_author","course_partner","course_illustration","course_is_certified","course_url"]
 #     OC_CoursesParts_cols        = ["course_id","part_number","part_name","part_title","part_description","part_url"]
@@ -872,7 +878,7 @@ def scrap_OC_RepairCoursesLinks(b):
     duplicates = len(dfd)
 
     if (missing>0):
-        console_log("Scrapping "+str(missing)+" courses links to resolve broken references ") 
+        console_log("Scraping "+str(missing)+" courses links to resolve broken references ") 
         resolved_entries=[]
         toggle_scrap_buttons(True)
 
@@ -929,7 +935,7 @@ def scrap_OC_Paths(b):
         search_language_options, search_topic_param, search_language_param, search_page_param, search_path_or_course_param
     
     success=True #until it gets False
-    console_log("Scrapping paths") 
+    console_log("Scraping paths") 
     toggle_scrap_buttons(True)
     # OC_Paths_cols = ["topic_id","path_id","path_name","path_description","path_language","path_level","path_duration_months","path_employment_warranty",
     # "path_partner","path_illustration","path_url","path_certification_url"]
@@ -947,7 +953,7 @@ def scrap_OC_Paths(b):
     OC_browser_hide_overlays()
     time.sleep(2)
     nb_paths=0
-    elt=OC_browser.find_element_by_xpath('//*[text() = "filtres (1)"]')
+    elt=OC_browser.find_element_by_xpath('//*[text() = "Filtres (1)"]')
     elt.click()
     time.sleep(2)
     elt=OC_browser.find_element_by_xpath('//span[contains(string(),"Voir les")]')
@@ -965,11 +971,12 @@ def scrap_OC_Paths(b):
         # get the topics available for this language
         OC_browser_get(url_search+"?"+search_language_param+"="+lang+"&"+search_path_or_course_param+"=path")
         time.sleep(2)
-        elts=OC_browser.find_elements_by_xpath('//button[contains(string(),"Thème")]/..//following-sibling::ul/li/span/button/span/span')
+        elts=OC_browser.find_elements_by_xpath('//button[contains(string(),"Thème")]/..//following-sibling::ul/li/span/button/span')
         topics = []
         for e in elts: 
             txt = e.get_attribute('innerHTML')
-            topics.append(txt)
+            if len(txt)>0:
+                topics.append(txt)
         #display("AVAILABLE TOPICS = ")
         #display(topics)
         # for each topic available for the given language
@@ -1066,7 +1073,7 @@ def scrap_OC_PathsSkills(b):
         search_language_options, search_topic_param, search_language_param, search_page_param, search_path_or_course_param
     
     success=True #until it gets False
-    console_log("Scrapping paths skills and some paths details") 
+    console_log("Scraping paths skills and some paths details") 
     toggle_scrap_buttons(True)
     # paths ["topic_id","path_id","path_name","path_date","path_title","path_description","path_language","path_level","path_duration_months","path_employment_warranty","path_partner","path_illustration","path_url","path_certification_url"]
     # paths skills ["path_id","skill"]
@@ -1097,7 +1104,13 @@ def scrap_OC_PathsSkills(b):
             patterns.append(("p","Ce que vous saurez faire")) 
             patterns.append(("h3","Ce que vous saurez faire"))
             patterns.append(("h2","capable de"))
+            patterns.append(("h3","vous serez capable de"))
             patterns.append(("h4","vous serez capable de"))
+            patterns.append(("p","vous serez capable de"))
+            patterns.append(("p","Vous serez capable")) 
+            patterns.append(("h3","quelles sont vos missions")) 
+            patterns.append(("p","missions types")) 
+            patterns.append(("p","vous serez en charge de"))  
         elif (p["path_language"]=="en"):
             patterns.append(("h2","What will I learn"))
             patterns.append(("h2","What Will I Learn"))
@@ -1105,7 +1118,9 @@ def scrap_OC_PathsSkills(b):
             patterns.append(("h2","What will I do"))
             patterns.append(("p","By the end of this path"))            
             patterns.append(("p","need to:"))
-            patterns.append(("p","may be in charge of:"))  
+            patterns.append(("p","may be in charge of:"))
+            patterns.append(("p","Typical projects"))    
+            
             
         elts=None
         for tag, pattern in patterns:
@@ -1177,7 +1192,7 @@ def scrap_OC_Projects(b):
         search_language_options, search_topic_param, search_language_param, search_page_param, search_path_or_course_param
     
     success=True #until it gets False
-    console_log("Scrapping projects + skills") 
+    console_log("Scraping projects + skills") 
     toggle_scrap_buttons(True)
     # paths ["topic_id","path_id","path_name","path_date","path_title","path_description","path_language","path_level","path_duration_months","path_employment_warranty","path_partner","path_illustration","path_url","path_certification_url"]
     # projects ["path_id","project_id","project_number","project_name","project_title","project_description","project_duration_hours","project_illustration","project_url"]
@@ -1265,7 +1280,7 @@ def scrap_OC_ProjectsCoursesLinks(b):
         return False
     
     success=True #until it gets False
-    console_log("Scrapping projects courses links") 
+    console_log("Scraping projects courses links") 
     toggle_scrap_buttons(True)
     # paths ["topic_id","path_id","path_name","path_date","path_title","path_description","path_language","path_level","path_duration_months","path_employment_warranty","path_partner","path_illustration","path_url","path_certification_url"]
     # projects ["path_id","project_id","project_number","project_name","project_title","project_description","project_duration_hours","project_illustration","project_url"]
@@ -1371,7 +1386,7 @@ def scrap_OC_MyCourses(b):
     time.sleep(10)
     OC_browser_hide_overlays()
     
-    console_log("Scrapping My Courses")
+    console_log("Scraping My Courses")
      
     elts=OC_browser.find_elements_by_xpath('//table[@id="list-course-followed"]/tbody/tr')
     init_progress('my courses',0,0,len(elts))    
@@ -1456,7 +1471,7 @@ def scrap_OC_MyCourses(b):
     OC_browser_get(url_my_paths)
     time.sleep(5)
     OC_browser_hide_overlays()
-    console_log("Scrapping My Projects")
+    console_log("Scraping My Projects")
     path_id=0
     elts=OC_browser.find_elements_by_xpath('//a[contains(@href,"/paths/")]')
     if len(elts)>0:
@@ -1492,4 +1507,4 @@ def scrap_OC_MyCourses(b):
     display_data_section()
     clear_progress()
     toggle_scrap_buttons(False)
-#end scrapping my courses
+#end scraping my courses

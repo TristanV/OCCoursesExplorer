@@ -156,8 +156,10 @@ def build_topics_and_paths_graph(height='640px', width='99%',bgcolor="#ffffff",
     if len(dfp) == 0:
         return empty_graph(height, width, bgcolor, font_color, directed,notebook,layout)
     
+    dfp["path_grade"]=1 # a default value to avoid casting errors
+    dfp = dfp.astype({"path_grade": int})
     dfp["path_grade"]=dfp['path_level'].map(ocd.path_grades)
-    
+
     # merge the datasets
     dftp=dfp.merge(dft, on='topic_id', how='left').copy()
     
@@ -199,7 +201,7 @@ def build_topics_and_paths_graph(height='640px', width='99%',bgcolor="#ffffff",
     topic_lang_edges["tgt_nid"]=topic_lang_edges["tgt_uid"].apply(aia.get_numeric_id_for_object_id)    
     lang_path_edges["src_nid"]=lang_path_edges["src_uid"].apply(aia.get_numeric_id_for_object_id)                            
     lang_path_edges["tgt_nid"]=lang_path_edges["tgt_uid"].apply(aia.get_numeric_id_for_object_id)  
-    
+        
     g=None
     if (heading is None):
         g = Network(height = height, width=width, bgcolor=bgcolor, font_color=font_color, directed=directed,notebook=notebook,layout=layout)
@@ -684,6 +686,8 @@ def build_path_projects_courses_graph(path_id, max_depth=1, i_read_my_courses_on
     dfpr["path_uid"]=dfpr["path_id"]
     dfpr["uid"]=dfpr.agg(lambda x: f"{x['path_id']}-{x['project_number']}", axis=1)
     
+    # print(dfpc.head())
+    # print(dfpc.info())
     dfpc["src_uid"]=dfpc.agg(lambda x: f"{x['path_id']}-{x['project_number']}", axis=1)
     dfpc["tgt_uid"]=dfpc.agg(lambda x: f"c_{x['course_id']}", axis=1)
     dfpc["course_difficulty_grade"]=dfpc['course_difficulty'].map(ocd.course_grades)

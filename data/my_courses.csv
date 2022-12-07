@@ -1,44 +1,47 @@
 titreCours,inscription,progression,moyenneDeClasse,duree,difficulte,nbChapitres,ratioQuizEvaluation,nbEvaluations,derniereMiseAJour,idCours
-Classez et segmentez des données visuelles,224 days,31,0,15.0,3,11,1.0,2,21/10/2021,4470531
-Analysez des données marketing,92 days,0,0,4.0,2,11,1.0,3,01/03/2021,4762856
-Evaluez les performances d'un modele de machine learning,224 days,0,0,10.0,2,10,1.0,1,30/09/2021,4297211
-Initiez-vous au Machine Learning,276 days,100,0,10.0,2,15,1.0,3,05/01/2022,4011851
-Réalisez des modélisations de données performantes,216 days,0,0,12.0,3,25,1.0,2,16/07/2021,4525326
-Initiez-vous à la statistique inférentielle,224 days,100,0,12.0,2,22,1.0,3,09/06/2021,4525306
-Réalisez des rapports statistiques clairs et impactants,217 days,0,0,8.0,1,15,0.0,0,14/02/2020,4525336
-Learn Python Basics for Data Analysis,276 days,100,0,6.0,1,12,1.0,2,21/01/2021,2304731
-Réalisez un dashboard avec Tableau,217 days,0,0,12.0,2,20,1.0,1,02/08/2021,4525361
-Maîtrisez les bases des probabilités,224 days,100,0,12.0,2,12,1.0,3,16/09/2021,4525296
-Concevez un site avec Flask,221 days,0,0,8.0,2,11,1.0,4,03/08/2021,4425066
-Réalisez un cahier des charges fonctionnel,224 days,0,0,8.0,2,14,1.0,3,04/01/2021,6739646
-Analysez les risques de votre projet,224 days,0,0,10.0,2,11,1.0,2,31/05/2021,5774866
-Initiez-vous au marketing digital,224 days,0,0,10.0,1,13,1.0,3,08/11/2021,3013816
-Initiez-vous à la gestion de projet agile,224 days,0,0,6.0,1,15,1.0,3,20/01/2022,4507926
-Gérez un projet digital avec une méthodologie en cascade,224 days,0,0,8.0,1,14,1.0,3,03/11/2021,4296701
-Appliquez le principe du Domain-Driven Design à votre application,224 days,0,0,4.0,1,10,1.0,2,06/12/2021,5647281
-Apprenez à programmer avec JavaScript,224 days,0,0,15.0,1,19,1.0,3,17/01/2022,6175841
-Maîtrisez les risques juridiques liés au numérique,224 days,0,0,12.0,2,13,1.0,3,08/11/2021,5162341
-Initiez-vous au Deep Learning,224 days,0,0,8.0,2,10,1.0,2,25/05/2021,5801891
-Appliquez l’apprentissage statistique aux objets connectés,224 days,0,0,12.0,2,11,1.0,2,23/12/2019,5264666
-Découvrez la science des données pour les objets connectés,224 days,0,0,12.0,2,16,1.0,4,13/11/2019,5919236
-Modélisez vos données avec les méthodes ensemblistes,224 days,0,0,15.0,2,6,1.0,2,08/10/2021,4470521
-Explorez vos données avec des algorithmes non supervisés,224 days,0,0,15.0,3,14,1.0,2,06/04/2021,4379436
-Analysez vos données textuelles,224 days,0,0,8.0,2,10,1.0,1,12/10/2021,4470541
-,224 days,0,0,0.0,0,0,0.0,0,,4425111
-Entraînez un modèle prédictif linéaire,224 days,0,0,10.0,2,10,1.0,1,04/05/2021,4444646
-Utilisez des modèles supervisés non linéaires,224 days,0,0,12.0,2,5,1.0,2,12/02/2021,4470406
-Gérez du code avec Git et GitHub,224 days,0,0,6.0,1,13,1.0,3,03/01/2022,7162856
-Apprenez la programmation orientée objet avec Python,224 days,0,0,12.0,2,13,1.0,3,08/09/2021,7150616
-Réalisez une analyse exploratoire de données,269 days,100,0,15.0,2,19,1.0,2,15/10/2021,4525281
-Mettez en place un système de veille informationnelle,241 days,0,0,4.0,1,10,1.0,3,05/11/2021,4805776
-Initiez-vous à Python pour l'analyse de données,270 days,100,0,12.0,1,11,1.0,3,25/11/2021,6204541
-,269 days,100,0,0.0,0,0,0.0,0,,4262331
-Objectif IA : initiez-vous à l'intelligence artificielle,348 days,100,0,6.0,1,10,1.0,3,03/01/2022,6417031
-Découvrez les librairies Python pour la Data Science,293 days,100,0,10.0,2,15,0.0,0,15/12/2020,4452741
-Décrivez et nettoyez votre jeu de données,293 days,100,0,15.0,2,25,1.0,3,25/05/2021,4525266
-Apprenez à apprendre,311 days,100,0,6.0,1,19,1.0,4,10/12/2021,4312781
-Mettez en place l'intégration et la livraison continues avec la démarche DevOps,329 days,0,0,10.0,3,8,1.0,2,29/11/2021,2035736
-Optimisez votre déploiement en créant des conteneurs avec Docker,329 days,0,0,8.0,2,10,1.0,3,23/12/2021,2035766
-Gérez votre projet avec une équipe Scrum,329 days,0,0,8.0,2,15,1.0,3,10/12/2021,4511226
-Découvrez la méthodologie DevOps,329 days,0,0,6.0,1,4,1.0,1,07/01/2021,6093671
-,339 days,0,0,0.0,0,0,0.0,0,,5641721
+Construisez votre projet professionnel,35 days,23,0,6.0,1,10,1.0,3,21/02/2022,5218141
+Introduction to Natural Language Processing,35 days,9,0,10.0,3,12,1.0,2,04/03/2022,6532301
+Improve Your Data Literacy,98 days,13,0,8.0,1,13,1.0,3,04/10/2022,7725096
+Gérez votre projet avec une équipe Scrum,646 days,11,0,8.0,2,15,1.0,3,08/04/2022,4511226
+Initiez-vous à la gestion de projet agile,541 days,100,0,6.0,1,15,1.0,3,14/04/2022,4507926
+Classez et segmentez des données visuelles,541 days,31,0,15.0,3,11,1.0,2,08/07/2022,4470531
+Analysez des données marketing,409 days,0,0,4.0,2,11,1.0,3,08/06/2022,4762856
+Evaluez les performances d'un modele de machine learning,541 days,0,0,10.0,2,10,1.0,1,30/09/2021,4297211
+Initiez-vous au Machine Learning,593 days,100,0,10.0,2,15,1.0,3,01/12/2022,4011851
+Réalisez des modélisations de données performantes,533 days,0,0,12.0,3,25,1.0,2,18/11/2022,4525326
+Initiez-vous à la statistique inférentielle,541 days,100,0,12.0,2,22,1.0,3,09/06/2021,4525306
+Réalisez des rapports statistiques clairs et impactants,534 days,0,0,8.0,1,15,0.0,0,03/03/2022,4525336
+Learn Python Basics for Data Analysis,593 days,100,0,6.0,1,11,1.0,3,02/11/2022,2304731
+Réalisez un dashboard avec Tableau,534 days,0,0,12.0,2,20,1.0,1,09/05/2022,4525361
+Maîtrisez les bases des probabilités,541 days,100,0,12.0,2,12,1.0,3,08/09/2022,4525296
+Concevez un site avec Flask,538 days,0,0,8.0,2,11,1.0,4,18/02/2022,4425066
+Réalisez un cahier des charges fonctionnel,541 days,0,0,8.0,2,14,1.0,3,04/02/2022,6739646
+Analysez les risques de votre projet,541 days,0,0,10.0,2,11,1.0,2,31/05/2021,5774866
+Initiez-vous au marketing digital,541 days,0,0,10.0,1,13,1.0,3,12/08/2022,3013816
+Gérez un projet digital avec une méthodologie en cascade,541 days,0,0,8.0,1,14,1.0,3,18/02/2022,4296701
+Appliquez le principe du Domain-Driven Design à votre application,541 days,0,0,4.0,1,10,1.0,2,21/02/2022,5647281
+Apprenez à programmer avec JavaScript,541 days,0,0,15.0,1,19,1.0,2,02/11/2022,6175841
+Maîtrisez les risques juridiques liés au numérique,541 days,0,0,12.0,2,13,1.0,3,25/10/2022,5162341
+Initiez-vous au Deep Learning,541 days,0,0,8.0,2,10,1.0,2,25/05/2021,5801891
+Appliquez l’apprentissage statistique aux objets connectés,541 days,0,0,12.0,2,11,1.0,2,23/12/2019,5264666
+Découvrez la science des données pour les objets connectés,541 days,0,0,12.0,2,16,1.0,4,13/11/2019,5919236
+Modélisez vos données avec les méthodes ensemblistes,541 days,0,0,15.0,2,6,1.0,2,20/07/2022,4470521
+Explorez vos données avec des algorithmes non supervisés,541 days,0,0,15.0,3,14,1.0,2,12/08/2022,4379436
+Analysez vos données textuelles,541 days,0,0,8.0,2,10,1.0,1,06/09/2022,4470541
+,541 days,0,0,0.0,0,0,0.0,0,,4425111
+Entraînez un modèle prédictif linéaire,541 days,0,0,10.0,2,10,1.0,1,26/07/2022,4444646
+Utilisez des modèles supervisés non linéaires,541 days,0,0,12.0,2,5,1.0,2,07/06/2022,4470406
+Gérez du code avec Git et GitHub,541 days,0,0,6.0,1,13,1.0,3,19/05/2022,7162856
+Apprenez la programmation orientée objet avec Python,541 days,0,0,12.0,2,13,1.0,3,07/03/2022,7150616
+Réalisez une analyse exploratoire de données,586 days,100,0,15.0,2,18,1.0,2,31/08/2022,4525281
+Mettez en place un système de veille informationnelle,558 days,0,0,4.0,1,10,1.0,3,06/07/2022,4805776
+Initiez-vous à Python pour l'analyse de données,587 days,100,0,6.0,1,11,1.0,3,24/10/2022,6204541
+,586 days,100,0,0.0,0,0,0.0,0,,4262331
+Objectif IA : initiez-vous à l'intelligence artificielle,665 days,100,0,6.0,1,10,1.0,3,26/09/2022,6417031
+Découvrez les librairies Python pour la Data Science,610 days,100,0,10.0,2,15,0.0,0,07/06/2022,4452741
+,610 days,100,0,0.0,0,0,0.0,0,,4525266
+Apprenez à apprendre,628 days,100,0,6.0,1,19,1.0,4,02/09/2022,4312781
+Mettez en place l'intégration et la livraison continues avec la démarche DevOps,646 days,0,0,10.0,3,8,1.0,2,24/02/2022,2035736
+Optimisez votre déploiement en créant des conteneurs avec Docker,646 days,0,0,8.0,2,10,1.0,3,23/12/2021,2035766
+Découvrez la méthodologie DevOps,646 days,0,0,6.0,1,4,1.0,1,07/01/2021,6093671
+,656 days,0,0,0.0,0,0,0.0,0,,5641721

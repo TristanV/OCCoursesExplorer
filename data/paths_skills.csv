@@ -5,6 +5,22 @@ path_id	skill
 530	Communiquer en utilisant les outils digitaux
 530	Sécuriser votre environnement numérique de travail
 530	Résoudre un problème technique simple en autonomie
+577	Fixer des objectifs clairs d’apprentissage
+577	Personnaliser un programme de formation
+577	Utiliser un service en ligne
+577	Utiliser un moteur de recherche adapté
+577	Évaluer la fiabilité des informations trouvées sur Internet
+577	Stocker du contenu en ligne ou sur un ordinateur
+577	Identifier les obligations légales de base de la communication numérique
+577	Collaborer en ligne grâce à des outils spécifiques
+577	Choisir un outil numérique de communication adapté
+577	Repérer une fausse identité, un faux profil et un ‘bot’
+577	Utiliser un réseau social en respectant ses usages
+577	Communiquer par courriel
+577	Protéger ses données personnelles et sa réputation en ligne
+577	Reconnaître des tentatives de fraude par courriel ou site Internet
+577	Créer des mots de passe sécurisés
+577	Utiliser des outils pour sécuriser son environnement numérique
 218	Adopter la posture d'un entrepreneur
 218	Valider une proposition de valeur claire
 218	Créer un business plan
@@ -25,11 +41,24 @@ path_id	skill
 536	Réaliser une vente, de l’entretien à la signature du contrat
 536	Développer et gérer un portefeuille clients après la vente
 536	Utiliser un CRM et les outils digitaux utiles au commercial
-324	Aider à la prise de décision, en vue d’améliorer la stratégie de l'entreprise.
-324	Interroger des bases de données afin de récupérer les données pertinentes.
-324	Créer des dashboards comprenant des graphiques et indicateurs pertinents.
-324	Collecter, agréger et nettoyer des données en vue de vos analyses.
-324	Explorer des données, tester des hypothèses statistiques et modéliser des phénomènes.
+102	Définir et mettre en œuvre la politique de sécurité
+102	Procéder à un audit des systèmes d'information et préconiser des évolutions
+102	Gérer les risques de l'entreprise dans le respect des réglementations (GDPR…)  
+102	Conduire et accompagner des projets de sécurité des SI
+102	Mettre en place des techniques de sécurité afin de détecter des intrusions
+102	Organiser les processus de traitement et de gestion des incidents
+102	Mettre en œuvre le processus forensic
+102	Sécuriser les infrastructures réseaux et systèmes et les applications web
+102	Développer et promouvoir la politique auprès de tous les acteurs
+592	Identifier et analyser les besoins utilisateurs afin de faciliter les prises de décisions stratégiques.
+592	Mettre en place des requêtes SQL simples et complexes pour interroger une base de données.
+592	Charger des données de sources variées dans une base de données et les nettoyer pour préparer vos analyses.
+592	Synthétiser la donnée en créant des dashboards actionnables grâce à des outils de data visualisation.
+324	Réaliser des modélisations de données pour segmenter une audience marketing ; 
+324	Analyser les ventes en vue d'améliorer la stratégie de l'entreprise ; 
+324	Interroger une base de données statistiques pour répondre à des questions business ; 
+324	Réaliser des dashboards avec graphiques et indicateurs de suivi pour suivre et analyser des résultats ;
+324	Collecter, agréger et nettoyer des données en vue de réaliser une étude de marché.
 164	Collecter et préparer les données en vue de l’analyse
 164	Programmer des algorithmes de Machine Learning à l’aide du langage Python
 164	Déployer des algorithmes dans le cloud avec les outils du Big Data
@@ -50,25 +79,19 @@ path_id	skill
 97	Réaliser une interface web / mobile / métier
 97	Mettre en œuvre la démarche UX dans une équipe projet
 97	Promouvoir son travail au sein de la communauté UX
-556	découper, assembler et intégrer tous les éléments d’une maquette graphique en HTML5 et CSS ;
-556	ajouter du contenu audio et vidéo en HTML5 ;
-556	animer les pages web avec CSS3 ;
-556	appliquer les standards du web et les normes en vigueur ;
-556	construire un site web fluide s’adaptant à tout type d’écran (web, smartphone et tablette) ;
-556	améliorer le référencement naturel en utilisant les balises selon leur sémantique ;
-556	faire réagir la page web en fonction des actions de l’utilisateur en JavaScript ;
-556	se connecter à un service web pour exploiter des données tierces (API) ;
-556	gérer les comptes utilisateurs ;
-556	concevoir un site maintenable grâce à la gestion des erreurs et exceptions ;
-556	créer, gérer et afficher le contenu d’une base de données.
-410	extraire les besoins d'un client ; 
-410	faire l'audit d'une architecture existante ; 
-410	chercher et présenter des solutions d'architecture ; 
-410	analyser une dette technique ; 
-410	créer la roadmap d'une architecture ; 
-410	définir des tests orientés business et des frameworks de gouvernance de l'architecture ;
-410	développer un POC (Proof of Concept) ;
-410	gérer les changements de direction et les besoins d'un projet pendant son cycle de vie...
+594	Créer une application web complète et responsive pour permettre à l’entreprise ou au client de vendre ses produits et services en ligne, sur tous types d’appareils.
+594	Dynamiser des pages web pour mieux mettre en valeur les produits et service de l’entreprise ou du client.
+594	Créer des interfaces communiquant avec le back-end du site pour élaborer des applications dynamiques et permettre aux clients de s’identifier sur le site.
+594	Optimiser les performances et réaliser la maintenance de sites web déjà existants pour permettre leur fonctionnement optimal et une bonne visibilité sur les moteurs de recherche.
+594	Gérer un projet web de A à Z : du chiffrage et découpage des tâches du projet à la présentation de la solution, en passant par la rédaction des spécifications techniques.
+595	Créer des sites WordPress de manière efficace dans le cadre de développement d’activité ou de lancement de nouvelles offres de l’entreprise ou d’un client.
+595	Personnaliser des thèmes et des plugins WordPress afin de développer des sites aux fonctionnalités avancées et à l’interface sur-mesure.
+595	Optimiser les performances et réaliser la maintenance de sites web déjà existants pour permettre leur fonctionnement optimal et une bonne visibilité sur les moteurs de recherche (SEO).
+595	Gérer un projet web de A à Z : du chiffrage et de  l’estimation du temps de travail à sa mise en ligne, en passant par la présentation d’un prototype et l’architecture du site.
+717	Construire un site web responsive et dynamique s’adaptant à tout type d’écran grâce à l’intégration des éléments des maquettes graphiques (développement front-end avec HTML, CSS, JavaScript et React)
+717	Créer des API et des bases de données pour développer des sites complets et dynamiques et assurer le bon fonctionnement côté serveur (développement back-end avec NodeJS, Express et MongoDB). 
+717	Optimiser les performances et réaliser la maintenance de sites web déjà existants pour permettre leur fonctionnement optimal et une bonne visibilité sur les moteurs de recherche (SEO).
+717	Gérer un projet web de A à Z : de la planification du projet à la présentation de la solution au client, en passant par la rédaction des spécifications techniques.
 500	Analyser un cahier des charges et choisir une solution technique adaptée parmi les solutions existantes
 500	Concevoir l’architecture technique d’une application à l’aide de diagrammes UML
 500	Créer des projets web dynamiques grâce PHP
@@ -123,30 +146,43 @@ path_id	skill
 518	Développer une base de données PostgreSQL sécurisée.
 518	Améliorer des applications en les testant, en les débugant et en les remaniant.
 518	Utiliser des technologies comme GitHub, Postman, HTML, CSS, JavaScript ou encore CircleCI.
-163	Définir et partager une vision stratégique en créant une roadmap produit ;
-163	Etablir les véritables besoins de vos clients et les hiérarchiser dans un backlog produit, soit une liste priorisée des fonctionnalités du produit à implémenter ;
-163	Accompagner les équipes de développeurs pendant la production en respectant les principes de gestion de projet agile ;
-163	Coordonner la release et les efforts d’optimisation pour les fonctionnalités à haute valeur ajoutée.
-80	Réaliser des études de marché pour informer des décisions stratégiques
-80	Élaborer et piloter des campagnes de notoriété
-80	Formaliser une stratégie éditoriale pour structurer la prise de parole en ligne
-80	Rédiger des contenus marketing en respectant un discours de marque
-80	Définir et répartir un budget de communication
-80	...
-80	Élaborer et piloter des campagnes d'acquisition
-80	Qualifier une audience-cible pour prioriser des actions 
-80	Établir une stratégie de référencement naturel et payant
-80	Optimiser une landing-page pour la conversion
-80	Réaliser des post-tests pour optimiser des actions marketing
-80	....
-80	Gérer des projets marketing 
-80	Et tout ce dont vous aurez besoin pour réussir dans ce métier
-81	Elaborer et superviser l'exécution d'une stratégie marketing
-81	Mettre en place un système d'information marketing et communication (SIM/SIC)
-81	Réaliser un audit marketing
-81	Concevoir et mettre en oeuvre une stratégie de communication
-81	Créer et gérer une marque (BtoC, BtoB, employeur, personnelle)
-81	Gérer la communication interne d'une organisation
+533	Réaliser un audit des fonctionnalités et de l’architecture d’une application existante.
+533	Anticiper les coûts et risques potentiels d’un projet.
+533	Concevoir l’architecture et les composants logiciels d’une application dans le respect de la législation.
+533	Créer des plans de test, de sécurité et de sauvegarde des données.
+533	Valider une solution technique avec les parties prenantes.
+533	Intégrer le front-end et le back-end d'un programme en utilisant une API.
+533	Rédiger des tests automatiques pour le code en front-end et en back-end.
+533	Garantir un produit de qualité en automatisant la compilation et les tests grâce à l’intégration et la livraison continues.
+533	Superviser l’exécution d’un projet par une équipe.
+749	communiquer avec des clients et des parties prenantes ; 
+749	coordonner une équipe de développement ;
+749	évaluer la portée d'un projet ; 
+749	analyser une architecture logicielle existante ; 
+749	définir la structure et le comportement d'applications et leurs interactions ; 
+749	valider de nouvelles solutions architecturales ; 
+749	gérer l'implémentation et la livraison d'architectures logicielles.
+702	Gérer des sprints de A à Z pour guider votre équipe dans la réalisation des objectifs et adapter concrètement le plan en fonction des résultats des tests.
+702	Définir et présenter une stratégie produit pour prioriser des actions et fédérer les équipes.
+702	Évaluer la performance d’un produit digital (business, UX, UI) pour l’optimiser, sur la base de données qualitatives et quantitatives.
+702	Développer un prototype pour tester vos idées, analyser la désirabilité, la faisabilité technique et la viabilité économique du projet.
+702	Élaborer le parcours utilisateur d’une application mobile ou d’un site internet pour assurer la cohérence et la différenciation à chaque étape et prioriser les optimisations.
+702	Piloter le développement d’un projet web digital pour réaliser la vision produit et améliorer le produit en continu.
+702	Développer la stratégie de communication interne et externe d’une nouvelle fonctionnalité pour atteindre les objectifs business.
+702	Méthodologies : Agile, Scrum, Waterfall, UX Design, objectifs SMART, matrice RACI, feedback Keep/Drop/Start, heuristiques de Nielsen, AB testing, Lean UX Canvas, Canevas de proposition de valeur, Business model canvas, vision produit, template stratégie marketing, template product brief. 
+702	Outils : système de veille (Feedly, Netvibes), gestion de projet (Trello, Notion, Miro, Mural), design (Figma, Adobe XD, Canva), présentation (PPT), tableur (Excel, GoogleSheet), analyse (Google Analytics).
+755	Cadrer et formaliser le besoin client : analyser la faisabilité d’un projet, identifier les ressources nécessaires, présenter la solution.
+755	Mener de A à Z des projets digitaux : auditer, mettre en place un protocole de test, gérer un sprint, modéliser des données et lancer le produit sur le marché.
+755	Garantir le respect du planning, des exigences de qualité et du budget d’un projet : prioriser, prototyper, améliorer le produit en continu et assurer le reporting.
+755	Fédérer les parties prenantes : gérer les conflits et problèmes internes et externes, animer des réunions.
+755	Élaborer une stratégie web marketing : mettre en place une stratégie de contenu et SEO et piloter une campagne web.
+711	Réaliser un audit et des études marketing pour concevoir une stratégie de communication.
+711	Créer et mettre en place une identité de marque pour créer davantage de cohérence et de différenciation.
+711	Mettre en œuvre et piloter la stratégie de communication pour accroître la notoriété et la considération.
+711	Piloter un projet digital de A à Z pour fédérer les équipes, prioriser les tâches et faire avancer vos missions.
+711	Gérer une campagne d’acquisition client pour augmenter le SEO et atteindre les objectifs d'acquisition.
+711	Il fédère les équipes autour d’un message et d’une personnalité de marque communs, pour une expérience client cohérente et différenciante*.
+711	En 2019, près de 60 % des consommateurs ont déclaré préférer les marques avec qui ils partagent des valeurs communes**, et ce taux a explosé avec la Covid-19. Il est donc important de construire un univers de marque avec des valeurs fortes.
 336	Animer une communauté avec un discours de marque.
 336	Créer du contenu simple et dynamique sur les réseaux sociaux.
 336	Gérer une campagne publicitaire sur les réseaux sociaux.
@@ -154,49 +190,25 @@ path_id	skill
 336	Gérer la communication avec des influenceurs.
 336	Réaliser un audit d'e-réputation.
 336	Organiser un événement live sur les réseaux sociaux.
-82	Analyser le secteur d'activité et le public-cible pour répondre aux besoins réels du métier.
-82	Définir des objectifs pédagogiques sous forme de compétences à acquérir.
-86	d’élaborer votre séquence au sein d'un dispositif pédagogique existant, en comprenant votre public ainsi que les attentes de votre organisme de formation ;
-86	de préparer une séance de formation avec méthode, car une bonne préparation est la clé d'une intervention réussie ;
-86	d’animer une séance de formation avec différentes modalités pédagogiques, afin de booster l'engagement de vos apprenants ;
-93	Accompagner le salarié dans la gestion des évènements privés impactant, ou impactés par, sa vie professionnelle
-93	Répercuter les changements de situation d'un salarié pour assurer la conformité entre les réglementations en vigueur, le contrat de travail et le bulletin de salaire
-93	Gérer les avantages individuels et collectifs
-93	Savoir ajuster les éléments de paie impactés par l'activité du salarié
-93	Pouvoir intégrer les éléments variables de rémunération
-93	Contrôler les états de paie avant envoi au client (interne ou externe) pour validation
-93	Editer les bulletins et procéder au versement des salaires 
-93	Paramétrer le plan de paie dans le logiciel pour garantir l'exactitude et la conformité des calculs
-93	Assurer le reporting social et RH
-93	Elaborer mensuellement le fichier DSN
-93	Savoir exercer une veille sociale
-87	Intégrer le digital RH dans vos différentes missions
-87	Analyser des besoins en recrutement
-87	Rédiger et diffuser des offres d'emploi notamment sur le web 
-87	Sélectionner des candidatures et mener un entretien de recrutement
-87	Préparer l'accueil des nouveaux recrutés et faire le lien avec les différents services
-87	Organiser les élections des délégués du personnel
-87	Préparer et vérifier la paie
-87	"Créer et documenter les dossiers individuels des salariés, ""nourrir"" le SIRH"
-87	Concevoir et gérer des actions de qualité de vie au travail (sécurité et santé)
-87	"Contribuer à la qualité de la marque employeur, animer des réseaux sociaux ""entreprise"""
-87	Participer à des projets de Gestion Prévisionnelle des Emplois et des Compétences
-87	Gérer et mettre en oeuvre le plan de formation
-87	Rédiger une proposition de formation intégrant un rétro-planning, des objectifs de formation ... 
-87	Organiser des formations et veiller au bon déroulement des stages
-87	Concevoir des outils d'évaluation des formations
+746	Réaliser des études de marché et un audit marketing pour enrichir la stratégie marketing.
+746	Définir et piloter un plan d’action marketing (SEO, online acquisition, RP, etc.) pour atteindre les objectifs de l’entreprise.
+746	Définir et implémenter une stratégie éditoriale et de contenu pour accroître la cohérence et la différenciation de la marque. 
+746	Animer une communauté sur les réseaux sociaux,  gérer une crise pour augmenter la notoriété et la préférence de marque.
+746	Piloter des projets de marketing digital complexes pour fédérer les équipes, prioriser les tâches et faire avancer vos missions.
+746	Pour 80 % des consommateurs, une expérience client de qualité est aussi importante que les produits proposés*. L’image de marque doit donc être unifiée sur tous les points de contact.
+746	En 2019, près de 60 % des consommateurs ont déclaré préférer les marques avec qui ils partagent des valeurs communes**, et ce taux a explosé avec la Covid-19. Il est donc important de construire un univers de marque avec des valeurs fortes.
+708	Analyser le secteur d'activité et le public-cible pour répondre aux besoins réels du métier.
+708	Définir des objectifs pédagogiques sous forme de compétences à acquérir.
+709	d’élaborer un parcours de formation, en comprenant votre public ainsi que les attentes de votre organisme de formation ;
+709	de concevoir une séquence et une séance de formation avec méthode, car une bonne préparation est la clé d'une intervention réussie ;
+709	d’animer une séance de formation afin de booster l'engagement de vos apprenants ;
+709	de piloter un projet de formation, dans sa globalité, en mettant en œuvre vos compétences de gestion de projet. 
+709	d’améliorer vos parcours de formation par la prise en compte des retours des étudiants et des learning analytics.
 143	Établir un cadre pour votre action professionnelle
 143	Accueillir et évaluer les besoins d'une personne accompagnée
 143	Co-construire l'accompagnement individualisé
 143	Gérer les situations d'accompagnement complexes
 143	Réaliser des ateliers d'évolution professionnelle
-559	Concevoir une stratégie de recrutement
-559	Gérer l'administration du personnel
-559	Définir une politique de rémunération
-559	Développer le dialogue social
-559	Manager une équipe RH
-559	Développer une politique de gestion des compétences
-559	Piloter la stratégie RH de l'entreprise
 561	Maîtriser les évolutions des dispositifs réglementaires et de financement applicables à l’entreprise
 561	Identifier les modalités mobilisables selon le contexte de l’entreprise
 561	Recenser les besoins de formation
@@ -211,39 +223,38 @@ path_id	skill
 561	Maîtriser les règles des processus d’achat et appels d’offres
 561	Choisir et mettre en œuvre le système d’évaluation
 561	Conduire un projet et accompagner le changement 
-102	Définir et mettre en œuvre la politique de sécurité
-102	Procéder à un audit des systèmes d'information et préconiser des évolutions
-102	Gérer les risques de l'entreprise dans le respect des réglementations (GDPR…)  
-102	Conduire et accompagner des projets de sécurité des SI
-102	Mettre en place des techniques de sécurité afin de détecter des intrusions
-102	Organiser les processus de traitement et de gestion des incidents
-102	Mettre en œuvre le processus forensic
-102	Sécuriser les infrastructures réseaux et systèmes et les applications web
-102	Développer et promouvoir la politique auprès de tous les acteurs
-406	Mettre en place, administrer, sécuriser des systèmes Linux et Windows dans une infrastructure complexe
-406	Mettre en place et administrer une architecture réseaux complexe (Réseaux filaires et sans fil)
-406	Mettre en œuvre une politique de sauvegarde, de gérer et récupérer des données informatiques
-406	Auditer la sécurité des systèmes d'information
-406	Sécuriser un système d'information et préconiser des bonnes pratiques de sécurité
-406	Répondre à des demandes complexes des utilisateurs
-406	Mettre en œuvre un plan de continuité des activités
-406	Superviser le fonctionnement des équipements informatiques
-406	Piloter un projet d’évolution du SI
-558	Monter un poste de travail répondant aux besoins de l'utilisateur
-558	Installer un poste de travail utilisateur et des périphériques (Windows et Linux)
-558	Installer du matériel et des périphériques sur une infrastructure d'entreprise (Windows)
-558	Configurer des logiciels d'entreprise
-558	Fournir une assistance informatique 
-558	Accompagner les utilisateurs sur les outils et la sécurité informatique
-558	Surveiller la disponibilité d'un serveur
-558	Gérer le stock d'un parc informatique
-558	Installer et paramétrer un système d’exploitation Serveur (Windows et Linux)
-558	Gérer les droits d’accès aux données dans le respect de la stratégie de sécurité
-172	Winning support for a digital transformation project.
-172	Reinventing business models that are redefining value creation and customer relationships.
-172	Structuring data collection to become a data-driven organization.
-172	Describing the potential of disruptive technologies (IoT, blockchain, cloud, robotics, IA...).
-172	Leading an overhaul of the skills needed by the people in an organization.
+640	Identifier et recueillir les besoins en data des acteurs de la Supply Chain, afin de leur apporter un éclairage analytique.
+640	Nettoyer et combiner la donnée venant de différentes sources avec Excel ou Python, afin de préparer une analyse.
+640	Rédiger des scripts avancés en SQL, et mettre en place des requêtes pour traiter de larges volumes de données. 
+640	Créer des outils de simulation avec Python / VBA et rédiger des études d’optimisation, afin d’améliorer les performances de la Supply Chain. 
+640	Synthétiser la donnée liée à la chaîne d’approvisionnement en créant des dashboards, et former les acteurs opérationnels aux outils de Data Visualisation.
+395	Paramétrer et déployer le parc informatique d’une entreprise
+395	Maintenir le parc informatique afin de prévenir les éventuels problèmes, les résoudre et mettre en place des solutions pour éviter qu’ils se reproduisent
+395	Superviser les serveurs, diagnostiquer et résoudre les dysfonctionnements réseaux
+395	Traiter les demandes des utilisateurs de l’entreprise et les accompagner pour une bonne utilisation des ressources informatiques
+395	Intégrer les enjeux de cybersécurité en suivant les procédures en vigueur
+395	Gérer la relation avec les fournisseurs (matériels, accès réseaux et logiciels, etc.)
+395	Travailler sur des technologies proposées en mode on premise, cloud ou infrastructure hybride. 
+734	Concevoir et modéliser un systèmes d’information
+734	Installer et administrer des systèmes et des services réseaux
+734	Mettre en œuvre une politique de sauvegarde
+734	Évaluer et améliorer la sécurité des systèmes informatiques
+734	Veiller à appliquer la politique de sécurité sur l'infrastructure SI
+734	Gérer et résoudre les incidents techniques sur le réseau et les systèmes
+734	Gérer les périphériques utilisateur (comme les postes de travail) ainsi que les accès des utilisateurs
+734	Intégrer des solutions dans un système d’information
+734	Superviser le bon fonctionnement et la performance du système d’information 
+734	Piloter des projets d’amélioration ou d’évolution du SI
+524	Piloter un portefeuille de projet ou un programme cybersécurité et SI 
+524	Collaborer avec les différentes parties prenantes et gérer une équipe
+524	Participer à la confection de la stratégie du SI en proposant des projets SI innovants et durables 
+524	Améliorer le SI tout en garantissant son intégrité et sa sécurité
+524	Assurer la qualité des projets cybersécurité et SI 
+591	Win support for a digital transformation project.
+591	Structure data collection to become a data-driven organization.
+591	Describe the potential of disruptive technologies (IoT, blockchain, cloud, robotics, IA...).
+591	Lead an overhaul of the skills needed by the people in an organization.
+591	Reinvent business models that are redefining value creation and customer relationships.
 167	Apply Data Science basics, such as collecting and preparing data
 167	Build Machine Learning and Deep Learning algorithms
 167	Build models using Microsoft Azure services
@@ -332,10 +343,6 @@ path_id	skill
 517	Create dynamic web applications with Javascript, React and APIs.
 517	Ensure data quality in a web application through testing.
 517	Contribute to a code project using agile methodology...
-162	Define and share a strategic vision by creating a product roadmap
-162	Discover the true needs of your customers and prioritize them in a product backlog
-162	Support teams of software engineers in production efforts, sticking to agile project management principles
-162	Coordinate the release and optimization efforts of high value product features 
 539	Analyze a client’s needs
 539	Document a digital project for its delivery and continual improvement
 539	List action points to remove, minimize or eliminate risks
@@ -344,18 +351,19 @@ path_id	skill
 539	Plan for test and quality assurance processes
 539	Ensure quantitative and qualitative project reporting
 539	As well as many other skills you will master!
+703	Manage sprints from A to Z to guide your team in achieving goals and concretely adapt the plan based on test results.
+703	Define and present a product strategy to prioritize actions and unite teams.
+703	Evaluate the performance of a digital product (business, UX, UI) to optimize it, based on qualitative and quantitative data.
+703	Develop a prototype to test your ideas, analyze customer needs, technical feasibility and economic viability of the project.
+703	Design the user journey of a mobile application or a website to ensure consistency and differentiation at each stage and prioritize optimizations.
+703	Manage digital web projects to achieve the product vision and continuously improve the product.
+703	Develop the internal and external communication strategy of a new feature to achieve business objectives.
 287	Determine the most effective social media channels for a brand.
 287	Create a paid online advertising campaign.
 287	Report on the effectiveness of a campaign and goal conversions.
 287	Develop an editorial calendar.
 287	Create an emailing strategy.
 287	Write copy in the brand's tone of voice.
-144	Help clients determine their assets and use them to develop ambitious career objectives
-144	Review and offer constructive criticism on job search marketing materials, such as resumes, profiles, etc.
-144	Build a network of contacts, recruiters and other professionals to share with clients
-144	Lead workshops on career transition topics
-144	Implement the steps to establish a career coaching practice
-144	Attract and retain clients and referrals
 347	Set up a computer to meet a user's needs.
 347	Install hardware and software in a company’s infrastructure.
 347	Back up a user’s computer.

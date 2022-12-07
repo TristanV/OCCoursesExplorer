@@ -87,11 +87,31 @@ OC_MyProgressProjects          = pd.DataFrame(columns=OC_MyProgressProjects_cols
 # get a numeric value "path_grade" instead of the textual "path_level"
 # >>> display(pd.unique(dfp.path_level))
 # >>> ['Certification OpenClassrooms', 'Licence (Bac+3)', 'Diplôme niveau 5 (Bac+2)', 'Diplôme niveau 6 (Bac+3/4)', 'Diplôme niveau 7 (Bac+5)', 'Master (Bac+5)']
+# when scraping in december 2022, the values had been changed : 
+# >>> ['Certification OpenClassrooms',
+#      'Certification CléA numérique',
+#      'Certification Répertoire Spécifique',
+#      'Diplôme de niveau 6 (bac +3/4)', 
+#      'Diplôme de niveau 5 (bac +2)' 
+#      'Diplôme de niveau 7 (bac +5)']
+
+# this array is built manually, but needs to be updated after scraping paths and beforeusing the graphs representations
+# I keep older values to be backwards compatible
+#TODO: an improvement (a great one) will be to address grades differently and detect automatically the level by analyzing terms)
 path_grades={'Certification OpenClassrooms' : 1, 
+             'Certification CléA numérique' : 1, 
+             'Certification Répertoire Spécifique' : 1,              
              'Diplôme niveau 5 (Bac+2)' : 2,
+             'Diplôme de niveau 5 (Bac+2)' : 2,
+             'Diplôme de niveau 5 (bac +2)': 2,
              'Licence (Bac+3)' : 3,  
              'Diplôme niveau 6 (Bac+3/4)' : 4, 
+             'Diplôme de niveau 6 (Bac+3/4)' : 4, 
+             'Diplôme de niveau 6 (bac +3/4)':4,
              'Diplôme niveau 7 (Bac+5)': 5, 
+             'Diplôme de niveau 7 (Bac+5)': 5, 
+             'Diplôme de niveau 7 (Bac +5)': 5,
+             'Diplôme de niveau 7 (bac +5)': 5, 
              'Master (Bac+5)' : 5}
 
 course_grades={'Facile' : 1, 
