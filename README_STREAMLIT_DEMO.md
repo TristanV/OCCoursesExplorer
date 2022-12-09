@@ -3,6 +3,8 @@
 
 Source and documentation of this project are on Github : https://github.com/TristanV/OCCoursesExplorer/
 
+A live demo of main functionalities is on Streamlit : https://occourses.streamlit.app/
+
 # What is this demo showing?
 
 The current web application you are visiting is a demonstration of the OCCoursesExplorer application main features.

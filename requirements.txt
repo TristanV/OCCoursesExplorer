@@ -10,5 +10,4 @@ requests
 scipy
 scikit-learn
 seaborn
-selenium 
-voila 
+streamlit

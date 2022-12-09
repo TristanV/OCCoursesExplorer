@@ -3,10 +3,7 @@ Explore OpenClassrooms courses
 
 Source and documentation of this project are on Github : https://github.com/TristanV/OCCoursesExplorer/
 
-# Known issues :
-- Issue with Chrome browser : visualizations are blocked because of launching JS and resources from external servers (see open issue https://github.com/jupyterlab/jupyterlab/issues/7539 )
-
-Please use Firefox to launch the notebook!
+A live demo of main functionalities is on Streamlit : https://occourses.streamlit.app/
 
 # Information
 Copyright (c) 2021, Tristan Vanrullen
