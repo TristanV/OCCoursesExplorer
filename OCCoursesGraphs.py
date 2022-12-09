@@ -144,7 +144,7 @@ def build_topics_and_paths_graph(height='640px', width='99%',bgcolor="#ffffff",
     dft=ocd.OC_Topics[["topic_id","topic_name"]]
      
     dfp=ocd.OC_Paths[["topic_id","path_id","path_title","path_language","path_level","path_duration_months","path_illustration"]].copy()
-    if type(filter_options)!=type(None) and filter_options["topic"]!=0:
+    if type(filter_options)!=type(None) and filter_options["topic"]!="-":
         dfp=dfp[dfp["topic_id"].isin([filter_options["topic"]])]
     if type(filter_options)!=type(None) and filter_options["language"]!="-":
         dfp=dfp[dfp["path_language"].isin([filter_options["language"]])]
@@ -227,7 +227,14 @@ def build_topics_and_paths_graph(height='640px', width='99%',bgcolor="#ffffff",
                                  damping=0.4, 
                                  overlap=0.2) 
     else: 
-        g.hrepulsion()
+        # the full OC scholarship overview is growing 
+        # so we don't use anymore g.hrepulsion()
+        g.barnes_hut(gravity=-10000,
+                central_gravity=0.02,
+                spring_length=150,
+                spring_strength=0.02,
+                damping=0.03,
+                overlap=0.1)  
         
     # ------- ROOT NODE
     g.add_node(0, "OpenClassrooms",group="root",color="#7451eb" ,shape="image", image=OCGraphsIconsURL["OpenClassrooms"],mass=3,physics=False)
