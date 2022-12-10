@@ -79,7 +79,7 @@ We want here to highlight the complexity issues when a student wants to follow 3
 
 The **persistent learning** optimization uses the fact that a course already followed for project N will not have to be followed again for project N+1 (I remember what I learned). So the **persistent learning** operation hides the links towards courses already visited in earlier projects. The following picture shows how the hyper-connexity issue is transformed into a simple tree structure.
 
-![Web Developer Path (depth 2) with Persistent Learning optimization](https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_webdev_projects_depth2_persistent_learning_800px.png)
+![Web Developer Path (depth 2) with Persistent Learning optimization](https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_webdev_projects_depth2_persistent_learning_800px.PNG)
 
 Other optimizations have been made with the OCCExplorer application (**Focused Learning**, **Degree sort**), so that we could provide the best schedule for a given Path. These features will be documented later, but now you can start using the demo. Visit all the demo views, and feel free to send me some feedback via Github or LinkedIn!
 
