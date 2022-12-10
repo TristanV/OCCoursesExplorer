@@ -66,7 +66,7 @@ def main():
     st.sidebar.write('Last database update: 2022-12-06')   
     # --------------------------------------------------- 
     if main_view == 'Data':        
-        st.subheader('OCCoursesExplorer Data Summary')
+        # st.subheader('OCCoursesExplorer Data Summary')
         
         
         #c = st.container()
@@ -101,7 +101,11 @@ def main():
             display_metric(occ.OCGraphsIconsURL['chapter'],'Courses chapters',len(ocd.OC_CoursesChapters)) 
             display_metric(occ.OCGraphsIconsURL['skill'],'Courses skills',len(ocd.OC_CoursesSkills))     
             display_metric(occ.OCGraphsIconsURL['course_link'],'Courses links',len(ocd.OC_CoursesLinks))     
-        
+        more_info = st.expander("🡺📖 More information about the data used in this application", expanded=False)
+        with more_info:
+            content = Path("README_DATA_INFORMATION.md").read_text()
+            st.markdown(content)
+            #st.markdown(content,unsafe_allow_html=True)
     # ---------------------------------------------------
     elif main_view == 'Topics':    
         
@@ -109,8 +113,6 @@ def main():
         
         with menu:
             st.subheader('Topics and Paths')
-            paths_width_slider = st.slider("View width",200,1600,1000,10,"%d px",key="paths_width_slider") 
-            paths_height_slider = st.slider("View height",200,1200,680,10,"%d px",key="paths_height_slider") 
             df=ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())].sort_values(by=["topic_name"])
             paths_topics_options={"-":"-"}
             for i,r in df.iterrows():
@@ -119,7 +121,11 @@ def main():
             paths_language_selector = st.selectbox("💬Lang", ["-"] + list(ocd.OC_Paths["path_language"].unique()), index=0,key="paths_language_selector")
             paths_level_selector = st.selectbox("🎓 Level", ["-"] + list(ocd.OC_Paths["path_level"].sort_values().unique()) , index=0,key="paths_level_selector") 
             paths_duration_selector = st.selectbox("📅 Months", ["-"] + list(ocd.OC_Paths["path_duration_months"].sort_values().unique()), index=0,key="paths_duration_selector")
-
+            other_inputs = st.expander("... other parameters", expanded=False)
+            with other_inputs:
+                paths_width_slider = st.slider("View width",200,1600,1000,10,"%d px",key="paths_width_slider") 
+                paths_height_slider = st.slider("View height",200,1200,680,10,"%d px",key="paths_height_slider") 
+            
         
         href= occ.VizFolder+"oc_topics_and_paths.html"
         # heading="Topics and Paths at OpenClassrooms<i> ...et voilà</i>!"
@@ -150,9 +156,6 @@ def main():
         
         with menu:
             st.subheader('Paths and Projects')
-            
-            projects_width_slider = st.slider("View width",200,1600,1000,10,"%d px",key="projects_width_slider") 
-            projects_height_slider = st.slider("View height",200,1200,680,10,"%d px",key="projects_height_slider") 
             
             df=ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())].sort_values(by=["topic_name"])
             projects_topics_options={0:"-"}
@@ -187,7 +190,10 @@ def main():
             
             projects_pseudonodes_check = False # This is a demo. Let's not disturb users with this experimental feature
              
-                       
+            other_inputs = st.expander("... other parameters", expanded=False)
+            with other_inputs:
+                projects_width_slider = st.slider("View width",200,1600,1000,10,"%d px",key="projects_width_slider") 
+                projects_height_slider = st.slider("View height",200,1200,680,10,"%d px",key="projects_height_slider")            
          
         href= occ.VizFolder+"oc_path_"+str(projects_path_selector)+"_projects_courses.html" 
         
@@ -226,11 +232,13 @@ def main():
         with viz:
             if path_id != 0:
                 path= next(ocd.OC_Paths[ocd.OC_Paths["path_id"].isin([path_id])].iterrows())[1]
-                st.title("Path structure for : "+path["path_title"])
+                st.header("Path structure for : "+path["path_title"])
             components.html(source, height = frame_height+10,width=frame_width)
     # ---------------------------------------------------
     elif main_view == 'Courses':        
         st.subheader('Courses galaxy')
+        
+        
     # ---------------------------------------------------
     elif main_view == 'Schedule':        
         st.subheader('Paths schedule')
