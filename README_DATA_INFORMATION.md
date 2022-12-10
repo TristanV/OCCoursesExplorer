@@ -19,7 +19,7 @@ These questions arise either because of the **large amount of information to be 
 
 Educational websites are naturally using hyper-text browsing (links between pages) to render complex relations between pieces of information. The consequence of this is that the underlying data structures are sometimes disappearing and become implicit knowledge. 
 
-Tables of content can easily render tree-structures (such as course-part-chapter-section), but they are irrelevant to render requirement-networks between pedagogic resources (for instance the course A requires mandatorily to have followed the course B, itself requiring the courses B and optionally the course C, and so on). So I came to the idea that 
+Tables of content can easily render tree-structures (such as course-part-chapter-section), but they are irrelevant to render requirement-networks between pedagogic resources (for instance the course A requires mandatorily to have followed the course B, itself requiring the courses C and optionally the course D, and so on). When following a path and a given course, the students often meet situations when they cannot keep track of the relevant things to do to satisfy the course prerequisites. 
 
 With OCCoursesExplorer, we first take things as they are (i.e. we consider the full OpenClassrooms pedagogic material as a graph) and collect it into an **internal graph-structure representation**. Then we observe this graph structure and apply graph-theory algorithms to **visualize things with a bird-eye view**, and break the courses network hyper-connex complexity into a **student-friendly simplified schedule**.
 
@@ -61,8 +61,27 @@ An important aspect of the pedagogic material is that the courses, projects, pat
 - New technologies and techniques appear in the world, become 'nice to have' and replace old techniques. Hence Paths and projects evolve too!
 - New diplomas are integrated in the online University program, so new Paths and new contents are often created.
 
-For these reasons, the pedagogic **database needs to be scraped periodically**.
+For these reasons, the pedagogic **database needs to be scraped periodically**. This action is done with the OCCoursesExplorer main application, that can be launched with "Voilà!" or with a Jupyter Notebook (see the minidoc).
 
+# From the internal graph-structure to an optimized schedule
+
+Now considering the full graph representing a Path, its Projects and the Courses recommended for each Project, we can understand which parts of the graph will be a source of concern for the students. In many paths, the cognitive charge is increasing around the middle of the path, when many courses are followed simultaneously and many of these courses are linked together with strong prerequisites relations.
+
+In the following image, one can see an overview of the graph for the *Web Developer* french path. 
+
+The graph is showing the main **path project backbone** (here shaped as a mountain from project 1 at the bottom left, to project 8 at the top right). 
+
+Each project is also linked to some courses with a green arrow (these courses are understood as **prerequisites courses** to successfully achieve the projects). Each course is also linked to other courses (**prerequisites** or simple **references**).
+
+We want here to highlight the complexity issues when a student wants to follow 3 levels of references or requirements between courses (a standard learner will usually only need to follow 1 level of requirement or references). We can see a growing and overwhelming complex network as the path progresses from project 1 to project 6. 
+
+![Web Developer Path (depth 2)](https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_webdev_projects_depth2_800px.png)
+
+The **persistent learning** optimization uses the fact that a course already followed for project N will not have to be followed again for project N+1 (I remember what I learned). So the **persistent learning** operation hides the links towards courses already visited in earlier projects. The following picture shows how the hyper-connexity issue is transformed into a simple tree structure.
+
+![Web Developer Path (depth 2) with Persistent Learning optimization](https://raw.githubusercontent.com/TristanV/OCCoursesExplorer/main/doc/OCCE_webdev_projects_depth2_persistent_learning_800px.png)
+
+Other optimizations have been made with the OCCExplorer application (**Focused Learning**, **Degree sort**), so that we could provide the best schedule for a given Path. These features will be documented later, but now you can start using the demo. Visit all the demo views, and feel free to send me some feedback via Github or LinkedIn!
 
 # References
 
