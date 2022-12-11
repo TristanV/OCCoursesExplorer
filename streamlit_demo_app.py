@@ -174,7 +174,7 @@ def main():
             
             projects_mountainshape_options={0:"Mountain",1:"OC Wheel",2:"StaiZway to OC",3:"Shad'OC Ladder"}
             projects_mountainshape_selector= st.selectbox("↝ Shape", projects_mountainshape_options.keys(), format_func=lambda x: projects_mountainshape_options[x], index=0,key="projects_mountainshape_selector",
-                                                          help='The shape of the learning structure, to climb the path towards success')
+                                                          help='The shape of the learning structure, to climb the path towards success. Select a shape to see differently how projects are connected to courses.')
 
             projects_max_depth_slider = st.slider("🔍 Max Depth",0,20,2,1,key="projects_max_depth_slider", 
                                                 help='Do not explore links between courses too deeply : limit exploration to Max Depth !')
@@ -185,8 +185,8 @@ def main():
             projects_hidereferences_check = st.checkbox("🕚 Focused learning",value=False,key="projects_hidereferences_check",
                                                         help='Just focus on mandatory courses requirements, and ignore informative / optional references.')
 
-            projects_relations_max_distance_slider =  st.slider("🙈 Max Lookout",0,20,2,1,key="projects_relations_max_distance_slider",
-                                                                help='Long distance relations between courses may be disturbing: Max Lookout defines the max lookout distance. (links between courses over this max lookout distance will not be drawn in the graph)')
+            projects_relations_max_distance_slider =  st.slider("🙈 Max Lookout",0,20,1,1,key="projects_relations_max_distance_slider",
+                                                                help='Some courses are transitively linked to other courses (A to B, B to C, C to D), but are also linked directly to the same courses (A to D for instance). Long distance relations between courses may be disturbing: Max Lookout is defined as the max distance between courses that are already transitively connected, over which the links will not be drawn in the graph)')
             
             projects_pseudonodes_check = False # This is a demo. Let's not disturb users with this experimental feature
              
@@ -235,9 +235,135 @@ def main():
                 st.header("Path structure for : "+path["path_title"])
             components.html(source, height = frame_height+10,width=frame_width)
     # ---------------------------------------------------
-    elif main_view == 'Courses':        
-        st.subheader('Courses galaxy')
+    elif main_view == 'Courses':         
+        menu , viz = st.columns([1,4]) 
         
+        with menu:
+            st.subheader('Courses galaxy') 
+                
+            # "max_depth"                          : courses_max_depth_slider,
+            # "hide_references"                    : courses_hidereferences_check,
+            # "atlas_layout"                       : courses_algo_check, 
+            
+            courses_inputs = st.expander("📒 Course filters", expanded=False)
+            with courses_inputs:
+                df=ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())].sort_values(by=["topic_name"])
+                courses_topics_options={0:"-"}
+                for i,r in df.iterrows():
+                    courses_topics_options[r["topic_id"]]=r["topic_name"]
+                courses_topic_selector = st.selectbox("🏫 Course Topic", 
+                                                    courses_topics_options.keys(), 
+                                                    format_func=lambda x: courses_topics_options[x], 
+                                                    index=0,
+                                                    key="courses_topic_selector",
+                                                    help="Only show courses having the given topic")
+                
+                courses_language_selector = st.selectbox("💬 Course Lang", 
+                                                         ["-"] + list(ocd.OC_Courses["course_language"].unique()), 
+                                                         index=0,
+                                                         key="courses_language_selector",
+                                                         help="Only show courses having the given lang")
+                
+            paths_inputs = st.expander("📚 Path filters", expanded=False)
+            with paths_inputs:                
+                df=ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())].sort_values(by=["topic_name"])
+                courses_path_topics_options={0:"-"}
+                for i,r in df.iterrows():
+                    courses_path_topics_options[r["topic_id"]]=r["topic_name"]
+                courses_path_topic_selector = st.selectbox("🏫 Path Topic", 
+                                                           courses_path_topics_options.keys(), 
+                                                           format_func=lambda x: courses_path_topics_options[x], 
+                                                           index=0,
+                                                           key="courses_path_topic_selector",
+                                                           help="Only show paths having the given topic")
+                courses_path_language_selector = st.selectbox("💬 Path Lang", 
+                                                              ["-"] + list(ocd.OC_Paths["path_language"].unique()), 
+                                                              index=0,
+                                                              key="courses_path_language_selector",
+                                                              help="Only show paths having the given lang")
+            
+                courses_paths_options={0:"-"}            
+                # select topics having paths
+                df = ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())]
+                # merge paths with these topics
+                df = ocd.OC_Paths.merge(df, on='topic_id', how='left').sort_values(by=["topic_name","path_language","path_title"])
+                if courses_path_topic_selector!=0:
+                    df=df[["path_title","path_language","path_id","topic_name","topic_id"]][df["topic_id"].isin([courses_path_topic_selector])].sort_values(by=["topic_name","path_language","path_title"])
+                if courses_path_language_selector!='-':
+                    df=df[["path_title","path_language","path_id","topic_name","topic_id"]][df["path_language"].isin([courses_path_language_selector])].sort_values(by=["topic_name","path_language","path_title"])
+                for i,r in df.iterrows():
+                    courses_paths_options[r["path_id"]]=r["topic_name"][:3]+"-"+r["path_language"]+" : "+r["path_title"] 
+                courses_path_selector = st.selectbox("📚 Path", 
+                                                    courses_paths_options.keys(), 
+                                                    format_func=lambda x: courses_paths_options[x], 
+                                                    index=0,
+                                                    key="courses_path_selector",
+                                                    help="Show all paths of this list, or select one path") 
+                
+                courses_max_depth_slider = st.slider("🔍 Max Depth",0,20,0,1,key="courses_max_depth_slider", 
+                                                help='Do not explore links between courses too deeply : limit exploration to Max Depth !')
+            
+                courses_hidereferences_check = projects_hidereferences_check = st.checkbox("🕚 Focused learning",value=False,key="courses_hidereferences_check",
+                                                        help='Just focus on mandatory courses requirements, and ignore informative / optional references.')
+
+                courses_connexpaths_check = st.checkbox('🔗 Show only courses linked to the visible paths',False,key='courses_connexpaths_check',
+                                                        help='Show only courses related to the selected paths (courses belonging to paths connex graph). Hide courses and links not related to the selected paths.')
+                
+             
+            other_inputs = st.expander("... other parameters", expanded=False)
+            with other_inputs:
+                courses_palette_selector = st.selectbox("🎨 Graph color palette",["Topic","Dependency","Hybrid"],index=0,key="courses_palette_selector",
+                                                        help="Choose a color palette to setup how courses, paths and dependencies are drawn.")
+                
+                courses_algo_check = st.checkbox("🌐 Force Atlas layout",False, key="courses_algo_check",
+                                                 help="Choose whether the graph is layout freely or is constrained into a spherical shape.")
+                courses_width_slider = st.slider("View width",200,1600,1000,10,"%d px",key="courses_width_slider") 
+                courses_height_slider = st.slider("View height",200,1200,680,10,"%d px",key="courses_height_slider")               
+         
+        href= occ.VizFolder+"custom_oc_courses.html" 
+        
+        frame_height=courses_height_slider
+        frame_width =courses_width_slider  
+        
+        filter_options={
+            "height"                             : courses_height_slider,
+            "topic"                              : courses_topic_selector,
+            "language"                           : courses_language_selector,
+            "path_topic"                         : courses_path_topic_selector,
+            "path_language"                      : courses_path_language_selector,
+            "path"                               : courses_path_selector, 
+            "max_depth"                          : courses_max_depth_slider,
+            "hide_references"                    : courses_hidereferences_check,
+            "atlas_layout"                       : courses_algo_check,
+            "show_my_way"                        : False, 
+            "palette"                            : courses_palette_selector,
+            "connex_paths"                       : courses_connexpaths_check
+        }
+    
+         
+        
+        # OC like bg color : "#d5d0f5" 
+        g = ocg.build_courses_graph(topic_id=courses_topic_selector,
+                                language=courses_language_selector,
+                                path_topic_id=courses_path_topic_selector,
+                                path_language=courses_path_language_selector,
+                                path_id=courses_path_selector,
+                                max_depth=courses_max_depth_slider,
+                                atlas_layout=courses_algo_check,
+                                show_my_way=False,
+                                show_only_requirement_relations=courses_hidereferences_check,
+                                height=str(courses_height_slider)+'px', width='99%',
+                                palette=courses_palette_selector,
+                                bgcolor="#FFFFFF", font_color="#141414",
+                                directed=True,notebook=True,layout=False,show_titles=True,
+                                show_buttons=False,filter_options=filter_options)    
+        
+        if (type(g)!=type(None)):
+            g.show(href)
+            HtmlFile = open(href, 'r', encoding='utf-8')
+            source = HtmlFile.read() 
+            with viz:
+                components.html(source, height = frame_height+10,width=frame_width)
         
     # ---------------------------------------------------
     elif main_view == 'Schedule':        
