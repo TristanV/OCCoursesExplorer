@@ -368,9 +368,168 @@ def main():
                 # import json
                 # opt=json.loads(options)
                 # st.write(opt)
+        more_info = st.expander("🡺📖 More information about this page", expanded=False)
+        with more_info:
+            content = '''
+            ## Some remarks about the 'courses galaxy' view
+            
+            ### The full graph is very big
+            
+            When you load this page, you will notice a long loading time, with a progress bar slowly loading the graph.
+            
+            This loading time is due to the huge edge number in the graph. 
+            
+            **The graph size will decrease when you filter courses and paths by topic, by language, and other constraints.**
+            
+            ### This graph is experimental
+            
+            The main and perhaps only use of this big graph is to **render a bird-eye view of the full courses network**.
+            
+            You may find interesting to answer some of the following questions with the relevant filters:
+            - What are the *pedagogy* courses used in most paths?
+            - What are the *data* courses used in paths not belonging to the *data* topic? And what are these paths?
+            - Same question for development courses. Do you see how much programming skills are important in so many jobs?
+            - What courses are linked to no path at all? (use the Atlas layout to see them properly)
+            
+            ### The legend is not clear
+            
+            It is a conscious choice not to give a legend for this graph view. 
+            - Colours and shapes are quite easily understood, after a few graph generations.
+            - The graphic features of this graph are experimental and may change in any update.            
+            
+            ### How can I take a picture of the graph?
+            
+            Sure, sharing what you find is a great idea! 
+            - with no tech skills, you can take a screenshot of the page
+            - With enough technical skills, you may copy-paste the HTML code of the graph frame into a HTML text file and view it as a standalone page.
+            
+            Please mention this OCCoursesExplorer project if you share graph pictures generated with this demo!
+
+            ### Remember this is just a demo
+            More things can be done with this app. Feel free to send me a message on the Github Project.            
+            '''
+            st.markdown(content)
     # ---------------------------------------------------
-    elif main_view == 'Schedule':        
-        st.subheader('Paths schedule')
+    elif main_view == 'Schedule':     
+        menu , viz = st.columns([1,4]) 
+        
+        with menu:
+            st.subheader('Paths schedule')
+        
+            schedule_paths_options={0:"-"}            
+            # select topics having paths
+            df = ocd.OC_Topics[["topic_name","topic_id"]][ocd.OC_Topics["topic_id"].isin(ocd.OC_Paths.topic_id.unique())]
+            # merge paths with these topics
+            df = ocd.OC_Paths.merge(df, on='topic_id', how='left').sort_values(by=["topic_name","path_language","path_title"])
+            for i,r in df.iterrows():
+                schedule_paths_options[r["path_id"]]=r["topic_name"][:3]+"-"+r["path_language"]+" : "+r["path_title"] 
+            schedule_path_selector = st.selectbox("📚 Path", 
+                                                schedule_paths_options.keys(), 
+                                                format_func=lambda x: schedule_paths_options[x], 
+                                                index=0,
+                                                key="schedule_path_selector",
+                                                help="Select one path to compute its schedule") 
+            
+            schedule_requires_max_depth_slider = st.slider("❗🔍 Requirements Max Depth",0,20,1,1,key="schedule_requires_max_depth_slider", 
+                                            help='Do not explore REQUIRED links between courses too deeply : limit exploration to Max Depth !')
+            
+            schedule_references_max_depth_slider = st.slider("❓🔍 References Max Depth",0,20,1,1,key="schedule_references_max_depth_slider", 
+                                            help='Do not explore REFERENCES links between courses too deeply : limit exploration to Max Depth !')
+
+        
+            schedule_details_check = st.checkbox("🖹 Detailed descriptions",value=False,key="schedule_details_check",
+                                                    help='Show projects and courses details, chapters and skills')
+        
+            schedule_myway_check = False # this is a demo
+            
+            info_content = '''
+            **Important note regarding courses scheduling while attending OpenClassrooms PATHS**:
+            - **There is no good schedule!**. Each student is different from other students. 
+              Some people will skip a chapter or a full course because they already know the subject.
+            - **Courses are optional**. Even courses marked as 'recommended' or 'required' are optional to follow a path and deliver successfully your projects. So following courses, even the ones recommended, is not mandatory. 
+            - Moreover it may **slow you down to follow all the courses indicated in the schedule**.             
+            ''' 
+            info_box = st.info(info_content,icon='⚠')
+        
+        path_id = schedule_path_selector 
+        if (path_id==0):
+            with viz:
+                st.subheader("Please choose a path in the left side selector, to compute its schedule!")
+        else:
+            filter_options={
+                "show_my_way"                        : schedule_myway_check, 
+                "show_details"                       : schedule_details_check,
+                "path"                               : schedule_path_selector, 
+                "required_max_depth"                 : schedule_requires_max_depth_slider,
+                "references_max_depth"               : schedule_references_max_depth_slider
+            }
+            ht = oca.build_path_agenda_html(path_id=path_id, options=filter_options) 
+            if (type(ht)!=type(None)) :
+                with viz:     
+                    href= occ.VizFolder+"custom_path_"+str(path_id)+"_schedule.html"
+                    f = open(href,'w', encoding='utf-8') 
+                    f.write(ht)
+                    f.close()
+                    HtmlFile = open(href, 'r', encoding='utf-8')
+                    source = HtmlFile.read()  
+                    components.html(source, height =700 ,scrolling =True) 
+        
+        
+        more_info = st.expander("🡺📖 More information about this page", expanded=False)
+        with more_info:
+            content = '''
+            ## Some remarks about the 'Schedule' view
+            
+            ### Disclaimer regarding OpenClassrooms
+            
+            * OpenClassrooms will not give you such a schedule when you start a learning path. 
+                - The online paths documentation gives you access to projects, and some courses recommendations for each project. 
+            
+            * There are **good reasons** for not providing a full courses schedule:
+                - **There is no good schedule!**. Each student is different from other students. Some people will skip the Unix lessons, or the Excel courses because they already are experts in these subjects.
+                - **Courses are optional**. Even courses marked as 'recommended' or 'required' are optional to follow a path and deliver successfully your projects. So following courses, even the ones recommended, is not mandatory. 
+                - Moreover it may slow you down to follow all the courses indicated in the schedule. **Note: I take no responsibility in your choices to follow a course or not!**
+            
+            
+            * There was an issue with the courses structure, motivating the present work. This issue is now getting solved by OpenClassrooms e-learning teams:
+                - A **lot of cross-references** between courses (which is good for web navigation in online pedagogic content), can lead curious and serious students to feel they are in a kind of "maze".
+                - When you start course A, requiring courses B and C, themselves requiring course D and A, you find yourself in a prerequisites circle. Easy to solve for a few courses, but a hard issue for a full diploma path.
+                - The solution comes with a basic algorithm inspired by graph-theory, solving this scheduling issue : "what courses do I need to follow, in which order, without missing an important step?"
+                        
+            ### This schedule is experimental
+
+            The main goal of this schedule page is to **provide a chronological progression for the courses to be followed in each path**.
+            
+            You will not find the left column very useful, and some codes may not be very understandable. 
+            
+            Note that some courses are accounted as referenced by other courses, while they only are mentioned (sometimes just to read a paragraph). The scheduler is not clever enough (yet?) to distinguish references where you are invited to follow a full course, and ones where you are invited to follow just a chapter.
+                      
+            ### This demo does not take in account my own schedule or progression as a student
+            
+            It's because it is an online demo, with public pages. 
+            
+            If you want to use the full scheduling features, you'll have to install the standalone Python application, and connect it to your OpenClassrooms account.
+            
+            I'm working on an update... but I will not give any deadline :)
+            
+            ### How can I download a copy of a schedule?
+            
+            Sure, it is a great idea to keep a copy in your computer! 
+            
+            For now, there is no download button for this, but it may come in an update.
+            
+            However, note that only OpenClassrooms has the good data up to date! Courses are changing often, but this demo is not updated very often.
+            
+            Finally if you really need a copy of the schedule:            
+            - With no tech skills, you can take a screenshot of the page... 
+            - With enough technical skills, you may copy-paste the HTML code of the schedule frame into a HTML text file and view it as a standalone page.
+            
+            Please mention this OCCoursesExplorer project if you share content extracted from this demo! (There is a licence explaining what you can do, on the Github project page)
+
+            ### Remember this is just a demo
+            More things can be done with this app. Feel free to send me a message on the Github Project.            
+            '''
+            st.markdown(content)
     # ---------------------------------------------------
     elif main_view == 'Info':        
         st.subheader('Information about this demo')
