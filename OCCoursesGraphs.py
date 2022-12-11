@@ -1617,7 +1617,7 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
                     "enabled":False,
                     "type": "continuous"      
                 } 
-    g.options.set(json.dumps(opt))
+    g.set_options(json.dumps(opt))
     
     return g
 #end function

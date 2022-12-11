@@ -363,7 +363,11 @@ def main():
             source = HtmlFile.read() 
             with viz:
                 components.html(source, height = frame_height+10,width=frame_width)
-         
+                # debug purpose
+                # options = g.options.to_json()
+                # import json
+                # opt=json.loads(options)
+                # st.write(opt)
     # ---------------------------------------------------
     elif main_view == 'Schedule':        
         st.subheader('Paths schedule')
