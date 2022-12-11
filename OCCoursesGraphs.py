@@ -1607,5 +1607,17 @@ def build_courses_graph(topic_id=0,language='-',path_topic_id=0,path_language='-
         g.prep_notebook(custom_template=True, custom_template_path=VizTemplate)
     else: 
         g.set_template(VizTemplate)
+        
+    # The "dynamic" behaviour of edges seems to by activated by default since a recent version of 'pyvis'.
+    # We need to deactivate it for the courses graph because it slows down dramatically the javascript in browsers.
+    options = g.options.to_json()
+    import json
+    opt=json.loads(options) 
+    opt["edges"]["smooth"]={      
+                    "enabled":False,
+                    "type": "continuous"      
+                } 
+    g.options.set(json.dumps(opt))
+    
     return g
 #end function

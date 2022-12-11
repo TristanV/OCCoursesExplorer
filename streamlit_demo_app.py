@@ -11,7 +11,6 @@ import OCCoursesDatasets as ocd
 import OCCoursesAgenda as oca
 import OCCoursesGraphs as ocg
 
-
 st.set_page_config(page_title="OCCoursesExplorer Demo App",page_icon="img/telescope-icon_90.png",layout="wide",initial_sidebar_state="expanded")
 
 @st.cache        
@@ -364,7 +363,7 @@ def main():
             source = HtmlFile.read() 
             with viz:
                 components.html(source, height = frame_height+10,width=frame_width)
-        
+         
     # ---------------------------------------------------
     elif main_view == 'Schedule':        
         st.subheader('Paths schedule')
