@@ -10,4 +10,5 @@ requests
 scipy
 scikit-learn
 seaborn
+selenium
 streamlit
